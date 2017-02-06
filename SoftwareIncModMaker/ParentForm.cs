@@ -66,15 +66,15 @@ namespace SoftwareIncModMaker
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (System.Windows.Forms.Application.MessageLoop)
+            if (Application.MessageLoop)
             {
                 // WinForms 
-                System.Windows.Forms.Application.Exit();
+                Application.Exit();
             }
              else
             {
                 // Console 
-                System.Environment.Exit(1);
+                Environment.Exit(1);
             }
         }
     }
