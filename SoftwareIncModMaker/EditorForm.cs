@@ -17,12 +17,12 @@ using AutocompleteMenuNS;
 
 namespace SoftwareIncModMaker
 {
-    public partial class Form3 : Form
+    public partial class EditorForm : Form
     {
         String xmlName;
         String nodeEditLabelHistory;
 
-        public Form3()
+        public EditorForm()
         {
 
             InitializeComponent();

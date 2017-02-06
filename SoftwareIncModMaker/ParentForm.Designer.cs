@@ -1,6 +1,6 @@
 ﻿namespace SoftwareIncModMaker
 {
-    partial class Form1
+    partial class ParentForm
     {
         /// <summary>
         /// Required designer variable.
@@ -50,7 +50,7 @@
             this.treeviewToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(631, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(691, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -111,15 +111,15 @@
             this.openXMLToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.openXMLToolStripMenuItem.Text = "Open XML";
             // 
-            // Form1
+            // ParentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 437);
+            this.ClientSize = new System.Drawing.Size(691, 370);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "ParentForm";
+            this.Text = "Mod Creator: Software Inc";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);

@@ -11,10 +11,10 @@ using System.Xml;
 
 namespace SoftwareIncModMaker
 {
-    public partial class Form1 : Form
+    public partial class ParentForm : Form
     {
 
-        public Form1()
+        public ParentForm()
         {
             InitializeComponent();
             
@@ -56,12 +56,12 @@ namespace SoftwareIncModMaker
         private void createNewModToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            UserInterfaceController.showChildForm(this, new Form2());
+            UserInterfaceController.showChildForm(this, new CreateBoxForm());
         }
 
         private void treeviewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UserInterfaceController.showChildForm(this, new Form3());
+            UserInterfaceController.showChildForm(this, new EditorForm());
         }
     }
 }

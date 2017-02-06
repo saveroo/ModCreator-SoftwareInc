@@ -1,6 +1,6 @@
 ﻿namespace SoftwareIncModMaker
 {
-    partial class Form3
+    partial class EditorForm
     {
         /// <summary>
         /// Required designer variable.
@@ -64,7 +64,7 @@
             treeNode14,
             treeNode15,
             treeNode17});
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditorForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.softwareTree = new System.Windows.Forms.TreeView();
             this.scintilla1 = new ScintillaNET.Scintilla();
@@ -115,14 +115,14 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 183F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 251F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(861, 458);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(948, 482);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // softwareTree
             // 
             this.softwareTree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.softwareTree.Location = new System.Drawing.Point(3, 7);
+            this.softwareTree.Location = new System.Drawing.Point(3, 31);
             this.softwareTree.Name = "softwareTree";
             treeNode1.Name = "nodeName";
             treeNode1.Text = "Name";
@@ -165,7 +165,7 @@
             treeNode18.Text = "Software Type";
             this.softwareTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode18});
-            this.softwareTree.Size = new System.Drawing.Size(855, 177);
+            this.softwareTree.Size = new System.Drawing.Size(942, 177);
             this.softwareTree.TabIndex = 0;
             this.softwareTree.BeforeLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.softwareTree_BeforeLabelEdit);
             this.softwareTree.AfterLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.softwareTree_AfterLabelEdit);
@@ -177,9 +177,9 @@
             this.scintilla1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.scintilla1.FontQuality = ScintillaNET.FontQuality.LcdOptimized;
             this.scintilla1.Lexer = ScintillaNET.Lexer.Xml;
-            this.scintilla1.Location = new System.Drawing.Point(3, 210);
+            this.scintilla1.Location = new System.Drawing.Point(3, 234);
             this.scintilla1.Name = "scintilla1";
-            this.scintilla1.Size = new System.Drawing.Size(855, 245);
+            this.scintilla1.Size = new System.Drawing.Size(942, 245);
             this.scintilla1.TabIndex = 1;
             this.scintilla1.Text = "scintilla1";
             this.scintilla1.CharAdded += new System.EventHandler<ScintillaNET.CharAddedEventArgs>(this.scintilla1_CharAdded);
@@ -194,9 +194,9 @@
             this.statusLastAction,
             this.toolStripStatusLabel5,
             this.statusInformation});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 187);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 211);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(861, 20);
+            this.statusStrip1.Size = new System.Drawing.Size(948, 20);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -247,7 +247,7 @@
             this.toolStripComboBox1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(861, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(948, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -376,15 +376,15 @@
             this.nodeEditTimer.Enabled = true;
             this.nodeEditTimer.Tick += new System.EventHandler(this.nodeEditTimer_Tick);
             // 
-            // Form3
+            // EditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 458);
+            this.ClientSize = new System.Drawing.Size(948, 482);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Form3";
-            this.Text = "Form3";
+            this.Name = "EditorForm";
+            this.Text = "Editor Window";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

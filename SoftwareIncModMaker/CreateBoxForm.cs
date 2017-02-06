@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SoftwareIncModMaker
 {
-    public partial class Form2 : Form
+    public partial class CreateBoxForm : Form
     {
-        public Form2()
+        public CreateBoxForm()
         {
             InitializeComponent();
         }
