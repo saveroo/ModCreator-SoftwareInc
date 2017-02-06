@@ -13,43 +13,10 @@ namespace SoftwareIncModMaker
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
-
-            //Draw the tab 
-            iterateTab();
-            
-        }
-
-        private void iterateTab()
-        {
-            foreach (TabPage tab in tabControl1.TabPages)
-            {
-                ToolStripMenuItem menuItem = new ToolStripMenuItem(tab.Text);
-
-                //event handler
-                menuItem.Click += new EventHandler(deleteItem_Click);
-                deleteTabToolStripMenuItem.DropDownItems.Add(menuItem);
-            }
-        }
-
-        private void deleteItem_Click(object sender, EventArgs e)
-        {
-            ToolStripMenuItem menuItemIndex = sender as ToolStripMenuItem;
-            deleteTabToolStripMenuItem.DropDownItems.RemoveByKey(menuItemIndex.Text);
-            tabControl1.TabPages.RemoveByKey(menuItemIndex.Text);
-        }
-
-        private int getMenuStripIndex(object sender)
-        {
-            ToolStripMenuItem deleteTabMember = sender as ToolStripMenuItem;
-            if(deleteTabMember != null)
-            {
-                int index = ContextMenuStrip.Items.IndexOf(deleteTabMember);
-                return index;
-            }
-            return 0;
             
         }
 
@@ -79,6 +46,22 @@ namespace SoftwareIncModMaker
             {
                 contextMenuStrip1.Show(MousePosition);
             }
+        }
+
+        private void xmlView()
+        {
+           
+        }
+
+        private void createNewModToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            UserInterfaceController.showChildForm(this, new Form2());
+        }
+
+        private void treeviewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserInterfaceController.showChildForm(this, new Form3());
         }
     }
 }
