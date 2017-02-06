@@ -63,5 +63,19 @@ namespace SoftwareIncModMaker
         {
             UserInterfaceController.showChildForm(this, new EditorForm());
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                // WinForms 
+                System.Windows.Forms.Application.Exit();
+            }
+             else
+            {
+                // Console 
+                System.Environment.Exit(1);
+            }
+        }
     }
 }
