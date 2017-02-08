@@ -1,6 +1,6 @@
 ﻿namespace SoftwareIncModMaker
 {
-    partial class EditorForm
+    partial class XMLEditorForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,56 +29,45 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Name");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Category");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Description");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Random");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Node8");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Node9");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Node10");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Node11");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Node12");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Node7");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Category", new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode6,
-            treeNode7,
-            treeNode8,
-            treeNode9,
-            treeNode10});
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Categories", new System.Windows.Forms.TreeNode[] {
-            treeNode11});
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Node15");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Node16");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Node17");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Node19");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Features", new System.Windows.Forms.TreeNode[] {
-            treeNode16});
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Software Type", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode12,
-            treeNode13,
-            treeNode14,
-            treeNode15,
-            treeNode17});
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditorForm));
+            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Name");
+            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Category");
+            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Description");
+            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Random");
+            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Node8");
+            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Node9");
+            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Node10");
+            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Node11");
+            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Node12");
+            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("Node7");
+            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("Category", new System.Windows.Forms.TreeNode[] {
+            treeNode41,
+            treeNode42,
+            treeNode43,
+            treeNode44,
+            treeNode45,
+            treeNode46});
+            System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("Categories", new System.Windows.Forms.TreeNode[] {
+            treeNode47});
+            System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("Node15");
+            System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("Node16");
+            System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("Node17");
+            System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("Node19");
+            System.Windows.Forms.TreeNode treeNode53 = new System.Windows.Forms.TreeNode("Features", new System.Windows.Forms.TreeNode[] {
+            treeNode52});
+            System.Windows.Forms.TreeNode treeNode54 = new System.Windows.Forms.TreeNode("Software Type", new System.Windows.Forms.TreeNode[] {
+            treeNode37,
+            treeNode38,
+            treeNode39,
+            treeNode40,
+            treeNode48,
+            treeNode49,
+            treeNode50,
+            treeNode51,
+            treeNode53});
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XMLEditorForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.softwareTree = new System.Windows.Forms.TreeView();
             this.scintilla1 = new ScintillaNET.Scintilla();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusCurrentAction = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusLastAction = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusInformation = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.softwareTreeToolStripMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.NodesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addNodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,23 +80,39 @@
             this.collapseAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.viewRAWXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.autocompleteMenu1 = new AutocompleteMenuNS.AutocompleteMenu();
             this.nodeEditTimer = new System.Windows.Forms.Timer(this.components);
+            this.textEditorContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.convertToTreeViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.featureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.softwareTreeToolStripMenu.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
+            this.textEditorContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.softwareTree, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.softwareTree, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.scintilla1, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.statusStrip1, 0, 2);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -121,50 +126,52 @@
             // 
             // softwareTree
             // 
-            this.softwareTree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.softwareTree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.softwareTree.Location = new System.Drawing.Point(3, 31);
             this.softwareTree.Name = "softwareTree";
-            treeNode1.Name = "nodeName";
-            treeNode1.Text = "Name";
-            treeNode2.Name = "nodeCategory";
-            treeNode2.Text = "Category";
-            treeNode3.Name = "nodeDescriptionRoot";
-            treeNode3.Text = "Description";
-            treeNode4.Name = "nodeRandom";
-            treeNode4.Text = "Random";
-            treeNode5.Name = "Node8";
-            treeNode5.Text = "Node8";
-            treeNode6.Name = "Node9";
-            treeNode6.Text = "Node9";
-            treeNode7.Name = "Node10";
-            treeNode7.Text = "Node10";
-            treeNode8.Name = "Node11";
-            treeNode8.Text = "Node11";
-            treeNode9.Name = "Node12";
-            treeNode9.Text = "Node12";
-            treeNode10.Name = "Node7";
-            treeNode10.Text = "Node7";
-            treeNode11.Name = "Node6";
-            treeNode11.Tag = "Name";
-            treeNode11.Text = "Category";
-            treeNode12.Name = "nodeCategories";
-            treeNode12.Text = "Categories";
-            treeNode13.Name = "Node15";
-            treeNode13.Text = "Node15";
-            treeNode14.Name = "Node16";
-            treeNode14.Text = "Node16";
-            treeNode15.Name = "Node17";
-            treeNode15.Text = "Node17";
-            treeNode16.Name = "Node19";
-            treeNode16.Text = "Node19";
-            treeNode17.Name = "nodeFeatures";
-            treeNode17.Tag = "";
-            treeNode17.Text = "Features";
-            treeNode18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            treeNode18.Name = "Node0";
-            treeNode18.Text = "Software Type";
+            treeNode37.Name = "nodeName";
+            treeNode37.Text = "Name";
+            treeNode38.Name = "nodeCategory";
+            treeNode38.Text = "Category";
+            treeNode39.Name = "nodeDescriptionRoot";
+            treeNode39.Text = "Description";
+            treeNode40.Name = "nodeRandom";
+            treeNode40.Text = "Random";
+            treeNode41.Name = "Node8";
+            treeNode41.Text = "Node8";
+            treeNode42.Name = "Node9";
+            treeNode42.Text = "Node9";
+            treeNode43.Name = "Node10";
+            treeNode43.Text = "Node10";
+            treeNode44.Name = "Node11";
+            treeNode44.Text = "Node11";
+            treeNode45.Name = "Node12";
+            treeNode45.Text = "Node12";
+            treeNode46.Name = "Node7";
+            treeNode46.Text = "Node7";
+            treeNode47.Name = "Node6";
+            treeNode47.Tag = "Name";
+            treeNode47.Text = "Category";
+            treeNode48.Name = "nodeCategories";
+            treeNode48.Text = "Categories";
+            treeNode49.Name = "Node15";
+            treeNode49.Text = "Node15";
+            treeNode50.Name = "Node16";
+            treeNode50.Text = "Node16";
+            treeNode51.Name = "Node17";
+            treeNode51.Text = "Node17";
+            treeNode52.Name = "Node19";
+            treeNode52.Text = "Node19";
+            treeNode53.Name = "nodeFeatures";
+            treeNode53.Tag = "";
+            treeNode53.Text = "Features";
+            treeNode54.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            treeNode54.Name = "Node0";
+            treeNode54.Text = "Software Type";
             this.softwareTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode18});
+            treeNode54});
             this.softwareTree.Size = new System.Drawing.Size(942, 177);
             this.softwareTree.TabIndex = 0;
             this.softwareTree.BeforeLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.softwareTree_BeforeLabelEdit);
@@ -174,101 +181,23 @@
             // 
             // scintilla1
             // 
-            this.scintilla1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scintilla1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.scintilla1.ContextMenuStrip = this.textEditorContextMenu;
+            this.scintilla1.EdgeColor = System.Drawing.Color.IndianRed;
+            this.scintilla1.EdgeMode = ScintillaNET.EdgeMode.Line;
             this.scintilla1.FontQuality = ScintillaNET.FontQuality.LcdOptimized;
             this.scintilla1.Lexer = ScintillaNET.Lexer.Xml;
             this.scintilla1.Location = new System.Drawing.Point(3, 234);
             this.scintilla1.Name = "scintilla1";
             this.scintilla1.Size = new System.Drawing.Size(942, 245);
             this.scintilla1.TabIndex = 1;
-            this.scintilla1.Text = "scintilla1";
-            this.scintilla1.CharAdded += new System.EventHandler<ScintillaNET.CharAddedEventArgs>(this.scintilla1_CharAdded);
+            this.scintilla1.Text = "Boom Boom Paw";
+            this.scintilla1.UseTabs = true;
+            this.scintilla1.ViewWhitespace = ScintillaNET.WhitespaceMode.VisibleAfterIndent;
+            this.scintilla1.TextChanged += new System.EventHandler(this.scintilla1_TextChanged);
             this.scintilla1.Click += new System.EventHandler(this.scintilla1_Click);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.statusCurrentAction,
-            this.toolStripStatusLabel3,
-            this.statusLastAction,
-            this.toolStripStatusLabel5,
-            this.statusInformation});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 211);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(948, 20);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(88, 15);
-            this.toolStripStatusLabel1.Text = "Current Action:";
-            // 
-            // statusCurrentAction
-            // 
-            this.statusCurrentAction.Name = "statusCurrentAction";
-            this.statusCurrentAction.Size = new System.Drawing.Size(118, 15);
-            this.statusCurrentAction.Text = "toolStripStatusLabel2";
-            // 
-            // toolStripStatusLabel3
-            // 
-            this.toolStripStatusLabel3.BackColor = System.Drawing.Color.IndianRed;
-            this.toolStripStatusLabel3.ForeColor = System.Drawing.Color.Black;
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(69, 15);
-            this.toolStripStatusLabel3.Text = "Last Action:";
-            // 
-            // statusLastAction
-            // 
-            this.statusLastAction.Name = "statusLastAction";
-            this.statusLastAction.Size = new System.Drawing.Size(118, 15);
-            this.statusLastAction.Text = "toolStripStatusLabel4";
-            // 
-            // toolStripStatusLabel5
-            // 
-            this.toolStripStatusLabel5.BackColor = System.Drawing.Color.DarkOrange;
-            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(73, 15);
-            this.toolStripStatusLabel5.Text = "Information:";
-            // 
-            // statusInformation
-            // 
-            this.statusInformation.Name = "statusInformation";
-            this.statusInformation.Size = new System.Drawing.Size(118, 15);
-            this.statusInformation.Text = "toolStripStatusLabel6";
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripComboBox1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(948, 25);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(83, 22);
-            this.toolStripButton1.Text = "Open XML";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripComboBox1
-            // 
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 25);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // softwareTreeToolStripMenu
             // 
@@ -361,6 +290,36 @@
             this.viewRAWXMLToolStripMenuItem.Text = "View RAW XML";
             this.viewRAWXMLToolStripMenuItem.Click += new System.EventHandler(this.viewRAWXMLToolStripMenuItem_Click);
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripComboBox1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(948, 25);
+            this.toolStrip1.TabIndex = 1;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(83, 22);
+            this.toolStripButton1.Text = "Open XML";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripComboBox1
+            // 
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 25);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
             // autocompleteMenu1
             // 
             this.autocompleteMenu1.Colors = ((AutocompleteMenuNS.Colors)(resources.GetObject("autocompleteMenu1.Colors")));
@@ -376,6 +335,90 @@
             this.nodeEditTimer.Enabled = true;
             this.nodeEditTimer.Tick += new System.EventHandler(this.nodeEditTimer_Tick);
             // 
+            // textEditorContextMenu
+            // 
+            this.textEditorContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem,
+            this.copyToolStripMenuItem,
+            this.pasteToolStripMenuItem,
+            this.convertToTreeViewToolStripMenuItem,
+            this.deleteLineToolStripMenuItem,
+            this.clearToolStripMenuItem,
+            this.undoToolStripMenuItem,
+            this.redoToolStripMenuItem});
+            this.textEditorContextMenu.Name = "textEditorContextMenu";
+            this.textEditorContextMenu.Size = new System.Drawing.Size(123, 180);
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.copyToolStripMenuItem.Text = "Copy";
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.ClickCopy);
+            // 
+            // pasteToolStripMenuItem
+            // 
+            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pasteToolStripMenuItem.Text = "Paste";
+            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.ClickPaste);
+            // 
+            // convertToTreeViewToolStripMenuItem
+            // 
+            this.convertToTreeViewToolStripMenuItem.Name = "convertToTreeViewToolStripMenuItem";
+            this.convertToTreeViewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.convertToTreeViewToolStripMenuItem.Text = "Cut";
+            this.convertToTreeViewToolStripMenuItem.Click += new System.EventHandler(this.ClickCut);
+            // 
+            // deleteLineToolStripMenuItem
+            // 
+            this.deleteLineToolStripMenuItem.Name = "deleteLineToolStripMenuItem";
+            this.deleteLineToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteLineToolStripMenuItem.Text = "Select All";
+            this.deleteLineToolStripMenuItem.Click += new System.EventHandler(this.ClickSelectAll);
+            // 
+            // clearToolStripMenuItem
+            // 
+            this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.clearToolStripMenuItem.Text = "Clear";
+            this.clearToolStripMenuItem.Click += new System.EventHandler(this.ClickClear);
+            // 
+            // undoToolStripMenuItem
+            // 
+            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.undoToolStripMenuItem.Text = "Undo";
+            this.undoToolStripMenuItem.Click += new System.EventHandler(this.ClickUndo);
+            // 
+            // redoToolStripMenuItem
+            // 
+            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.redoToolStripMenuItem.Text = "Redo";
+            this.redoToolStripMenuItem.Click += new System.EventHandler(this.ClickRedo);
+            // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.featureToolStripMenuItem,
+            this.categoryToolStripMenuItem});
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.addToolStripMenuItem.Text = "Add";
+            // 
+            // featureToolStripMenuItem
+            // 
+            this.featureToolStripMenuItem.Name = "featureToolStripMenuItem";
+            this.featureToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.featureToolStripMenuItem.Text = "Feature";
+            // 
+            // categoryToolStripMenuItem
+            // 
+            this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
+            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.categoryToolStripMenuItem.Text = "Category";
+            // 
             // EditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,14 +428,14 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "EditorForm";
             this.Text = "Editor Window";
+            this.Activated += new System.EventHandler(this.EditorForm_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditorForm_onClose);
             this.Load += new System.EventHandler(this.Form3_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.softwareTreeToolStripMenu.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.softwareTreeToolStripMenu.ResumeLayout(false);
+            this.textEditorContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -415,18 +458,22 @@
         private System.Windows.Forms.ToolStripMenuItem deleteAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewRAWXMLToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
-        private ScintillaNET.Scintilla scintilla1;
         private AutocompleteMenuNS.AutocompleteMenu autocompleteMenu1;
         private System.Windows.Forms.ToolStripMenuItem expandHighlightedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem collapseHighlightedToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Timer nodeEditTimer;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
-        public System.Windows.Forms.ToolStripStatusLabel statusCurrentAction;
-        public System.Windows.Forms.ToolStripStatusLabel statusLastAction;
-        public System.Windows.Forms.ToolStripStatusLabel statusInformation;
+        public ScintillaNET.Scintilla scintilla1;
+        private System.Windows.Forms.ContextMenuStrip textEditorContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem convertToTreeViewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteLineToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem featureToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem categoryToolStripMenuItem;
     }
 }

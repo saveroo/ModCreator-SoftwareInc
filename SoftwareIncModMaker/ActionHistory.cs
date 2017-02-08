@@ -15,7 +15,7 @@ namespace SoftwareIncModMaker
         // private static bool _actionIsEnded;
         // private static List<String> _lastAction;
         // private static string _information;
-
+        public static List<String> HistoryOfAction = new List<String>();
         public static string CurrentAction { get; set; }
         public static bool CurrentActionType { get; set; }
         public static bool ActionIsEnded { get; set; }
@@ -42,11 +42,27 @@ namespace SoftwareIncModMaker
 
         public static void setStatus(string status)
         {
+            HistoryOfAction.Add(status);
             LastAction.Add(status);
-
-
             CurrentAction = status;
             labelControl.ElementAt(0).Text = status;
+            if(HistoryOfAction.Count > 1) { 
+                labelControl.ElementAt(1).Text = HistoryOfAction.ElementAt(HistoryOfAction.Count - 2).ToString();
+            }
+        }
+
+        public static void setStatus(string status, string info)
+        {
+            HistoryOfAction.Add(status);
+            CurrentAction = status;
+
+
+            labelControl.ElementAt(2).Text = info;
+            labelControl.ElementAt(0).Text = status;
+            if (HistoryOfAction.Count > 1)
+            {
+                labelControl.ElementAt(1).Text = HistoryOfAction.ElementAt(HistoryOfAction.Count - 2).ToString();
+            }
         }
 
         public static void setStatus(bool val, string status)

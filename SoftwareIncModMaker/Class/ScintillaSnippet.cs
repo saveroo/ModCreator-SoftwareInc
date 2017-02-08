@@ -51,11 +51,11 @@ namespace SoftwareIncModMaker
         public static string[] softwareTypeOneLineSnippets()
         {
             string[] oneLineSnippets = {
-                "<Description>^<Description>",
-                "<Random>^<Random>",
-                "<Category>^<Category>",
-                "<OneClient>^<OneClient>",
-                "<InHouse>^<InHouse>",
+                "<Description>^</Description>",
+                "<Random>^</Random>",
+                "<Category>^</Category>",
+                "<OneClient>^</OneClient>",
+                "<InHouse>^</InHouse>",
                 "<Name>^</Name>"
             };
 
@@ -72,7 +72,7 @@ namespace SoftwareIncModMaker
                 "\t<TimeScale>1</TimeScale>\n" +
                 "\t<Iterative>0.75</Iterative>\n" +
                 "\t<NameGenerator>testgen</NameGenerator>\n";
-            string[] snippetWrapper = { "<Category Name=\"^\">\n" + categorySnippet + "<Category>" };
+            string[] snippetWrapper = { "<Category Name=\"^\">\n" + categorySnippet + "</Category>" };
             return snippetWrapper;
         }
 

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SoftwareType>
+  <Name>Test Software</Name>
+  <Category>Testing</Category>
+  <Description>This is part of a test mod. If you develop a perfect version, 50% of the population will want it, but 10% might randomly not want it.</Description>
+  <Random>0.1</Random>
+  <Categories>
+    <Category Name="Test category">
+      <Description>This is a test category</Description>
+      <Popularity>0.5</Popularity>
+      <Retention>0.5</Retention>
+      <TimeScale>1</TimeScale>
+      <Iterative>0.75</Iterative>
+      <NameGenerator>testgen</NameGenerator>
+    </Category>
+  </Categories>
+  <OSSpecific>TRUE</OSSpecific>
+  <OneClient>FALSE</OneClient>
+  <InHouse>FALSE</InHouse>
+  <Features>
+    <Feature Forced="TRUE">
+      <Name>Test feat 1</Name>
+      <Description>This feature will always be selected unless superseded by a feature with this as "From".</Description>
+      <DevTime>2</DevTime>
+      <Innovation>0</Innovation>
+      <Usability>1</Usability>
+      <Stability>1</Stability>
+      <CodeArt>1</CodeArt>
+    </Feature>
+    <Feature From="Test feat 1">
+      <Name>Test feat 2</Name>
+      <Description>This feature takes 6 months to make and has 4/6 Usability.</Description>
+      <DevTime>6</DevTime>
+      <Innovation>1</Innovation>
+      <Usability>4</Usability>
+      <Stability>1</Stability>
+      <CodeArt>1</CodeArt>
+      <Dependency Software="Visual Tool">Image viewing</Dependency>
+    </Feature>
+    <Feature>
+      <Name>Test feat 3</Name>
+      <Description>This feature takes just as many artists as programmers and offers no stability.</Description>
+      <DevTime>5</DevTime>
+      <Innovation>1</Innovation>
+      <Usability>1</Usability>
+      <Stability>0</Stability>
+      <CodeArt>0.5</CodeArt>
+      <Dependency Software="Test Software">Test feat 2</Dependency>
+      <SoftwareCategory Category="Test category">1983</SoftwareCategory>
+    </Feature>
+  </Features>
+</SoftwareType>

@@ -17,19 +17,21 @@ using AutocompleteMenuNS;
 
 namespace SoftwareIncModMaker
 {
-    public partial class EditorForm : Form
+    public partial class XMLEditorForm : Form
     {
+        private IMdiParentAccess statusAccess;
         String xmlName;
         String nodeEditLabelHistory;
 
-        public EditorForm()
+        public XMLEditorForm(IMdiParentAccess handler)
         {
+            this.statusAccess = handler;
+
+            //Apply code highlight
+    
 
             InitializeComponent();
             nodeEditTimer.Start();
-            ActionHistory.labelControl.Add(statusCurrentAction);
-            ActionHistory.labelControl.Add(statusLastAction);
-            ActionHistory.labelControl.Add(statusInformation);
 
 
         }
@@ -54,6 +56,7 @@ namespace SoftwareIncModMaker
             String folderName = "Software Inc.\\Mods";
             openFileDialog1.InitialDirectory = "C:\\Games\\Steam\\steamapps\\common\\" + folderName;
             openFileDialog1.ShowDialog();
+            
         }
 
         private void AddNode(XmlNode inXmlNode, TreeNode inTreeNode)
@@ -93,8 +96,8 @@ namespace SoftwareIncModMaker
             XmlDocument dom = new XmlDocument();
             dom.Load(@xmlName);
             AddNode(dom.DocumentElement, softwareTree.Nodes[0]);
+            ActionHistory.setStatus("Opened XML", xmlName.ToString());
         }
-
 
 
         private void parseToTreeView()
@@ -114,35 +117,7 @@ namespace SoftwareIncModMaker
             BuildTree(softwareTree, XDocument.Load(@xmlName));
             string sourcecode = XDocument.Load(@xmlName).ToString();
             //string colorized = new CodeColorizer().Colorize(sourcecode, Languages.Xml);
-            scintilla1.Lexer = Lexer.Xml;
-            scintilla1.Styles[Style.Xml.SingleString].Font = "consolas";
-            scintilla1.Styles[Style.Xml.SingleString].Size = 12;
-            scintilla1.Styles[Style.Xml.Tag].ForeColor = Color.FromKnownColor(KnownColor.Green);
-            scintilla1.Styles[Style.Xml.Value].ForeColor = Color.FromKnownColor(KnownColor.IndianRed);
-            scintilla1.Styles[Style.Xml.Number].ForeColor = Color.FromKnownColor(KnownColor.Red);
-
-            scintilla1.Margins[2].Type = MarginType.Symbol;
-            scintilla1.Margins[2].Mask = Marker.MaskFolders;
-            scintilla1.Margins[2].Sensitive = true;
-            scintilla1.Margins[2].Width = 20;
-
-            for (int i = 25; i <= 31; i++)
-            {
-                scintilla1.Markers[i].SetForeColor(SystemColors.ControlLightLight);
-                scintilla1.Markers[i].SetBackColor(SystemColors.ControlDark);
-            }
-            scintilla1.Markers[Marker.Folder].Symbol = MarkerSymbol.BoxPlus;
-            scintilla1.Markers[Marker.FolderOpen].Symbol = MarkerSymbol.BoxMinus;
-            scintilla1.Markers[Marker.FolderEnd].Symbol = MarkerSymbol.BoxPlusConnected;
-            scintilla1.Markers[Marker.FolderMidTail].Symbol = MarkerSymbol.TCorner;
-            scintilla1.Markers[Marker.FolderOpenMid].Symbol = MarkerSymbol.BoxMinusConnected;
-            scintilla1.Markers[Marker.FolderSub].Symbol = MarkerSymbol.VLine;
-            scintilla1.Markers[Marker.FolderTail].Symbol = MarkerSymbol.LCorner;
-
-            scintilla1.SetProperty("fold", "1");
-            scintilla1.SetProperty("fold.compact", "1");
-            scintilla1.SetProperty("fold.html", "1");
-            scintilla1.AutomaticFold = (AutomaticFold.Show | AutomaticFold.Click | AutomaticFold.Change);
+           
             scintilla1.Text = XDocument.Load(@xmlName).ToString();
         }
 
@@ -288,6 +263,11 @@ namespace SoftwareIncModMaker
         {
 
         }
+        private void scintilla1_Load(object sender, EventArgs e)
+        {
+
+                ScintillaStyling.ScintillaStyleApply(ref scintilla1);
+        }
 
         private void scintilla1_CharAdded(object sender, CharAddedEventArgs e)
         {
@@ -305,11 +285,23 @@ namespace SoftwareIncModMaker
             }
         }
 
+        private void EditorForm_onClose(Object sender, FormClosingEventArgs e)
+        {
+
+            System.Text.StringBuilder messageBoxCS = new System.Text.StringBuilder();
+            messageBoxCS.AppendFormat("{0} = {1}", "CloseReason", e.CloseReason);
+            messageBoxCS.AppendLine();
+            messageBoxCS.AppendFormat("{0} = {1}", "Cancel", e.Cancel);
+            messageBoxCS.AppendLine();
+            MessageBox.Show(messageBoxCS.ToString(), "Closing Editor");
+        }
+
         private void Form3_Load(object sender, EventArgs e)
         {
+
             autocompleteMenu1.TargetControlWrapper = new ScintillaWrapper(scintilla1);
+            ScintillaStyling.ScintillaStyleApply(ref scintilla1);
             ScintillaSnippet.BuildAutocompleteMenu(autocompleteMenu1);
-           
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -398,6 +390,26 @@ namespace SoftwareIncModMaker
             ActionHistory.setStatus("Tree Editing");
 
         }
+
+
+        private void EditorForm_Activated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void scintilla1_TextChanged(object sender, EventArgs e)
+        {
+            ScintillaStyling.ScintillaLineNumber(ref scintilla1);
+
+        }
+
+        void ClickPaste(Object sender, EventArgs args) { ActionHistory.setStatus("Pasted Text To Editor"); scintilla1.Paste(); }
+        void ClickCopy(Object sender, EventArgs args) { ActionHistory.setStatus("Copied Text From Editor"); scintilla1.Copy(); }
+        void ClickCut(Object sender, EventArgs args) { ActionHistory.setStatus("Cut Text From Editor"); scintilla1.Cut(); }
+        void ClickSelectAll(Object sender, EventArgs args) { ActionHistory.setStatus("Select all Text in Editor"); scintilla1.SelectAll(); }
+        void ClickClear(Object sender, EventArgs args) { ActionHistory.setStatus("Clearing Text in Editor"); scintilla1.Clear(); }
+        void ClickUndo(Object sender, EventArgs args) { ActionHistory.setStatus("Undo Text in Editor"); scintilla1.Undo(); }
+        void ClickRedo(Object sender, EventArgs args) { ActionHistory.setStatus("Redo Text in Editor"); scintilla1.Redo(); }
     }
 
 }
