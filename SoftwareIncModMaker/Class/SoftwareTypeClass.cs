@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading;
 
@@ -324,9 +326,13 @@ namespace SoftwareIncModMaker
             Interlocked.Decrement(ref _instances);
         }
 
+        public static int getActiveInstance() { return _instances; }
+
     }
 
-    public class SoftwareType : BaseSoftwareType 
+
+
+    public class SoftwareType : BaseSoftwareType, IEnumerable<SoftwareType>
     {
         public static readonly SoftwareTypeClass staticSoftwareType = new SoftwareTypeClass();
 
@@ -336,21 +342,40 @@ namespace SoftwareIncModMaker
         private decimal rootUnlock = 0;
         private decimal rootRandom = 0;
         private decimal rootPopularity = 0;
-        private String rootRetention = String.Empty;
+        private decimal rootRetention = 0;
         private decimal rootIterative = 0;
         private String rootDescription = String.Empty;
         private bool rootOSSpecific = false;
         private bool rootOneClient = false;
         private bool rootInHouse = false;
         private String rootOSLimit = String.Empty;
+        public BindingList<Category> childrenCategories;
+        private BindingList<Feature> childrenFeatures;
+        private BindingList<SoftwareType> softwareType;
 
         public SoftwareType() : base()
         {
             
         }
 
-        public SoftwareType(string rootName, string rootDelete, decimal rootUnlock,
-            decimal rootRandom, decimal rootPopularity, string rootRetention, decimal rootIterative,
+        public SoftwareType(SoftwareType c) : base()
+        {
+            
+        }
+
+        public IEnumerator<SoftwareType> GetEnumerator()
+        {
+            foreach (var contact in softwareType)
+                yield return contact;
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        public SoftwareType(string rootName, decimal rootUnlock,
+            decimal rootRandom, decimal rootPopularity, decimal rootRetention, decimal rootIterative,
             string rootDescription, bool rootOSSpecific, bool rootOneClient, bool rootInHouse, string rootOSLimit)
             
         {
@@ -374,17 +399,19 @@ namespace SoftwareIncModMaker
         public decimal RootUnlock { get => rootUnlock; set => rootUnlock = value; }
         public decimal RootRandom { get => rootRandom; set => rootRandom = value; }
         public decimal RootPopularity { get => rootPopularity; set => rootPopularity = value; }
-        public string RootRetention { get => rootRetention; set => rootRetention = value; }
+        public decimal RootRetention { get => rootRetention; set => rootRetention = value; }
         public decimal RootIterative { get => rootIterative; set => rootIterative = value; }
         public string RootDescription { get => rootDescription; set => rootDescription = value; }
         public bool RootOSSpecific { get => rootOSSpecific; set => rootOSSpecific = value; }
         public bool RootOneClient { get => rootOneClient; set => rootOneClient = value; }
         public bool RootInHouse { get => rootInHouse; set => rootInHouse = value; }
         public string RootOSLimit { get => rootOSLimit; set => rootOSLimit = value; }
+        public BindingList<Feature> ChildrenFeatures { get => childrenFeatures; set => childrenFeatures = value; }
     }
 
     public class Feature : SoftwareType
     {
+        private SoftwareType belongsTo;
         private String attributeFrom = String.Empty;
         private bool attributeForced = false;
         private bool attributeVital = false;
@@ -405,7 +432,18 @@ namespace SoftwareIncModMaker
         private String subFeatureSoftwareCategory = String.Empty;
         private String subAttrCategory = String.Empty;
 
-        public Feature(string attributeFrom, bool attributeForced, bool attributeVital, bool attributeResearch, string subFeatureName, string subFeatureDescription, string subFeatureArtCategory, decimal subFeatureUnlock, decimal subFeatureDevtime, decimal subFeatureInnovation, decimal subFeatureUsability, decimal subFeatureStability, decimal subFeatureCodeArt, string subFeatureDependency, decimal subFeatureServer, string subFeatureSoftwareCategory, string subAttrCategory)
+        public Feature() : base()
+        {
+            
+        }
+
+        public Feature(SoftwareType belongsTo) : base()
+        {
+
+        }
+
+
+        public Feature(SoftwareType belongsTo, string attributeFrom, bool attributeForced, bool attributeVital, bool attributeResearch, string subFeatureName, string subFeatureDescription, string subFeatureArtCategory, decimal subFeatureUnlock, decimal subFeatureDevtime, decimal subFeatureInnovation, decimal subFeatureUsability, decimal subFeatureStability, decimal subFeatureCodeArt, string subFeatureDependency, decimal subFeatureServer, string subFeatureSoftwareCategory, string subAttrCategory)
         {
             this.attributeFrom = attributeFrom;
             this.attributeForced = attributeForced;
@@ -424,6 +462,7 @@ namespace SoftwareIncModMaker
             this.subFeatureServer = subFeatureServer;
             this.subFeatureSoftwareCategory = subFeatureSoftwareCategory;
             this.subAttrCategory = subAttrCategory;
+            this.BelongsTo = belongsTo;
         }
 
         public string AttributeFrom { get => attributeFrom; set => attributeFrom = value; }
@@ -443,11 +482,14 @@ namespace SoftwareIncModMaker
         public decimal SubFeatureServer { get => subFeatureServer; set => subFeatureServer = value; }
         public string SubFeatureSoftwareCategory { get => subFeatureSoftwareCategory; set => subFeatureSoftwareCategory = value; }
         public string SubAttrCategory { get => subAttrCategory; set => subAttrCategory = value; }
+        public SoftwareType BelongsTo { get => belongsTo; set => belongsTo = value; }
     }
 
     public class Category : SoftwareType
     {
         //private String parentCategories = String.Empty;
+        private SoftwareType belongsTo;
+
 
         private String attrName = String.Empty;
         private String subCategory = String.Empty;
@@ -459,8 +501,14 @@ namespace SoftwareIncModMaker
         private decimal subCategoryIterative = 0;
         private String subCategoryNameGenerator = String.Empty;
 
-        public Category(string attrName, string subCategory, string subCategoryDescription, decimal subCategoryUnlock, decimal subCategoryPopularity, decimal subCategoryTimeScale, decimal subCategoryRetention, decimal subCategoryIterative, string subCategoryNameGenerator)
+        public Category() : base()
         {
+            
+        }
+
+        public Category(SoftwareType belongsTo, string attrName, string subCategory, string subCategoryDescription, decimal subCategoryUnlock, decimal subCategoryPopularity, decimal subCategoryTimeScale, decimal subCategoryRetention, decimal subCategoryIterative, string subCategoryNameGenerator)
+        {
+            this.BelongsTo = belongsTo;
             this.AttrName = attrName;
             this.SubCategory = subCategory;
             this.SubCategoryDescription = subCategoryDescription;
@@ -472,6 +520,7 @@ namespace SoftwareIncModMaker
             this.SubCategoryNameGenerator = subCategoryNameGenerator;
         }
 
+        public SoftwareType BelongsTo { get => belongsTo; set => belongsTo = value; }
         public string AttrName { get => attrName; set => attrName = value; }
         public string SubCategory { get => subCategory; set => subCategory = value; }
         public string SubCategoryDescription { get => subCategoryDescription; set => subCategoryDescription = value; }

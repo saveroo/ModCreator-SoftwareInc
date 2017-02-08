@@ -1,27 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Forms;
+using EnvDTE;
 
 namespace SoftwareIncModMaker
 {
     public partial class TabularEditorForm : Form
     {
-        public static BindingList<SoftwareTypeClass> test1DList = new BindingList<SoftwareTypeClass>();
+        public static BindingList<SoftwareType> test1DList = new BindingList<SoftwareType>();
         public static List<List<List<SoftwareTypeClass>>> test3DList = new List<List<List<SoftwareTypeClass>>>();
         public static List<List<SoftwareTypeClass>> test2DList = new List<List<SoftwareTypeClass>>();
 
         BindingList<SoftwareTypeClass> testBindingList = new BindingList<SoftwareTypeClass>();
-        public static SoftwareTypeClass st = new SoftwareTypeClass();
-        public static SoftwareTypeClass ft = new SoftwareTypeClass();
-        public static SoftwareTypeClass ct = new SoftwareTypeClass();
+       // public static SoftwareType st = new SoftwareType();
+       // public static Feature ft = new Feature();
+        //public static Category ct = new Category();
+        
 
         BindingSource bs = new BindingSource();
 
@@ -39,19 +35,12 @@ namespace SoftwareIncModMaker
 
         private void TabularEditorForm_Load(object sender, EventArgs e)
         {
+
+            timer1.Start();
             
             //XMLController.IterateFromXML(@"C:\\Games\\Steam\\steamapps\\common\\Software Inc\test.xml");
         }
 
-        private void createNewSoftwareToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
 
         private void testToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -96,7 +85,53 @@ namespace SoftwareIncModMaker
         private void ftSubmitButton_Click(object sender, EventArgs e)
         {
 
-            iterateFeature().ForEach(item => listView1.Items.Add(new ListViewItem(item.SubFeatureName)));
+            Feature newFeature = new Feature(
+                listBox1.SelectedItem as SoftwareType,
+                ftAttrFrom.Text,
+                ftAttrForced.BoolValue,
+                ftAttrVital.BoolValue,
+                ftAttrResearch.BoolValue,
+                ftName.Text,
+                ftDescription.Text,
+                ftCategory.Text,
+                ftUnlockBox.Value,
+                ftDevTimeBox.Value,
+                ftInnovationBox.Value,
+                ftUsabilityBox.Value,
+                ftStabilityBox.Value,
+                ftCodeArtBox.Value,
+                ftDependencyFeature.Text,
+                ftServerBox.Value,
+                ftCategory.Text,
+                ftAttrVital.Text
+                );
+
+//                MessageBox.Show(newFeature.BelongsTo.RootName);
+            SoftwareType a = listBox1.SelectedItem as SoftwareType;
+            BindingList<Feature> bd = new BindingList<Feature>();
+            bd.Add(newFeature);
+            if (listBox1.SelectedItem != null)
+            {
+                a.ChildrenFeatures = bd;
+//                var aa = a.ChildrenFeatures.AddNew();
+//                aa.BelongsTo = listBox1.SelectedItem as SoftwareType;
+//                aa.AttributeFrom = ftAttrFrom.Text;
+//                aa.AttributeForced = ftAttrForced.Checked;
+//                aa.AttributeResearch = ftAttrResearch.Checked;
+//                aa.AttributeVital = ftAttrVital.Checked;
+//                aa.SubFeatureName = ftName.Text;
+//                aa.SubFeatureServer = ftServerBox.Value;
+//                aa.SubFeatureInnovation = ftInnovationBox.Value;
+//                aa.SubFeatureDependency = ftDependencyFeature.Text;
+//                aa.SubFeatureCodeArt = ftCodeArtBox.Value;
+//                aa.SubFeatureStability = ftStabilityBox.Value;
+//                aa.SubFeatureUsability = ftUsabilityBox.Value;
+//                aa.SubFeatureDevtime = ftDevTimeBox.Value;
+//                aa.SubFeatureUnlock = ftUnlockBox.Value;
+//                aa.SubFeatureSoftwareCategory = "a";
+            }
+
+            //iterateFeature().ForEach(item => listView1.Items.Add(new ListViewItem(item.SubFeatureName)));
             //iterateFeature().ForEach(item => ];
             //var a = listView1.Items[listView1.Items.IndexOfKey().Text;
         }
@@ -114,19 +149,29 @@ namespace SoftwareIncModMaker
         private void stSubmitButton_Click(object sender, EventArgs e)
         {
      
-            string[] arr = new String[2];
-            arr[0] = stClass().RootName;
-            arr[1] = stClass().RootDescription;
+     
+            listView1.Clear();
+            SoftwareType stForm = new SoftwareType(
+                stNameTextBox.Text,
+                stUnlock.Value,
+                stRandom.Value,
+                stPopularity.Value,
+                stRetention.Value,
+                stIterativeBox.Value,
+                stDescriptionTextBox.Text,
+                stOSSpecific.Checked,
+                stOneClient.Checked,
+                stInHouse.Checked,
+                stOSLimit.Text);
 
-            SoftwareTypeClass a = new SoftwareTypeClass(stNameTextBox.Text, stDescriptionTextBox.Text);
+            //SoftwareTypeClass a = new SoftwareType(stNameTextBox.Text, stDescriptionTextBox.Text);
             // CreateListViewItem(listView1, a);
             //AddToListBox(listBox1, a);
-            bs.Add(a);
-            AddTo1DList(a);
-            SoftwareTypeClass C = new SoftwareTypeClass();
-            SoftwareTypeClass cC = new SoftwareTypeClass();
-            
-            tabPage6.Text = SoftwareTypeClass.getActiveInstance().ToString();
+        
+                bs.Add(stForm);
+                //AddTo1DList(stForm);
+
+            tabPage6.Text = SoftwareType.getActiveInstance().ToString();
 
 
         }
@@ -167,25 +212,42 @@ namespace SoftwareIncModMaker
             return categoryList;
         }
 
-        private SoftwareTypeClass stClass()
+        public dynamic stClass()
         {
-            //SoftwareTypeClass st = new SoftwareTypeClass();
+//            BindingList<SoftwareType> st = new BindingList<SoftwareType>();
 
-            st.RootName = stNameTextBox.Text;
-            st.RootDescription = stDescriptionTextBox.Text;
-            st.RootOneClient = stOneClient.Checked;
-            st.RootInHouse = stInHouse.Checked;
-            st.RootIterative = stIterativeBox.Value;
-            st.RootOSSpecific = stOSSpecific.Checked;
-            st.RootPopularity = stPopularity.Value;
-            st.RootOSLimit = stOSLimit.Text;
-            return st;
+            //            st.RootName = stNameTextBox.Text;
+            //            st.RootUnlock = stUnlock.Value;
+            //            st.RootRandom = stRandom.Value;
+            //            st.RootPopularity = stPopularity.Value;
+            //            st.RootRetention = stRetention.Value;
+            //            st.RootIterative = stIterativeBox.Value;
+            //            st.RootDescription = stDescriptionTextBox.Text;
+            //            st.RootOSSpecific = stOSSpecific.Checked;
+            //            st.RootOneClient = stOneClient.Checked;
+            //            st.RootInHouse = stInHouse.Checked;
+            //            st.RootOSLimit = stOSLimit.Text;
+
+      
+//                st.RootName = stNameTextBox.Text;
+//                st.RootUnlock = stUnlock.Value;
+//                st.RootRandom = stRandom.Value;
+//                st.RootPopularity = stPopularity.Value;
+//                st.RootRetention = stRetention.Value;
+//                st.RootIterative = stIterativeBox.Value;
+//                st.RootDescription = stDescriptionTextBox.Text;
+//                st.RootOSSpecific = stOSSpecific.Checked;
+//                st.RootOneClient = stOneClient.Checked;
+//                st.RootInHouse = stInHouse.Checked;
+//                st.RootOSLimit = stOSLimit.Text;
+//                return st;
+            return null;
         }
 
-        private List<SoftwareTypeClass> iterateSoftwareType()
+        private List<SoftwareType> iterateSoftwareType()
         {
            
-            List<SoftwareTypeClass> SoftwareTypeList = new List<SoftwareTypeClass>();
+            List<SoftwareType> SoftwareTypeList = new List<SoftwareType>();
             SoftwareTypeList.Add(stClass());
             return SoftwareTypeList;
         }
@@ -266,11 +328,11 @@ namespace SoftwareIncModMaker
 
         }
 
-        private void AddTo1DList(SoftwareTypeClass boom)
+        private void AddTo1DList(SoftwareType boom)
         {
             test1DList.Add(boom);
         }
-        private void AddToListBox(ListBox box, SoftwareTypeClass obj)
+        private void AddToListBox(ListBox box, SoftwareType obj)
         {
             ListBox item = new ListBox();
             item.Text = obj.RootName;
@@ -279,7 +341,7 @@ namespace SoftwareIncModMaker
             
             //box.Items.Add(item);
         }
-        private void CreateListViewItem(ListView listView, SoftwareTypeClass obj)
+        private void CreateListViewItem(ListView listView, SoftwareType obj)
         {
             ListViewItem item = new ListViewItem();
             item.Text = obj.RootName;
@@ -288,7 +350,7 @@ namespace SoftwareIncModMaker
             listView.Items.Add(item);
         }
 
-        private void addTo1D(SoftwareTypeClass boom)
+        private void addTo1D(SoftwareType boom)
         {
             test1DList.Add(boom);
         }
@@ -335,12 +397,40 @@ namespace SoftwareIncModMaker
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listView1.Items.Add(listBox1.SelectedValue.ToString());
+            var aa = listBox1.SelectedItem as SoftwareType;
+
+            if (aa != null)
+            {
+                for (int i = 0; i < aa.ChildrenFeatures.Count; i++)
+                {
+                    MessageBox.Show(aa.ChildrenFeatures.Count.ToString());
+
+                }
+                
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            tabPage6.Text = SoftwareTypeClass.getActiveInstance().ToString();
+            if (SoftwareType.getActiveInstance() == 0)
+            {
+                ftSubmit.Enabled = false;
+                ftSubmitButton.Enabled = false;
+            }
+            else
+            {
+                ftSubmit.Enabled = true;
+                ftSubmitButton.Enabled = true;
+            }
+            if (SoftwareType.getActiveInstance() == 0)
+            {
+                ctButtonSubmit.Enabled = false;
+            }
+            else
+            {
+                ctButtonSubmit.Enabled = true;
+            }
+            tabPage6.Text = SoftwareType.getActiveInstance().ToString();
         }
 
         private void tabPage4_Click(object sender, EventArgs e)

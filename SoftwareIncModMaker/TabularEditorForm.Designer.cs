@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Syncfusion.Windows.Forms.Tools.TreeNavigator.HeaderCollection headerCollection3 = new Syncfusion.Windows.Forms.Tools.TreeNavigator.HeaderCollection();
+            Syncfusion.Windows.Forms.Tools.TreeNavigator.HeaderCollection headerCollection2 = new Syncfusion.Windows.Forms.Tools.TreeNavigator.HeaderCollection();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,8 +60,8 @@
             this.ftInnovationBox = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
             this.ftCodeArtBox = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
             this.ftServerBox = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
-            this.textBoxExt4 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-            this.textBoxExt3 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.ftDescription = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.ftCategory = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.ftDevTimeBox = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
             this.ftName = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.ftSubmitButton = new Syncfusion.Windows.Forms.ButtonAdv();
@@ -78,6 +78,7 @@
             this.autoLabel12 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.BtEdit = new Syncfusion.Windows.Forms.Tools.ButtonEdit();
+            this.addToDependencyComboList = new Syncfusion.Windows.Forms.Tools.ButtonEditChildButton();
             this.addToDependencyList = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.ftDependencyFeature = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.ftDependencyComboBox = new Syncfusion.Windows.Forms.Tools.ComboBoxAdv();
@@ -104,6 +105,10 @@
             this.ctDescriptionTextBox = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.TabNodeSoftwareType = new System.Windows.Forms.TabPage();
+            this.stRetention = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
+            this.autoLabel29 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            this.autoLabel28 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            this.stUnlock = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
             this.autoLabel26 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.stPopularity = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
             this.stRandom = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
@@ -141,7 +146,6 @@
             this.treeMenuItem10 = new Syncfusion.Windows.Forms.Tools.TreeMenuItem();
             this.treeMenuItem11 = new Syncfusion.Windows.Forms.Tools.TreeMenuItem();
             this.treeMenuItem12 = new Syncfusion.Windows.Forms.Tools.TreeMenuItem();
-            this.addToDependencyComboList = new Syncfusion.Windows.Forms.Tools.ButtonEditChildButton();
             this.menuStrip1.SuspendLayout();
             this.GroupTabControl.SuspendLayout();
             this.SoftwareTypeTab.SuspendLayout();
@@ -157,8 +161,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ftInnovationBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftCodeArtBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftServerBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftDescription)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftDevTimeBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftAttrFrom.AutoCompleteControl)).BeginInit();
@@ -180,6 +184,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ctDescriptionTextBox)).BeginInit();
             this.tabControl3.SuspendLayout();
             this.TabNodeSoftwareType.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stRetention)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stUnlock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stPopularity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stRandom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stIterativeBox)).BeginInit();
@@ -381,8 +387,8 @@
             this.tabPage3.Controls.Add(this.ftInnovationBox);
             this.tabPage3.Controls.Add(this.ftCodeArtBox);
             this.tabPage3.Controls.Add(this.ftServerBox);
-            this.tabPage3.Controls.Add(this.textBoxExt4);
-            this.tabPage3.Controls.Add(this.textBoxExt3);
+            this.tabPage3.Controls.Add(this.ftDescription);
+            this.tabPage3.Controls.Add(this.ftCategory);
             this.tabPage3.Controls.Add(this.ftDevTimeBox);
             this.tabPage3.Controls.Add(this.ftName);
             this.tabPage3.Controls.Add(this.ftSubmitButton);
@@ -599,30 +605,30 @@
             0});
             this.ftServerBox.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
-            // textBoxExt4
+            // ftDescription
             // 
-            this.textBoxExt4.BackColor = System.Drawing.SystemColors.Info;
-            this.textBoxExt4.BeforeTouchSize = new System.Drawing.Size(99, 13);
-            this.textBoxExt4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxExt4.Location = new System.Drawing.Point(6, 104);
-            this.textBoxExt4.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
-            this.textBoxExt4.Multiline = true;
-            this.textBoxExt4.Name = "textBoxExt4";
-            this.textBoxExt4.Size = new System.Drawing.Size(134, 27);
-            this.textBoxExt4.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
-            this.textBoxExt4.TabIndex = 29;
+            this.ftDescription.BackColor = System.Drawing.SystemColors.Info;
+            this.ftDescription.BeforeTouchSize = new System.Drawing.Size(117, 13);
+            this.ftDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ftDescription.Location = new System.Drawing.Point(6, 104);
+            this.ftDescription.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
+            this.ftDescription.Multiline = true;
+            this.ftDescription.Name = "ftDescription";
+            this.ftDescription.Size = new System.Drawing.Size(134, 27);
+            this.ftDescription.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
+            this.ftDescription.TabIndex = 29;
             // 
-            // textBoxExt3
+            // ftCategory
             // 
-            this.textBoxExt3.BackColor = System.Drawing.SystemColors.Info;
-            this.textBoxExt3.BeforeTouchSize = new System.Drawing.Size(99, 13);
-            this.textBoxExt3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxExt3.Location = new System.Drawing.Point(6, 63);
-            this.textBoxExt3.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
-            this.textBoxExt3.Name = "textBoxExt3";
-            this.textBoxExt3.Size = new System.Drawing.Size(134, 20);
-            this.textBoxExt3.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
-            this.textBoxExt3.TabIndex = 14;
+            this.ftCategory.BackColor = System.Drawing.SystemColors.Info;
+            this.ftCategory.BeforeTouchSize = new System.Drawing.Size(117, 13);
+            this.ftCategory.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ftCategory.Location = new System.Drawing.Point(6, 63);
+            this.ftCategory.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
+            this.ftCategory.Name = "ftCategory";
+            this.ftCategory.Size = new System.Drawing.Size(134, 20);
+            this.ftCategory.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
+            this.ftCategory.TabIndex = 14;
             // 
             // ftDevTimeBox
             // 
@@ -649,7 +655,7 @@
             // ftName
             // 
             this.ftName.BackColor = System.Drawing.SystemColors.Info;
-            this.ftName.BeforeTouchSize = new System.Drawing.Size(99, 13);
+            this.ftName.BeforeTouchSize = new System.Drawing.Size(117, 13);
             this.ftName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ftName.Location = new System.Drawing.Point(6, 21);
             this.ftName.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -771,7 +777,7 @@
             // autoLabel14
             // 
             this.autoLabel14.DY = -17;
-            this.autoLabel14.LabeledControl = this.textBoxExt4;
+            this.autoLabel14.LabeledControl = this.ftDescription;
             this.autoLabel14.Location = new System.Drawing.Point(6, 87);
             this.autoLabel14.Name = "autoLabel14";
             this.autoLabel14.Position = Syncfusion.Windows.Forms.Tools.AutoLabelPosition.Top;
@@ -782,7 +788,7 @@
             // autoLabel13
             // 
             this.autoLabel13.DY = -17;
-            this.autoLabel13.LabeledControl = this.textBoxExt3;
+            this.autoLabel13.LabeledControl = this.ftCategory;
             this.autoLabel13.Location = new System.Drawing.Point(6, 46);
             this.autoLabel13.Name = "autoLabel13";
             this.autoLabel13.Position = Syncfusion.Windows.Forms.Tools.AutoLabelPosition.Top;
@@ -830,15 +836,30 @@
             this.BtEdit.TextBox = this.addToDependencyList;
             this.BtEdit.UseVisualStyle = true;
             // 
+            // addToDependencyComboList
+            // 
+            this.addToDependencyComboList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+            this.addToDependencyComboList.BeforeTouchSize = new System.Drawing.Size(18, 17);
+            this.addToDependencyComboList.BorderStyleAdv = Syncfusion.Windows.Forms.ButtonAdvBorderStyle.Flat;
+            this.addToDependencyComboList.ComboEditBackColor = System.Drawing.SystemColors.Window;
+            this.addToDependencyComboList.ForeColor = System.Drawing.Color.White;
+            this.addToDependencyComboList.Image = null;
+            this.addToDependencyComboList.IsBackStageButton = false;
+            this.addToDependencyComboList.Name = "addToDependencyComboList";
+            this.addToDependencyComboList.PreferredWidth = 18;
+            this.addToDependencyComboList.TabIndex = 1;
+            this.addToDependencyComboList.Text = "buttonEditChildButton1";
+            this.addToDependencyComboList.Click += new System.EventHandler(this.addToDependencyComboList_Click);
+            // 
             // addToDependencyList
             // 
-            this.addToDependencyList.BeforeTouchSize = new System.Drawing.Size(99, 13);
+            this.addToDependencyList.BeforeTouchSize = new System.Drawing.Size(117, 13);
             this.addToDependencyList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.addToDependencyList.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.addToDependencyList.Location = new System.Drawing.Point(2, 4);
             this.addToDependencyList.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
             this.addToDependencyList.Name = "addToDependencyList";
-            this.addToDependencyList.Size = new System.Drawing.Size(99, 13);
+            this.addToDependencyList.Size = new System.Drawing.Size(117, 13);
             this.addToDependencyList.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
             this.addToDependencyList.TabIndex = 0;
             this.addToDependencyList.Text = "Add to Dependency List";
@@ -847,7 +868,7 @@
             // ftDependencyFeature
             // 
             this.ftDependencyFeature.BackColor = System.Drawing.SystemColors.Info;
-            this.ftDependencyFeature.BeforeTouchSize = new System.Drawing.Size(99, 13);
+            this.ftDependencyFeature.BeforeTouchSize = new System.Drawing.Size(117, 13);
             this.ftDependencyFeature.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ftDependencyFeature.Location = new System.Drawing.Point(20, 125);
             this.ftDependencyFeature.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -1078,7 +1099,7 @@
             // ctNameGenerator
             // 
             this.ctNameGenerator.BackColor = System.Drawing.SystemColors.Info;
-            this.ctNameGenerator.BeforeTouchSize = new System.Drawing.Size(99, 13);
+            this.ctNameGenerator.BeforeTouchSize = new System.Drawing.Size(117, 13);
             this.ctNameGenerator.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ctNameGenerator.Location = new System.Drawing.Point(6, 374);
             this.ctNameGenerator.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -1146,7 +1167,7 @@
             // ctNameTextBox
             // 
             this.ctNameTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.ctNameTextBox.BeforeTouchSize = new System.Drawing.Size(99, 13);
+            this.ctNameTextBox.BeforeTouchSize = new System.Drawing.Size(117, 13);
             this.ctNameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ctNameTextBox.Location = new System.Drawing.Point(6, 21);
             this.ctNameTextBox.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -1178,7 +1199,7 @@
             // ctDescriptionTextBox
             // 
             this.ctDescriptionTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.ctDescriptionTextBox.BeforeTouchSize = new System.Drawing.Size(99, 13);
+            this.ctDescriptionTextBox.BeforeTouchSize = new System.Drawing.Size(117, 13);
             this.ctDescriptionTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ctDescriptionTextBox.Location = new System.Drawing.Point(6, 61);
             this.ctDescriptionTextBox.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -1200,7 +1221,11 @@
             // 
             // TabNodeSoftwareType
             // 
+            this.TabNodeSoftwareType.Controls.Add(this.stRetention);
+            this.TabNodeSoftwareType.Controls.Add(this.autoLabel29);
+            this.TabNodeSoftwareType.Controls.Add(this.autoLabel28);
             this.TabNodeSoftwareType.Controls.Add(this.autoLabel26);
+            this.TabNodeSoftwareType.Controls.Add(this.stUnlock);
             this.TabNodeSoftwareType.Controls.Add(this.stPopularity);
             this.TabNodeSoftwareType.Controls.Add(this.stRandom);
             this.TabNodeSoftwareType.Controls.Add(this.stIterativeBox);
@@ -1227,6 +1252,78 @@
             this.TabNodeSoftwareType.TabIndex = 0;
             this.TabNodeSoftwareType.Text = "SoftwareType";
             this.TabNodeSoftwareType.UseVisualStyleBackColor = true;
+            // 
+            // stRetention
+            // 
+            this.stRetention.BeforeTouchSize = new System.Drawing.Size(53, 20);
+            this.stRetention.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
+            this.stRetention.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.stRetention.Location = new System.Drawing.Point(130, 154);
+            this.stRetention.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.stRetention.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
+            this.stRetention.Name = "stRetention";
+            this.stRetention.Size = new System.Drawing.Size(53, 20);
+            this.stRetention.TabIndex = 56;
+            this.stRetention.ThousandsSeparator = true;
+            this.stRetention.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.stRetention.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
+            // 
+            // autoLabel29
+            // 
+            this.autoLabel29.DY = -17;
+            this.autoLabel29.LabeledControl = this.stRetention;
+            this.autoLabel29.Location = new System.Drawing.Point(130, 137);
+            this.autoLabel29.Name = "autoLabel29";
+            this.autoLabel29.Position = Syncfusion.Windows.Forms.Tools.AutoLabelPosition.Top;
+            this.autoLabel29.Size = new System.Drawing.Size(53, 13);
+            this.autoLabel29.TabIndex = 55;
+            this.autoLabel29.Text = "Retention";
+            // 
+            // autoLabel28
+            // 
+            this.autoLabel28.DY = -17;
+            this.autoLabel28.LabeledControl = this.stUnlock;
+            this.autoLabel28.Location = new System.Drawing.Point(130, 94);
+            this.autoLabel28.Name = "autoLabel28";
+            this.autoLabel28.Position = Syncfusion.Windows.Forms.Tools.AutoLabelPosition.Top;
+            this.autoLabel28.Size = new System.Drawing.Size(41, 13);
+            this.autoLabel28.TabIndex = 51;
+            this.autoLabel28.Text = "Unlock";
+            // 
+            // stUnlock
+            // 
+            this.stUnlock.BeforeTouchSize = new System.Drawing.Size(53, 20);
+            this.stUnlock.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
+            this.stUnlock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.stUnlock.Location = new System.Drawing.Point(130, 111);
+            this.stUnlock.Maximum = new decimal(new int[] {
+            2500,
+            0,
+            0,
+            0});
+            this.stUnlock.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
+            this.stUnlock.Minimum = new decimal(new int[] {
+            1960,
+            0,
+            0,
+            0});
+            this.stUnlock.Name = "stUnlock";
+            this.stUnlock.Size = new System.Drawing.Size(53, 20);
+            this.stUnlock.TabIndex = 50;
+            this.stUnlock.Value = new decimal(new int[] {
+            1980,
+            0,
+            0,
+            0});
+            this.stUnlock.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
             // autoLabel26
             // 
@@ -1349,7 +1446,7 @@
             // stOSLimit
             // 
             this.stOSLimit.BackColor = System.Drawing.SystemColors.Info;
-            this.stOSLimit.BeforeTouchSize = new System.Drawing.Size(99, 13);
+            this.stOSLimit.BeforeTouchSize = new System.Drawing.Size(117, 13);
             this.stOSLimit.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stOSLimit.Location = new System.Drawing.Point(6, 373);
             this.stOSLimit.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -1372,7 +1469,7 @@
             // stNameGeneratorBox
             // 
             this.stNameGeneratorBox.BackColor = System.Drawing.SystemColors.Info;
-            this.stNameGeneratorBox.BeforeTouchSize = new System.Drawing.Size(99, 13);
+            this.stNameGeneratorBox.BeforeTouchSize = new System.Drawing.Size(117, 13);
             this.stNameGeneratorBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stNameGeneratorBox.Location = new System.Drawing.Point(6, 333);
             this.stNameGeneratorBox.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -1395,7 +1492,7 @@
             // stDescriptionTextBox
             // 
             this.stDescriptionTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.stDescriptionTextBox.BeforeTouchSize = new System.Drawing.Size(99, 13);
+            this.stDescriptionTextBox.BeforeTouchSize = new System.Drawing.Size(117, 13);
             this.stDescriptionTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stDescriptionTextBox.Location = new System.Drawing.Point(6, 64);
             this.stDescriptionTextBox.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -1419,7 +1516,7 @@
             // stNameTextBox
             // 
             this.stNameTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.stNameTextBox.BeforeTouchSize = new System.Drawing.Size(99, 13);
+            this.stNameTextBox.BeforeTouchSize = new System.Drawing.Size(117, 13);
             this.stNameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stNameTextBox.Location = new System.Drawing.Point(6, 24);
             this.stNameTextBox.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -1454,7 +1551,7 @@
             // stCategoryTextBox
             // 
             this.stCategoryTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.stCategoryTextBox.BeforeTouchSize = new System.Drawing.Size(99, 13);
+            this.stCategoryTextBox.BeforeTouchSize = new System.Drawing.Size(117, 13);
             this.stCategoryTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stCategoryTextBox.Location = new System.Drawing.Point(6, 211);
             this.stCategoryTextBox.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -1548,8 +1645,8 @@
             // treeNavigator1
             // 
             this.treeNavigator1.BackColor = System.Drawing.Color.White;
-            headerCollection3.Font = new System.Drawing.Font("Arial", 8F);
-            this.treeNavigator1.Header = headerCollection3;
+            headerCollection2.Font = new System.Drawing.Font("Arial", 8F);
+            this.treeNavigator1.Header = headerCollection2;
             this.treeNavigator1.ItemBackColor = System.Drawing.SystemColors.Control;
             this.treeNavigator1.Items.Add(this.treeMenuItem1);
             this.treeNavigator1.Items.Add(this.treeMenuItem2);
@@ -1711,20 +1808,6 @@
             this.treeMenuItem12.Size = new System.Drawing.Size(0, 0);
             this.treeMenuItem12.TabIndex = 0;
             // 
-            // addToDependencyComboList
-            // 
-            this.addToDependencyComboList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-            this.addToDependencyComboList.BeforeTouchSize = new System.Drawing.Size(18, 17);
-            this.addToDependencyComboList.ComboEditBackColor = System.Drawing.SystemColors.Window;
-            this.addToDependencyComboList.ForeColor = System.Drawing.Color.White;
-            this.addToDependencyComboList.Image = null;
-            this.addToDependencyComboList.IsBackStageButton = false;
-            this.addToDependencyComboList.Name = "addToDependencyComboList";
-            this.addToDependencyComboList.PreferredWidth = 18;
-            this.addToDependencyComboList.TabIndex = 1;
-            this.addToDependencyComboList.Text = "buttonEditChildButton1";
-            this.addToDependencyComboList.Click += new System.EventHandler(this.addToDependencyComboList_Click);
-            // 
             // TabularEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1755,8 +1838,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ftInnovationBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftCodeArtBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftServerBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftDescription)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftDevTimeBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftAttrFrom.AutoCompleteControl)).EndInit();
@@ -1782,6 +1865,8 @@
             this.tabControl3.ResumeLayout(false);
             this.TabNodeSoftwareType.ResumeLayout(false);
             this.TabNodeSoftwareType.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stRetention)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stUnlock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stPopularity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stRandom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stIterativeBox)).EndInit();
@@ -1888,8 +1973,8 @@
         private Syncfusion.Windows.Forms.Tools.NumericUpDownExt ftInnovationBox;
         private Syncfusion.Windows.Forms.Tools.NumericUpDownExt ftCodeArtBox;
         private Syncfusion.Windows.Forms.Tools.NumericUpDownExt ftServerBox;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt4;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt3;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt ftDescription;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt ftCategory;
         private Syncfusion.Windows.Forms.Tools.NumericUpDownExt ftDevTimeBox;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt ftName;
         private Syncfusion.Windows.Forms.ButtonAdv ftSubmitButton;
@@ -1912,5 +1997,9 @@
         private Syncfusion.Windows.Forms.Tools.TextBoxExt ftDependencyFeature;
         private Syncfusion.Windows.Forms.Tools.ComboBoxAdv ftDependencyComboBox;
         private Syncfusion.Windows.Forms.Tools.ButtonEditChildButton addToDependencyComboList;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel28;
+        private Syncfusion.Windows.Forms.Tools.NumericUpDownExt stUnlock;
+        private Syncfusion.Windows.Forms.Tools.NumericUpDownExt stRetention;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel29;
     }
 }
