@@ -10,9 +10,9 @@ namespace SoftwareIncModMaker
 {
     class XMLController
     {
-        public static List<SoftwareTypeClass> IterateFromXML(string datasrc)
+        public static List<SoftwareTypeClassBackup> IterateFromXML(string datasrc)
         {
-            List<SoftwareTypeClass> listSoftwareType = new List<SoftwareTypeClass>();
+            List<SoftwareTypeClassBackup> listSoftwareType = new List<SoftwareTypeClassBackup>();
 
             // Use the XML DOM to read data from the employees XML data file
             XmlDocument xmldoc = new XmlDocument();
@@ -23,8 +23,8 @@ namespace SoftwareIncModMaker
                 for (int i = 0; i < softwareTypeNodeChild.Count; i++)
                 {
                     // Create an Employee instance to represent each employee
-                    SoftwareTypeClass softwareTypeField = new SoftwareTypeClass();
-                    SoftwareTypeClass listFeature = new SoftwareTypeClass();
+                    SoftwareTypeClassBackup softwareTypeField = new SoftwareTypeClassBackup();
+                    SoftwareTypeClassBackup listFeature = new SoftwareTypeClassBackup();
 
 
                     XmlNode softwareTypeNode = softwareTypeNodeChild[i];

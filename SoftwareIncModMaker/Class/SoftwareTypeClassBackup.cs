@@ -6,9 +6,9 @@ using System.Threading;
 
 namespace SoftwareIncModMaker
 {
-    public class SoftwareTypeClass
+    public class SoftwareTypeClassBackup
     {
-        public static readonly SoftwareTypeClass staticSoftwareType = new SoftwareTypeClass();
+        public static readonly SoftwareTypeClassBackup staticSoftwareType = new SoftwareTypeClassBackup();
         public string ParentSoftwareType { get => parentSoftwareType; set => parentSoftwareType = value; }
         public string RootName { get => rootName; set => rootName = value; }
         public string RootDelete { get => rootDelete; set => rootDelete = value; }
@@ -99,19 +99,19 @@ namespace SoftwareIncModMaker
 
         private static int _instances = 0; 
 
-        private BindingList<SoftwareTypeClass> FeatureList;
+        private BindingList<SoftwareTypeClassBackup> FeatureList;
 
-        public SoftwareTypeClass()
+        public SoftwareTypeClassBackup()
         {
             Interlocked.Increment(ref _instances);
         }
 
-        ~SoftwareTypeClass()
+        ~SoftwareTypeClassBackup()
         {
             Interlocked.Decrement(ref _instances);
         }
 
-        public SoftwareTypeClass(string attrName, string parentCategories, string subCategory, string subCategoryDescription, decimal subCategoryUnlock, decimal subCategoryPopularity, decimal subCategoryTimeScale, decimal subCategoryRetention, decimal subCategoryIterative, string subCategoryNameGenerator)
+        public SoftwareTypeClassBackup(string attrName, string parentCategories, string subCategory, string subCategoryDescription, decimal subCategoryUnlock, decimal subCategoryPopularity, decimal subCategoryTimeScale, decimal subCategoryRetention, decimal subCategoryIterative, string subCategoryNameGenerator)
         {
             this.AttrName = attrName;
             this.ParentCategories = parentCategories;
@@ -125,7 +125,7 @@ namespace SoftwareIncModMaker
             this.SubCategoryNameGenerator = subCategoryNameGenerator;
         }
 
-        public SoftwareTypeClass(string parentSoftwareType, string rootName, string rootDelete, decimal rootUnlock, decimal rootRandom, decimal rootPopularity, string rootRetention, decimal rootIterative, bool rootOSSpecific, bool rootOneClient, bool rootInHouse, string rootOSLimit)
+        public SoftwareTypeClassBackup(string parentSoftwareType, string rootName, string rootDelete, decimal rootUnlock, decimal rootRandom, decimal rootPopularity, string rootRetention, decimal rootIterative, bool rootOSSpecific, bool rootOneClient, bool rootInHouse, string rootOSLimit)
         {
             this.ParentSoftwareType = parentSoftwareType;
             this.RootName = rootName;
@@ -141,7 +141,7 @@ namespace SoftwareIncModMaker
             this.RootOSLimit = rootOSLimit;
         }
 
-        public SoftwareTypeClass(
+        public SoftwareTypeClassBackup(
             string attributeFrom, 
             bool attributeForced, 
             bool attributeVital, 
@@ -177,7 +177,7 @@ namespace SoftwareIncModMaker
             this.SubFeatureSoftwareCategory = subFeatureSoftwareCategory;
         }
 
-        public SoftwareTypeClass(string parentSoftwareType, string rootName, string rootDelete, decimal rootUnlock, decimal rootRandom, decimal rootPopularity, string rootRetention, decimal rootIterative, bool rootOSSpecific, bool rootOneClient, bool rootInHouse, string rootOSLimit, string attributeFrom, bool attributeForced, bool attributeVital, bool attributeResearch, string parentFeatures, string subFeature, string subFeatureName, string subFeatureDescription, string subFeatureArtCategory, decimal subFeatureUnlock, decimal subFeatureDevtime, decimal subFeatureInnovation, decimal subFeatureUsability, decimal subFeatureStability, decimal subFeatureCodeArt, string subFeatureDependency, decimal subFeatureServer, string subFeatureSoftwareCategory, string attrName, string parentCategories, string subCategory, string subCategoryDescription, decimal subCategoryUnlock, decimal subCategoryPopularity, decimal subCategoryTimeScale, decimal subCategoryRetention, decimal subCategoryIterative, string subCategoryNameGenerator)
+        public SoftwareTypeClassBackup(string parentSoftwareType, string rootName, string rootDelete, decimal rootUnlock, decimal rootRandom, decimal rootPopularity, string rootRetention, decimal rootIterative, bool rootOSSpecific, bool rootOneClient, bool rootInHouse, string rootOSLimit, string attributeFrom, bool attributeForced, bool attributeVital, bool attributeResearch, string parentFeatures, string subFeature, string subFeatureName, string subFeatureDescription, string subFeatureArtCategory, decimal subFeatureUnlock, decimal subFeatureDevtime, decimal subFeatureInnovation, decimal subFeatureUsability, decimal subFeatureStability, decimal subFeatureCodeArt, string subFeatureDependency, decimal subFeatureServer, string subFeatureSoftwareCategory, string attrName, string parentCategories, string subCategory, string subCategoryDescription, decimal subCategoryUnlock, decimal subCategoryPopularity, decimal subCategoryTimeScale, decimal subCategoryRetention, decimal subCategoryIterative, string subCategoryNameGenerator)
         {
             this.ParentSoftwareType = parentSoftwareType;
             this.RootName = rootName;
@@ -221,7 +221,7 @@ namespace SoftwareIncModMaker
             this.SubCategoryNameGenerator = subCategoryNameGenerator;
         }
 
-        public SoftwareTypeClass(
+        public SoftwareTypeClassBackup(
             string atFr, 
             bool atFo,
             bool atVi,
@@ -302,7 +302,7 @@ namespace SoftwareIncModMaker
             this.rootOSLimit = rootOSLimit;
         }
 
-        public SoftwareTypeClass(string a, string b)
+        public SoftwareTypeClassBackup(string a, string b)
         {
             this.RootName = a;
             this.RootDescription = b;
@@ -328,13 +328,15 @@ namespace SoftwareIncModMaker
 
         public static int getActiveInstance() { return _instances; }
 
+
     }
 
 
 
-    public class SoftwareType : BaseSoftwareType, IEnumerable<SoftwareType>
+    public class SoftwareType : BaseSoftwareType
+        //,IEnumerable<SoftwareType>
     {
-        public static readonly SoftwareTypeClass staticSoftwareType = new SoftwareTypeClass();
+        public static readonly SoftwareTypeClassBackup staticSoftwareType = new SoftwareTypeClassBackup();
 
         private String parentSoftwareType = String.Empty;
         private String rootName = String.Empty;
@@ -350,8 +352,10 @@ namespace SoftwareIncModMaker
         private bool rootInHouse = false;
         private String rootOSLimit = String.Empty;
         public BindingList<Category> childrenCategories;
-        private BindingList<Feature> childrenFeatures;
-        private BindingList<SoftwareType> softwareType;
+        private BindingList<BindingList<Feature>> childrenFeatures;
+        //        private BindingList<SoftwareType> softwareType;
+        BindingList<BindingList<Feature>> newCollectionOfCollection = new BindingList<BindingList<Feature>>();
+        BindingList<Feature> newCollection = new BindingList<Feature>();
 
         public SoftwareType() : base()
         {
@@ -363,16 +367,24 @@ namespace SoftwareIncModMaker
             
         }
 
-        public IEnumerator<SoftwareType> GetEnumerator()
+        public void addFeature(Feature listFeature)
         {
-            foreach (var contact in softwareType)
-                yield return contact;
+            
+            newCollection.Add(listFeature);
+            newCollectionOfCollection.Add(newCollection);
+            ChildrenFeatures = newCollectionOfCollection;
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
+//        public IEnumerator<SoftwareType> GetEnumerator()
+//        {
+//            foreach (var contact in softwareType)
+//                yield return contact;
+//        }
+//
+//        IEnumerator IEnumerable.GetEnumerator()
+//        {
+//            return GetEnumerator();
+//        }
 
         public SoftwareType(string rootName, decimal rootUnlock,
             decimal rootRandom, decimal rootPopularity, decimal rootRetention, decimal rootIterative,
@@ -406,7 +418,7 @@ namespace SoftwareIncModMaker
         public bool RootOneClient { get => rootOneClient; set => rootOneClient = value; }
         public bool RootInHouse { get => rootInHouse; set => rootInHouse = value; }
         public string RootOSLimit { get => rootOSLimit; set => rootOSLimit = value; }
-        public BindingList<Feature> ChildrenFeatures { get => childrenFeatures; set => childrenFeatures = value; }
+        public BindingList<BindingList<Feature>> ChildrenFeatures { get => childrenFeatures; set => childrenFeatures = value; }
     }
 
     public class Feature : SoftwareType
@@ -442,6 +454,10 @@ namespace SoftwareIncModMaker
 
         }
 
+        public Feature getInstance()
+        {
+            return this;
+        }
 
         public Feature(SoftwareType belongsTo, string attributeFrom, bool attributeForced, bool attributeVital, bool attributeResearch, string subFeatureName, string subFeatureDescription, string subFeatureArtCategory, decimal subFeatureUnlock, decimal subFeatureDevtime, decimal subFeatureInnovation, decimal subFeatureUsability, decimal subFeatureStability, decimal subFeatureCodeArt, string subFeatureDependency, decimal subFeatureServer, string subFeatureSoftwareCategory, string subAttrCategory)
         {

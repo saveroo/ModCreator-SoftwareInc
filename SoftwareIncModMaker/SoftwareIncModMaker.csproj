@@ -27,6 +27,8 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -56,8 +58,20 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\ColorCode.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.1.3\lib\net40\EntityFramework.SqlServerCompact.dll</HintPath>
+    </Reference>
     <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net4\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="ScintillaNET, Version=3.5.10.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\jacobslusser.ScintillaNET.3.5.10\lib\net40\ScintillaNET.dll</HintPath>
@@ -92,10 +106,26 @@
     </Reference>
     <Reference Include="Syncfusion.TreeMap.Windows, Version=14.4460.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.104.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.104.0\lib\net40\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.104.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.104.0\lib\net40\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.104.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.104.0\lib\net40\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -112,6 +142,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="ActionHistory.cs" />
+    <Compile Include="Class\apaini.cs" />
     <Compile Include="DiagnosticForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,7 +164,53 @@
     <Compile Include="Class\ScintillaStyling.cs" />
     <Compile Include="Interface\InterfaceParentAccess.cs" />
     <Compile Include="Class\ScintillaSnippet.cs" />
-    <Compile Include="Class\SoftwareTypeClass.cs" />
+    <Compile Include="Class\SoftwareTypeClassBackup.cs" />
+    <Compile Include="ModCreatorDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModCreatorDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\DataSources\CategoryModel.cs">
+      <DependentUpon>STContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\DataSources\FeatureAttributes.cs">
+      <DependentUpon>STContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\DataSources\FeatureDependency.cs">
+      <DependentUpon>STContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\DataSources\FeatureModel.cs">
+      <DependentUpon>STContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\DataSources\FeatureSoftwareCategory.cs">
+      <DependentUpon>STContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\DataSources\SoftwareTypeMAttribute.cs">
+      <DependentUpon>STContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\DataSources\SoftwareTypeModel.cs">
+      <DependentUpon>STContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\DataSources\SoftwareTypeModel2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SoftwareTypeModel2.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\DataSources\STContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>STContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\DataSources\STContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>STContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>STDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TabularEditorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,8 +281,26 @@
       <DependentUpon>WikiBrowser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ModCreatorDataSet.xsc">
+      <DependentUpon>ModCreatorDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ModCreatorDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ModCreatorDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModCreatorDataSet.xss">
+      <DependentUpon>ModCreatorDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Feature.datasource" />
+    <None Include="Properties\DataSources\SoftwareType.datasource" />
     <None Include="Properties\DataSources\SoftwareTypeClass.datasource" />
+    <EntityDeploy Include="Properties\DataSources\SoftwareTypeModel2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SoftwareTypeModel2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -215,6 +310,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="STDataSet.xsc">
+      <DependentUpon>STDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="STDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>STDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="STDataSet.xss">
+      <DependentUpon>STDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -222,6 +328,17 @@
   <ItemGroup>
     <Content Include="ColorCode.dll" />
     <Content Include="ColorCode.pdb" />
+    <Content Include="Properties\DataSources\SoftwareTypeModel2.edmx.sql" />
+    <Content Include="Properties\DataSources\STContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>STContext.Context.cs</LastGenOutput>
+      <DependentUpon>SoftwareTypeModel2.edmx</DependentUpon>
+    </Content>
+    <Content Include="Properties\DataSources\STContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>STContext.cs</LastGenOutput>
+      <DependentUpon>SoftwareTypeModel2.edmx</DependentUpon>
+    </Content>
     <EmbeddedResource Include="SoftwareTypeExample.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -239,5 +356,22 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.104.0\build\net40\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.104.0\build\net40\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.104.0\build\net40\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.104.0\build\net40\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

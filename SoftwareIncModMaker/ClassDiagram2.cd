@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SoftwareIncModMaker.SoftwareTypeClass" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JrJgkAAxAA1IEaQCQgSG2woeiWB8AEgBWIzCQGKpqwE=</HashCode>
+      <FileName>Class\SoftwareTypeClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoftwareIncModMaker.BaseSoftwareType" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACCAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class\SoftwareTypeClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoftwareIncModMaker.SoftwareType">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IDAAgAAwAABAECAgQgQAQAIMAUAAAEEAAIBCASCAggA=</HashCode>
+      <FileName>Class\SoftwareTypeClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoftwareIncModMaker.Feature">
+    <Position X="1.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIJAkAAgAAAIAIQCAAAEkggCgCAcAAQgUAQAAECpKAE=</HashCode>
+      <FileName>Class\SoftwareTypeClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoftwareIncModMaker.Category">
+    <Position X="6.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAABAA0AAYAAAACAAAAACCBoAAggCAiAAAABgAA=</HashCode>
+      <FileName>Class\SoftwareTypeClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
