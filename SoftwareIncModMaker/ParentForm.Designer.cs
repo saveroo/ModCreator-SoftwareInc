@@ -42,6 +42,7 @@
             this.xMLEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nodeEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xMLDiagramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wikiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miscToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.debugInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +61,7 @@
             this.dataTableProcess = new System.Data.DataTable();
             this.dataColumn1 = new System.Data.DataColumn();
             this.dataTableEditor = new System.Data.DataTable();
-            this.xMLDiagramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ActionMemoBox = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -78,7 +79,7 @@
             this.miscToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(824, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(883, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -175,6 +176,13 @@
             this.nodeEditorToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.nodeEditorToolStripMenuItem.Text = "Node Editor";
             // 
+            // xMLDiagramToolStripMenuItem
+            // 
+            this.xMLDiagramToolStripMenuItem.Name = "xMLDiagramToolStripMenuItem";
+            this.xMLDiagramToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.xMLDiagramToolStripMenuItem.Text = "XML Diagram";
+            this.xMLDiagramToolStripMenuItem.Click += new System.EventHandler(this.xMLDiagramToolStripMenuItem_Click);
+            // 
             // wikiToolStripMenuItem
             // 
             this.wikiToolStripMenuItem.Name = "wikiToolStripMenuItem";
@@ -237,9 +245,9 @@
             this.toolStripStatusLabel5,
             this.statusInformation});
             this.statusStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.statusStrip1.Location = new System.Drawing.Point(0, 375);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 335);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(824, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(883, 26);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
@@ -308,18 +316,24 @@
             // 
             this.dataTableEditor.TableName = "tableEditor";
             // 
-            // xMLDiagramToolStripMenuItem
+            // ActionMemoBox
             // 
-            this.xMLDiagramToolStripMenuItem.Name = "xMLDiagramToolStripMenuItem";
-            this.xMLDiagramToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.xMLDiagramToolStripMenuItem.Text = "XML Diagram";
-            this.xMLDiagramToolStripMenuItem.Click += new System.EventHandler(this.xMLDiagramToolStripMenuItem_Click);
+            this.ActionMemoBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ActionMemoBox.Location = new System.Drawing.Point(0, 234);
+            this.ActionMemoBox.Name = "ActionMemoBox";
+            this.ActionMemoBox.ReadOnly = true;
+            this.ActionMemoBox.Size = new System.Drawing.Size(883, 98);
+            this.ActionMemoBox.TabIndex = 6;
+            this.ActionMemoBox.Text = "";
+            this.ActionMemoBox.TextChanged += new System.EventHandler(this.ActionMemoBox_TextChanged);
             // 
             // ParentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 401);
+            this.ClientSize = new System.Drawing.Size(883, 361);
+            this.Controls.Add(this.ActionMemoBox);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
@@ -374,6 +388,7 @@
         private System.Windows.Forms.ToolStripMenuItem nodeEditorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wikiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xMLDiagramToolStripMenuItem;
+        private System.Windows.Forms.RichTextBox ActionMemoBox;
     }
 }
 

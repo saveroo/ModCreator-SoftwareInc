@@ -129,6 +129,8 @@ namespace SoftwareIncModMaker
             ActionHistory.labelControl.Add(statusCurrentAction);
             ActionHistory.labelControl.Add(statusLastAction);
             ActionHistory.labelControl.Add(statusInformation);
+            ActionMemo.Component = ActionMemoBox;
+//            ActionMemoTextbox.Lines =new []{"a","a"};
         }
 
         private void wikiToolStripMenuItem_Click(object sender, EventArgs e)
@@ -141,6 +143,12 @@ namespace SoftwareIncModMaker
         {
             UserInterfaceController.showChildForm(this, new Form1());
             ActionHistory.setStatus("Opened XMLDiagram Window");
+        }
+
+        private void ActionMemoBox_TextChanged(object sender, EventArgs e)
+        {
+            ActionMemoBox.SelectionStart = ActionMemoBox.Text.Length;
+            ActionMemoBox.ScrollToCaret();
         }
     }
 }

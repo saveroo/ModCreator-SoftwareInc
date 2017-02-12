@@ -140,6 +140,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionMemo.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="ActionHistory.cs" />
     <Compile Include="Class\apaini.cs" />

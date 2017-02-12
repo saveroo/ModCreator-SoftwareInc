@@ -52,7 +52,13 @@
     <Property Name="SubFeatureDevTime" Type="decimal" Nullable="true" />
     <Property Name="SubFeatureCodeArt" Type="decimal" Nullable="true" />
     <Property Name="SubFeatureDepedency" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="SoftwareTypeModel_Id" Type="int" Nullable="true" />
+    <Property Name="SubFeatureStability" Type="decimal" Nullable="true" />
+    <Property Name="SubFeatureServer" Type="decimal" Nullable="false" />
+    <Property Name="FKSoftwareTypeModel_Id" Type="int" Nullable="false" />
+    <Property Name="FKFeatureAttributes_Id" Type="int" Nullable="true" />
+    <Property Name="FKFeatureDependencies_Id" Type="int" Nullable="true" />
+    <Property Name="FKFeatureSoftwareCategory_Id" Type="int" Nullable="true" />
+    <Property Name="SoftwareTypeModel_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="CategoryModels">
     <Key>
@@ -98,6 +104,8 @@
     <Property Name="AttributeForced" Type="bit" Nullable="true" />
     <Property Name="AttributeResearch" Type="bit" Nullable="true" />
     <Property Name="AttributeVital" Type="bit" Nullable="true" />
+    <Property Name="FKFeatureModel_Id" Type="int" Nullable="false" />
+    <Property Name="FKFeatureName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="FeatureModel_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="FeatureSoftwareCategories">
@@ -105,7 +113,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="FCName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FCName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="FCDescription" Type="nvarchar(max)" Nullable="true" />
     <Property Name="FCPopularity" Type="decimal" Nullable="true" />
     <Property Name="FCTimeScale" Type="decimal" Nullable="true" />
@@ -132,7 +140,7 @@
     <Property Name="Override" Type="bit" Nullable="true" />
   </EntityType>
   <Association Name="SoftwareTypeModelFeatureModel">
-    <End Role="SoftwareTypeModel" Type="SoftwareTypeModel2.Store.SoftwareTypeModels" Multiplicity="0..1" />
+    <End Role="SoftwareTypeModel" Type="SoftwareTypeModel2.Store.SoftwareTypeModels" Multiplicity="1" />
     <End Role="FeatureModel" Type="SoftwareTypeModel2.Store.FeatureModels" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="SoftwareTypeModel">
@@ -210,19 +218,11 @@
         <EntityContainer Name="SoftwareTypeModel2Container" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="FeatureModels" EntityType="SoftwareTypeModel2.FeatureModel" />
           <EntitySet Name="CategoryModels" EntityType="SoftwareTypeModel2.CategoryModel" />
-          <AssociationSet Name="SoftwareTypeModelFeatureModel" Association="SoftwareTypeModel2.SoftwareTypeModelFeatureModel">
-            <End Role="SoftwareTypeModel" EntitySet="SoftwareTypeModels" />
-            <End Role="FeatureModel" EntitySet="FeatureModels" />
-          </AssociationSet>
           <EntitySet Name="SoftwareTypeModels" EntityType="SoftwareTypeModel2.SoftwareTypeModel" />
-          <AssociationSet Name="SoftwareTypeModelCategoryModel" Association="SoftwareTypeModel2.SoftwareTypeModelCategoryModel">
-            <End Role="SoftwareTypeModel" EntitySet="SoftwareTypeModels" />
-            <End Role="CategoryModel" EntitySet="CategoryModels" />
-          </AssociationSet>
           <EntitySet Name="FeatureAttributes" EntityType="SoftwareTypeModel2.FeatureAttributes" />
           <AssociationSet Name="FeatureModelFeatureAttributes" Association="SoftwareTypeModel2.FeatureModelFeatureAttributes">
-            <End Role="FeatureModel" EntitySet="FeatureModels" />
-            <End Role="FeatureAttributes" EntitySet="FeatureAttributes" />
+            <End EntitySet="FeatureModels" Role="FeatureModel" />
+            <End EntitySet="FeatureAttributes" Role="FeatureAttributes" />
           </AssociationSet>
           <EntitySet Name="FeatureSoftwareCategories" EntityType="SoftwareTypeModel2.FeatureSoftwareCategory" />
           <EntitySet Name="FeatureDependencies" EntityType="SoftwareTypeModel2.FeatureDependency" />
@@ -238,6 +238,14 @@
           <AssociationSet Name="SoftwareTypeMAttributeSoftwareTypeModel" Association="SoftwareTypeModel2.SoftwareTypeMAttributeSoftwareTypeModel">
             <End Role="SoftwareTypeMAttribute" EntitySet="SoftwareTypeMAttributes" />
             <End Role="SoftwareTypeModel" EntitySet="SoftwareTypeModels" />
+          </AssociationSet>
+          <AssociationSet Name="SoftwareTypeModelFeatureModel" Association="SoftwareTypeModel2.SoftwareTypeModelFeatureModel">
+            <End Role="SoftwareTypeModel" EntitySet="SoftwareTypeModels" />
+            <End Role="FeatureModel" EntitySet="FeatureModels" />
+          </AssociationSet>
+          <AssociationSet Name="SoftwareTypeModelCategoryModel" Association="SoftwareTypeModel2.SoftwareTypeModelCategoryModel">
+            <End Role="SoftwareTypeModel" EntitySet="SoftwareTypeModels" />
+            <End Role="CategoryModel" EntitySet="CategoryModels" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="SoftwareTypeModel">
@@ -257,17 +265,16 @@
           <Property Name="RootOneClient" Type="Boolean" Nullable="true" />
           <Property Name="RootInHouse" Type="Boolean" Nullable="true" />
           <Property Name="RootIterative" Type="Decimal" Nullable="true" />
-          <NavigationProperty Name="FeatureModels" Relationship="SoftwareTypeModel2.SoftwareTypeModelFeatureModel" FromRole="SoftwareTypeModel" ToRole="FeatureModel" />
-          <NavigationProperty Name="CategoryModels" Relationship="SoftwareTypeModel2.SoftwareTypeModelCategoryModel" FromRole="SoftwareTypeModel" ToRole="CategoryModel" />
           <NavigationProperty Name="SoftwareTypeMAttribute" Relationship="SoftwareTypeModel2.SoftwareTypeMAttributeSoftwareTypeModel" FromRole="SoftwareTypeModel" ToRole="SoftwareTypeMAttribute" />
           <Property Name="RootNameGenerator" Type="String" Nullable="true" />
+          <NavigationProperty Name="FeatureModels" Relationship="SoftwareTypeModel2.SoftwareTypeModelFeatureModel" FromRole="SoftwareTypeModel" ToRole="FeatureModel" />
+          <NavigationProperty Name="CategoryModels" Relationship="SoftwareTypeModel2.SoftwareTypeModelCategoryModel" FromRole="SoftwareTypeModel" ToRole="CategoryModel" />
         </EntityType>
         <EntityType Name="FeatureModel">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="SoftwareTypeModel" Relationship="SoftwareTypeModel2.SoftwareTypeModelFeatureModel" FromRole="FeatureModel" ToRole="SoftwareTypeModel" />
           <Property Name="SubFeatureName" Type="String" Nullable="false" />
           <Property Name="SubFeatureDescription" Type="String" Nullable="false" />
           <Property Name="SubFeatureSoftwareCategory" Type="String" Nullable="true" />
@@ -280,13 +287,20 @@
           <NavigationProperty Name="FeatureAttributes" Relationship="SoftwareTypeModel2.FeatureModelFeatureAttributes" FromRole="FeatureModel" ToRole="FeatureAttributes" />
           <NavigationProperty Name="FeatureDependencies" Relationship="SoftwareTypeModel2.FeatureModelFeatureDependency" FromRole="FeatureModel" ToRole="FeatureDependency" />
           <NavigationProperty Name="FeatureSoftwareCategories" Relationship="SoftwareTypeModel2.FeatureModelFeatureSoftwareCategory" FromRole="FeatureModel" ToRole="FeatureSoftwareCategory" />
+          <Property Name="SubFeatureStability" Type="Decimal" Nullable="true" />
+          <Property Name="SubFeatureServer" Type="Decimal" Nullable="false" />
+          <Property Name="FKSoftwareTypeModel_Id" Type="Int32" Nullable="false" />
+          <Property Name="FKFeatureAttributes_Id" Type="Int32" Nullable="true" />
+          <Property Name="FKFeatureDependencies_Id" Type="Int32" Nullable="true" />
+          <Property Name="FKFeatureSoftwareCategory_Id" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="SoftwareTypeModel" Relationship="SoftwareTypeModel2.SoftwareTypeModelFeatureModel" FromRole="FeatureModel" ToRole="SoftwareTypeModel" />
+          <Property Name="SoftwareTypeModelId" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="CategoryModel">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="SoftwareTypeModel" Relationship="SoftwareTypeModel2.SoftwareTypeModelCategoryModel" FromRole="CategoryModel" ToRole="SoftwareTypeModel" />
           <Property Name="STCategoryName" Type="String" Nullable="false" />
           <Property Name="STCategoryDescription" Type="String" Nullable="true" />
           <Property Name="STPopularity" Type="Decimal" Nullable="true" />
@@ -295,15 +309,9 @@
           <Property Name="STRetention" Type="Decimal" Nullable="true" />
           <Property Name="STIterative" Type="Decimal" Nullable="true" />
           <Property Name="STNameGenerator" Type="String" Nullable="true" />
+          <NavigationProperty Name="SoftwareTypeModel" Relationship="SoftwareTypeModel2.SoftwareTypeModelCategoryModel" FromRole="CategoryModel" ToRole="SoftwareTypeModel" />
+          <Property Name="SoftwareTypeModelId" Type="Int32" Nullable="true" />
         </EntityType>
-        <Association Name="SoftwareTypeModelFeatureModel">
-          <End Type="SoftwareTypeModel2.SoftwareTypeModel" Role="SoftwareTypeModel" Multiplicity="0..1" />
-          <End Type="SoftwareTypeModel2.FeatureModel" Role="FeatureModel" Multiplicity="*" />
-        </Association>
-        <Association Name="SoftwareTypeModelCategoryModel">
-          <End Type="SoftwareTypeModel2.SoftwareTypeModel" Role="SoftwareTypeModel" Multiplicity="0..1" />
-          <End Type="SoftwareTypeModel2.CategoryModel" Role="CategoryModel" Multiplicity="*" />
-        </Association>
         <EntityType Name="FeatureAttributes">
           <Key>
             <PropertyRef Name="Id" />
@@ -314,17 +322,19 @@
           <Property Name="AttributeResearch" Type="Boolean" Nullable="true" />
           <Property Name="AttributeVital" Type="Boolean" Nullable="true" />
           <NavigationProperty Name="FeatureModel" Relationship="SoftwareTypeModel2.FeatureModelFeatureAttributes" FromRole="FeatureAttributes" ToRole="FeatureModel" />
+          <Property Name="FKFeatureModel_Id" Type="Int32" Nullable="false" />
+          <Property Name="FKFeatureName" Type="String" Nullable="false" />
         </EntityType>
         <Association Name="FeatureModelFeatureAttributes">
-          <End Type="SoftwareTypeModel2.FeatureModel" Role="FeatureModel" Multiplicity="1" />
-          <End Type="SoftwareTypeModel2.FeatureAttributes" Role="FeatureAttributes" Multiplicity="0..1" />
+          <End Type="SoftwareTypeModel2.FeatureModel" Multiplicity="1" Role="FeatureModel" />
+          <End Type="SoftwareTypeModel2.FeatureAttributes" Multiplicity="0..1" Role="FeatureAttributes" />
         </Association>
         <EntityType Name="FeatureSoftwareCategory">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FCName" Type="String" Nullable="true" />
+          <Property Name="FCName" Type="String" Nullable="false" />
           <Property Name="FCDescription" Type="String" Nullable="true" />
           <Property Name="FCPopularity" Type="Decimal" Nullable="true" />
           <Property Name="FCTimeScale" Type="Decimal" Nullable="true" />
@@ -355,13 +365,37 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" annotation:StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Override" Type="Boolean" Nullable="true" />
           <NavigationProperty Name="SoftwareTypeModels" Relationship="SoftwareTypeModel2.SoftwareTypeMAttributeSoftwareTypeModel" FromRole="SoftwareTypeMAttribute" ToRole="SoftwareTypeModel" />
         </EntityType>
         <Association Name="SoftwareTypeMAttributeSoftwareTypeModel">
           <End Type="SoftwareTypeModel2.SoftwareTypeMAttribute" Role="SoftwareTypeMAttribute" Multiplicity="0..1" />
           <End Type="SoftwareTypeModel2.SoftwareTypeModel" Role="SoftwareTypeModel" Multiplicity="0..1" />
+        </Association>
+        <Association Name="SoftwareTypeModelFeatureModel">
+          <End Type="SoftwareTypeModel2.SoftwareTypeModel" Role="SoftwareTypeModel" Multiplicity="1" />
+          <End Type="SoftwareTypeModel2.FeatureModel" Role="FeatureModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SoftwareTypeModel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FeatureModel">
+              <PropertyRef Name="SoftwareTypeModelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SoftwareTypeModelCategoryModel">
+          <End Type="SoftwareTypeModel2.SoftwareTypeModel" Role="SoftwareTypeModel" Multiplicity="0..1" />
+          <End Type="SoftwareTypeModel2.CategoryModel" Role="CategoryModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SoftwareTypeModel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CategoryModel">
+              <PropertyRef Name="SoftwareTypeModelId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -372,7 +406,8 @@
     <EntitySetMapping Name="FeatureModels">
       <EntityTypeMapping TypeName="IsTypeOf(SoftwareTypeModel2.FeatureModel)">
         <MappingFragment StoreEntitySet="FeatureModels">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SoftwareTypeModelId" ColumnName="SoftwareTypeModel_Id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="SubFeatureName" ColumnName="SubFeatureName" />
           <ScalarProperty Name="SubFeatureDescription" ColumnName="SubFeatureDescription" />
           <ScalarProperty Name="SubFeatureSoftwareCategory" ColumnName="SubFeatureSoftwareCategory" />
@@ -382,6 +417,12 @@
           <ScalarProperty Name="SubFeatureDevTime" ColumnName="SubFeatureDevTime" />
           <ScalarProperty Name="SubFeatureCodeArt" ColumnName="SubFeatureCodeArt" />
           <ScalarProperty Name="SubFeatureDepedency" ColumnName="SubFeatureDepedency" />
+          <ScalarProperty Name="SubFeatureStability" ColumnName="SubFeatureStability" />
+          <ScalarProperty Name="SubFeatureServer" ColumnName="SubFeatureServer" />
+          <ScalarProperty Name="FKSoftwareTypeModel_Id" ColumnName="FKSoftwareTypeModel_Id" />
+          <ScalarProperty Name="FKFeatureAttributes_Id" ColumnName="FKFeatureAttributes_Id" />
+          <ScalarProperty Name="FKFeatureDependencies_Id" ColumnName="FKFeatureDependencies_Id" />
+          <ScalarProperty Name="FKFeatureSoftwareCategory_Id" ColumnName="FKFeatureSoftwareCategory_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -428,6 +469,8 @@
           <ScalarProperty Name="AttributeForced" ColumnName="AttributeForced" />
           <ScalarProperty Name="AttributeResearch" ColumnName="AttributeResearch" />
           <ScalarProperty Name="AttributeVital" ColumnName="AttributeVital" />
+          <ScalarProperty Name="FKFeatureModel_Id" ColumnName="FKFeatureModel_Id" />
+          <ScalarProperty Name="FKFeatureName" ColumnName="FKFeatureName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -463,24 +506,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="SoftwareTypeModelFeatureModel" TypeName="SoftwareTypeModel2.SoftwareTypeModelFeatureModel" StoreEntitySet="FeatureModels">
-      <EndProperty Name="SoftwareTypeModel">
-        <ScalarProperty Name="Id" ColumnName="SoftwareTypeModel_Id" />
-      </EndProperty>
-      <EndProperty Name="FeatureModel">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-      <Condition ColumnName="SoftwareTypeModel_Id" IsNull="false" />
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="SoftwareTypeModelCategoryModel" TypeName="SoftwareTypeModel2.SoftwareTypeModelCategoryModel" StoreEntitySet="CategoryModels">
-      <EndProperty Name="SoftwareTypeModel">
-        <ScalarProperty Name="Id" ColumnName="SoftwareTypeModel_Id" />
-      </EndProperty>
-      <EndProperty Name="CategoryModel">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-      <Condition ColumnName="SoftwareTypeModel_Id" IsNull="false" />
-    </AssociationSetMapping>
     <AssociationSetMapping Name="FeatureModelFeatureAttributes" TypeName="SoftwareTypeModel2.FeatureModelFeatureAttributes" StoreEntitySet="FeatureAttributes">
       <EndProperty Name="FeatureModel">
         <ScalarProperty Name="Id" ColumnName="FeatureModel_Id" />
@@ -535,20 +560,20 @@
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ef2e4cf3e41a4339b05cc9a50a2ce452" Name="Diagram1" ZoomLevel="48">
+      <Diagram DiagramId="ef2e4cf3e41a4339b05cc9a50a2ce452" Name="Diagram1" ZoomLevel="88">
         <EntityTypeShape EntityType="SoftwareTypeModel2.SoftwareTypeModel" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SoftwareTypeModel2.FeatureModel" Width="1.875" PointX="7.5" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SoftwareTypeModel2.CategoryModel" Width="1.5" PointX="5.25" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SoftwareTypeModel2.FeatureModel" Width="1.875" PointX="6.875" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SoftwareTypeModel2.CategoryModel" Width="1.5" PointX="5" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SoftwareTypeModel2.FeatureAttributes" Width="1.5" PointX="9.75" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SoftwareTypeModel2.FeatureSoftwareCategory" Width="1.5" PointX="9.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SoftwareTypeModel2.FeatureSoftwareCategory" Width="1.5" PointX="10.875" PointY="10.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SoftwareTypeModel2.FeatureDependency" Width="1.5" PointX="9.75" PointY="14.25" IsExpanded="true" />
         <EntityTypeShape EntityType="SoftwareTypeModel2.SoftwareTypeMAttribute" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <AssociationConnector Association="SoftwareTypeModel2.SoftwareTypeModelFeatureModel" ManuallyRouted="false" />
-        <AssociationConnector Association="SoftwareTypeModel2.SoftwareTypeModelCategoryModel" ManuallyRouted="false" />
-        <AssociationConnector Association="SoftwareTypeModel2.FeatureModelFeatureAttributes" ManuallyRouted="false" />
+        <AssociationConnector ManuallyRouted="false" Association="SoftwareTypeModel2.FeatureModelFeatureAttributes" />
         <AssociationConnector Association="SoftwareTypeModel2.FeatureModelFeatureDependency" ManuallyRouted="false" />
         <AssociationConnector Association="SoftwareTypeModel2.FeatureModelFeatureSoftwareCategory" ManuallyRouted="false" />
         <AssociationConnector Association="SoftwareTypeModel2.SoftwareTypeMAttributeSoftwareTypeModel" ManuallyRouted="false" />
+        <AssociationConnector Association="SoftwareTypeModel2.SoftwareTypeModelFeatureModel" />
+        <AssociationConnector Association="SoftwareTypeModel2.SoftwareTypeModelCategoryModel" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

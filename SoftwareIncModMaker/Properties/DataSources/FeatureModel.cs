@@ -30,11 +30,18 @@ namespace SoftwareIncModMaker.Properties.DataSources
         public Nullable<decimal> SubFeatureDevTime { get; set; }
         public Nullable<decimal> SubFeatureCodeArt { get; set; }
         public string SubFeatureDepedency { get; set; }
+        public Nullable<decimal> SubFeatureStability { get; set; }
+        public decimal SubFeatureServer { get; set; }
+        public int FKSoftwareTypeModel_Id { get; set; }
+        public Nullable<int> FKFeatureAttributes_Id { get; set; }
+        public Nullable<int> FKFeatureDependencies_Id { get; set; }
+        public Nullable<int> FKFeatureSoftwareCategory_Id { get; set; }
+        public int SoftwareTypeModelId { get; set; }
     
-        public virtual SoftwareTypeModel SoftwareTypeModel { get; set; }
         public virtual FeatureAttributes FeatureAttributes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FeatureDependency> FeatureDependencies { get; set; }
         public virtual FeatureSoftwareCategory FeatureSoftwareCategories { get; set; }
+        public virtual SoftwareTypeModel SoftwareTypeModel { get; set; }
     }
 }

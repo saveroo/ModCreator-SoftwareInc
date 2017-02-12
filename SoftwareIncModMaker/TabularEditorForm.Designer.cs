@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Syncfusion.Windows.Forms.Tools.TreeNavigator.HeaderCollection headerCollection4 = new Syncfusion.Windows.Forms.Tools.TreeNavigator.HeaderCollection();
+            Syncfusion.Windows.Forms.Tools.TreeNavigator.HeaderCollection headerCollection1 = new Syncfusion.Windows.Forms.Tools.TreeNavigator.HeaderCollection();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +44,7 @@
             this.modCreatorDataSet = new SoftwareIncModMaker.ModCreatorDataSet();
             this.autoLabel27 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.sTDataSet = new SoftwareIncModMaker.STDataSet();
             this.softwareTypeBS = new System.Windows.Forms.BindingSource(this.components);
             this.listView2 = new System.Windows.Forms.ListView();
             this.btnSubmitToList = new Syncfusion.Windows.Forms.ButtonAdv();
@@ -152,11 +153,13 @@
             this.tabularFormContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.EditSTList = new System.Windows.Forms.ToolStripMenuItem();
             this.DeleteSTList = new System.Windows.Forms.ToolStripMenuItem();
+            this.softwareTypeModelsTableAdapter = new SoftwareIncModMaker.ModCreatorDataSetTableAdapters.SoftwareTypeModelsTableAdapter();
             this.menuStrip1.SuspendLayout();
             this.GroupTabControl.SuspendLayout();
             this.SoftwareTypeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.childFeaturesBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modCreatorDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.softwareTypeBS)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -220,7 +223,7 @@
             this.testToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1017, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(885, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked_1);
@@ -272,7 +275,7 @@
             this.GroupTabControl.Location = new System.Drawing.Point(0, 24);
             this.GroupTabControl.Name = "GroupTabControl";
             this.GroupTabControl.SelectedIndex = 0;
-            this.GroupTabControl.Size = new System.Drawing.Size(1017, 535);
+            this.GroupTabControl.Size = new System.Drawing.Size(885, 535);
             this.GroupTabControl.TabIndex = 2;
             // 
             // SoftwareTypeTab
@@ -290,7 +293,7 @@
             this.SoftwareTypeTab.Location = new System.Drawing.Point(4, 22);
             this.SoftwareTypeTab.Name = "SoftwareTypeTab";
             this.SoftwareTypeTab.Padding = new System.Windows.Forms.Padding(3);
-            this.SoftwareTypeTab.Size = new System.Drawing.Size(1009, 509);
+            this.SoftwareTypeTab.Size = new System.Drawing.Size(877, 509);
             this.SoftwareTypeTab.TabIndex = 0;
             this.SoftwareTypeTab.Text = "SoftwareType";
             this.SoftwareTypeTab.UseVisualStyleBackColor = true;
@@ -302,8 +305,9 @@
             this.listBox2.FormattingEnabled = true;
             this.listBox2.Location = new System.Drawing.Point(605, 290);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(326, 95);
+            this.listBox2.Size = new System.Drawing.Size(176, 95);
             this.listBox2.TabIndex = 66;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
             // childFeaturesBS
             // 
@@ -323,35 +327,43 @@
             this.autoLabel27.Location = new System.Drawing.Point(605, 8);
             this.autoLabel27.Name = "autoLabel27";
             this.autoLabel27.Position = Syncfusion.Windows.Forms.Tools.AutoLabelPosition.Top;
-            this.autoLabel27.Size = new System.Drawing.Size(66, 13);
+            this.autoLabel27.Size = new System.Drawing.Size(68, 13);
             this.autoLabel27.TabIndex = 65;
-            this.autoLabel27.Text = "autoLabel27";
+            this.autoLabel27.Text = "Software List";
             // 
             // listBox1
             // 
             this.listBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.modCreatorDataSet, "SoftwareTypeModels.RootName", true));
             this.listBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.modCreatorDataSet, "SoftwareTypeModels.FK_SoftwareTypeModelFeatureModel.Id", true));
-            this.listBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", this.modCreatorDataSet, "SoftwareTypeModels.Id", true));
+            this.listBox1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.sTDataSet, "SoftwareTypeModels.Id", true));
+            this.listBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", this.sTDataSet, "SoftwareTypeModels.Id", true));
             this.listBox1.DataSource = this.softwareTypeBS;
+            this.listBox1.DisplayMember = "RootName";
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(605, 25);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(326, 43);
+            this.listBox1.Size = new System.Drawing.Size(239, 43);
             this.listBox1.TabIndex = 64;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.listBox1.BindingContextChanged += new System.EventHandler(this.listBox1_BindingContextChanged);
             this.listBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDown);
+            // 
+            // sTDataSet
+            // 
+            this.sTDataSet.DataSetName = "STDataSet";
+            this.sTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // softwareTypeBS
             // 
             this.softwareTypeBS.AllowNew = true;
+            this.softwareTypeBS.DataMember = "SoftwareTypeModels";
             this.softwareTypeBS.DataSource = this.modCreatorDataSet;
-            this.softwareTypeBS.Position = 0;
             // 
             // listView2
             // 
             this.listView2.Location = new System.Drawing.Point(799, 112);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(121, 153);
+            this.listView2.Size = new System.Drawing.Size(45, 153);
             this.listView2.TabIndex = 63;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
@@ -362,7 +374,7 @@
             this.btnSubmitToList.BeforeTouchSize = new System.Drawing.Size(85, 24);
             this.btnSubmitToList.ForeColor = System.Drawing.Color.White;
             this.btnSubmitToList.IsBackStageButton = false;
-            this.btnSubmitToList.Location = new System.Drawing.Point(708, 469);
+            this.btnSubmitToList.Location = new System.Drawing.Point(605, 477);
             this.btnSubmitToList.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSubmitToList.Name = "btnSubmitToList";
             this.btnSubmitToList.Size = new System.Drawing.Size(85, 24);
@@ -391,7 +403,7 @@
             this.allGenerate.BeforeTouchSize = new System.Drawing.Size(85, 24);
             this.allGenerate.ForeColor = System.Drawing.Color.White;
             this.allGenerate.IsBackStageButton = false;
-            this.allGenerate.Location = new System.Drawing.Point(871, 469);
+            this.allGenerate.Location = new System.Drawing.Point(696, 477);
             this.allGenerate.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.allGenerate.Name = "allGenerate";
             this.allGenerate.Size = new System.Drawing.Size(85, 24);
@@ -1645,7 +1657,7 @@
             this.CompanyTab.Location = new System.Drawing.Point(4, 22);
             this.CompanyTab.Name = "CompanyTab";
             this.CompanyTab.Padding = new System.Windows.Forms.Padding(3);
-            this.CompanyTab.Size = new System.Drawing.Size(1009, 509);
+            this.CompanyTab.Size = new System.Drawing.Size(877, 509);
             this.CompanyTab.TabIndex = 1;
             this.CompanyTab.Text = "Company";
             this.CompanyTab.UseVisualStyleBackColor = true;
@@ -1654,7 +1666,7 @@
             // 
             this.Personality.Location = new System.Drawing.Point(4, 22);
             this.Personality.Name = "Personality";
-            this.Personality.Size = new System.Drawing.Size(1009, 509);
+            this.Personality.Size = new System.Drawing.Size(877, 509);
             this.Personality.TabIndex = 2;
             this.Personality.Text = "Personalities";
             this.Personality.UseVisualStyleBackColor = true;
@@ -1663,7 +1675,7 @@
             // 
             this.ScenarioTab.Location = new System.Drawing.Point(4, 22);
             this.ScenarioTab.Name = "ScenarioTab";
-            this.ScenarioTab.Size = new System.Drawing.Size(1009, 509);
+            this.ScenarioTab.Size = new System.Drawing.Size(877, 509);
             this.ScenarioTab.TabIndex = 3;
             this.ScenarioTab.Text = "Scenario";
             this.ScenarioTab.UseVisualStyleBackColor = true;
@@ -1674,7 +1686,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1009, 509);
+            this.tabPage6.Size = new System.Drawing.Size(877, 509);
             this.tabPage6.TabIndex = 4;
             this.tabPage6.Text = "tabPage6";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1682,8 +1694,8 @@
             // treeNavigator1
             // 
             this.treeNavigator1.BackColor = System.Drawing.Color.White;
-            headerCollection4.Font = new System.Drawing.Font("Arial", 8F);
-            this.treeNavigator1.Header = headerCollection4;
+            headerCollection1.Font = new System.Drawing.Font("Arial", 8F);
+            this.treeNavigator1.Header = headerCollection1;
             this.treeNavigator1.ItemBackColor = System.Drawing.SystemColors.Control;
             this.treeNavigator1.Items.Add(this.treeMenuItem1);
             this.treeNavigator1.Items.Add(this.treeMenuItem2);
@@ -1859,22 +1871,26 @@
             // EditSTList
             // 
             this.EditSTList.Name = "EditSTList";
-            this.EditSTList.Size = new System.Drawing.Size(152, 22);
+            this.EditSTList.Size = new System.Drawing.Size(107, 22);
             this.EditSTList.Text = "Edit";
             this.EditSTList.Click += new System.EventHandler(this.EditSTList_Click);
             // 
             // DeleteSTList
             // 
             this.DeleteSTList.Name = "DeleteSTList";
-            this.DeleteSTList.Size = new System.Drawing.Size(152, 22);
+            this.DeleteSTList.Size = new System.Drawing.Size(107, 22);
             this.DeleteSTList.Text = "Delete";
             this.DeleteSTList.Click += new System.EventHandler(this.DeleteSTList_Click);
+            // 
+            // softwareTypeModelsTableAdapter
+            // 
+            this.softwareTypeModelsTableAdapter.ClearBeforeFill = true;
             // 
             // TabularEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1017, 559);
+            this.ClientSize = new System.Drawing.Size(885, 559);
             this.Controls.Add(this.GroupTabControl);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
@@ -1889,6 +1905,7 @@
             this.SoftwareTypeTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.childFeaturesBS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modCreatorDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.softwareTypeBS)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
@@ -2072,5 +2089,7 @@
         private System.Windows.Forms.ContextMenuStrip tabularFormContextMenu;
         private System.Windows.Forms.ToolStripMenuItem EditSTList;
         private System.Windows.Forms.ToolStripMenuItem DeleteSTList;
+        private ModCreatorDataSetTableAdapters.SoftwareTypeModelsTableAdapter softwareTypeModelsTableAdapter;
+        private STDataSet sTDataSet;
     }
 }

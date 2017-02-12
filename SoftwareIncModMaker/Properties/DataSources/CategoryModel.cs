@@ -23,6 +23,7 @@ namespace SoftwareIncModMaker.Properties.DataSources
         public Nullable<decimal> STRetention { get; set; }
         public Nullable<decimal> STIterative { get; set; }
         public string STNameGenerator { get; set; }
+        public Nullable<int> SoftwareTypeModelId { get; set; }
     
         public virtual SoftwareTypeModel SoftwareTypeModel { get; set; }
     }

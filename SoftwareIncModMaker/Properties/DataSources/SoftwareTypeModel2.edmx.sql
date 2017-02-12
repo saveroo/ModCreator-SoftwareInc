@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/09/2017 16:13:26
--- Generated from EDMX file: C:\Users\Savero\Documents\Visual Studio 2017\Projects\SoftwareIncModMaker\SoftwareIncModMaker\Properties\DataSources\SoftwareTypeModel2.edmx
+-- Date Created: 02/11/2017 12:15:52
+-- Generated from EDMX file: C:\Users\Savero\documents\visual studio 2017\Projects\SoftwareIncModMaker\SoftwareIncModMaker\Properties\DataSources\SoftwareTypeModel2.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -23,11 +23,8 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_SoftwareTypeModelCategoryModel]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[CategoryModels] DROP CONSTRAINT [FK_SoftwareTypeModelCategoryModel];
 GO
-IF OBJECT_ID(N'[dbo].[FK_CategoryModelFeatureModel]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[CategoryModels] DROP CONSTRAINT [FK_CategoryModelFeatureModel];
-GO
 IF OBJECT_ID(N'[dbo].[FK_FeatureModelFeatureAttributes]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[FeatureModels] DROP CONSTRAINT [FK_FeatureModelFeatureAttributes];
+    ALTER TABLE [dbo].[FeatureAttributes] DROP CONSTRAINT [FK_FeatureModelFeatureAttributes];
 GO
 IF OBJECT_ID(N'[dbo].[FK_FeatureModelFeatureDependency]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[FeatureDependencies] DROP CONSTRAINT [FK_FeatureModelFeatureDependency];
@@ -36,7 +33,7 @@ IF OBJECT_ID(N'[dbo].[FK_FeatureModelFeatureSoftwareCategory]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[FeatureSoftwareCategories] DROP CONSTRAINT [FK_FeatureModelFeatureSoftwareCategory];
 GO
 IF OBJECT_ID(N'[dbo].[FK_SoftwareTypeMAttributeSoftwareTypeModel]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[SoftwareTypeMAttributes] DROP CONSTRAINT [FK_SoftwareTypeMAttributeSoftwareTypeModel];
+    ALTER TABLE [dbo].[SoftwareTypeModels] DROP CONSTRAINT [FK_SoftwareTypeMAttributeSoftwareTypeModel];
 GO
 
 -- --------------------------------------------------
@@ -81,7 +78,13 @@ CREATE TABLE [dbo].[FeatureModels] (
     [SubFeatureDevTime] decimal(18,0)  NULL,
     [SubFeatureCodeArt] decimal(18,0)  NULL,
     [SubFeatureDepedency] nvarchar(max)  NULL,
-    [SoftwareTypeModel_Id] int  NULL
+    [SubFeatureStability] decimal(18,0)  NULL,
+    [SubFeatureServer] decimal(18,0)  NOT NULL,
+    [FKSoftwareTypeModel_Id] int  NOT NULL,
+    [FKFeatureAttributes_Id] int  NULL,
+    [FKFeatureDependencies_Id] int  NULL,
+    [FKFeatureSoftwareCategory_Id] int  NULL,
+    [SoftwareTypeModel_Id] int  NOT NULL
 );
 GO
 
@@ -127,6 +130,8 @@ CREATE TABLE [dbo].[FeatureAttributes] (
     [AttributeForced] bit  NULL,
     [AttributeResearch] bit  NULL,
     [AttributeVital] bit  NULL,
+    [FKFeatureModel_Id] int  NOT NULL,
+    [FKFeatureName] nvarchar(max)  NOT NULL,
     [FeatureModel_Id] int  NOT NULL
 );
 GO
@@ -134,7 +139,7 @@ GO
 -- Creating table 'FeatureSoftwareCategories'
 CREATE TABLE [dbo].[FeatureSoftwareCategories] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [FCName] nvarchar(max)  NULL,
+    [FCName] nvarchar(max)  NOT NULL,
     [FCDescription] nvarchar(max)  NULL,
     [FCPopularity] decimal(18,0)  NULL,
     [FCTimeScale] decimal(18,0)  NULL,

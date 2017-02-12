@@ -19,6 +19,8 @@ namespace SoftwareIncModMaker.Properties.DataSources
         public Nullable<bool> AttributeForced { get; set; }
         public Nullable<bool> AttributeResearch { get; set; }
         public Nullable<bool> AttributeVital { get; set; }
+        public int FKFeatureModel_Id { get; set; }
+        public string FKFeatureName { get; set; }
     
         public virtual FeatureModel FeatureModel { get; set; }
     }
