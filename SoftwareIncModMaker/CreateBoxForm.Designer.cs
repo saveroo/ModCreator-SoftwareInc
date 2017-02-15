@@ -122,7 +122,7 @@
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            this.groupBox2.Enter += new System.EventHandler(this.GroupBox2Enter);
             // 
             // label10
             // 

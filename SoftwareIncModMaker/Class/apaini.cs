@@ -2,14 +2,14 @@ namespace SoftwareIncModMaker.Class
 {
     using System.Data.Entity;
 
-    public class apaini : DbContext
+    public class Apaini : DbContext
     {
         // Your context has been configured to use a 'SoftwareTypeModel' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 
         // 'SoftwareIncModMaker.Class.SoftwareTypeModel' database on your LocalDb instance. 
         // If you wish to target a different database and/or database provider, modify the 'SoftwareTypeModel' 
         // connection string in the application configuration file.
-        public apaini()
+        public Apaini()
             : base("name=apaini")
         {
         }

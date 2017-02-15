@@ -114,7 +114,7 @@
             this.createNewModToolStripMenuItem.Name = "createNewModToolStripMenuItem";
             this.createNewModToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.createNewModToolStripMenuItem.Text = "New";
-            this.createNewModToolStripMenuItem.Click += new System.EventHandler(this.createNewModToolStripMenuItem_Click);
+            this.createNewModToolStripMenuItem.Click += new System.EventHandler(this.CreateNewModToolStripMenuItemClick);
             // 
             // generateSoftwareTypeToolStripMenuItem
             // 
@@ -141,7 +141,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItemClick);
             // 
             // viewWrapperToolStripMenuItem
             // 
@@ -160,21 +160,21 @@
             this.treeviewToolStripMenuItem.Name = "treeviewToolStripMenuItem";
             this.treeviewToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.treeviewToolStripMenuItem.Text = "Editor";
-            this.treeviewToolStripMenuItem.Click += new System.EventHandler(this.treeviewToolStripMenuItem_Click);
+            this.treeviewToolStripMenuItem.Click += new System.EventHandler(this.TreeviewToolStripMenuItemClick);
             // 
             // tabularEditorToolStripMenuItem
             // 
             this.tabularEditorToolStripMenuItem.Name = "tabularEditorToolStripMenuItem";
             this.tabularEditorToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.tabularEditorToolStripMenuItem.Text = "Tabular Editor";
-            this.tabularEditorToolStripMenuItem.Click += new System.EventHandler(this.tabularEditorToolStripMenuItem_Click);
+            this.tabularEditorToolStripMenuItem.Click += new System.EventHandler(this.TabularEditorToolStripMenuItemClick);
             // 
             // xMLEditorToolStripMenuItem
             // 
             this.xMLEditorToolStripMenuItem.Name = "xMLEditorToolStripMenuItem";
             this.xMLEditorToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.xMLEditorToolStripMenuItem.Text = "Node+XML Editor";
-            this.xMLEditorToolStripMenuItem.Click += new System.EventHandler(this.xMLEditorToolStripMenuItem_Click);
+            this.xMLEditorToolStripMenuItem.Click += new System.EventHandler(this.XMlEditorToolStripMenuItemClick);
             // 
             // textEditorToolStripMenuItem
             // 
@@ -193,7 +193,7 @@
             this.xMLDiagramToolStripMenuItem.Name = "xMLDiagramToolStripMenuItem";
             this.xMLDiagramToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.xMLDiagramToolStripMenuItem.Text = "XML Diagram";
-            this.xMLDiagramToolStripMenuItem.Click += new System.EventHandler(this.xMLDiagramToolStripMenuItem_Click);
+            this.xMLDiagramToolStripMenuItem.Click += new System.EventHandler(this.XMlDiagramToolStripMenuItemClick);
             // 
             // wikiToolStripMenuItem
             // 
@@ -203,7 +203,7 @@
             this.wikiToolStripMenuItem.Name = "wikiToolStripMenuItem";
             this.wikiToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.wikiToolStripMenuItem.Text = "Wiki Browser";
-            this.wikiToolStripMenuItem.Click += new System.EventHandler(this.wikiToolStripMenuItem_Click);
+            this.wikiToolStripMenuItem.Click += new System.EventHandler(this.WikiToolStripMenuItemClick);
             // 
             // wikiBrowserToolStripMenuItem
             // 
@@ -216,7 +216,7 @@
             this.forumBrowserToolStripMenuItem.Name = "forumBrowserToolStripMenuItem";
             this.forumBrowserToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.forumBrowserToolStripMenuItem.Text = "Forum Browser";
-            this.forumBrowserToolStripMenuItem.Click += new System.EventHandler(this.forumBrowserToolStripMenuItem_Click);
+            this.forumBrowserToolStripMenuItem.Click += new System.EventHandler(this.ForumBrowserToolStripMenuItemClick);
             // 
             // miscToolStripMenuItem
             // 
@@ -235,7 +235,7 @@
             this.debugInfoToolStripMenuItem.Name = "debugInfoToolStripMenuItem";
             this.debugInfoToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.debugInfoToolStripMenuItem.Text = "Diagnostic Info";
-            this.debugInfoToolStripMenuItem.Click += new System.EventHandler(this.debugInfoToolStripMenuItem_Click);
+            this.debugInfoToolStripMenuItem.Click += new System.EventHandler(this.DebugInfoToolStripMenuItemClick);
             // 
             // checkForUpdateToolStripMenuItem
             // 
@@ -253,21 +253,21 @@
             this.showPropertyGridToolStripMenuItem.Name = "showPropertyGridToolStripMenuItem";
             this.showPropertyGridToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.showPropertyGridToolStripMenuItem.Text = "Property Grid";
-            this.showPropertyGridToolStripMenuItem.Click += new System.EventHandler(this.showPropertyGridToolStripMenuItem_Click);
+            this.showPropertyGridToolStripMenuItem.Click += new System.EventHandler(this.ShowPropertyGridToolStripMenuItemClick);
             // 
             // mainWindowToolStripMenuItem
             // 
             this.mainWindowToolStripMenuItem.Name = "mainWindowToolStripMenuItem";
             this.mainWindowToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.mainWindowToolStripMenuItem.Text = "Main Window";
-            this.mainWindowToolStripMenuItem.Click += new System.EventHandler(this.mainWindowToolStripMenuItem_Click);
+            this.mainWindowToolStripMenuItem.Click += new System.EventHandler(this.MainWindowToolStripMenuItemClick);
             // 
             // actionLogToolStripMenuItem
             // 
             this.actionLogToolStripMenuItem.Name = "actionLogToolStripMenuItem";
             this.actionLogToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.actionLogToolStripMenuItem.Text = "Action Log";
-            this.actionLogToolStripMenuItem.Click += new System.EventHandler(this.actionLogToolStripMenuItem_Click);
+            this.actionLogToolStripMenuItem.Click += new System.EventHandler(this.ActionLogToolStripMenuItemClick);
             // 
             // hideActionLogToolStripMenuItem
             // 
@@ -275,14 +275,14 @@
             this.hideActionLogToolStripMenuItem.Name = "hideActionLogToolStripMenuItem";
             this.hideActionLogToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.hideActionLogToolStripMenuItem.Text = "Action Log";
-            this.hideActionLogToolStripMenuItem.Click += new System.EventHandler(this.hideActionLogToolStripMenuItem_Click);
+            this.hideActionLogToolStripMenuItem.Click += new System.EventHandler(this.HideActionLogToolStripMenuItemClick);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItemClick);
             // 
             // contextMenuStrip1
             // 
@@ -303,7 +303,7 @@
             this.closeAllWindowToolStripMenuItem.Name = "closeAllWindowToolStripMenuItem";
             this.closeAllWindowToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.closeAllWindowToolStripMenuItem.Text = "Close All Window";
-            this.closeAllWindowToolStripMenuItem.Click += new System.EventHandler(this.closeAllWindowToolStripMenuItem_Click);
+            this.closeAllWindowToolStripMenuItem.Click += new System.EventHandler(this.CloseAllWindowToolStripMenuItemClick);
             // 
             // statusStrip1
             // 
@@ -322,7 +322,7 @@
             this.statusStrip1.Size = new System.Drawing.Size(1244, 26);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
-            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
+            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.StatusStrip1ItemClicked);
             // 
             // toolStripStatusLabel1
             // 
@@ -405,7 +405,7 @@
             this.ActionMemoBox.TabIndex = 6;
             this.ActionMemoBox.Text = "";
             this.ActionMemoBox.Visible = false;
-            this.ActionMemoBox.TextChanged += new System.EventHandler(this.ActionMemoBox_TextChanged);
+            this.ActionMemoBox.TextChanged += new System.EventHandler(this.ActionMemoBoxTextChanged);
             // 
             // progressBar1
             // 
@@ -426,7 +426,7 @@
             this.propertyGrid1.Size = new System.Drawing.Size(324, 405);
             this.propertyGrid1.TabIndex = 11;
             this.propertyGrid1.Visible = false;
-            this.propertyGrid1.Click += new System.EventHandler(this.propertyGrid1_Click);
+            this.propertyGrid1.Click += new System.EventHandler(this.PropertyGrid1Click);
             // 
             // process1
             // 
@@ -458,7 +458,7 @@
             this.Name = "ParentForm";
             this.Text = "Mod Creator: Software Inc";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.ParentForm_Load);
+            this.Load += new System.EventHandler(this.ParentFormLoad);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);

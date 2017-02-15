@@ -55,7 +55,7 @@ namespace SoftwareIncModMaker
             this.Controls.Add(this.webBrowser1);
             this.Name = "MetroForm2";
             this.Text = "MetroForm1";
-            this.Load += new System.EventHandler(this.MetroForm2_Load);
+            this.Load += new System.EventHandler(this.MetroForm2Load);
             this.ResumeLayout(false);
 
         }

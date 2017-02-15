@@ -22,11 +22,11 @@ namespace SoftwareIncModMaker
             this.InitializeComponent();
         }
 
-        private void MetroForm2_Load(object sender, EventArgs e)
+        private void MetroForm2Load(object sender, EventArgs e)
         {
         }
 
-        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        private void WebBrowser1DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
         }
     }

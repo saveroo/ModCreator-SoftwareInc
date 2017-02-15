@@ -11,7 +11,7 @@
 
     using ScintillaNET;
 
-    public partial class XMLEditorForm : Form
+    public partial class XmlEditorForm : Form
     {
         private string nodeEditLabelHistory;
 
@@ -19,7 +19,7 @@
 
         private string xmlName;
 
-        public XMLEditorForm(IMdiParentAccess handler)
+        public XmlEditorForm(IMdiParentAccess handler)
         {
             this.statusAccess = handler;
 
@@ -55,7 +55,7 @@
             this.softwareTree.ExpandAll();
         }
 
-        private void addXmlNodes(XmlNode inXmlNode, TreeNode inTreeNode)
+        private void AddXmlNodes(XmlNode inXmlNode, TreeNode inTreeNode)
         {
             XmlNode xNode;
             TreeNode tNode;
@@ -69,7 +69,7 @@
                     xNode = inXmlNode.ChildNodes[i];
                     inTreeNode.Nodes.Add(new TreeNode(xNode.Name));
                     tNode = inTreeNode.Nodes[i];
-                    this.addXmlNodes(xNode, tNode);
+                    this.AddXmlNodes(xNode, tNode);
                 }
             }
             else
@@ -105,73 +105,73 @@
 
         private void ClickClear(object sender, EventArgs args)
         {
-            ActionHistory.setStatus("Clearing Text in Editor");
+            ActionHistory.SetStatus("Clearing Text in Editor");
             this.scintilla1.Clear();
         }
 
         private void ClickCopy(object sender, EventArgs args)
         {
-            ActionHistory.setStatus("Copied Text From Editor");
+            ActionHistory.SetStatus("Copied Text From Editor");
             this.scintilla1.Copy();
         }
 
         private void ClickCut(object sender, EventArgs args)
         {
-            ActionHistory.setStatus("Cut Text From Editor");
+            ActionHistory.SetStatus("Cut Text From Editor");
             this.scintilla1.Cut();
         }
 
         private void ClickPaste(object sender, EventArgs args)
         {
-            ActionHistory.setStatus("Pasted Text To Editor");
+            ActionHistory.SetStatus("Pasted Text To Editor");
             this.scintilla1.Paste();
         }
 
         private void ClickRedo(object sender, EventArgs args)
         {
-            ActionHistory.setStatus("Redo Text in Editor");
+            ActionHistory.SetStatus("Redo Text in Editor");
             this.scintilla1.Redo();
         }
 
         private void ClickSelectAll(object sender, EventArgs args)
         {
-            ActionHistory.setStatus("Select all Text in Editor");
+            ActionHistory.SetStatus("Select all Text in Editor");
             this.scintilla1.SelectAll();
         }
 
         private void ClickUndo(object sender, EventArgs args)
         {
-            ActionHistory.setStatus("Undo Text in Editor");
+            ActionHistory.SetStatus("Undo Text in Editor");
             this.scintilla1.Undo();
         }
 
-        private void collapseAllToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CollapseAllToolStripMenuItemClick(object sender, EventArgs e)
         {
             this.softwareTree.CollapseAll();
         }
 
-        private void collapseHighlightedToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CollapseHighlightedToolStripMenuItemClick(object sender, EventArgs e)
         {
             this.softwareTree.SelectedNode.Collapse();
         }
 
-        private void deleteAllToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DeleteAllToolStripMenuItemClick(object sender, EventArgs e)
         {
-            ActionHistory.startAction();
-            ActionHistory.setStatus("Deleting Node");
-            ActionHistory.endAction();
+            ActionHistory.StartAction();
+            ActionHistory.SetStatus("Deleting Node");
+            ActionHistory.EndAction();
             this.softwareTree.Nodes.Clear();
         }
 
-        private void deleteNodeToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void DeleteNodeToolStripMenuItemClick1(object sender, EventArgs e)
         {
             this.softwareTree.SelectedNode.Remove();
         }
 
-        private void editNodeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void EditNodeToolStripMenuItemClick(object sender, EventArgs e)
         {
             var selectedNode = this.softwareTree.SelectedNode;
-            this.getBeforeEditedLabel(ref this.nodeEditLabelHistory);
+            this.GetBeforeEditedLabel(ref this.nodeEditLabelHistory);
             if (selectedNode != null && selectedNode.Parent != null)
             {
                 this.softwareTree.SelectedNode = selectedNode;
@@ -184,73 +184,73 @@
             }
         }
 
-        private void EditorForm_Activated(object sender, EventArgs e)
+        private void EditorFormActivated(object sender, EventArgs e)
         {
         }
 
-        private void EditorForm_onClose(object sender, FormClosingEventArgs e)
+        private void EditorFormOnClose(object sender, FormClosingEventArgs e)
         {
-            var messageBoxCS = new StringBuilder();
-            messageBoxCS.AppendFormat("{0} = {1}", "CloseReason", e.CloseReason);
-            messageBoxCS.AppendLine();
-            messageBoxCS.AppendFormat("{0} = {1}", "Cancel", e.Cancel);
-            messageBoxCS.AppendLine();
-            MessageBox.Show(messageBoxCS.ToString(), "Closing Editor");
+            var messageBoxCs = new StringBuilder();
+            messageBoxCs.AppendFormat("{0} = {1}", "CloseReason", e.CloseReason);
+            messageBoxCs.AppendLine();
+            messageBoxCs.AppendFormat("{0} = {1}", "Cancel", e.Cancel);
+            messageBoxCs.AppendLine();
+            MessageBox.Show(messageBoxCs.ToString(), "Closing Editor");
         }
 
-        private void expandAllToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ExpandAllToolStripMenuItemClick(object sender, EventArgs e)
         {
             this.softwareTree.ExpandAll();
         }
 
-        private void expandHighlightedToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ExpandHighlightedToolStripMenuItemClick(object sender, EventArgs e)
         {
             this.softwareTree.SelectedNode.Expand();
         }
 
-        private void Form3_Load(object sender, EventArgs e)
+        private void Form3Load(object sender, EventArgs e)
         {
             this.autocompleteMenu1.TargetControlWrapper = new ScintillaWrapper(this.scintilla1);
             ScintillaStyling.ScintillaStyleApply(ref this.scintilla1);
             ScintillaSnippet.BuildAutocompleteMenu(this.autocompleteMenu1);
         }
 
-        private string getBeforeEditedLabel()
+        private string GetBeforeEditedLabel()
         {
             return this.softwareTree.SelectedNode.Text;
         }
 
-        private string getBeforeEditedLabel(ref string referencedVariable)
+        private string GetBeforeEditedLabel(ref string referencedVariable)
         {
             return referencedVariable = this.softwareTree.SelectedNode.Text;
         }
 
-        private void nodeDel_Click(object sender, EventArgs e)
+        private void NodeDelClick(object sender, EventArgs e)
         {
             this.softwareTree.SelectedNode.Remove();
         }
 
-        private void nodeDown_Click(object sender, EventArgs e)
+        private void NodeDownClick(object sender, EventArgs e)
         {
         }
 
-        private void nodeEditTimer_Tick(object sender, EventArgs e)
+        private void NodeEditTimerTick(object sender, EventArgs e)
         {
             // if(softwareTree.node)
             // statusInformation.Text = softwareTree.SelectedNode.Text;
         }
 
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        private void OpenFileDialog1FileOk(object sender, CancelEventArgs e)
         {
             this.xmlName = this.openFileDialog1.FileName;
-            this.parseToTreeView();
+            this.ParseToTreeView();
             var dom = new XmlDocument();
             dom.Load(this.xmlName);
             this.AddNode(dom.DocumentElement, this.softwareTree.Nodes[0]);
-            ActionHistory.setStatus("Opened XML", this.xmlName);
+            ActionHistory.SetStatus("Opened XML", this.xmlName);
         }
 
-        private void parseNode(TreeNode tn)
+        private void ParseNode(TreeNode tn)
         {
             var x = new List<string>();
             var ie = tn.Nodes.GetEnumerator();
@@ -265,7 +265,7 @@
 
                 if (ctn.GetNodeCount(true) == 0) x.Add(ctn.Text);
                 else x.Add("<" + ctn.Text + ">\n");
-                if (ctn.GetNodeCount(true) > 0) this.parseNode(ctn);
+                if (ctn.GetNodeCount(true) > 0) this.ParseNode(ctn);
             }
 
             x.Add("</" + parentnode + ">\n");
@@ -273,7 +273,7 @@
             this.scintilla1.Text = string.Join(string.Empty, x.ToArray());
         }
 
-        private void parseToTreeView()
+        private void ParseToTreeView()
         {
             // XmlDataDocument xmlData = new XmlDataDocument();
             // FileStream fs = new FileStream(xmlName, FileMode.Open, FileAccess.ReadWrite);
@@ -294,7 +294,7 @@
             this.scintilla1.Text = XDocument.Load(this.xmlName).ToString();
         }
 
-        private void scintilla1_CharAdded(object sender, CharAddedEventArgs e)
+        private void Scintilla1CharAdded(object sender, CharAddedEventArgs e)
         {
             // Find the word start
             var currentPos = this.scintilla1.CurrentPosition;
@@ -305,23 +305,23 @@
             if (lenEntered > 0) if (!this.scintilla1.AutoCActive) this.scintilla1.AutoCShow(lenEntered, "<Name></Name>");
         }
 
-        private void scintilla1_Click(object sender, EventArgs e)
+        private void Scintilla1Click(object sender, EventArgs e)
         {
         }
 
-        private void scintilla1_Load(object sender, EventArgs e)
+        private void Scintilla1Load(object sender, EventArgs e)
         {
             ScintillaStyling.ScintillaStyleApply(ref this.scintilla1);
         }
 
-        private void scintilla1_TextChanged(object sender, EventArgs e)
+        private void Scintilla1TextChanged(object sender, EventArgs e)
         {
             ScintillaStyling.ScintillaLineNumber(ref this.scintilla1);
         }
 
-        private void softwareTree_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
+        private void SoftwareTreeAfterLabelEdit(object sender, NodeLabelEditEventArgs e)
         {
-            ActionHistory.endAction();
+            ActionHistory.EndAction();
             if (e.Label != null)
             {
                 this.softwareTree.SelectedNode.Text = e.Label;
@@ -329,44 +329,44 @@
             else
             {
                 e.CancelEdit = true;
-                e.Node.Text = this.getBeforeEditedLabel();
+                e.Node.Text = this.GetBeforeEditedLabel();
                 MessageBox.Show("Invalid tree node label");
             }
         }
 
-        private void softwareTree_BeforeLabelEdit(object sender, NodeLabelEditEventArgs e)
+        private void SoftwareTreeBeforeLabelEdit(object sender, NodeLabelEditEventArgs e)
         {
-            ActionHistory.startAction();
-            ActionHistory.setStatus("Tree Editing");
+            ActionHistory.StartAction();
+            ActionHistory.SetStatus("Tree Editing");
         }
 
-        private void softwareTree_MouseDown(object sender, MouseEventArgs e)
+        private void SoftwareTreeMouseDown(object sender, MouseEventArgs e)
         {
-            UserInterfaceController.rightClickMenu(this.softwareTreeToolStripMenu, e);
+            UserInterfaceController.RightClickMenu(this.softwareTreeToolStripMenu, e);
         }
 
-        private void statusWrapper()
-        {
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void StatusWrapper()
         {
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void TableLayoutPanel1Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void ToolStripButton1Click(object sender, EventArgs e)
         {
             var folderName = "Software Inc.\\Mods";
             this.openFileDialog1.InitialDirectory = "C:\\Games\\Steam\\steamapps\\common\\" + folderName;
             this.openFileDialog1.ShowDialog();
         }
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        private void TreeView1AfterSelect(object sender, TreeViewEventArgs e)
         {
         }
 
-        private void viewRAWXMLToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ViewRawxmlToolStripMenuItemClick(object sender, EventArgs e)
         {
-            this.parseNode(this.softwareTree.SelectedNode);
+            this.ParseNode(this.softwareTree.SelectedNode);
         }
 
         private void Xml2TreeNode(XElement xNode, TreeNode treeNode)

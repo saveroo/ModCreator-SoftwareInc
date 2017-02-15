@@ -37,7 +37,7 @@
             this.ClientSize = new System.Drawing.Size(570, 290);
             this.Name = "DiagnosticForm";
             this.Text = "Diagnostic Window";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Form1Load);
             this.ResumeLayout(false);
 
         }

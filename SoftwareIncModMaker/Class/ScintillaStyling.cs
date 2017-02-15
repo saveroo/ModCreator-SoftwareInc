@@ -17,10 +17,10 @@
 
             // Calculate the width required to display the last line number
             // and include some padding for good measure.
-            const int padding = 2;
+            const int Padding = 2;
             textEditor.Margins[0].Width = textEditor.TextWidth(
                                               Style.LineNumber,
-                                              new string('9', maxLineNumberCharLength + 1)) + padding;
+                                              new string('9', maxLineNumberCharLength + 1)) + Padding;
             ScintillaStyling.maxLineNumberCharLength = maxLineNumberCharLength;
         }
 

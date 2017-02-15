@@ -212,7 +212,7 @@
             // 
             // timer1
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.Timer1Tick);
             // 
             // menuStrip1
             // 
@@ -225,7 +225,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(861, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked_1);
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1ItemClicked1);
             // 
             // testToolStripMenuItem
             // 
@@ -234,7 +234,7 @@
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
             this.testToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.testToolStripMenuItem.Text = "File";
-            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
+            this.testToolStripMenuItem.Click += new System.EventHandler(this.TestToolStripMenuItemClick);
             // 
             // exportToXMLToolStripMenuItem
             // 
@@ -322,7 +322,7 @@
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(120, 329);
             this.listBox2.TabIndex = 71;
-            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged_1);
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.ListBox2SelectedIndexChanged1);
             // 
             // autoLabel32
             // 
@@ -398,9 +398,9 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(239, 56);
             this.listBox1.TabIndex = 64;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            this.listBox1.BindingContextChanged += new System.EventHandler(this.listBox1_BindingContextChanged);
-            this.listBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDown);
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.ListBox1SelectedIndexChanged);
+            this.listBox1.BindingContextChanged += new System.EventHandler(this.ListBox1BindingContextChanged);
+            this.listBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ListBox1MouseDown);
             // 
             // modCreatorDataSet
             // 
@@ -752,7 +752,7 @@
             this.ftSubmitButton.TabIndex = 47;
             this.ftSubmitButton.Text = "Submit";
             this.ftSubmitButton.UseVisualStyle = true;
-            this.ftSubmitButton.Click += new System.EventHandler(this.ftSubmitButton_Click);
+            this.ftSubmitButton.Click += new System.EventHandler(this.FtSubmitButtonClick);
             // 
             // ftAttrFrom
             // 
@@ -892,7 +892,7 @@
             this.tabPage4.Size = new System.Drawing.Size(236, 477);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Dependency";
-            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
+            this.tabPage4.Click += new System.EventHandler(this.TabPage4Click);
             // 
             // ftDependencySubmit
             // 
@@ -911,7 +911,7 @@
             this.ftDependencySubmit.TabIndex = 55;
             this.ftDependencySubmit.Text = "Add to selected feature";
             this.ftDependencySubmit.UseVisualStyle = true;
-            this.ftDependencySubmit.Click += new System.EventHandler(this.ftDependencySubmit_Click);
+            this.ftDependencySubmit.Click += new System.EventHandler(this.FtDependencySubmitClick);
             // 
             // BtEdit
             // 
@@ -943,7 +943,7 @@
             this.addToDependencyComboList.PreferredWidth = 18;
             this.addToDependencyComboList.TabIndex = 1;
             this.addToDependencyComboList.Text = "buttonEditChildButton1";
-            this.addToDependencyComboList.Click += new System.EventHandler(this.addToDependencyComboList_Click);
+            this.addToDependencyComboList.Click += new System.EventHandler(this.AddToDependencyComboListClick);
             // 
             // addToDependencyList
             // 
@@ -959,7 +959,7 @@
             this.addToDependencyList.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
             this.addToDependencyList.TabIndex = 0;
             this.addToDependencyList.Text = "Add to Dependency List";
-            this.addToDependencyList.TextChanged += new System.EventHandler(this.addToDependencyList_TextChanged);
+            this.addToDependencyList.TextChanged += new System.EventHandler(this.AddToDependencyListTextChanged);
             // 
             // ftDependencyFeature
             // 
@@ -989,7 +989,7 @@
             this.ftDependencyComboBox.Style = Syncfusion.Windows.Forms.VisualStyle.Metro;
             this.ftDependencyComboBox.TabIndex = 1;
             this.ftDependencyComboBox.Text = "--Select Software--";
-            this.ftDependencyComboBox.DropDown += new System.EventHandler(this.ftDependencyComboBox_DropDown);
+            this.ftDependencyComboBox.DropDown += new System.EventHandler(this.FtDependencyComboBoxDropDown);
             // 
             // tabPage2
             // 
@@ -1204,7 +1204,7 @@
             this.ctSubmitButton.TabIndex = 29;
             this.ctSubmitButton.Text = "Submit";
             this.ctSubmitButton.UseVisualStyle = true;
-            this.ctSubmitButton.Click += new System.EventHandler(this.ctButtonSubmit_Click);
+            this.ctSubmitButton.Click += new System.EventHandler(this.CtButtonSubmitClick);
             // 
             // autoLabel11
             // 
@@ -1261,7 +1261,7 @@
             this.autoLabel7.Size = new System.Drawing.Size(41, 13);
             this.autoLabel7.TabIndex = 18;
             this.autoLabel7.Text = "Unlock";
-            this.autoLabel7.Click += new System.EventHandler(this.autoLabel7_Click);
+            this.autoLabel7.Click += new System.EventHandler(this.AutoLabel7Click);
             // 
             // autoLabel6
             // 
@@ -1593,7 +1593,7 @@
             this.stSubmitButton.TabIndex = 31;
             this.stSubmitButton.Text = "Submit";
             this.stSubmitButton.UseVisualStyle = true;
-            this.stSubmitButton.Click += new System.EventHandler(this.stSubmitButton_Click);
+            this.stSubmitButton.Click += new System.EventHandler(this.StSubmitButtonClick);
             // 
             // autoLabel24
             // 
@@ -1711,7 +1711,7 @@
             this.autoLabel1.Size = new System.Drawing.Size(49, 13);
             this.autoLabel1.TabIndex = 5;
             this.autoLabel1.Text = "Category";
-            this.autoLabel1.Click += new System.EventHandler(this.autoLabel1_Click);
+            this.autoLabel1.Click += new System.EventHandler(this.AutoLabel1Click);
             // 
             // stCategoryTextBox
             // 
@@ -1725,7 +1725,7 @@
             this.stCategoryTextBox.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
             this.stCategoryTextBox.TabIndex = 3;
             this.stCategoryTextBox.UseBorderColorOnFocus = true;
-            this.stCategoryTextBox.TextChanged += new System.EventHandler(this.textBoxExt1_TextChanged);
+            this.stCategoryTextBox.TextChanged += new System.EventHandler(this.TextBoxExt1TextChanged);
             // 
             // stInHouse
             // 
@@ -1751,7 +1751,7 @@
             this.stOneClient.TabIndex = 1;
             this.stOneClient.Text = "OneClient";
             this.stOneClient.ThemesEnabled = false;
-            this.stOneClient.CheckStateChanged += new System.EventHandler(this.checkBoxAdv2_CheckStateChanged);
+            this.stOneClient.CheckStateChanged += new System.EventHandler(this.CheckBoxAdv2CheckStateChanged);
             // 
             // stOSSpecific
             // 
@@ -1767,7 +1767,7 @@
             this.stOSSpecific.TabIndex = 0;
             this.stOSSpecific.Text = "OSSpecific";
             this.stOSSpecific.ThemesEnabled = false;
-            this.stOSSpecific.CheckStateChanged += new System.EventHandler(this.checkBoxAdv1_CheckStateChanged);
+            this.stOSSpecific.CheckStateChanged += new System.EventHandler(this.CheckBoxAdv1CheckStateChanged);
             // 
             // CompanyTab
             // 
@@ -1822,7 +1822,7 @@
             this.treeNavigator1.Size = new System.Drawing.Size(725, 480);
             this.treeNavigator1.TabIndex = 1;
             this.treeNavigator1.Text = "treeNavigator1";
-            this.treeNavigator1.MouseEnter += new System.EventHandler(this.treeNavigator1_MouseEnter);
+            this.treeNavigator1.MouseEnter += new System.EventHandler(this.TreeNavigator1MouseEnter);
             // 
             // treeMenuItem1
             // 
@@ -1932,30 +1932,30 @@
             this.generateToolStripMenuItem});
             this.tabularFormContextMenu.Name = "tabularFormContextMenu";
             this.tabularFormContextMenu.Size = new System.Drawing.Size(122, 70);
-            this.tabularFormContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.tabularFormContextMenu_Opening);
-            this.tabularFormContextMenu.Click += new System.EventHandler(this.tabularFormContextMenu_Click);
-            this.tabularFormContextMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabularFormContextMenu_MouseDown);
+            this.tabularFormContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.TabularFormContextMenuOpening);
+            this.tabularFormContextMenu.Click += new System.EventHandler(this.TabularFormContextMenuClick);
+            this.tabularFormContextMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TabularFormContextMenuMouseDown);
             // 
             // EditSTList
             // 
             this.EditSTList.Name = "EditSTList";
             this.EditSTList.Size = new System.Drawing.Size(121, 22);
             this.EditSTList.Text = "Edit";
-            this.EditSTList.Click += new System.EventHandler(this.EditSTList_Click);
+            this.EditSTList.Click += new System.EventHandler(this.EditStListClick);
             // 
             // DeleteSTList
             // 
             this.DeleteSTList.Name = "DeleteSTList";
             this.DeleteSTList.Size = new System.Drawing.Size(121, 22);
             this.DeleteSTList.Text = "Delete";
-            this.DeleteSTList.Click += new System.EventHandler(this.DeleteSTList_Click);
+            this.DeleteSTList.Click += new System.EventHandler(this.DeleteStListClick);
             // 
             // generateToolStripMenuItem
             // 
             this.generateToolStripMenuItem.Name = "generateToolStripMenuItem";
             this.generateToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.generateToolStripMenuItem.Text = "Generate";
-            this.generateToolStripMenuItem.Click += new System.EventHandler(this.generateToolStripMenuItem_Click);
+            this.generateToolStripMenuItem.Click += new System.EventHandler(this.GenerateToolStripMenuItemClick);
             // 
             // softwareTypeModelsTableAdapter
             // 
@@ -1972,8 +1972,8 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TabularEditorForm";
             this.Text = "Tabular Editor";
-            this.Load += new System.EventHandler(this.TabularEditorForm_Load);
-            this.DoubleClick += new System.EventHandler(this.TabularEditorForm_DoubleClick);
+            this.Load += new System.EventHandler(this.TabularEditorFormLoad);
+            this.DoubleClick += new System.EventHandler(this.TabularEditorFormDoubleClick);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.GroupTabControl.ResumeLayout(false);

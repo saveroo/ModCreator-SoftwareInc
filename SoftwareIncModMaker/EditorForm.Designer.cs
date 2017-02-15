@@ -1,6 +1,6 @@
 ﻿namespace SoftwareIncModMaker
 {
-    partial class XMLEditorForm
+    partial class XmlEditorForm
     {
         /// <summary>
         /// Required designer variable.
@@ -64,7 +64,7 @@
             treeNode50,
             treeNode51,
             treeNode53});
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XMLEditorForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XmlEditorForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.softwareTree = new System.Windows.Forms.TreeView();
             this.scintilla1 = new ScintillaNET.Scintilla();
@@ -122,7 +122,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 251F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(948, 482);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel1Paint);
             // 
             // softwareTree
             // 
@@ -174,10 +174,10 @@
             treeNode54});
             this.softwareTree.Size = new System.Drawing.Size(942, 177);
             this.softwareTree.TabIndex = 0;
-            this.softwareTree.BeforeLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.softwareTree_BeforeLabelEdit);
-            this.softwareTree.AfterLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.softwareTree_AfterLabelEdit);
-            this.softwareTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
-            this.softwareTree.MouseDown += new System.Windows.Forms.MouseEventHandler(this.softwareTree_MouseDown);
+            this.softwareTree.BeforeLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.SoftwareTreeBeforeLabelEdit);
+            this.softwareTree.AfterLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.SoftwareTreeAfterLabelEdit);
+            this.softwareTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeView1AfterSelect);
+            this.softwareTree.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SoftwareTreeMouseDown);
             // 
             // scintilla1
             // 
@@ -196,8 +196,8 @@
             this.scintilla1.Text = "Boom Boom Paw";
             this.scintilla1.UseTabs = true;
             this.scintilla1.ViewWhitespace = ScintillaNET.WhitespaceMode.VisibleAfterIndent;
-            this.scintilla1.TextChanged += new System.EventHandler(this.scintilla1_TextChanged);
-            this.scintilla1.Click += new System.EventHandler(this.scintilla1_Click);
+            this.scintilla1.TextChanged += new System.EventHandler(this.Scintilla1TextChanged);
+            this.scintilla1.Click += new System.EventHandler(this.Scintilla1Click);
             // 
             // softwareTreeToolStripMenu
             // 
@@ -234,49 +234,49 @@
             this.editNodeToolStripMenuItem.Name = "editNodeToolStripMenuItem";
             this.editNodeToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.editNodeToolStripMenuItem.Text = "Edit Node";
-            this.editNodeToolStripMenuItem.Click += new System.EventHandler(this.editNodeToolStripMenuItem_Click);
+            this.editNodeToolStripMenuItem.Click += new System.EventHandler(this.EditNodeToolStripMenuItemClick);
             // 
             // deleteNodeToolStripMenuItem
             // 
             this.deleteNodeToolStripMenuItem.Name = "deleteNodeToolStripMenuItem";
             this.deleteNodeToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.deleteNodeToolStripMenuItem.Text = "Delete Node";
-            this.deleteNodeToolStripMenuItem.Click += new System.EventHandler(this.deleteNodeToolStripMenuItem_Click_1);
+            this.deleteNodeToolStripMenuItem.Click += new System.EventHandler(this.DeleteNodeToolStripMenuItemClick1);
             // 
             // deleteAllToolStripMenuItem
             // 
             this.deleteAllToolStripMenuItem.Name = "deleteAllToolStripMenuItem";
             this.deleteAllToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.deleteAllToolStripMenuItem.Text = "Delete All";
-            this.deleteAllToolStripMenuItem.Click += new System.EventHandler(this.deleteAllToolStripMenuItem_Click);
+            this.deleteAllToolStripMenuItem.Click += new System.EventHandler(this.DeleteAllToolStripMenuItemClick);
             // 
             // expandHighlightedToolStripMenuItem
             // 
             this.expandHighlightedToolStripMenuItem.Name = "expandHighlightedToolStripMenuItem";
             this.expandHighlightedToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.expandHighlightedToolStripMenuItem.Text = "Expand";
-            this.expandHighlightedToolStripMenuItem.Click += new System.EventHandler(this.expandHighlightedToolStripMenuItem_Click);
+            this.expandHighlightedToolStripMenuItem.Click += new System.EventHandler(this.ExpandHighlightedToolStripMenuItemClick);
             // 
             // expandAllToolStripMenuItem
             // 
             this.expandAllToolStripMenuItem.Name = "expandAllToolStripMenuItem";
             this.expandAllToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.expandAllToolStripMenuItem.Text = "Expand All";
-            this.expandAllToolStripMenuItem.Click += new System.EventHandler(this.expandAllToolStripMenuItem_Click);
+            this.expandAllToolStripMenuItem.Click += new System.EventHandler(this.ExpandAllToolStripMenuItemClick);
             // 
             // collapseHighlightedToolStripMenuItem
             // 
             this.collapseHighlightedToolStripMenuItem.Name = "collapseHighlightedToolStripMenuItem";
             this.collapseHighlightedToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.collapseHighlightedToolStripMenuItem.Text = "Collapse";
-            this.collapseHighlightedToolStripMenuItem.Click += new System.EventHandler(this.collapseHighlightedToolStripMenuItem_Click);
+            this.collapseHighlightedToolStripMenuItem.Click += new System.EventHandler(this.CollapseHighlightedToolStripMenuItemClick);
             // 
             // collapseAllToolStripMenuItem
             // 
             this.collapseAllToolStripMenuItem.Name = "collapseAllToolStripMenuItem";
             this.collapseAllToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.collapseAllToolStripMenuItem.Text = "Collapse All";
-            this.collapseAllToolStripMenuItem.Click += new System.EventHandler(this.collapseAllToolStripMenuItem_Click);
+            this.collapseAllToolStripMenuItem.Click += new System.EventHandler(this.CollapseAllToolStripMenuItemClick);
             // 
             // toolStripSeparator1
             // 
@@ -288,7 +288,7 @@
             this.viewRAWXMLToolStripMenuItem.Name = "viewRAWXMLToolStripMenuItem";
             this.viewRAWXMLToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.viewRAWXMLToolStripMenuItem.Text = "View RAW XML";
-            this.viewRAWXMLToolStripMenuItem.Click += new System.EventHandler(this.viewRAWXMLToolStripMenuItem_Click);
+            this.viewRAWXMLToolStripMenuItem.Click += new System.EventHandler(this.ViewRawxmlToolStripMenuItemClick);
             // 
             // toolStrip1
             // 
@@ -308,7 +308,7 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(83, 22);
             this.toolStripButton1.Text = "Open XML";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.toolStripButton1.Click += new System.EventHandler(this.ToolStripButton1Click);
             // 
             // toolStripComboBox1
             // 
@@ -318,7 +318,7 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.OpenFileDialog1FileOk);
             // 
             // autocompleteMenu1
             // 
@@ -333,7 +333,7 @@
             // nodeEditTimer
             // 
             this.nodeEditTimer.Enabled = true;
-            this.nodeEditTimer.Tick += new System.EventHandler(this.nodeEditTimer_Tick);
+            this.nodeEditTimer.Tick += new System.EventHandler(this.NodeEditTimerTick);
             // 
             // textEditorContextMenu
             // 
@@ -428,9 +428,9 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "EditorForm";
             this.Text = "Editor Window";
-            this.Activated += new System.EventHandler(this.EditorForm_Activated);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditorForm_onClose);
-            this.Load += new System.EventHandler(this.Form3_Load);
+            this.Activated += new System.EventHandler(this.EditorFormActivated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditorFormOnClose);
+            this.Load += new System.EventHandler(this.Form3Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.softwareTreeToolStripMenu.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);

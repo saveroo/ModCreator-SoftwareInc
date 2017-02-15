@@ -44,7 +44,7 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(793, 585);
             this.webBrowser1.TabIndex = 1;
-            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
+            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.WebBrowser1DocumentCompleted);
             // 
             // toolStrip1
             // 
@@ -64,7 +64,7 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(87, 22);
             this.toolStripButton2.Text = "Load Again";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.toolStripButton2.Click += new System.EventHandler(this.ToolStripButton2Click);
             // 
             // toolStripButton1
             // 
@@ -73,7 +73,7 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(89, 22);
             this.toolStripButton1.Text = "Back to Top";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.toolStripButton1.Click += new System.EventHandler(this.ToolStripButton1Click);
             // 
             // WikiBrowser
             // 
@@ -84,7 +84,7 @@
             this.Controls.Add(this.webBrowser1);
             this.Name = "WikiBrowser";
             this.Text = "WikiBrowser";
-            this.Load += new System.EventHandler(this.WikiBrowser_Load);
+            this.Load += new System.EventHandler(this.WikiBrowserLoad);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

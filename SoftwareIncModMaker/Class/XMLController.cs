@@ -5,9 +5,9 @@
     using System.Windows.Forms;
     using System.Xml;
 
-    internal class XMLController
+    internal class XmlController
     {
-        public static List<SoftwareTypeClassBackup> IterateFromXML(string datasrc)
+        public static List<SoftwareTypeClassBackup> IterateFromXml(string datasrc)
         {
             var listSoftwareType = new List<SoftwareTypeClassBackup>();
 

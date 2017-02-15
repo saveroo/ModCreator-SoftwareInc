@@ -10,9 +10,9 @@
         public ParentForm()
         {
             this.InitializeComponent();
-            WorkerClass.bg = this.backgroundWorker1;
-            WorkerClass.pBar = this.progressBar1;
-            WorkerClass.fCallback = this;
+            WorkerClass.Bg = this.backgroundWorker1;
+            WorkerClass.PBar = this.progressBar1;
+            WorkerClass.FCallback = this;
         }
 
         StatusStrip IMdiParentAccess.ActionHistoryAccess()
@@ -20,129 +20,129 @@
             throw new NotImplementedException();
         }
 
-        ToolStripStatusLabel IMdiParentAccess.statusCurrent()
+        ToolStripStatusLabel IMdiParentAccess.StatusCurrent()
         {
             return this.statusCurrentAction;
         }
 
-        ToolStripStatusLabel IMdiParentAccess.statusInformation()
+        ToolStripStatusLabel IMdiParentAccess.StatusInformation()
         {
             return this.statusInformation;
         }
 
-        ToolStripStatusLabel IMdiParentAccess.statusLast()
+        ToolStripStatusLabel IMdiParentAccess.StatusLast()
         {
             return this.statusLastAction;
         }
 
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AboutToolStripMenuItemClick(object sender, EventArgs e)
         {
-            UserInterfaceController.showChildForm(this, new AboutForm());
-            ActionHistory.setStatus("Opened About Window");
+            UserInterfaceController.ShowChildForm(this, new AboutForm());
+            ActionHistory.SetStatus("Opened About Window");
         }
 
-        private void actionLogToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ActionLogToolStripMenuItemClick(object sender, EventArgs e)
         {
             this.propertyGrid1.SelectedObject = this.ActionMemoBox;
         }
 
-        private void ActionMemoBox_TextChanged(object sender, EventArgs e)
+        private void ActionMemoBoxTextChanged(object sender, EventArgs e)
         {
             this.ActionMemoBox.SelectionStart = this.ActionMemoBox.Text.Length;
             this.ActionMemoBox.ScrollToCaret();
         }
 
-        private void closeAllWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CloseAllWindowToolStripMenuItemClick(object sender, EventArgs e)
         {
             UserInterfaceController.DisposeAllButThis(this, this.MdiChildren);
         }
 
-        private void createNewModToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CreateNewModToolStripMenuItemClick(object sender, EventArgs e)
         {
-            UserInterfaceController.showChildForm(this, new CreateBoxForm());
-            ActionHistory.setStatus("Opened Create Box Window");
+            UserInterfaceController.ShowChildForm(this, new CreateBoxForm());
+            ActionHistory.SetStatus("Opened Create Box Window");
         }
 
-        private void debugInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DebugInfoToolStripMenuItemClick(object sender, EventArgs e)
         {
-            UserInterfaceController.showChildForm(this, new DiagnosticForm());
-            ActionHistory.setStatus("Opened Diagnostic Window");
+            UserInterfaceController.ShowChildForm(this, new DiagnosticForm());
+            ActionHistory.SetStatus("Opened Diagnostic Window");
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ExitToolStripMenuItemClick(object sender, EventArgs e)
         {
             if (Application.MessageLoop) Application.Exit();
             else Environment.Exit(1);
         }
 
-        private void forumBrowserToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ForumBrowserToolStripMenuItemClick(object sender, EventArgs e)
         {
-            UserInterfaceController.showChildForm(this, new MetroForm2());
-            ActionHistory.setStatus("Opened Forum Browser Window");
+            UserInterfaceController.ShowChildForm(this, new MetroForm2());
+            ActionHistory.SetStatus("Opened Forum Browser Window");
         }
 
-        private void hideActionLogToolStripMenuItem_Click(object sender, EventArgs e)
+        private void HideActionLogToolStripMenuItemClick(object sender, EventArgs e)
         {
             if (this.hideActionLogToolStripMenuItem.Checked == false) this.ActionMemoBox.Visible = false;
             else this.ActionMemoBox.Visible = true;
         }
 
-        private void mainWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MainWindowToolStripMenuItemClick(object sender, EventArgs e)
         {
             this.propertyGrid1.SelectedObject = this;
         }
 
-        private void ParentForm_Load(object sender, EventArgs e)
+        private void ParentFormLoad(object sender, EventArgs e)
         {
-            ActionHistory.labelControl.Add(this.statusCurrentAction);
-            ActionHistory.labelControl.Add(this.statusLastAction);
-            ActionHistory.labelControl.Add(this.statusInformation);
+            ActionHistory.LabelControl.Add(this.statusCurrentAction);
+            ActionHistory.LabelControl.Add(this.statusLastAction);
+            ActionHistory.LabelControl.Add(this.statusInformation);
             ActionMemo.Component = this.ActionMemoBox;
 
             // ActionMemoTextbox.Lines =new []{"a","a"};
         }
 
-        private void propertyGrid1_Click(object sender, EventArgs e)
+        private void PropertyGrid1Click(object sender, EventArgs e)
         {
         }
 
-        private void showPropertyGridToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ShowPropertyGridToolStripMenuItemClick(object sender, EventArgs e)
         {
             if (this.showPropertyGridToolStripMenuItem.Checked == false) this.propertyGrid1.Visible = false;
             else this.propertyGrid1.Visible = true;
         }
 
-        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void StatusStrip1ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
         }
 
-        private void tabularEditorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void TabularEditorToolStripMenuItemClick(object sender, EventArgs e)
         {
             // await Task.Run(()=>WorkerClass.Start());
-            UserInterfaceController.showChildForm(this, new TabularEditorForm());
-            ActionHistory.setStatus("Opened Tabular Window");
+            UserInterfaceController.ShowChildForm(this, new TabularEditorForm());
+            ActionHistory.SetStatus("Opened Tabular Window");
         }
 
-        private void treeviewToolStripMenuItem_Click(object sender, EventArgs e)
+        private void TreeviewToolStripMenuItemClick(object sender, EventArgs e)
         {
         }
 
-        private void wikiToolStripMenuItem_Click(object sender, EventArgs e)
+        private void WikiToolStripMenuItemClick(object sender, EventArgs e)
         {
-            UserInterfaceController.showChildForm(this, new WikiBrowser());
-            ActionHistory.setStatus("Opened Browser Window");
+            UserInterfaceController.ShowChildForm(this, new WikiBrowser());
+            ActionHistory.SetStatus("Opened Browser Window");
         }
 
-        private void xMLDiagramToolStripMenuItem_Click(object sender, EventArgs e)
+        private void XMlDiagramToolStripMenuItemClick(object sender, EventArgs e)
         {
             // UserInterfaceController.showChildForm(this, new Form1());
             // ActionHistory.setStatus("Opened XMLDiagram Window");
         }
 
-        private void xMLEditorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void XMlEditorToolStripMenuItemClick(object sender, EventArgs e)
         {
-            UserInterfaceController.showChildForm(this, new XMLEditorForm(this));
-            ActionHistory.setStatus("Opened XML Editor Window");
+            UserInterfaceController.ShowChildForm(this, new XmlEditorForm(this));
+            ActionHistory.SetStatus("Opened XML Editor Window");
         }
     }
 }

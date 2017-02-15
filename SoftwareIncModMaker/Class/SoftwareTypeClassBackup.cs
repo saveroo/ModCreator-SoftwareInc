@@ -5,9 +5,9 @@
 
     public class SoftwareTypeClassBackup
     {
-        public static SoftwareTypeClassBackup staticSoftwareType = new SoftwareTypeClassBackup();
+        public static SoftwareTypeClassBackup StaticSoftwareType = new SoftwareTypeClassBackup();
 
-        private static int _instances;
+        private static int instances;
 
         private bool attributeForced;
 
@@ -37,9 +37,9 @@
 
         private bool rootOneClient;
 
-        private string rootOSLimit = string.Empty;
+        private string rootOsLimit = string.Empty;
 
-        private bool rootOSSpecific;
+        private bool rootOsSpecific;
 
         private decimal rootPopularity;
 
@@ -96,7 +96,7 @@
         // private BindingList<SoftwareTypeClassBackup> FeatureList;
         public SoftwareTypeClassBackup()
         {
-            Interlocked.Increment(ref _instances);
+            Interlocked.Increment(ref instances);
         }
 
         public SoftwareTypeClassBackup(
@@ -132,10 +132,10 @@
             decimal rootPopularity,
             string rootRetention,
             decimal rootIterative,
-            bool rootOSSpecific,
+            bool rootOsSpecific,
             bool rootOneClient,
             bool rootInHouse,
-            string rootOSLimit)
+            string rootOsLimit)
         {
             this.ParentSoftwareType = parentSoftwareType;
             this.RootName = rootName;
@@ -145,10 +145,10 @@
             this.RootPopularity = rootPopularity;
             this.RootRetention = rootRetention;
             this.RootIterative = rootIterative;
-            this.RootOSSpecific = rootOSSpecific;
+            this.RootOsSpecific = rootOsSpecific;
             this.RootOneClient = rootOneClient;
             this.RootInHouse = rootInHouse;
-            this.RootOSLimit = rootOSLimit;
+            this.RootOsLimit = rootOsLimit;
         }
 
         public SoftwareTypeClassBackup(
@@ -200,10 +200,10 @@
             decimal rootPopularity,
             string rootRetention,
             decimal rootIterative,
-            bool rootOSSpecific,
+            bool rootOsSpecific,
             bool rootOneClient,
             bool rootInHouse,
-            string rootOSLimit,
+            string rootOsLimit,
             string attributeFrom,
             bool attributeForced,
             bool attributeVital,
@@ -241,10 +241,10 @@
             this.RootPopularity = rootPopularity;
             this.RootRetention = rootRetention;
             this.RootIterative = rootIterative;
-            this.RootOSSpecific = rootOSSpecific;
+            this.RootOsSpecific = rootOsSpecific;
             this.RootOneClient = rootOneClient;
             this.RootInHouse = rootInHouse;
-            this.RootOSLimit = rootOSLimit;
+            this.RootOsLimit = rootOsLimit;
             this.AttributeFrom = attributeFrom;
             this.AttributeForced = attributeForced;
             this.AttributeVital = attributeVital;
@@ -282,7 +282,7 @@
             bool atRe,
             string name,
             string desc,
-            string ArtCategory,
+            string artCategory,
             decimal unlock,
             decimal devtime,
             decimal innovation,
@@ -303,7 +303,7 @@
             this.attributeResearch = atRe;
             this.subFeatureName = name;
             this.subFeatureDescription = desc;
-            this.subFeatureArtCategory = ArtCategory;
+            this.subFeatureArtCategory = artCategory;
             this.subFeatureUnlock = unlock;
             this.subFeatureDevtime = devtime;
             this.subFeatureInnovation = innovation;
@@ -324,7 +324,7 @@
 
         ~SoftwareTypeClassBackup()
         {
-            Interlocked.Decrement(ref _instances);
+            Interlocked.Decrement(ref instances);
         }
 
         public bool AttributeForced { get => attributeForced; set => attributeForced = value; }
@@ -355,9 +355,9 @@
 
         public bool RootOneClient { get => rootOneClient; set => rootOneClient = value; }
 
-        public string RootOSLimit { get => rootOSLimit; set => rootOSLimit = value; }
+        public string RootOsLimit { get => rootOSLimit; set => rootOSLimit = value; }
 
-        public bool RootOSSpecific { get => rootOSSpecific; set => rootOSSpecific = value; }
+        public bool RootOsSpecific { get => rootOSSpecific; set => rootOSSpecific = value; }
 
         public decimal RootPopularity { get => rootPopularity; set => rootPopularity = value; }
 
@@ -414,9 +414,9 @@
 
         public decimal SubFeatureUsability { get => subFeatureUsability; set => subFeatureUsability = value; }
 
-        public static int getActiveInstance()
+        public static int GetActiveInstance()
         {
-            return _instances;
+            return instances;
         }
 
         public void AddFeature(
@@ -470,10 +470,10 @@
             string rootRetention,
             decimal rootIterative,
             string rootDescription,
-            bool rootOSSpecific,
+            bool rootOsSpecific,
             bool rootOneClient,
             bool rootInHouse,
-            string rootOSLimit)
+            string rootOsLimit)
         {
             this.rootName = rootName;
             this.rootDelete = rootDelete;
@@ -483,39 +483,39 @@
             this.rootRetention = rootRetention;
             this.rootIterative = rootIterative;
             this.rootDescription = rootDescription;
-            this.rootOSSpecific = rootOSSpecific;
+            this.rootOsSpecific = rootOsSpecific;
             this.rootOneClient = rootOneClient;
             this.rootInHouse = rootInHouse;
-            this.rootOSLimit = rootOSLimit;
+            this.rootOsLimit = rootOsLimit;
         }
     }
 
     public class BaseSoftwareType
     {
-        private static int _instances;
+        private static int instances;
 
         public BaseSoftwareType()
         {
-            Interlocked.Increment(ref _instances);
+            Interlocked.Increment(ref instances);
         }
 
         ~BaseSoftwareType()
         {
-            Interlocked.Decrement(ref _instances);
+            Interlocked.Decrement(ref instances);
         }
 
-        public static int getActiveInstance()
+        public static int GetActiveInstance()
         {
-            return _instances;
+            return instances;
         }
     }
 
     public class SoftwareType : BaseSoftwareType
     {
         // ,IEnumerable<SoftwareType>
-        public static SoftwareTypeClassBackup staticSoftwareType = new SoftwareTypeClassBackup();
+        public static SoftwareTypeClassBackup StaticSoftwareType = new SoftwareTypeClassBackup();
 
-        public BindingList<Category> childrenCategories;
+        public BindingList<Category> ChildrenCategories;
 
         private BindingList<Feature> newCollection = new BindingList<Feature>();
 
@@ -539,9 +539,9 @@
 
         private bool rootOneClient = false;
 
-        private string rootOSLimit = string.Empty;
+        private string rootOsLimit = string.Empty;
 
-        private bool rootOSSpecific = false;
+        private bool rootOsSpecific = false;
 
         private decimal rootPopularity = 0;
 
@@ -576,10 +576,10 @@
             decimal rootRetention,
             decimal rootIterative,
             string rootDescription,
-            bool rootOSSpecific,
+            bool rootOsSpecific,
             bool rootOneClient,
             bool rootInHouse,
-            string rootOSLimit)
+            string rootOsLimit)
         {
             this.RootName = rootName;
             this.RootDelete = this.rootDelete;
@@ -589,10 +589,10 @@
             this.RootRetention = rootRetention;
             this.RootIterative = rootIterative;
             this.RootDescription = rootDescription;
-            this.RootOSSpecific = rootOSSpecific;
+            this.RootOsSpecific = rootOsSpecific;
             this.RootOneClient = rootOneClient;
             this.RootInHouse = rootInHouse;
-            this.RootOSLimit = rootOSLimit;
+            this.RootOsLimit = rootOsLimit;
         }
 
         public BindingList<BindingList<Feature>> ChildrenFeatures { get => childrenFeatures; set =>
@@ -612,9 +612,9 @@
 
         public bool RootOneClient { get => rootOneClient; set => rootOneClient = value; }
 
-        public string RootOSLimit { get => rootOSLimit; set => rootOSLimit = value; }
+        public string RootOsLimit { get => rootOSLimit; set => rootOSLimit = value; }
 
-        public bool RootOSSpecific { get => rootOSSpecific; set => rootOSSpecific = value; }
+        public bool RootOsSpecific { get => rootOSSpecific; set => rootOSSpecific = value; }
 
         public decimal RootPopularity { get => rootPopularity; set => rootPopularity = value; }
 
@@ -624,7 +624,7 @@
 
         public decimal RootUnlock { get => rootUnlock; set => rootUnlock = value; }
 
-        public void addFeature(Feature listFeature)
+        public void AddFeature(Feature listFeature)
         {
             this.newCollection.Add(listFeature);
             this.newCollectionOfCollection.Add(this.newCollection);
@@ -757,7 +757,7 @@
 
         public decimal SubFeatureUsability { get => subFeatureUsability; set => subFeatureUsability = value; }
 
-        public Feature getInstance()
+        public Feature GetInstance()
         {
             return this;
         }

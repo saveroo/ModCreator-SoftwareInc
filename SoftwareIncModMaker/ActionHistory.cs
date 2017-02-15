@@ -8,7 +8,7 @@
     {
         public static List<string> HistoryOfAction = new List<string>();
 
-        public static List<ToolStripStatusLabel> labelControl = new List<ToolStripStatusLabel>();
+        public static List<ToolStripStatusLabel> LabelControl = new List<ToolStripStatusLabel>();
 
         public static List<string> LastAction = new List<string>();
 
@@ -25,52 +25,52 @@
 
         public static string Information { get; set; }
 
-        public static void endAction()
+        public static void EndAction()
         {
-            labelControl.ElementAt(0).Text = "Done!";
+            LabelControl.ElementAt(0).Text = "Done!";
             ActionIsEnded = true;
-            labelControl.ElementAt(1).Text = LastAction.Last();
+            LabelControl.ElementAt(1).Text = LastAction.Last();
         }
 
-        public static void setStatus(string status)
+        public static void SetStatus(string status)
         {
             HistoryOfAction.Add(status);
             LastAction.Add(status);
             CurrentAction = status;
-            labelControl.ElementAt(0).Text = status;
-            if (HistoryOfAction.Count > 1) labelControl.ElementAt(1).Text = HistoryOfAction.ElementAt(HistoryOfAction.Count - 2);
+            LabelControl.ElementAt(0).Text = status;
+            if (HistoryOfAction.Count > 1) LabelControl.ElementAt(1).Text = HistoryOfAction.ElementAt(HistoryOfAction.Count - 2);
         }
 
-        public static void setStatus(string status, string info)
+        public static void SetStatus(string status, string info)
         {
             HistoryOfAction.Add(status);
             CurrentAction = status;
 
-            labelControl.ElementAt(2).Text = info;
-            labelControl.ElementAt(0).Text = status;
-            if (HistoryOfAction.Count > 1) labelControl.ElementAt(1).Text = HistoryOfAction.ElementAt(HistoryOfAction.Count - 2);
+            LabelControl.ElementAt(2).Text = info;
+            LabelControl.ElementAt(0).Text = status;
+            if (HistoryOfAction.Count > 1) LabelControl.ElementAt(1).Text = HistoryOfAction.ElementAt(HistoryOfAction.Count - 2);
         }
 
-        public static void setStatus(bool val, string status)
+        public static void SetStatus(bool val, string status)
         {
             LastAction.Add(status);
             CurrentAction = status;
             CurrentActionType = val;
         }
 
-        public static void startAction()
+        public static void StartAction()
         {
             ActionIsEnded = false;
         }
 
-        public void setStatus(StatusStrip form, string status)
+        public void SetStatus(StatusStrip form, string status)
         {
             LastAction.Add(status);
             CurrentAction = status;
             form.Text = status;
         }
 
-        public void setStatus(StatusStrip form, bool val, string status)
+        public void SetStatus(StatusStrip form, bool val, string status)
         {
             LastAction.Add(status);
             CurrentAction = status;

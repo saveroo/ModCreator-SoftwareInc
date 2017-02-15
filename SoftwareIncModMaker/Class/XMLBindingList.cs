@@ -13,34 +13,34 @@ using System.Collections;
 /// <summary>
 ///     Summary description for XMLBinding
 /// </summary>
-public class XMLBindinglist
+public class XmlBindinglist
 {
-    public XMLBindinglist()
+    public XmlBindinglist()
     {
     }
 
-    public XMLBindinglist(string name, string id, string Designation)
+    public XmlBindinglist(string name, string id, string designation)
     {
         this.EmployeeName = name;
-        this.EmployeeID = id;
-        this.Designation = Designation;
+        this.EmployeeId = id;
+        this.Designation = designation;
     }
 
-    public XMLBindinglist(string name, string id, string Designation, string managerid)
+    public XmlBindinglist(string name, string id, string designation, string managerid)
     {
         this.EmployeeName = name;
-        this.EmployeeID = id;
-        this.Designation = Designation;
-        this.ManagerID = managerid;
+        this.EmployeeId = id;
+        this.Designation = designation;
+        this.ManagerId = managerid;
     }
 
     public string Designation { get; set; } = string.Empty;
 
-    public string EmployeeID { get; set; } = string.Empty;
+    public string EmployeeId { get; set; } = string.Empty;
 
     public string EmployeeName { get; set; } = string.Empty;
 
-    public string ManagerID { get; set; } = string.Empty;
+    public string ManagerId { get; set; } = string.Empty;
 
     public ArrayList SubEmployees { get; } = new ArrayList();
 }

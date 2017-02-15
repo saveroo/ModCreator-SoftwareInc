@@ -15,20 +15,20 @@
                 }
         }
 
-        public static void rightClickMenu(ContextMenuStrip formName, MouseEventArgs e)
+        public static void RightClickMenu(ContextMenuStrip formName, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right) formName.Show(Control.MousePosition);
         }
 
-        public static async void showChildForm(Form Here, Form Child)
+        public static async void ShowChildForm(Form here, Form child)
         {
             await Task.Run(() => WorkerClass.Start()).ConfigureAwait(true);
-            var childForm = Child;
-            childForm.MdiParent = Here;
+            var childForm = child;
+            childForm.MdiParent = here;
             childForm.Show();
         }
 
-        private static void main()
+        private static void Main()
         {
         }
     }

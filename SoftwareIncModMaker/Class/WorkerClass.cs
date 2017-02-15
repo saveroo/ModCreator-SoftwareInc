@@ -12,46 +12,46 @@
 
         private delegate void SetValueCallback(Form f, Control ctrl, int value);
 
-        public static BackgroundWorker bg { get; set; }
+        public static BackgroundWorker Bg { get; set; }
 
-        public static bool completed { get; set; }
+        public static bool Completed { get; set; }
 
-        public static Form fCallback { get; set; }
+        public static Form FCallback { get; set; }
 
-        public static ProgressBar pBar { get; set; }
+        public static ProgressBar PBar { get; set; }
 
-        public static void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        public static void BackgroundWorker1DoWork(object sender, DoWorkEventArgs e)
         {
             for (var i = 0; i <= 100; i++)
             {
-                completed = false;
-                bg.ReportProgress(i);
+                Completed = false;
+                Bg.ReportProgress(i);
             }
 
-            completed = true;
+            Completed = true;
         }
 
-        public static void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        public static void BackgroundWorker1ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            DelegatedProgressBarCallback(fCallback, pBar, e.ProgressPercentage);
+            DelegatedProgressBarCallback(FCallback, PBar, e.ProgressPercentage);
         }
 
-        public static void bg_completed(object sender, RunWorkerCompletedEventArgs e)
+        public static void BgCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             try
             {
-                bg.Dispose();
+                Bg.Dispose();
                 if (e.Error != null) MessageBox.Show(e.Error.ToString());
             }
             finally
             {
-                bg = new BackgroundWorker();
+                Bg = new BackgroundWorker();
             }
         }
 
         public static void DelegatedProgressBarCallback(Form f, ProgressBar ctrl, int value)
         {
-            if (pBar.InvokeRequired)
+            if (PBar.InvokeRequired)
             {
                 ProgressBarCallBack pb = DelegatedProgressBarCallback;
                 f.Invoke(pb, f, ctrl, value);
@@ -62,18 +62,18 @@
             }
         }
 
-        public static void Form1_Shown(object sender, EventArgs e)
+        public static void Form1Shown(object sender, EventArgs e)
         {
-            bg.RunWorkerAsync();
+            Bg.RunWorkerAsync();
         }
 
         public static void Start()
         {
-            bg.WorkerReportsProgress = true;
-            bg.DoWork += backgroundWorker1_DoWork;
-            bg.ProgressChanged += backgroundWorker1_ProgressChanged;
-            bg.RunWorkerAsync();
-            bg.RunWorkerCompleted += bg_completed;
+            Bg.WorkerReportsProgress = true;
+            Bg.DoWork += BackgroundWorker1DoWork;
+            Bg.ProgressChanged += BackgroundWorker1ProgressChanged;
+            Bg.RunWorkerAsync();
+            Bg.RunWorkerCompleted += BgCompleted;
         }
     }
 }

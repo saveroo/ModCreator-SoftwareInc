@@ -44,7 +44,7 @@ namespace SoftwareIncModMaker
             bool atRe,
             string name,
             string desc,
-            string ArtCategory,
+            string artCategory,
             decimal unlock,
             decimal devtime,
             decimal innovation,
@@ -100,7 +100,7 @@ namespace SoftwareIncModMaker
             }
         }
 
-        private void addToDependencyComboList_Click(object sender, EventArgs e)
+        private void AddToDependencyComboListClick(object sender, EventArgs e)
         {
             if (this.listBox3.SelectedItem != null)
             {
@@ -127,11 +127,11 @@ namespace SoftwareIncModMaker
 
             using (var instance = new SoftwareTypeModel2Container())
             {
-                this.refreshListBox(this.listBox3, instance.DependenciesLists.ToList(), "DependencySoftware");
+                this.RefreshListBox(this.listBox3, instance.DependenciesLists.ToList(), "DependencySoftware");
             }
         }
 
-        private void addToDependencyList_TextChanged(object sender, EventArgs e)
+        private void AddToDependencyListTextChanged(object sender, EventArgs e)
         {
         }
 
@@ -144,29 +144,29 @@ namespace SoftwareIncModMaker
             // box.Items.Add(item);
         }
 
-        private void allGenerate_Click(object sender, EventArgs e)
+        private void AllGenerateClick(object sender, EventArgs e)
         {
             var groupList = new List<List<SoftwareTypeClassBackup>>();
         }
 
-        private void autoLabel1_Click(object sender, EventArgs e)
+        private void AutoLabel1Click(object sender, EventArgs e)
         {
         }
 
-        private void autoLabel7_Click(object sender, EventArgs e)
+        private void AutoLabel7Click(object sender, EventArgs e)
         {
         }
 
-        private void btnSubmitToList_Click(object sender, EventArgs e)
+        private void BtnSubmitToListClick(object sender, EventArgs e)
         {
             // Do nothing
         }
 
-        private void checkBoxAdv1_CheckStateChanged(object sender, EventArgs e)
+        private void CheckBoxAdv1CheckStateChanged(object sender, EventArgs e)
         {
         }
 
-        private void checkBoxAdv2_CheckStateChanged(object sender, EventArgs e)
+        private void CheckBoxAdv2CheckStateChanged(object sender, EventArgs e)
         {
         }
 
@@ -197,7 +197,7 @@ namespace SoftwareIncModMaker
             listView.Items.Add(item);
         }
 
-        private void ctButtonSubmit_Click(object sender, EventArgs e)
+        private void CtButtonSubmitClick(object sender, EventArgs e)
         {
             var categoryData = new CategoryModel
                                    {
@@ -217,12 +217,12 @@ namespace SoftwareIncModMaker
                 var instance = new SoftwareTypeModel2Container();
                 instance.SoftwareTypeModels.Find(castedListbox.Id).CategoryModels.Add(categoryData);
                 instance.SaveChanges();
-                ActionMemo.addLines(
+                ActionMemo.AddLines(
                     "Category: " + categoryData.STCategoryName + " Added to " + categoryData.SoftwareTypeModel.RootName);
             }
         }
 
-        private SoftwareTypeClassBackup ctClass()
+        private SoftwareTypeClassBackup CtClass()
         {
             var ct = new SoftwareTypeClassBackup();
 
@@ -239,7 +239,7 @@ namespace SoftwareIncModMaker
             return ct;
         }
 
-        private void DeleteSTList_Click(object sender, EventArgs e)
+        private void DeleteStListClick(object sender, EventArgs e)
         {
             this.selectedSoftware = this.listBox1.SelectedItem as SoftwareTypeModel;
             using (var instance = new SoftwareTypeModel2Container())
@@ -263,8 +263,8 @@ namespace SoftwareIncModMaker
                                 foreach (var xx in x)
                                 {
                                     var c = xx;
-                                    var featureDependenciesID = instance.FeatureDependencies.Find(c.Id);
-                                    ActionMemo.addLines(
+                                    var featureDependenciesId = instance.FeatureDependencies.Find(c.Id);
+                                    ActionMemo.AddLines(
                                         "Dependency: [" + c.Id + ". " + c.DependenciesList.DependencySoftware
                                         + "] is Removed",
                                         true,
@@ -277,7 +277,7 @@ namespace SoftwareIncModMaker
                                 var fatId = instance.FeatureAttributes.Find(child.FeatureAttributes.Id);
                                 instance.FeatureModels.Remove(child);
 
-                                ActionMemo.addLines(
+                                ActionMemo.AddLines(
                                     "Feature: [" + child.Id + ". " + child.SubFeatureName + "] is Removed",
                                     true,
                                     Color.Red);
@@ -307,7 +307,7 @@ namespace SoftwareIncModMaker
                             foreach (var v in categoryModel.CategoryModels.ToList())
                                 if (v != null)
                                 {
-                                    ActionMemo.addLines(
+                                    ActionMemo.AddLines(
                                         "Category: [" + v.Id + ". " + v.STCategoryName + "] is Removed",
                                         true,
                                         Color.Red);
@@ -320,10 +320,10 @@ namespace SoftwareIncModMaker
                         // SoftwareType Delete
                         instance.SoftwareTypeModels.Remove(st);
                         instance.Entry(st).State = EntityState.Deleted;
-                        ActionMemo.addLines("Software: [" + st.RootName + "] Is Removed", true, Color.DarkRed);
+                        ActionMemo.AddLines("Software: [" + st.RootName + "] Is Removed", true, Color.DarkRed);
                         instance.SaveChanges();
 
-                        this.refreshListBox(this.listBox1, this.ModelContext().SoftwareTypeModels.ToList(), "RootName");
+                        this.RefreshListBox(this.listBox1, this.ModelContext().SoftwareTypeModels.ToList(), "RootName");
                         this.listBox2.DataSource = null;
                         this.listBox2.Items.Clear();
                     }
@@ -337,15 +337,15 @@ namespace SoftwareIncModMaker
             }
         }
 
-        private void editControl1_Load(object sender, EventArgs e)
+        private void EditControl1Load(object sender, EventArgs e)
         {
         }
 
-        private void EditSTList_Click(object sender, EventArgs e)
+        private void EditStListClick(object sender, EventArgs e)
         {
         }
 
-        private SoftwareTypeClassBackup ftClass()
+        private SoftwareTypeClassBackup FtClass()
         {
             var ft = new SoftwareTypeClassBackup();
 
@@ -368,11 +368,11 @@ namespace SoftwareIncModMaker
             return ft;
         }
 
-        private void ftDependencyComboBox_DropDown(object sender, EventArgs e)
+        private void FtDependencyComboBoxDropDown(object sender, EventArgs e)
         {
         }
 
-        private void ftDependencySubmit_Click(object sender, EventArgs e)
+        private void FtDependencySubmitClick(object sender, EventArgs e)
         {
             if (this.listBox2.SelectedItem != null && this.ftDependencyComboBox.SelectedItem != null)
             {
@@ -393,12 +393,12 @@ namespace SoftwareIncModMaker
                             instance.FeatureDependencies.Attach(newDependency);
                             instance.FeatureDependencies.Add(newDependency);
                             instance.SaveChanges();
-                            ActionMemo.addLines(
+                            ActionMemo.AddLines(
                                 "Dependency: [" + castedDependencies.DependencySoftware + "] " + "added to Feature: ["
                                 + castedFeature.SubFeatureName + "]",
                                 true,
                                 Color.Orange);
-                            this.refreshListBox(
+                            this.RefreshListBox(
                                 this.listBox3,
                                 instance.FeatureDependencies.ToList(),
                                 "DependencyFeature");
@@ -407,7 +407,7 @@ namespace SoftwareIncModMaker
             }
         }
 
-        private void ftSubmitButton_Click(object sender, EventArgs e)
+        private void FtSubmitButtonClick(object sender, EventArgs e)
         {
             var newFeature = new Feature(
                 this.listBox1.SelectedItem as SoftwareType,
@@ -480,7 +480,7 @@ namespace SoftwareIncModMaker
                 {
                     b.SoftwareTypeModels.Find((this.listBox1.SelectedItem as SoftwareTypeModel).Id)
                         .FeatureModels.Add(newFt);
-                    ActionMemo.addLines(
+                    ActionMemo.AddLines(
                         "Feature: " + newFt.SubFeatureName + " Is Added To Software: "
                         + (this.listBox1.SelectedItem as SoftwareTypeModel).RootName,
                         true,
@@ -490,7 +490,7 @@ namespace SoftwareIncModMaker
             else ActionHistory.Information = "Select the Software from the list before adding new feature";
         }
 
-        private void generateToolStripMenuItem_Click(object sender, EventArgs e)
+        private void GenerateToolStripMenuItemClick(object sender, EventArgs e)
         {
             // TODO: serialize approach instead ?
             var instance = new SoftwareTypeModel2Container();
@@ -554,43 +554,43 @@ namespace SoftwareIncModMaker
             File.WriteAllLines("SoftwareMod/" + castedListbox.RootName + ".xml", xList);
         }
 
-        private void gridDataBoundGrid1_CellClick(object sender, GridCellClickEventArgs e)
+        private void GridDataBoundGrid1CellClick(object sender, GridCellClickEventArgs e)
         {
         }
 
-        private int instanceOfFeature()
+        private int InstanceOfFeature()
         {
             var a = this.listBox1.SelectedItem as SoftwareType;
             if (a.ChildrenFeatures != null) return a.ChildrenFeatures.Count;
             return 0;
         }
 
-        private Feature instanceOfFeature(int index, ListView st)
+        private Feature InstanceOfFeature(int index, ListView st)
         {
             if (st.SelectedItems.Count > 0) return (Feature)st.SelectedItems[index].Tag;
             return null;
         }
 
-        private List<SoftwareTypeClassBackup> iterateCategory()
+        private List<SoftwareTypeClassBackup> IterateCategory()
         {
             var categoryList = new List<SoftwareTypeClassBackup>();
-            categoryList.Add(this.ctClass());
+            categoryList.Add(this.CtClass());
             return categoryList;
         }
 
-        private List<SoftwareTypeClassBackup> iterateFeature()
+        private List<SoftwareTypeClassBackup> IterateFeature()
         {
             var featureList = new List<SoftwareTypeClassBackup>();
-            featureList.Add(this.ftClass());
+            featureList.Add(this.FtClass());
             return featureList;
         }
 
-        private void listBox1_BindingContextChanged(object sender, EventArgs e)
+        private void ListBox1BindingContextChanged(object sender, EventArgs e)
         {
             // ActionMemo.addLines("BindingContext is changed");
         }
 
-        private void listBox1_MouseDown(object sender, MouseEventArgs e)
+        private void ListBox1MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Right) return;
             var index = this.listBox1.IndexFromPoint(e.Location);
@@ -605,22 +605,22 @@ namespace SoftwareIncModMaker
             }
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListBox1SelectedIndexChanged(object sender, EventArgs e)
         {
             // Define Dependency
             var instance = new SoftwareTypeModel2Container();
             var castedListbox = this.listBox1.SelectedItem as SoftwareTypeModel;
 
             // Add to memo
-            ActionMemo.addLines("Software: [" + castedListbox.RootName + "] Is Selected");
-            ActionMemo.addLines(
+            ActionMemo.AddLines("Software: [" + castedListbox.RootName + "] Is Selected");
+            ActionMemo.AddLines(
                 "Software: [" + castedListbox.RootName + "] Features:",
                 instance.SoftwareTypeModels.Find(castedListbox.Id).FeatureModels.Any());
             instance.SoftwareTypeModels.Find(castedListbox.Id)
                 .FeatureModels.ToList()
                 .ForEach(
                     s =>
-                        ActionMemo.addLines(
+                        ActionMemo.AddLines(
                             "Feature: " + s.SubFeatureName,
                             instance.SoftwareTypeModels.Find(castedListbox.Id).FeatureModels.Any()));
 
@@ -631,7 +631,7 @@ namespace SoftwareIncModMaker
             // Populate belonged feature model to listview
             this.listBox2.DataSource = null;
             this.listBox2.Items.Clear();
-            this.refreshListBox(
+            this.RefreshListBox(
                 this.listBox2,
                 instance.SoftwareTypeModels.Find(castedListbox.Id).FeatureModels.ToList(),
                 "SubFeatureName");
@@ -649,94 +649,94 @@ namespace SoftwareIncModMaker
             var aa = this.listBox1.SelectedItem as SoftwareType;
         }
 
-        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListBox2SelectedIndexChanged(object sender, EventArgs e)
         {
         }
 
-        private void listBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void ListBox2SelectedIndexChanged1(object sender, EventArgs e)
         {
             var a = this.listBox2.SelectedItem as FeatureModel;
             if (a != null)
             {
                 this.listBox3.DataSource = null;
                 if (this.listBox2.SelectedItem != null)
-                    this.refreshListBox(
+                    this.RefreshListBox(
                         this.listBox3,
                         (this.listBox2.SelectedItem as FeatureModel).FeatureDependencies.ToList(),
                         "DependencyFeature");
-                ActionMemo.addLines(
+                ActionMemo.AddLines(
                     "Feature: [" + a.SubFeatureName + "] from " + "Software: [" + a.SoftwareTypeModel.RootName
                     + "] are Selected");
                 if (a.FeatureAttributes.AttributeFrom != string.Empty)
-                    ActionMemo.addLines(
+                    ActionMemo.AddLines(
                         "Feature: [" + a.SubFeatureName + "] " + "Are Derived From Feature ["
                         + a.FeatureAttributes.AttributeFrom + "]",
                         true,
                         Color.DarkBlue);
-                ActionMemo.addLines(
+                ActionMemo.AddLines(
                     "Feature: [" + a.SubFeatureName + "] " + "is Forced Feature",
                     a.FeatureAttributes.AttributeForced,
                     Color.DarkBlue);
-                ActionMemo.addLines(
+                ActionMemo.AddLines(
                     "Feature: [" + a.SubFeatureName + "] " + "is Researchable Feature",
                     a.FeatureAttributes.AttributeResearch,
                     Color.DarkBlue);
-                ActionMemo.addLines(
+                ActionMemo.AddLines(
                     "Feature: [" + a.SubFeatureName + "] " + "is Vital Feature",
                     a.FeatureAttributes.AttributeVital,
                     Color.DarkBlue);
-                ActionMemo.addLines(
+                ActionMemo.AddLines(
                     "Feature: [" + a.SubFeatureName + "] " + "Have " + a.FeatureDependencies.Count + " Dependency",
                     a.FeatureAttributes.AttributeVital,
                     Color.DarkBlue);
             }
         }
 
-        private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        private void ListView1ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             var a = e.Item.Tag as FeatureModel;
             if (a != null)
             {
-                ActionMemo.addLines(
+                ActionMemo.AddLines(
                     "Feature: [" + a.SubFeatureName + "] from " + "Software: [" + a.SoftwareTypeModel.RootName
                     + "] are Selected");
                 if (a.FeatureAttributes.AttributeFrom != string.Empty)
-                    ActionMemo.addLines(
+                    ActionMemo.AddLines(
                         "Feature: [" + a.SubFeatureName + "] " + "Are Derived From Feature ["
                         + a.FeatureAttributes.AttributeFrom + "]",
                         true,
                         Color.DarkBlue);
-                ActionMemo.addLines(
+                ActionMemo.AddLines(
                     "Feature: [" + a.SubFeatureName + "] " + "is Forced Feature",
                     a.FeatureAttributes.AttributeForced,
                     Color.DarkBlue);
-                ActionMemo.addLines(
+                ActionMemo.AddLines(
                     "Feature: [" + a.SubFeatureName + "] " + "is Researchable Feature",
                     a.FeatureAttributes.AttributeResearch,
                     Color.DarkBlue);
-                ActionMemo.addLines(
+                ActionMemo.AddLines(
                     "Feature: [" + a.SubFeatureName + "] " + "is Vital Feature",
                     a.FeatureAttributes.AttributeVital,
                     Color.DarkBlue);
             }
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListView1SelectedIndexChanged(object sender, EventArgs e)
         {
         }
 
-        private void menuStrip1_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
+        private void MenuStrip1ItemClicked1(object sender, ToolStripItemClickedEventArgs e)
         {
         }
 
-        private void refreshListBox<T>(ListBox lb, List<T> ctx, string displayMember)
+        private void RefreshListBox<T>(ListBox lb, List<T> ctx, string displayMember)
         {
             lb.DataSource = ctx;
             lb.DisplayMember = string.Empty;
             lb.DisplayMember = displayMember;
         }
 
-        private void stSubmitButton_Click(object sender, EventArgs e)
+        private void StSubmitButtonClick(object sender, EventArgs e)
         {
             SoftwareTypeModel softwareTypeData;
             if (this.RootOverride.BoolValue)
@@ -781,21 +781,21 @@ namespace SoftwareIncModMaker
             var instance = this.ModelContext();
             instance.SoftwareTypeModels.Add(softwareTypeData);
             instance.SaveChanges();
-            ActionMemo.addLines("Software: [" + softwareTypeData.RootName + "] Is Added");
+            ActionMemo.AddLines("Software: [" + softwareTypeData.RootName + "] Is Added");
 
             this.listBox1.DataSource = a.SoftwareTypeModels.ToList();
             this.listBox1.DisplayMember = "RootName";
         }
 
-        private void tabPage4_Click(object sender, EventArgs e)
+        private void TabPage4Click(object sender, EventArgs e)
         {
         }
 
-        private void TabularEditorForm_DoubleClick(object sender, EventArgs e)
+        private void TabularEditorFormDoubleClick(object sender, EventArgs e)
         {
         }
 
-        private void TabularEditorForm_Load(object sender, EventArgs e)
+        private void TabularEditorFormLoad(object sender, EventArgs e)
         {
             using (var instance = new SoftwareTypeModel2Container())
             {
@@ -813,27 +813,27 @@ namespace SoftwareIncModMaker
             this.timer1.Start();
         }
 
-        private void tabularFormContextMenu_Click(object sender, EventArgs e)
+        private void TabularFormContextMenuClick(object sender, EventArgs e)
         {
         }
 
-        private void tabularFormContextMenu_MouseDown(object sender, MouseEventArgs e)
+        private void TabularFormContextMenuMouseDown(object sender, MouseEventArgs e)
         {
         }
 
-        private void tabularFormContextMenu_Opening(object sender, CancelEventArgs e)
+        private void TabularFormContextMenuOpening(object sender, CancelEventArgs e)
         {
         }
 
-        private void testToolStripMenuItem_Click(object sender, EventArgs e)
+        private void TestToolStripMenuItemClick(object sender, EventArgs e)
         {
         }
 
-        private void textBoxExt1_TextChanged(object sender, EventArgs e)
+        private void TextBoxExt1TextChanged(object sender, EventArgs e)
         {
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1Tick(object sender, EventArgs e)
         {
             if (this.listBox1.SelectedIndex == -1)
             {
@@ -849,7 +849,7 @@ namespace SoftwareIncModMaker
             }
         }
 
-        private void treeNavigator1_MouseEnter(object sender, EventArgs e)
+        private void TreeNavigator1MouseEnter(object sender, EventArgs e)
         {
             var instance = new SoftwareTypeModel2Container();
 

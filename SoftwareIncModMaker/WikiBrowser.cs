@@ -16,12 +16,12 @@
             newBrowser.WikiBrowser(this.webBrowser1);
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void ToolStripButton1Click(object sender, EventArgs e)
         {
             this.webBrowser1.Document.Window.ScrollTo(0, 0);
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
+        private void ToolStripButton2Click(object sender, EventArgs e)
         {
             var assembly = Assembly.GetExecutingAssembly();
             var resourceName = "SoftwareIncModMaker.web.html";
@@ -34,20 +34,20 @@
             }
         }
 
-        private void toolStripTextBox1_KeyDown(object sender, KeyEventArgs e)
+        private void ToolStripTextBox1KeyDown(object sender, KeyEventArgs e)
         {
             this.webBrowser1.DocumentText = "web.html";
         }
 
-        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        private void WebBrowser1DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
         }
 
-        private void WikiBrowser_Load(object sender, EventArgs e)
+        private void WikiBrowserLoad(object sender, EventArgs e)
         {
         }
 
-        private void WikiLinkComboBox_Click(object sender, EventArgs e)
+        private void WikiLinkComboBoxClick(object sender, EventArgs e)
         {
         }
     }

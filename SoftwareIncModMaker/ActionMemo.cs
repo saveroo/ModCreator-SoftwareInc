@@ -8,23 +8,23 @@
     {
         public static RichTextBox Component;
 
-        public static void addLines(string s)
+        public static void AddLines(string s)
         {
             if (Component.Lines.Length > 0) Component.AppendText(string.Format("{1}: {0}{2}", s, DateTime.Now, Environment.NewLine));
             else Component.Text = string.Format("{1}: {0}{2}", s, DateTime.Now, Environment.NewLine);
         }
 
-        public static void addLines(string s, bool dataToCheck)
+        public static void AddLines(string s, bool dataToCheck)
         {
-            if (dataToCheck) addLines(s);
+            if (dataToCheck) AddLines(s);
         }
 
-        public static void addLines(string s, bool? dataToCheck, Color col)
+        public static void AddLines(string s, bool? dataToCheck, Color col)
         {
             if (dataToCheck == true)
             {
                 Component.SelectionColor = col;
-                addLines(s);
+                AddLines(s);
             }
         }
 

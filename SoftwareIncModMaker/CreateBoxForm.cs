@@ -10,7 +10,7 @@
             this.InitializeComponent();
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void GroupBox2Enter(object sender, EventArgs e)
         {
         }
     }

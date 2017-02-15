@@ -6,10 +6,10 @@
     {
         StatusStrip ActionHistoryAccess();
 
-        ToolStripStatusLabel statusCurrent();
+        ToolStripStatusLabel StatusCurrent();
 
-        ToolStripStatusLabel statusInformation();
+        ToolStripStatusLabel StatusInformation();
 
-        ToolStripStatusLabel statusLast();
+        ToolStripStatusLabel StatusLast();
     }
 }
