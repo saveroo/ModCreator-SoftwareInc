@@ -1,60 +1,182 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="STDataSet" targetNamespace="http://tempuri.org/STDataSet.xsd" xmlns:mstns="http://tempuri.org/STDataSet.xsd" xmlns="http://tempuri.org/STDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+
+<xs:schema id="STDataSet" targetNamespace="http://tempuri.org/STDataSet.xsd"
+           xmlns:mstns="http://tempuri.org/STDataSet.xsd" xmlns="http://tempuri.org/STDataSet.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+           xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified"
+           elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter"
+                  Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema"
+                  xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ModCreatorConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ModCreatorConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SoftwareIncModMaker.Properties.Settings.GlobalReference.Default.ModCreatorConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ModCreatorConnectionString"
+                      ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly"
+                      Name="ModCreatorConnectionString (Settings)" ParameterPrefix="@"
+                      PropertyReference="ApplicationSettings.SoftwareIncModMaker.Properties.Settings.GlobalReference.Default.ModCreatorConnectionString"
+                      Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SoftwareTypeModelsTableAdapter" GeneratorDataComponentClassName="SoftwareTypeModelsTableAdapter" Name="SoftwareTypeModels" UserDataComponentName="SoftwareTypeModelsTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component"
+                        DataAccessorModifier="AutoLayout, AnsiClass, Class, Public"
+                        DataAccessorName="SoftwareTypeModelsTableAdapter"
+                        GeneratorDataComponentClassName="SoftwareTypeModelsTableAdapter" Name="SoftwareTypeModels"
+                        UserDataComponentName="SoftwareTypeModelsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ModCreatorConnectionString (Settings)" DbObjectName="ModCreator.dbo.SoftwareTypeModels" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ModCreatorConnectionString (Settings)"
+                        DbObjectName="ModCreator.dbo.SoftwareTypeModels" DbObjectType="Table"
+                        FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both"
+                        GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill"
+                        GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset"
+                        ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+                        UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[SoftwareTypeModels] WHERE (([Id] = @Original_Id) AND ((@IsNull_RootUnlock = 1 AND [RootUnlock] IS NULL) OR ([RootUnlock] = @Original_RootUnlock)) AND ((@IsNull_RootOSSpecific = 1 AND [RootOSSpecific] IS NULL) OR ([RootOSSpecific] = @Original_RootOSSpecific)) AND ((@IsNull_RootPopularity = 1 AND [RootPopularity] IS NULL) OR ([RootPopularity] = @Original_RootPopularity)) AND ((@IsNull_RootRandom = 1 AND [RootRandom] IS NULL) OR ([RootRandom] = @Original_RootRandom)) AND ((@IsNull_RootRetention = 1 AND [RootRetention] IS NULL) OR ([RootRetention] = @Original_RootRetention)) AND ((@IsNull_RootOneClient = 1 AND [RootOneClient] IS NULL) OR ([RootOneClient] = @Original_RootOneClient)) AND ((@IsNull_RootInHouse = 1 AND [RootInHouse] IS NULL) OR ([RootInHouse] = @Original_RootInHouse)) AND ((@IsNull_RootIterative = 1 AND [RootIterative] IS NULL) OR ([RootIterative] = @Original_RootIterative)) AND ((@IsNull_SoftwareTypeMAttribute_Id = 1 AND [SoftwareTypeMAttribute_Id] IS NULL) OR ([SoftwareTypeMAttribute_Id] = @Original_SoftwareTypeMAttribute_Id)))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RootUnlock" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RootUnlock" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_RootUnlock" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootUnlock" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RootOSSpecific" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RootOSSpecific" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_RootOSSpecific" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="RootOSSpecific" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RootPopularity" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RootPopularity" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_RootPopularity" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootPopularity" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RootRandom" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RootRandom" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_RootRandom" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootRandom" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RootRetention" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RootRetention" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_RootRetention" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootRetention" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RootOneClient" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RootOneClient" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_RootOneClient" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="RootOneClient" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RootInHouse" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RootInHouse" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_RootInHouse" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="RootInHouse" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RootIterative" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RootIterative" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_RootIterative" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootIterative" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SoftwareTypeMAttribute_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SoftwareTypeMAttribute_Id" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SoftwareTypeMAttribute_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SoftwareTypeMAttribute_Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@Original_Id" Precision="0" ProviderType="Int"
+                                 Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false"
+                                 SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@IsNull_RootUnlock" Precision="0" ProviderType="Int"
+                                 Scale="0" Size="0" SourceColumn="RootUnlock" SourceColumnNullMapping="true"
+                                 SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal"
+                                 Direction="Input" ParameterName="@Original_RootUnlock" Precision="18"
+                                 ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootUnlock"
+                                 SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@IsNull_RootOSSpecific" Precision="0"
+                                 ProviderType="Int" Scale="0" Size="0" SourceColumn="RootOSSpecific"
+                                 SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean"
+                                 Direction="Input" ParameterName="@Original_RootOSSpecific" Precision="0"
+                                 ProviderType="Bit" Scale="0" Size="0" SourceColumn="RootOSSpecific"
+                                 SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@IsNull_RootPopularity" Precision="0"
+                                 ProviderType="Int" Scale="0" Size="0" SourceColumn="RootPopularity"
+                                 SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal"
+                                 Direction="Input" ParameterName="@Original_RootPopularity" Precision="18"
+                                 ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootPopularity"
+                                 SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@IsNull_RootRandom" Precision="0" ProviderType="Int"
+                                 Scale="0" Size="0" SourceColumn="RootRandom" SourceColumnNullMapping="true"
+                                 SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal"
+                                 Direction="Input" ParameterName="@Original_RootRandom" Precision="18"
+                                 ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootRandom"
+                                 SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@IsNull_RootRetention" Precision="0"
+                                 ProviderType="Int" Scale="0" Size="0" SourceColumn="RootRetention"
+                                 SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal"
+                                 Direction="Input" ParameterName="@Original_RootRetention" Precision="18"
+                                 ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootRetention"
+                                 SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@IsNull_RootOneClient" Precision="0"
+                                 ProviderType="Int" Scale="0" Size="0" SourceColumn="RootOneClient"
+                                 SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean"
+                                 Direction="Input" ParameterName="@Original_RootOneClient" Precision="0"
+                                 ProviderType="Bit" Scale="0" Size="0" SourceColumn="RootOneClient"
+                                 SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@IsNull_RootInHouse" Precision="0" ProviderType="Int"
+                                 Scale="0" Size="0" SourceColumn="RootInHouse" SourceColumnNullMapping="true"
+                                 SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean"
+                                 Direction="Input" ParameterName="@Original_RootInHouse" Precision="0"
+                                 ProviderType="Bit" Scale="0" Size="0" SourceColumn="RootInHouse"
+                                 SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@IsNull_RootIterative" Precision="0"
+                                 ProviderType="Int" Scale="0" Size="0" SourceColumn="RootIterative"
+                                 SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal"
+                                 Direction="Input" ParameterName="@Original_RootIterative" Precision="18"
+                                 ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootIterative"
+                                 SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@IsNull_SoftwareTypeMAttribute_Id" Precision="0"
+                                 ProviderType="Int" Scale="0" Size="0" SourceColumn="SoftwareTypeMAttribute_Id"
+                                 SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@Original_SoftwareTypeMAttribute_Id" Precision="0"
+                                 ProviderType="Int" Scale="0" Size="0" SourceColumn="SoftwareTypeMAttribute_Id"
+                                 SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[SoftwareTypeModels] ([RootName], [RootDescription], [RootCategory], [RootUnlock], [RootOSLimit], [RootOSSpecific], [RootPopularity], [RootRandom], [RootRetention], [RootOneClient], [RootInHouse], [RootIterative], [RootNameGenerator], [SoftwareTypeMAttribute_Id]) VALUES (@RootName, @RootDescription, @RootCategory, @RootUnlock, @RootOSLimit, @RootOSSpecific, @RootPopularity, @RootRandom, @RootRetention, @RootOneClient, @RootInHouse, @RootIterative, @RootNameGenerator, @SoftwareTypeMAttribute_Id);
-SELECT Id, RootName, RootDescription, RootCategory, RootUnlock, RootOSLimit, RootOSSpecific, RootPopularity, RootRandom, RootRetention, RootOneClient, RootInHouse, RootIterative, RootNameGenerator, SoftwareTypeMAttribute_Id FROM SoftwareTypeModels WHERE (Id = SCOPE_IDENTITY())</CommandText>
+                    <CommandText>
+                      INSERT INTO [dbo].[SoftwareTypeModels] ([RootName], [RootDescription], [RootCategory], [RootUnlock], [RootOSLimit], [RootOSSpecific], [RootPopularity], [RootRandom], [RootRetention], [RootOneClient], [RootInHouse], [RootIterative], [RootNameGenerator], [SoftwareTypeMAttribute_Id]) VALUES (@RootName, @RootDescription, @RootCategory, @RootUnlock, @RootOSLimit, @RootOSSpecific, @RootPopularity, @RootRandom, @RootRetention, @RootOneClient, @RootInHouse, @RootIterative, @RootNameGenerator, @SoftwareTypeMAttribute_Id);
+                      SELECT Id, RootName, RootDescription, RootCategory, RootUnlock, RootOSLimit, RootOSSpecific, RootPopularity, RootRandom, RootRetention, RootOneClient, RootInHouse, RootIterative, RootNameGenerator, SoftwareTypeMAttribute_Id FROM SoftwareTypeModels WHERE (Id = SCOPE_IDENTITY())
+                    </CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@RootName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RootName" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@RootDescription" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RootDescription" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@RootCategory" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RootCategory" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@RootUnlock" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootUnlock" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@RootOSLimit" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RootOSLimit" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@RootOSSpecific" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="RootOSSpecific" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@RootPopularity" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootPopularity" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@RootRandom" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootRandom" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@RootRetention" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootRetention" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@RootOneClient" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="RootOneClient" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@RootInHouse" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="RootInHouse" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@RootIterative" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootIterative" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@RootNameGenerator" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RootNameGenerator" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SoftwareTypeMAttribute_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SoftwareTypeMAttribute_Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String"
+                                 Direction="Input" ParameterName="@RootName" Precision="0" ProviderType="NVarChar"
+                                 Scale="0" Size="0" SourceColumn="RootName" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String"
+                                 Direction="Input" ParameterName="@RootDescription" Precision="0"
+                                 ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RootDescription"
+                                 SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String"
+                                 Direction="Input" ParameterName="@RootCategory" Precision="0" ProviderType="NVarChar"
+                                 Scale="0" Size="0" SourceColumn="RootCategory" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal"
+                                 Direction="Input" ParameterName="@RootUnlock" Precision="18" ProviderType="Decimal"
+                                 Scale="0" Size="0" SourceColumn="RootUnlock" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String"
+                                 Direction="Input" ParameterName="@RootOSLimit" Precision="0" ProviderType="NVarChar"
+                                 Scale="0" Size="0" SourceColumn="RootOSLimit" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean"
+                                 Direction="Input" ParameterName="@RootOSSpecific" Precision="0" ProviderType="Bit"
+                                 Scale="0" Size="0" SourceColumn="RootOSSpecific" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal"
+                                 Direction="Input" ParameterName="@RootPopularity" Precision="18"
+                                 ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootPopularity"
+                                 SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal"
+                                 Direction="Input" ParameterName="@RootRandom" Precision="18" ProviderType="Decimal"
+                                 Scale="0" Size="0" SourceColumn="RootRandom" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal"
+                                 Direction="Input" ParameterName="@RootRetention" Precision="18" ProviderType="Decimal"
+                                 Scale="0" Size="0" SourceColumn="RootRetention" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean"
+                                 Direction="Input" ParameterName="@RootOneClient" Precision="0" ProviderType="Bit"
+                                 Scale="0" Size="0" SourceColumn="RootOneClient" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean"
+                                 Direction="Input" ParameterName="@RootInHouse" Precision="0" ProviderType="Bit"
+                                 Scale="0" Size="0" SourceColumn="RootInHouse" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal"
+                                 Direction="Input" ParameterName="@RootIterative" Precision="18" ProviderType="Decimal"
+                                 Scale="0" Size="0" SourceColumn="RootIterative" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String"
+                                 Direction="Input" ParameterName="@RootNameGenerator" Precision="0"
+                                 ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RootNameGenerator"
+                                 SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@SoftwareTypeMAttribute_Id" Precision="0"
+                                 ProviderType="Int" Scale="0" Size="0" SourceColumn="SoftwareTypeMAttribute_Id"
+                                 SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
@@ -66,43 +188,147 @@ SELECT Id, RootName, RootDescription, RootCategory, RootUnlock, RootOSLimit, Roo
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[SoftwareTypeModels] SET [RootName] = @RootName, [RootDescription] = @RootDescription, [RootCategory] = @RootCategory, [RootUnlock] = @RootUnlock, [RootOSLimit] = @RootOSLimit, [RootOSSpecific] = @RootOSSpecific, [RootPopularity] = @RootPopularity, [RootRandom] = @RootRandom, [RootRetention] = @RootRetention, [RootOneClient] = @RootOneClient, [RootInHouse] = @RootInHouse, [RootIterative] = @RootIterative, [RootNameGenerator] = @RootNameGenerator, [SoftwareTypeMAttribute_Id] = @SoftwareTypeMAttribute_Id WHERE (([Id] = @Original_Id) AND ((@IsNull_RootUnlock = 1 AND [RootUnlock] IS NULL) OR ([RootUnlock] = @Original_RootUnlock)) AND ((@IsNull_RootOSSpecific = 1 AND [RootOSSpecific] IS NULL) OR ([RootOSSpecific] = @Original_RootOSSpecific)) AND ((@IsNull_RootPopularity = 1 AND [RootPopularity] IS NULL) OR ([RootPopularity] = @Original_RootPopularity)) AND ((@IsNull_RootRandom = 1 AND [RootRandom] IS NULL) OR ([RootRandom] = @Original_RootRandom)) AND ((@IsNull_RootRetention = 1 AND [RootRetention] IS NULL) OR ([RootRetention] = @Original_RootRetention)) AND ((@IsNull_RootOneClient = 1 AND [RootOneClient] IS NULL) OR ([RootOneClient] = @Original_RootOneClient)) AND ((@IsNull_RootInHouse = 1 AND [RootInHouse] IS NULL) OR ([RootInHouse] = @Original_RootInHouse)) AND ((@IsNull_RootIterative = 1 AND [RootIterative] IS NULL) OR ([RootIterative] = @Original_RootIterative)) AND ((@IsNull_SoftwareTypeMAttribute_Id = 1 AND [SoftwareTypeMAttribute_Id] IS NULL) OR ([SoftwareTypeMAttribute_Id] = @Original_SoftwareTypeMAttribute_Id)));
-SELECT Id, RootName, RootDescription, RootCategory, RootUnlock, RootOSLimit, RootOSSpecific, RootPopularity, RootRandom, RootRetention, RootOneClient, RootInHouse, RootIterative, RootNameGenerator, SoftwareTypeMAttribute_Id FROM SoftwareTypeModels WHERE (Id = @Id)</CommandText>
+                    <CommandText>
+                      UPDATE [dbo].[SoftwareTypeModels] SET [RootName] = @RootName, [RootDescription] = @RootDescription, [RootCategory] = @RootCategory, [RootUnlock] = @RootUnlock, [RootOSLimit] = @RootOSLimit, [RootOSSpecific] = @RootOSSpecific, [RootPopularity] = @RootPopularity, [RootRandom] = @RootRandom, [RootRetention] = @RootRetention, [RootOneClient] = @RootOneClient, [RootInHouse] = @RootInHouse, [RootIterative] = @RootIterative, [RootNameGenerator] = @RootNameGenerator, [SoftwareTypeMAttribute_Id] = @SoftwareTypeMAttribute_Id WHERE (([Id] = @Original_Id) AND ((@IsNull_RootUnlock = 1 AND [RootUnlock] IS NULL) OR ([RootUnlock] = @Original_RootUnlock)) AND ((@IsNull_RootOSSpecific = 1 AND [RootOSSpecific] IS NULL) OR ([RootOSSpecific] = @Original_RootOSSpecific)) AND ((@IsNull_RootPopularity = 1 AND [RootPopularity] IS NULL) OR ([RootPopularity] = @Original_RootPopularity)) AND ((@IsNull_RootRandom = 1 AND [RootRandom] IS NULL) OR ([RootRandom] = @Original_RootRandom)) AND ((@IsNull_RootRetention = 1 AND [RootRetention] IS NULL) OR ([RootRetention] = @Original_RootRetention)) AND ((@IsNull_RootOneClient = 1 AND [RootOneClient] IS NULL) OR ([RootOneClient] = @Original_RootOneClient)) AND ((@IsNull_RootInHouse = 1 AND [RootInHouse] IS NULL) OR ([RootInHouse] = @Original_RootInHouse)) AND ((@IsNull_RootIterative = 1 AND [RootIterative] IS NULL) OR ([RootIterative] = @Original_RootIterative)) AND ((@IsNull_SoftwareTypeMAttribute_Id = 1 AND [SoftwareTypeMAttribute_Id] IS NULL) OR ([SoftwareTypeMAttribute_Id] = @Original_SoftwareTypeMAttribute_Id)));
+                      SELECT Id, RootName, RootDescription, RootCategory, RootUnlock, RootOSLimit, RootOSSpecific, RootPopularity, RootRandom, RootRetention, RootOneClient, RootInHouse, RootIterative, RootNameGenerator, SoftwareTypeMAttribute_Id FROM SoftwareTypeModels WHERE (Id = @Id)
+                    </CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@RootName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RootName" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@RootDescription" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RootDescription" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@RootCategory" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RootCategory" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@RootUnlock" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootUnlock" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@RootOSLimit" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RootOSLimit" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@RootOSSpecific" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="RootOSSpecific" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@RootPopularity" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootPopularity" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@RootRandom" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootRandom" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@RootRetention" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootRetention" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@RootOneClient" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="RootOneClient" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@RootInHouse" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="RootInHouse" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@RootIterative" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootIterative" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@RootNameGenerator" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RootNameGenerator" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SoftwareTypeMAttribute_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SoftwareTypeMAttribute_Id" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RootUnlock" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RootUnlock" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_RootUnlock" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootUnlock" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RootOSSpecific" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RootOSSpecific" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_RootOSSpecific" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="RootOSSpecific" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RootPopularity" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RootPopularity" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_RootPopularity" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootPopularity" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RootRandom" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RootRandom" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_RootRandom" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootRandom" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RootRetention" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RootRetention" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_RootRetention" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootRetention" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RootOneClient" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RootOneClient" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_RootOneClient" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="RootOneClient" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RootInHouse" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RootInHouse" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_RootInHouse" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="RootInHouse" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RootIterative" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RootIterative" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_RootIterative" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootIterative" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SoftwareTypeMAttribute_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SoftwareTypeMAttribute_Id" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SoftwareTypeMAttribute_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SoftwareTypeMAttribute_Id" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="Id" ColumnName="Id" DataSourceName="ModCreator.dbo.SoftwareTypeModels" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String"
+                                 Direction="Input" ParameterName="@RootName" Precision="0" ProviderType="NVarChar"
+                                 Scale="0" Size="0" SourceColumn="RootName" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String"
+                                 Direction="Input" ParameterName="@RootDescription" Precision="0"
+                                 ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RootDescription"
+                                 SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String"
+                                 Direction="Input" ParameterName="@RootCategory" Precision="0" ProviderType="NVarChar"
+                                 Scale="0" Size="0" SourceColumn="RootCategory" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal"
+                                 Direction="Input" ParameterName="@RootUnlock" Precision="18" ProviderType="Decimal"
+                                 Scale="0" Size="0" SourceColumn="RootUnlock" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String"
+                                 Direction="Input" ParameterName="@RootOSLimit" Precision="0" ProviderType="NVarChar"
+                                 Scale="0" Size="0" SourceColumn="RootOSLimit" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean"
+                                 Direction="Input" ParameterName="@RootOSSpecific" Precision="0" ProviderType="Bit"
+                                 Scale="0" Size="0" SourceColumn="RootOSSpecific" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal"
+                                 Direction="Input" ParameterName="@RootPopularity" Precision="18"
+                                 ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootPopularity"
+                                 SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal"
+                                 Direction="Input" ParameterName="@RootRandom" Precision="18" ProviderType="Decimal"
+                                 Scale="0" Size="0" SourceColumn="RootRandom" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal"
+                                 Direction="Input" ParameterName="@RootRetention" Precision="18" ProviderType="Decimal"
+                                 Scale="0" Size="0" SourceColumn="RootRetention" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean"
+                                 Direction="Input" ParameterName="@RootOneClient" Precision="0" ProviderType="Bit"
+                                 Scale="0" Size="0" SourceColumn="RootOneClient" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean"
+                                 Direction="Input" ParameterName="@RootInHouse" Precision="0" ProviderType="Bit"
+                                 Scale="0" Size="0" SourceColumn="RootInHouse" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal"
+                                 Direction="Input" ParameterName="@RootIterative" Precision="18" ProviderType="Decimal"
+                                 Scale="0" Size="0" SourceColumn="RootIterative" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String"
+                                 Direction="Input" ParameterName="@RootNameGenerator" Precision="0"
+                                 ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RootNameGenerator"
+                                 SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@SoftwareTypeMAttribute_Id" Precision="0"
+                                 ProviderType="Int" Scale="0" Size="0" SourceColumn="SoftwareTypeMAttribute_Id"
+                                 SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@Original_Id" Precision="0" ProviderType="Int"
+                                 Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false"
+                                 SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@IsNull_RootUnlock" Precision="0" ProviderType="Int"
+                                 Scale="0" Size="0" SourceColumn="RootUnlock" SourceColumnNullMapping="true"
+                                 SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal"
+                                 Direction="Input" ParameterName="@Original_RootUnlock" Precision="18"
+                                 ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootUnlock"
+                                 SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@IsNull_RootOSSpecific" Precision="0"
+                                 ProviderType="Int" Scale="0" Size="0" SourceColumn="RootOSSpecific"
+                                 SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean"
+                                 Direction="Input" ParameterName="@Original_RootOSSpecific" Precision="0"
+                                 ProviderType="Bit" Scale="0" Size="0" SourceColumn="RootOSSpecific"
+                                 SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@IsNull_RootPopularity" Precision="0"
+                                 ProviderType="Int" Scale="0" Size="0" SourceColumn="RootPopularity"
+                                 SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal"
+                                 Direction="Input" ParameterName="@Original_RootPopularity" Precision="18"
+                                 ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootPopularity"
+                                 SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@IsNull_RootRandom" Precision="0" ProviderType="Int"
+                                 Scale="0" Size="0" SourceColumn="RootRandom" SourceColumnNullMapping="true"
+                                 SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal"
+                                 Direction="Input" ParameterName="@Original_RootRandom" Precision="18"
+                                 ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootRandom"
+                                 SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@IsNull_RootRetention" Precision="0"
+                                 ProviderType="Int" Scale="0" Size="0" SourceColumn="RootRetention"
+                                 SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal"
+                                 Direction="Input" ParameterName="@Original_RootRetention" Precision="18"
+                                 ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootRetention"
+                                 SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@IsNull_RootOneClient" Precision="0"
+                                 ProviderType="Int" Scale="0" Size="0" SourceColumn="RootOneClient"
+                                 SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean"
+                                 Direction="Input" ParameterName="@Original_RootOneClient" Precision="0"
+                                 ProviderType="Bit" Scale="0" Size="0" SourceColumn="RootOneClient"
+                                 SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@IsNull_RootInHouse" Precision="0" ProviderType="Int"
+                                 Scale="0" Size="0" SourceColumn="RootInHouse" SourceColumnNullMapping="true"
+                                 SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean"
+                                 Direction="Input" ParameterName="@Original_RootInHouse" Precision="0"
+                                 ProviderType="Bit" Scale="0" Size="0" SourceColumn="RootInHouse"
+                                 SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@IsNull_RootIterative" Precision="0"
+                                 ProviderType="Int" Scale="0" Size="0" SourceColumn="RootIterative"
+                                 SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal"
+                                 Direction="Input" ParameterName="@Original_RootIterative" Precision="18"
+                                 ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RootIterative"
+                                 SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@IsNull_SoftwareTypeMAttribute_Id" Precision="0"
+                                 ProviderType="Int" Scale="0" Size="0" SourceColumn="SoftwareTypeMAttribute_Id"
+                                 SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@Original_SoftwareTypeMAttribute_Id" Precision="0"
+                                 ProviderType="Int" Scale="0" Size="0" SourceColumn="SoftwareTypeMAttribute_Id"
+                                 SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Id" ColumnName="Id"
+                                 DataSourceName="ModCreator.dbo.SoftwareTypeModels" DataTypeServer="int" DbType="Int32"
+                                 Direction="Input" ParameterName="@Id" Precision="0" ProviderType="Int" Scale="0"
+                                 Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -132,57 +358,115 @@ SELECT Id, RootName, RootDescription, RootCategory, RootUnlock, RootOSLimit, Roo
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="STDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="STDataSet" msprop:Generator_UserDSName="STDataSet">
+  <xs:element name="STDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true"
+              msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="STDataSet"
+              msprop:Generator_UserDSName="STDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="SoftwareTypeModels" msprop:Generator_TableClassName="SoftwareTypeModelsDataTable" msprop:Generator_TableVarName="tableSoftwareTypeModels" msprop:Generator_TablePropName="SoftwareTypeModels" msprop:Generator_RowDeletingName="SoftwareTypeModelsRowDeleting" msprop:Generator_RowChangingName="SoftwareTypeModelsRowChanging" msprop:Generator_RowEvHandlerName="SoftwareTypeModelsRowChangeEventHandler" msprop:Generator_RowDeletedName="SoftwareTypeModelsRowDeleted" msprop:Generator_UserTableName="SoftwareTypeModels" msprop:Generator_RowChangedName="SoftwareTypeModelsRowChanged" msprop:Generator_RowEvArgName="SoftwareTypeModelsRowChangeEvent" msprop:Generator_RowClassName="SoftwareTypeModelsRow">
+        <xs:element name="SoftwareTypeModels" msprop:Generator_TableClassName="SoftwareTypeModelsDataTable"
+                    msprop:Generator_TableVarName="tableSoftwareTypeModels"
+                    msprop:Generator_TablePropName="SoftwareTypeModels"
+                    msprop:Generator_RowDeletingName="SoftwareTypeModelsRowDeleting"
+                    msprop:Generator_RowChangingName="SoftwareTypeModelsRowChanging"
+                    msprop:Generator_RowEvHandlerName="SoftwareTypeModelsRowChangeEventHandler"
+                    msprop:Generator_RowDeletedName="SoftwareTypeModelsRowDeleted"
+                    msprop:Generator_UserTableName="SoftwareTypeModels"
+                    msprop:Generator_RowChangedName="SoftwareTypeModelsRowChanged"
+                    msprop:Generator_RowEvArgName="SoftwareTypeModelsRowChangeEvent"
+                    msprop:Generator_RowClassName="SoftwareTypeModelsRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
-              <xs:element name="RootName" msprop:Generator_ColumnVarNameInTable="columnRootName" msprop:Generator_ColumnPropNameInRow="RootName" msprop:Generator_ColumnPropNameInTable="RootNameColumn" msprop:Generator_UserColumnName="RootName">
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId"
+                          msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn"
+                          msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="RootName" msprop:Generator_ColumnVarNameInTable="columnRootName"
+                          msprop:Generator_ColumnPropNameInRow="RootName"
+                          msprop:Generator_ColumnPropNameInTable="RootNameColumn"
+                          msprop:Generator_UserColumnName="RootName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="RootDescription" msprop:Generator_ColumnVarNameInTable="columnRootDescription" msprop:Generator_ColumnPropNameInRow="RootDescription" msprop:Generator_ColumnPropNameInTable="RootDescriptionColumn" msprop:Generator_UserColumnName="RootDescription">
+              <xs:element name="RootDescription" msprop:Generator_ColumnVarNameInTable="columnRootDescription"
+                          msprop:Generator_ColumnPropNameInRow="RootDescription"
+                          msprop:Generator_ColumnPropNameInTable="RootDescriptionColumn"
+                          msprop:Generator_UserColumnName="RootDescription">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="RootCategory" msprop:Generator_ColumnVarNameInTable="columnRootCategory" msprop:Generator_ColumnPropNameInRow="RootCategory" msprop:Generator_ColumnPropNameInTable="RootCategoryColumn" msprop:Generator_UserColumnName="RootCategory" minOccurs="0">
+              <xs:element name="RootCategory" msprop:Generator_ColumnVarNameInTable="columnRootCategory"
+                          msprop:Generator_ColumnPropNameInRow="RootCategory"
+                          msprop:Generator_ColumnPropNameInTable="RootCategoryColumn"
+                          msprop:Generator_UserColumnName="RootCategory" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="RootUnlock" msprop:Generator_ColumnVarNameInTable="columnRootUnlock" msprop:Generator_ColumnPropNameInRow="RootUnlock" msprop:Generator_ColumnPropNameInTable="RootUnlockColumn" msprop:Generator_UserColumnName="RootUnlock" type="xs:decimal" minOccurs="0" />
-              <xs:element name="RootOSLimit" msprop:Generator_ColumnVarNameInTable="columnRootOSLimit" msprop:Generator_ColumnPropNameInRow="RootOSLimit" msprop:Generator_ColumnPropNameInTable="RootOSLimitColumn" msprop:Generator_UserColumnName="RootOSLimit" minOccurs="0">
+              <xs:element name="RootUnlock" msprop:Generator_ColumnVarNameInTable="columnRootUnlock"
+                          msprop:Generator_ColumnPropNameInRow="RootUnlock"
+                          msprop:Generator_ColumnPropNameInTable="RootUnlockColumn"
+                          msprop:Generator_UserColumnName="RootUnlock" type="xs:decimal" minOccurs="0" />
+              <xs:element name="RootOSLimit" msprop:Generator_ColumnVarNameInTable="columnRootOSLimit"
+                          msprop:Generator_ColumnPropNameInRow="RootOSLimit"
+                          msprop:Generator_ColumnPropNameInTable="RootOSLimitColumn"
+                          msprop:Generator_UserColumnName="RootOSLimit" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="RootOSSpecific" msprop:Generator_ColumnVarNameInTable="columnRootOSSpecific" msprop:Generator_ColumnPropNameInRow="RootOSSpecific" msprop:Generator_ColumnPropNameInTable="RootOSSpecificColumn" msprop:Generator_UserColumnName="RootOSSpecific" type="xs:boolean" minOccurs="0" />
-              <xs:element name="RootPopularity" msprop:Generator_ColumnVarNameInTable="columnRootPopularity" msprop:Generator_ColumnPropNameInRow="RootPopularity" msprop:Generator_ColumnPropNameInTable="RootPopularityColumn" msprop:Generator_UserColumnName="RootPopularity" type="xs:decimal" minOccurs="0" />
-              <xs:element name="RootRandom" msprop:Generator_ColumnVarNameInTable="columnRootRandom" msprop:Generator_ColumnPropNameInRow="RootRandom" msprop:Generator_ColumnPropNameInTable="RootRandomColumn" msprop:Generator_UserColumnName="RootRandom" type="xs:decimal" minOccurs="0" />
-              <xs:element name="RootRetention" msprop:Generator_ColumnVarNameInTable="columnRootRetention" msprop:Generator_ColumnPropNameInRow="RootRetention" msprop:Generator_ColumnPropNameInTable="RootRetentionColumn" msprop:Generator_UserColumnName="RootRetention" type="xs:decimal" minOccurs="0" />
-              <xs:element name="RootOneClient" msprop:Generator_ColumnVarNameInTable="columnRootOneClient" msprop:Generator_ColumnPropNameInRow="RootOneClient" msprop:Generator_ColumnPropNameInTable="RootOneClientColumn" msprop:Generator_UserColumnName="RootOneClient" type="xs:boolean" minOccurs="0" />
-              <xs:element name="RootInHouse" msprop:Generator_ColumnVarNameInTable="columnRootInHouse" msprop:Generator_ColumnPropNameInRow="RootInHouse" msprop:Generator_ColumnPropNameInTable="RootInHouseColumn" msprop:Generator_UserColumnName="RootInHouse" type="xs:boolean" minOccurs="0" />
-              <xs:element name="RootIterative" msprop:Generator_ColumnVarNameInTable="columnRootIterative" msprop:Generator_ColumnPropNameInRow="RootIterative" msprop:Generator_ColumnPropNameInTable="RootIterativeColumn" msprop:Generator_UserColumnName="RootIterative" type="xs:decimal" minOccurs="0" />
-              <xs:element name="RootNameGenerator" msprop:Generator_ColumnVarNameInTable="columnRootNameGenerator" msprop:Generator_ColumnPropNameInRow="RootNameGenerator" msprop:Generator_ColumnPropNameInTable="RootNameGeneratorColumn" msprop:Generator_UserColumnName="RootNameGenerator" minOccurs="0">
+              <xs:element name="RootOSSpecific" msprop:Generator_ColumnVarNameInTable="columnRootOSSpecific"
+                          msprop:Generator_ColumnPropNameInRow="RootOSSpecific"
+                          msprop:Generator_ColumnPropNameInTable="RootOSSpecificColumn"
+                          msprop:Generator_UserColumnName="RootOSSpecific" type="xs:boolean" minOccurs="0" />
+              <xs:element name="RootPopularity" msprop:Generator_ColumnVarNameInTable="columnRootPopularity"
+                          msprop:Generator_ColumnPropNameInRow="RootPopularity"
+                          msprop:Generator_ColumnPropNameInTable="RootPopularityColumn"
+                          msprop:Generator_UserColumnName="RootPopularity" type="xs:decimal" minOccurs="0" />
+              <xs:element name="RootRandom" msprop:Generator_ColumnVarNameInTable="columnRootRandom"
+                          msprop:Generator_ColumnPropNameInRow="RootRandom"
+                          msprop:Generator_ColumnPropNameInTable="RootRandomColumn"
+                          msprop:Generator_UserColumnName="RootRandom" type="xs:decimal" minOccurs="0" />
+              <xs:element name="RootRetention" msprop:Generator_ColumnVarNameInTable="columnRootRetention"
+                          msprop:Generator_ColumnPropNameInRow="RootRetention"
+                          msprop:Generator_ColumnPropNameInTable="RootRetentionColumn"
+                          msprop:Generator_UserColumnName="RootRetention" type="xs:decimal" minOccurs="0" />
+              <xs:element name="RootOneClient" msprop:Generator_ColumnVarNameInTable="columnRootOneClient"
+                          msprop:Generator_ColumnPropNameInRow="RootOneClient"
+                          msprop:Generator_ColumnPropNameInTable="RootOneClientColumn"
+                          msprop:Generator_UserColumnName="RootOneClient" type="xs:boolean" minOccurs="0" />
+              <xs:element name="RootInHouse" msprop:Generator_ColumnVarNameInTable="columnRootInHouse"
+                          msprop:Generator_ColumnPropNameInRow="RootInHouse"
+                          msprop:Generator_ColumnPropNameInTable="RootInHouseColumn"
+                          msprop:Generator_UserColumnName="RootInHouse" type="xs:boolean" minOccurs="0" />
+              <xs:element name="RootIterative" msprop:Generator_ColumnVarNameInTable="columnRootIterative"
+                          msprop:Generator_ColumnPropNameInRow="RootIterative"
+                          msprop:Generator_ColumnPropNameInTable="RootIterativeColumn"
+                          msprop:Generator_UserColumnName="RootIterative" type="xs:decimal" minOccurs="0" />
+              <xs:element name="RootNameGenerator" msprop:Generator_ColumnVarNameInTable="columnRootNameGenerator"
+                          msprop:Generator_ColumnPropNameInRow="RootNameGenerator"
+                          msprop:Generator_ColumnPropNameInTable="RootNameGeneratorColumn"
+                          msprop:Generator_UserColumnName="RootNameGenerator" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="SoftwareTypeMAttribute_Id" msprop:Generator_ColumnVarNameInTable="columnSoftwareTypeMAttribute_Id" msprop:Generator_ColumnPropNameInRow="SoftwareTypeMAttribute_Id" msprop:Generator_ColumnPropNameInTable="SoftwareTypeMAttribute_IdColumn" msprop:Generator_UserColumnName="SoftwareTypeMAttribute_Id" type="xs:int" minOccurs="0" />
+              <xs:element name="SoftwareTypeMAttribute_Id"
+                          msprop:Generator_ColumnVarNameInTable="columnSoftwareTypeMAttribute_Id"
+                          msprop:Generator_ColumnPropNameInRow="SoftwareTypeMAttribute_Id"
+                          msprop:Generator_ColumnPropNameInTable="SoftwareTypeMAttribute_IdColumn"
+                          msprop:Generator_UserColumnName="SoftwareTypeMAttribute_Id" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

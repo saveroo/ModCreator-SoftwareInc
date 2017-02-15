@@ -5198,8 +5198,10 @@ namespace SoftwareIncModMaker.ModCreatorDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FeatureModels_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FeatureModels_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[CategoryModels] ([STCategoryName], [STCategoryDescription], [STPopularity], [STUnlock], [STTimeScale], [STRetention], [STIterative], [STNameGenerator], [SoftwareTypeModel_Id], [FeatureModels_Id]) VALUES (@STCategoryName, @STCategoryDescription, @STPopularity, @STUnlock, @STTimeScale, @STRetention, @STIterative, @STNameGenerator, @SoftwareTypeModel_Id, @FeatureModels_Id);
-SELECT Id, STCategoryName, STCategoryDescription, STPopularity, STUnlock, STTimeScale, STRetention, STIterative, STNameGenerator, SoftwareTypeModel_Id, FeatureModels_Id FROM CategoryModels WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"
+                      INSERT INTO [dbo].[CategoryModels] ([STCategoryName], [STCategoryDescription], [STPopularity], [STUnlock], [STTimeScale], [STRetention], [STIterative], [STNameGenerator], [SoftwareTypeModel_Id], [FeatureModels_Id]) VALUES (@STCategoryName, @STCategoryDescription, @STPopularity, @STUnlock, @STTimeScale, @STRetention, @STIterative, @STNameGenerator, @SoftwareTypeModel_Id, @FeatureModels_Id);
+                      SELECT Id, STCategoryName, STCategoryDescription, STPopularity, STUnlock, STTimeScale, STRetention, STIterative, STNameGenerator, SoftwareTypeModel_Id, FeatureModels_Id FROM CategoryModels WHERE (Id = SCOPE_IDENTITY())
+                    ";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STCategoryName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STCategoryName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STCategoryDescription", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STCategoryDescription", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5213,8 +5215,10 @@ SELECT Id, STCategoryName, STCategoryDescription, STPopularity, STUnlock, STTime
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FeatureModels_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FeatureModels_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[CategoryModels] SET [STCategoryName] = @STCategoryName, [STCategoryDescription] = @STCategoryDescription, [STPopularity] = @STPopularity, [STUnlock] = @STUnlock, [STTimeScale] = @STTimeScale, [STRetention] = @STRetention, [STIterative] = @STIterative, [STNameGenerator] = @STNameGenerator, [SoftwareTypeModel_Id] = @SoftwareTypeModel_Id, [FeatureModels_Id] = @FeatureModels_Id WHERE (([Id] = @Original_Id) AND ((@IsNull_STPopularity = 1 AND [STPopularity] IS NULL) OR ([STPopularity] = @Original_STPopularity)) AND ((@IsNull_STUnlock = 1 AND [STUnlock] IS NULL) OR ([STUnlock] = @Original_STUnlock)) AND ((@IsNull_STTimeScale = 1 AND [STTimeScale] IS NULL) OR ([STTimeScale] = @Original_STTimeScale)) AND ((@IsNull_STRetention = 1 AND [STRetention] IS NULL) OR ([STRetention] = @Original_STRetention)) AND ((@IsNull_STIterative = 1 AND [STIterative] IS NULL) OR ([STIterative] = @Original_STIterative)) AND ([SoftwareTypeModel_Id] = @Original_SoftwareTypeModel_Id) AND ((@IsNull_FeatureModels_Id = 1 AND [FeatureModels_Id] IS NULL) OR ([FeatureModels_Id] = @Original_FeatureModels_Id)));
-SELECT Id, STCategoryName, STCategoryDescription, STPopularity, STUnlock, STTimeScale, STRetention, STIterative, STNameGenerator, SoftwareTypeModel_Id, FeatureModels_Id FROM CategoryModels WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"
+                      UPDATE [dbo].[CategoryModels] SET [STCategoryName] = @STCategoryName, [STCategoryDescription] = @STCategoryDescription, [STPopularity] = @STPopularity, [STUnlock] = @STUnlock, [STTimeScale] = @STTimeScale, [STRetention] = @STRetention, [STIterative] = @STIterative, [STNameGenerator] = @STNameGenerator, [SoftwareTypeModel_Id] = @SoftwareTypeModel_Id, [FeatureModels_Id] = @FeatureModels_Id WHERE (([Id] = @Original_Id) AND ((@IsNull_STPopularity = 1 AND [STPopularity] IS NULL) OR ([STPopularity] = @Original_STPopularity)) AND ((@IsNull_STUnlock = 1 AND [STUnlock] IS NULL) OR ([STUnlock] = @Original_STUnlock)) AND ((@IsNull_STTimeScale = 1 AND [STTimeScale] IS NULL) OR ([STTimeScale] = @Original_STTimeScale)) AND ((@IsNull_STRetention = 1 AND [STRetention] IS NULL) OR ([STRetention] = @Original_STRetention)) AND ((@IsNull_STIterative = 1 AND [STIterative] IS NULL) OR ([STIterative] = @Original_STIterative)) AND ([SoftwareTypeModel_Id] = @Original_SoftwareTypeModel_Id) AND ((@IsNull_FeatureModels_Id = 1 AND [FeatureModels_Id] IS NULL) OR ([FeatureModels_Id] = @Original_FeatureModels_Id)));
+                      SELECT Id, STCategoryName, STCategoryDescription, STPopularity, STUnlock, STTimeScale, STRetention, STIterative, STNameGenerator, SoftwareTypeModel_Id, FeatureModels_Id FROM CategoryModels WHERE (Id = @Id)
+                    ";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STCategoryName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STCategoryName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STCategoryDescription", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STCategoryDescription", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5775,8 +5779,10 @@ SELECT Id, STCategoryName, STCategoryDescription, STPopularity, STUnlock, STTime
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AttributeVital", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttributeVital", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[FeatureAttributes] ([AttributeFrom], [AttributeForced], [AttributeResearch], [AttributeVital]) VALUES (@AttributeFrom, @AttributeForced, @AttributeResearch, @AttributeVital);
-SELECT Id, AttributeFrom, AttributeForced, AttributeResearch, AttributeVital FROM FeatureAttributes WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"
+                      INSERT INTO [dbo].[FeatureAttributes] ([AttributeFrom], [AttributeForced], [AttributeResearch], [AttributeVital]) VALUES (@AttributeFrom, @AttributeForced, @AttributeResearch, @AttributeVital);
+                      SELECT Id, AttributeFrom, AttributeForced, AttributeResearch, AttributeVital FROM FeatureAttributes WHERE (Id = SCOPE_IDENTITY())
+                    ";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AttributeFrom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttributeFrom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AttributeForced", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttributeForced", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5784,8 +5790,10 @@ SELECT Id, AttributeFrom, AttributeForced, AttributeResearch, AttributeVital FRO
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AttributeVital", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttributeVital", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[FeatureAttributes] SET [AttributeFrom] = @AttributeFrom, [AttributeForced] = @AttributeForced, [AttributeResearch] = @AttributeResearch, [AttributeVital] = @AttributeVital WHERE (([Id] = @Original_Id) AND ((@IsNull_AttributeForced = 1 AND [AttributeForced] IS NULL) OR ([AttributeForced] = @Original_AttributeForced)) AND ((@IsNull_AttributeResearch = 1 AND [AttributeResearch] IS NULL) OR ([AttributeResearch] = @Original_AttributeResearch)) AND ((@IsNull_AttributeVital = 1 AND [AttributeVital] IS NULL) OR ([AttributeVital] = @Original_AttributeVital)));
-SELECT Id, AttributeFrom, AttributeForced, AttributeResearch, AttributeVital FROM FeatureAttributes WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"
+                      UPDATE [dbo].[FeatureAttributes] SET [AttributeFrom] = @AttributeFrom, [AttributeForced] = @AttributeForced, [AttributeResearch] = @AttributeResearch, [AttributeVital] = @AttributeVital WHERE (([Id] = @Original_Id) AND ((@IsNull_AttributeForced = 1 AND [AttributeForced] IS NULL) OR ([AttributeForced] = @Original_AttributeForced)) AND ((@IsNull_AttributeResearch = 1 AND [AttributeResearch] IS NULL) OR ([AttributeResearch] = @Original_AttributeResearch)) AND ((@IsNull_AttributeVital = 1 AND [AttributeVital] IS NULL) OR ([AttributeVital] = @Original_AttributeVital)));
+                      SELECT Id, AttributeFrom, AttributeForced, AttributeResearch, AttributeVital FROM FeatureAttributes WHERE (Id = @Id)
+                    ";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AttributeFrom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttributeFrom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AttributeForced", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttributeForced", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6178,16 +6186,20 @@ SELECT Id, AttributeFrom, AttributeForced, AttributeResearch, AttributeVital FRO
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FeatureModel_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FeatureModel_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[FeatureDependencies] ([DependencySoftware], [DependencyFeature], [FeatureModel_Id]) VALUES (@DependencySoftware, @DependencyFeature, @FeatureModel_Id);
-SELECT Id, DependencySoftware, DependencyFeature, FeatureModel_Id FROM FeatureDependencies WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"
+                      INSERT INTO [dbo].[FeatureDependencies] ([DependencySoftware], [DependencyFeature], [FeatureModel_Id]) VALUES (@DependencySoftware, @DependencyFeature, @FeatureModel_Id);
+                      SELECT Id, DependencySoftware, DependencyFeature, FeatureModel_Id FROM FeatureDependencies WHERE (Id = SCOPE_IDENTITY())
+                    ";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DependencySoftware", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DependencySoftware", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DependencyFeature", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DependencyFeature", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FeatureModel_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FeatureModel_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[FeatureDependencies] SET [DependencySoftware] = @DependencySoftware, [DependencyFeature] = @DependencyFeature, [FeatureModel_Id] = @FeatureModel_Id WHERE (([Id] = @Original_Id) AND ([FeatureModel_Id] = @Original_FeatureModel_Id));
-SELECT Id, DependencySoftware, DependencyFeature, FeatureModel_Id FROM FeatureDependencies WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"
+                      UPDATE [dbo].[FeatureDependencies] SET [DependencySoftware] = @DependencySoftware, [DependencyFeature] = @DependencyFeature, [FeatureModel_Id] = @FeatureModel_Id WHERE (([Id] = @Original_Id) AND ([FeatureModel_Id] = @Original_FeatureModel_Id));
+                      SELECT Id, DependencySoftware, DependencyFeature, FeatureModel_Id FROM FeatureDependencies WHERE (Id = @Id)
+                    ";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DependencySoftware", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DependencySoftware", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DependencyFeature", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DependencyFeature", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6525,8 +6537,10 @@ SELECT Id, DependencySoftware, DependencyFeature, FeatureModel_Id FROM FeatureDe
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FeatureAttributes_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FeatureAttributes_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[FeatureModels] ([SubFeatureName], [SubFeatureDescription], [SubFeatureSoftwareCategory], [SubFeatureUnlock], [SubFeatureUsability], [SubFeatureInnovation], [SubFeatureDevTime], [SubFeatureCodeArt], [SubFeatureDepedency], [SubFeatureSoftwareName], [SoftwareTypeModel_Id], [FeatureAttributes_Id]) VALUES (@SubFeatureName, @SubFeatureDescription, @SubFeatureSoftwareCategory, @SubFeatureUnlock, @SubFeatureUsability, @SubFeatureInnovation, @SubFeatureDevTime, @SubFeatureCodeArt, @SubFeatureDepedency, @SubFeatureSoftwareName, @SoftwareTypeModel_Id, @FeatureAttributes_Id);
-SELECT Id, SubFeatureName, SubFeatureDescription, SubFeatureSoftwareCategory, SubFeatureUnlock, SubFeatureUsability, SubFeatureInnovation, SubFeatureDevTime, SubFeatureCodeArt, SubFeatureDepedency, SubFeatureSoftwareName, SoftwareTypeModel_Id, FeatureAttributes_Id FROM FeatureModels WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"
+                      INSERT INTO [dbo].[FeatureModels] ([SubFeatureName], [SubFeatureDescription], [SubFeatureSoftwareCategory], [SubFeatureUnlock], [SubFeatureUsability], [SubFeatureInnovation], [SubFeatureDevTime], [SubFeatureCodeArt], [SubFeatureDepedency], [SubFeatureSoftwareName], [SoftwareTypeModel_Id], [FeatureAttributes_Id]) VALUES (@SubFeatureName, @SubFeatureDescription, @SubFeatureSoftwareCategory, @SubFeatureUnlock, @SubFeatureUsability, @SubFeatureInnovation, @SubFeatureDevTime, @SubFeatureCodeArt, @SubFeatureDepedency, @SubFeatureSoftwareName, @SoftwareTypeModel_Id, @FeatureAttributes_Id);
+                      SELECT Id, SubFeatureName, SubFeatureDescription, SubFeatureSoftwareCategory, SubFeatureUnlock, SubFeatureUsability, SubFeatureInnovation, SubFeatureDevTime, SubFeatureCodeArt, SubFeatureDepedency, SubFeatureSoftwareName, SoftwareTypeModel_Id, FeatureAttributes_Id FROM FeatureModels WHERE (Id = SCOPE_IDENTITY())
+                    ";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SubFeatureName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubFeatureName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SubFeatureDescription", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubFeatureDescription", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6542,28 +6556,28 @@ SELECT Id, SubFeatureName, SubFeatureDescription, SubFeatureSoftwareCategory, Su
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FeatureAttributes_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FeatureAttributes_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[FeatureModels] SET [SubFeatureName] = @SubFeatureName, [SubFeatureD" +
-                "escription] = @SubFeatureDescription, [SubFeatureSoftwareCategory] = @SubFeature" +
-                "SoftwareCategory, [SubFeatureUnlock] = @SubFeatureUnlock, [SubFeatureUsability] " +
-                "= @SubFeatureUsability, [SubFeatureInnovation] = @SubFeatureInnovation, [SubFeat" +
-                "ureDevTime] = @SubFeatureDevTime, [SubFeatureCodeArt] = @SubFeatureCodeArt, [Sub" +
-                "FeatureDepedency] = @SubFeatureDepedency, [SubFeatureSoftwareName] = @SubFeature" +
-                "SoftwareName, [SoftwareTypeModel_Id] = @SoftwareTypeModel_Id, [FeatureAttributes" +
-                "_Id] = @FeatureAttributes_Id WHERE (([Id] = @Original_Id) AND ((@IsNull_SubFeatu" +
-                "reUnlock = 1 AND [SubFeatureUnlock] IS NULL) OR ([SubFeatureUnlock] = @Original_" +
-                "SubFeatureUnlock)) AND ((@IsNull_SubFeatureUsability = 1 AND [SubFeatureUsabilit" +
-                "y] IS NULL) OR ([SubFeatureUsability] = @Original_SubFeatureUsability)) AND ((@I" +
-                "sNull_SubFeatureInnovation = 1 AND [SubFeatureInnovation] IS NULL) OR ([SubFeatu" +
-                "reInnovation] = @Original_SubFeatureInnovation)) AND ((@IsNull_SubFeatureDevTime" +
-                " = 1 AND [SubFeatureDevTime] IS NULL) OR ([SubFeatureDevTime] = @Original_SubFea" +
-                "tureDevTime)) AND ((@IsNull_SubFeatureCodeArt = 1 AND [SubFeatureCodeArt] IS NUL" +
-                "L) OR ([SubFeatureCodeArt] = @Original_SubFeatureCodeArt)) AND ([SoftwareTypeMod" +
-                "el_Id] = @Original_SoftwareTypeModel_Id) AND ([FeatureAttributes_Id] = @Original" +
-                "_FeatureAttributes_Id));\r\nSELECT Id, SubFeatureName, SubFeatureDescription, SubF" +
-                "eatureSoftwareCategory, SubFeatureUnlock, SubFeatureUsability, SubFeatureInnovat" +
-                "ion, SubFeatureDevTime, SubFeatureCodeArt, SubFeatureDepedency, SubFeatureSoftwa" +
-                "reName, SoftwareTypeModel_Id, FeatureAttributes_Id FROM FeatureModels WHERE (Id " +
-                "= @Id)";
+            this._adapter.UpdateCommand.CommandText = "\r\n                      UPDATE [dbo].[FeatureModels] SET [SubFeatureName] = @SubF" +
+                "eatureName, [SubFeatureDescription] = @SubFeatureDescription, [SubFeatureSoftwar" +
+                "eCategory] = @SubFeatureSoftwareCategory, [SubFeatureUnlock] = @SubFeatureUnlock" +
+                ", [SubFeatureUsability] = @SubFeatureUsability, [SubFeatureInnovation] = @SubFea" +
+                "tureInnovation, [SubFeatureDevTime] = @SubFeatureDevTime, [SubFeatureCodeArt] = " +
+                "@SubFeatureCodeArt, [SubFeatureDepedency] = @SubFeatureDepedency, [SubFeatureSof" +
+                "twareName] = @SubFeatureSoftwareName, [SoftwareTypeModel_Id] = @SoftwareTypeMode" +
+                "l_Id, [FeatureAttributes_Id] = @FeatureAttributes_Id WHERE (([Id] = @Original_Id" +
+                ") AND ((@IsNull_SubFeatureUnlock = 1 AND [SubFeatureUnlock] IS NULL) OR ([SubFea" +
+                "tureUnlock] = @Original_SubFeatureUnlock)) AND ((@IsNull_SubFeatureUsability = 1" +
+                " AND [SubFeatureUsability] IS NULL) OR ([SubFeatureUsability] = @Original_SubFea" +
+                "tureUsability)) AND ((@IsNull_SubFeatureInnovation = 1 AND [SubFeatureInnovation" +
+                "] IS NULL) OR ([SubFeatureInnovation] = @Original_SubFeatureInnovation)) AND ((@" +
+                "IsNull_SubFeatureDevTime = 1 AND [SubFeatureDevTime] IS NULL) OR ([SubFeatureDev" +
+                "Time] = @Original_SubFeatureDevTime)) AND ((@IsNull_SubFeatureCodeArt = 1 AND [S" +
+                "ubFeatureCodeArt] IS NULL) OR ([SubFeatureCodeArt] = @Original_SubFeatureCodeArt" +
+                ")) AND ([SoftwareTypeModel_Id] = @Original_SoftwareTypeModel_Id) AND ([FeatureAt" +
+                "tributes_Id] = @Original_FeatureAttributes_Id));\r\n                      SELECT I" +
+                "d, SubFeatureName, SubFeatureDescription, SubFeatureSoftwareCategory, SubFeature" +
+                "Unlock, SubFeatureUsability, SubFeatureInnovation, SubFeatureDevTime, SubFeature" +
+                "CodeArt, SubFeatureDepedency, SubFeatureSoftwareName, SoftwareTypeModel_Id, Feat" +
+                "ureAttributes_Id FROM FeatureModels WHERE (Id = @Id)\r\n                    ";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SubFeatureName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubFeatureName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SubFeatureDescription", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubFeatureDescription", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7137,8 +7151,10 @@ SELECT Id, SubFeatureName, SubFeatureDescription, SubFeatureSoftwareCategory, Su
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FeatureModel_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FeatureModel_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[FeatureSoftwareCategories] ([FCName], [FCDescription], [FCPopularity], [FCTimeScale], [FCRetention], [FCIterative], [FCNameGenerator], [FCUnlock], [FeatureModel_Id]) VALUES (@FCName, @FCDescription, @FCPopularity, @FCTimeScale, @FCRetention, @FCIterative, @FCNameGenerator, @FCUnlock, @FeatureModel_Id);
-SELECT Id, FCName, FCDescription, FCPopularity, FCTimeScale, FCRetention, FCIterative, FCNameGenerator, FCUnlock, FeatureModel_Id FROM FeatureSoftwareCategories WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"
+                      INSERT INTO [dbo].[FeatureSoftwareCategories] ([FCName], [FCDescription], [FCPopularity], [FCTimeScale], [FCRetention], [FCIterative], [FCNameGenerator], [FCUnlock], [FeatureModel_Id]) VALUES (@FCName, @FCDescription, @FCPopularity, @FCTimeScale, @FCRetention, @FCIterative, @FCNameGenerator, @FCUnlock, @FeatureModel_Id);
+                      SELECT Id, FCName, FCDescription, FCPopularity, FCTimeScale, FCRetention, FCIterative, FCNameGenerator, FCUnlock, FeatureModel_Id FROM FeatureSoftwareCategories WHERE (Id = SCOPE_IDENTITY())
+                    ";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FCName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FCName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FCDescription", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FCDescription", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7151,8 +7167,10 @@ SELECT Id, FCName, FCDescription, FCPopularity, FCTimeScale, FCRetention, FCIter
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FeatureModel_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FeatureModel_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[FeatureSoftwareCategories] SET [FCName] = @FCName, [FCDescription] = @FCDescription, [FCPopularity] = @FCPopularity, [FCTimeScale] = @FCTimeScale, [FCRetention] = @FCRetention, [FCIterative] = @FCIterative, [FCNameGenerator] = @FCNameGenerator, [FCUnlock] = @FCUnlock, [FeatureModel_Id] = @FeatureModel_Id WHERE (([Id] = @Original_Id) AND ((@IsNull_FCPopularity = 1 AND [FCPopularity] IS NULL) OR ([FCPopularity] = @Original_FCPopularity)) AND ((@IsNull_FCTimeScale = 1 AND [FCTimeScale] IS NULL) OR ([FCTimeScale] = @Original_FCTimeScale)) AND ((@IsNull_FCRetention = 1 AND [FCRetention] IS NULL) OR ([FCRetention] = @Original_FCRetention)) AND ((@IsNull_FCIterative = 1 AND [FCIterative] IS NULL) OR ([FCIterative] = @Original_FCIterative)) AND ((@IsNull_FCUnlock = 1 AND [FCUnlock] IS NULL) OR ([FCUnlock] = @Original_FCUnlock)) AND ([FeatureModel_Id] = @Original_FeatureModel_Id));
-SELECT Id, FCName, FCDescription, FCPopularity, FCTimeScale, FCRetention, FCIterative, FCNameGenerator, FCUnlock, FeatureModel_Id FROM FeatureSoftwareCategories WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"
+                      UPDATE [dbo].[FeatureSoftwareCategories] SET [FCName] = @FCName, [FCDescription] = @FCDescription, [FCPopularity] = @FCPopularity, [FCTimeScale] = @FCTimeScale, [FCRetention] = @FCRetention, [FCIterative] = @FCIterative, [FCNameGenerator] = @FCNameGenerator, [FCUnlock] = @FCUnlock, [FeatureModel_Id] = @FeatureModel_Id WHERE (([Id] = @Original_Id) AND ((@IsNull_FCPopularity = 1 AND [FCPopularity] IS NULL) OR ([FCPopularity] = @Original_FCPopularity)) AND ((@IsNull_FCTimeScale = 1 AND [FCTimeScale] IS NULL) OR ([FCTimeScale] = @Original_FCTimeScale)) AND ((@IsNull_FCRetention = 1 AND [FCRetention] IS NULL) OR ([FCRetention] = @Original_FCRetention)) AND ((@IsNull_FCIterative = 1 AND [FCIterative] IS NULL) OR ([FCIterative] = @Original_FCIterative)) AND ((@IsNull_FCUnlock = 1 AND [FCUnlock] IS NULL) OR ([FCUnlock] = @Original_FCUnlock)) AND ([FeatureModel_Id] = @Original_FeatureModel_Id));
+                      SELECT Id, FCName, FCDescription, FCPopularity, FCTimeScale, FCRetention, FCIterative, FCNameGenerator, FCUnlock, FeatureModel_Id FROM FeatureSoftwareCategories WHERE (Id = @Id)
+                    ";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FCName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FCName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FCDescription", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FCDescription", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7675,16 +7693,19 @@ SELECT Id, FCName, FCDescription, FCPopularity, FCTimeScale, FCRetention, FCIter
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SoftwareTypeModels_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SoftwareTypeModels_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[SoftwareTypeMAttributes] ([Override], [SoftwareTypeModels_Id])" +
-                " VALUES (@Override, @SoftwareTypeModels_Id);\r\nSELECT Id, Override, SoftwareTypeM" +
-                "odels_Id FROM SoftwareTypeMAttributes WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"
+                      INSERT INTO [dbo].[SoftwareTypeMAttributes] ([Override], [SoftwareTypeModels_Id]) VALUES (@Override, @SoftwareTypeModels_Id);
+                      SELECT Id, Override, SoftwareTypeModels_Id FROM SoftwareTypeMAttributes WHERE (Id = SCOPE_IDENTITY())
+                    ";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Override", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Override", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SoftwareTypeModels_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SoftwareTypeModels_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[SoftwareTypeMAttributes] SET [Override] = @Override, [SoftwareTypeModels_Id] = @SoftwareTypeModels_Id WHERE (([Id] = @Original_Id) AND ((@IsNull_Override = 1 AND [Override] IS NULL) OR ([Override] = @Original_Override)) AND ([SoftwareTypeModels_Id] = @Original_SoftwareTypeModels_Id));
-SELECT Id, Override, SoftwareTypeModels_Id FROM SoftwareTypeMAttributes WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"
+                      UPDATE [dbo].[SoftwareTypeMAttributes] SET [Override] = @Override, [SoftwareTypeModels_Id] = @SoftwareTypeModels_Id WHERE (([Id] = @Original_Id) AND ((@IsNull_Override = 1 AND [Override] IS NULL) OR ([Override] = @Original_Override)) AND ([SoftwareTypeModels_Id] = @Original_SoftwareTypeModels_Id));
+                      SELECT Id, Override, SoftwareTypeModels_Id FROM SoftwareTypeMAttributes WHERE (Id = @Id)
+                    ";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Override", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Override", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SoftwareTypeModels_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SoftwareTypeModels_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -8031,8 +8052,10 @@ SELECT Id, Override, SoftwareTypeModels_Id FROM SoftwareTypeMAttributes WHERE (I
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RootIterative", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "RootIterative", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[SoftwareTypeModels] ([RootName], [RootDescription], [RootCategory], [RootUnlock], [RootOSLimit], [RootOSSpecific], [RootPopularity], [RootRandom], [RootRetention], [RootOneClient], [RootInHouse], [RootIterative], [RootNameGenerator]) VALUES (@RootName, @RootDescription, @RootCategory, @RootUnlock, @RootOSLimit, @RootOSSpecific, @RootPopularity, @RootRandom, @RootRetention, @RootOneClient, @RootInHouse, @RootIterative, @RootNameGenerator);
-SELECT Id, RootName, RootDescription, RootCategory, RootUnlock, RootOSLimit, RootOSSpecific, RootPopularity, RootRandom, RootRetention, RootOneClient, RootInHouse, RootIterative, RootNameGenerator FROM SoftwareTypeModels WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"
+                      INSERT INTO [dbo].[SoftwareTypeModels] ([RootName], [RootDescription], [RootCategory], [RootUnlock], [RootOSLimit], [RootOSSpecific], [RootPopularity], [RootRandom], [RootRetention], [RootOneClient], [RootInHouse], [RootIterative], [RootNameGenerator]) VALUES (@RootName, @RootDescription, @RootCategory, @RootUnlock, @RootOSLimit, @RootOSSpecific, @RootPopularity, @RootRandom, @RootRetention, @RootOneClient, @RootInHouse, @RootIterative, @RootNameGenerator);
+                      SELECT Id, RootName, RootDescription, RootCategory, RootUnlock, RootOSLimit, RootOSSpecific, RootPopularity, RootRandom, RootRetention, RootOneClient, RootInHouse, RootIterative, RootNameGenerator FROM SoftwareTypeModels WHERE (Id = SCOPE_IDENTITY())
+                    ";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RootName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RootName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RootDescription", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RootDescription", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -8049,26 +8072,27 @@ SELECT Id, RootName, RootDescription, RootCategory, RootUnlock, RootOSLimit, Roo
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RootNameGenerator", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RootNameGenerator", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[SoftwareTypeModels] SET [RootName] = @RootName, [RootDescription] =" +
-                " @RootDescription, [RootCategory] = @RootCategory, [RootUnlock] = @RootUnlock, [" +
-                "RootOSLimit] = @RootOSLimit, [RootOSSpecific] = @RootOSSpecific, [RootPopularity" +
-                "] = @RootPopularity, [RootRandom] = @RootRandom, [RootRetention] = @RootRetentio" +
-                "n, [RootOneClient] = @RootOneClient, [RootInHouse] = @RootInHouse, [RootIterativ" +
-                "e] = @RootIterative, [RootNameGenerator] = @RootNameGenerator WHERE (([Id] = @Or" +
-                "iginal_Id) AND ((@IsNull_RootUnlock = 1 AND [RootUnlock] IS NULL) OR ([RootUnloc" +
-                "k] = @Original_RootUnlock)) AND ((@IsNull_RootOSSpecific = 1 AND [RootOSSpecific" +
-                "] IS NULL) OR ([RootOSSpecific] = @Original_RootOSSpecific)) AND ((@IsNull_RootP" +
-                "opularity = 1 AND [RootPopularity] IS NULL) OR ([RootPopularity] = @Original_Roo" +
-                "tPopularity)) AND ((@IsNull_RootRandom = 1 AND [RootRandom] IS NULL) OR ([RootRa" +
-                "ndom] = @Original_RootRandom)) AND ((@IsNull_RootRetention = 1 AND [RootRetentio" +
-                "n] IS NULL) OR ([RootRetention] = @Original_RootRetention)) AND ((@IsNull_RootOn" +
-                "eClient = 1 AND [RootOneClient] IS NULL) OR ([RootOneClient] = @Original_RootOne" +
-                "Client)) AND ((@IsNull_RootInHouse = 1 AND [RootInHouse] IS NULL) OR ([RootInHou" +
-                "se] = @Original_RootInHouse)) AND ((@IsNull_RootIterative = 1 AND [RootIterative" +
-                "] IS NULL) OR ([RootIterative] = @Original_RootIterative)));\r\nSELECT Id, RootNam" +
-                "e, RootDescription, RootCategory, RootUnlock, RootOSLimit, RootOSSpecific, RootP" +
-                "opularity, RootRandom, RootRetention, RootOneClient, RootInHouse, RootIterative," +
-                " RootNameGenerator FROM SoftwareTypeModels WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = "\r\n                      UPDATE [dbo].[SoftwareTypeModels] SET [RootName] = @RootN" +
+                "ame, [RootDescription] = @RootDescription, [RootCategory] = @RootCategory, [Root" +
+                "Unlock] = @RootUnlock, [RootOSLimit] = @RootOSLimit, [RootOSSpecific] = @RootOSS" +
+                "pecific, [RootPopularity] = @RootPopularity, [RootRandom] = @RootRandom, [RootRe" +
+                "tention] = @RootRetention, [RootOneClient] = @RootOneClient, [RootInHouse] = @Ro" +
+                "otInHouse, [RootIterative] = @RootIterative, [RootNameGenerator] = @RootNameGene" +
+                "rator WHERE (([Id] = @Original_Id) AND ((@IsNull_RootUnlock = 1 AND [RootUnlock]" +
+                " IS NULL) OR ([RootUnlock] = @Original_RootUnlock)) AND ((@IsNull_RootOSSpecific" +
+                " = 1 AND [RootOSSpecific] IS NULL) OR ([RootOSSpecific] = @Original_RootOSSpecif" +
+                "ic)) AND ((@IsNull_RootPopularity = 1 AND [RootPopularity] IS NULL) OR ([RootPop" +
+                "ularity] = @Original_RootPopularity)) AND ((@IsNull_RootRandom = 1 AND [RootRand" +
+                "om] IS NULL) OR ([RootRandom] = @Original_RootRandom)) AND ((@IsNull_RootRetenti" +
+                "on = 1 AND [RootRetention] IS NULL) OR ([RootRetention] = @Original_RootRetentio" +
+                "n)) AND ((@IsNull_RootOneClient = 1 AND [RootOneClient] IS NULL) OR ([RootOneCli" +
+                "ent] = @Original_RootOneClient)) AND ((@IsNull_RootInHouse = 1 AND [RootInHouse]" +
+                " IS NULL) OR ([RootInHouse] = @Original_RootInHouse)) AND ((@IsNull_RootIterativ" +
+                "e = 1 AND [RootIterative] IS NULL) OR ([RootIterative] = @Original_RootIterative" +
+                ")));\r\n                      SELECT Id, RootName, RootDescription, RootCategory, " +
+                "RootUnlock, RootOSLimit, RootOSSpecific, RootPopularity, RootRandom, RootRetenti" +
+                "on, RootOneClient, RootInHouse, RootIterative, RootNameGenerator FROM SoftwareTy" +
+                "peModels WHERE (Id = @Id)\r\n                    ";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RootName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RootName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RootDescription", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RootDescription", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

@@ -1,7 +1,7 @@
-﻿using System.Windows.Forms;
-
-namespace SoftwareIncModMaker
+﻿namespace SoftwareIncModMaker
 {
+    using System.Windows.Forms;
+
     public partial class AboutForm : Form
     {
         public AboutForm()

@@ -1,15 +1,12 @@
 namespace SoftwareIncModMaker.Class
 {
-    using System;
     using System.Data.Entity;
-    using System.Linq;
 
     public class apaini : DbContext
     {
         // Your context has been configured to use a 'SoftwareTypeModel' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 
         // 'SoftwareIncModMaker.Class.SoftwareTypeModel' database on your LocalDb instance. 
-        // 
         // If you wish to target a different database and/or database provider, modify the 'SoftwareTypeModel' 
         // connection string in the application configuration file.
         public apaini()
@@ -23,9 +20,9 @@ namespace SoftwareIncModMaker.Class
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
     }
 
-    //public class MyEntity
-    //{
-    //    public int Id { get; set; }
-    //    public string Name { get; set; }
-    //}
+    // public class MyEntity
+    // {
+    // public int Id { get; set; }
+    // public string Name { get; set; }
+    // }
 }
