@@ -101,7 +101,6 @@ namespace SoftwareIncModMaker
             pDataSet.Tables.Add(tProcessTable);
 
             DataRow newRow1;
-            DataRow newRow2;
 
             Process p = Process.GetCurrentProcess();
             long pageMemSize = p.PagedMemorySize64;

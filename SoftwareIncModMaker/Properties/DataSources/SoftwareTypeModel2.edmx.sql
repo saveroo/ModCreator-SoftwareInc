@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/11/2017 12:15:52
+-- Date Created: 02/15/2017 15:34:27
 -- Generated from EDMX file: C:\Users\Savero\documents\visual studio 2017\Projects\SoftwareIncModMaker\SoftwareIncModMaker\Properties\DataSources\SoftwareTypeModel2.edmx
 -- --------------------------------------------------
 
@@ -17,23 +17,26 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_FeatureModelFeatureAttributes]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[FeatureAttributes] DROP CONSTRAINT [FK_FeatureModelFeatureAttributes];
+GO
+IF OBJECT_ID(N'[dbo].[FK_FeatureModelFeatureSoftwareCategory]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[FeatureSoftwareCategories] DROP CONSTRAINT [FK_FeatureModelFeatureSoftwareCategory];
+GO
 IF OBJECT_ID(N'[dbo].[FK_SoftwareTypeModelFeatureModel]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[FeatureModels] DROP CONSTRAINT [FK_SoftwareTypeModelFeatureModel];
 GO
 IF OBJECT_ID(N'[dbo].[FK_SoftwareTypeModelCategoryModel]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[CategoryModels] DROP CONSTRAINT [FK_SoftwareTypeModelCategoryModel];
 GO
-IF OBJECT_ID(N'[dbo].[FK_FeatureModelFeatureAttributes]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[FeatureAttributes] DROP CONSTRAINT [FK_FeatureModelFeatureAttributes];
+IF OBJECT_ID(N'[dbo].[FK_SoftwareTypeModelSoftwareTypeMAttribute]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[SoftwareTypeMAttributes] DROP CONSTRAINT [FK_SoftwareTypeModelSoftwareTypeMAttribute];
 GO
 IF OBJECT_ID(N'[dbo].[FK_FeatureModelFeatureDependency]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[FeatureDependencies] DROP CONSTRAINT [FK_FeatureModelFeatureDependency];
 GO
-IF OBJECT_ID(N'[dbo].[FK_FeatureModelFeatureSoftwareCategory]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[FeatureSoftwareCategories] DROP CONSTRAINT [FK_FeatureModelFeatureSoftwareCategory];
-GO
-IF OBJECT_ID(N'[dbo].[FK_SoftwareTypeMAttributeSoftwareTypeModel]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[SoftwareTypeModels] DROP CONSTRAINT [FK_SoftwareTypeMAttributeSoftwareTypeModel];
+IF OBJECT_ID(N'[dbo].[FK_DependenciesListFeatureDependency]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[FeatureDependencies] DROP CONSTRAINT [FK_DependenciesListFeatureDependency];
 GO
 
 -- --------------------------------------------------
@@ -61,6 +64,9 @@ GO
 IF OBJECT_ID(N'[dbo].[SoftwareTypeMAttributes]', 'U') IS NOT NULL
     DROP TABLE [dbo].[SoftwareTypeMAttributes];
 GO
+IF OBJECT_ID(N'[dbo].[DependenciesLists]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DependenciesLists];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -84,7 +90,7 @@ CREATE TABLE [dbo].[FeatureModels] (
     [FKFeatureAttributes_Id] int  NULL,
     [FKFeatureDependencies_Id] int  NULL,
     [FKFeatureSoftwareCategory_Id] int  NULL,
-    [SoftwareTypeModel_Id] int  NOT NULL
+    [SoftwareTypeModelId] int  NOT NULL
 );
 GO
 
@@ -99,7 +105,7 @@ CREATE TABLE [dbo].[CategoryModels] (
     [STRetention] decimal(18,0)  NULL,
     [STIterative] decimal(18,0)  NULL,
     [STNameGenerator] nvarchar(max)  NULL,
-    [SoftwareTypeModel_Id] int  NULL
+    [SoftwareTypeModelId] int  NULL
 );
 GO
 
@@ -118,8 +124,7 @@ CREATE TABLE [dbo].[SoftwareTypeModels] (
     [RootOneClient] bit  NULL,
     [RootInHouse] bit  NULL,
     [RootIterative] decimal(18,0)  NULL,
-    [RootNameGenerator] nvarchar(max)  NULL,
-    [SoftwareTypeMAttribute_Id] int  NULL
+    [RootNameGenerator] nvarchar(max)  NULL
 );
 GO
 
@@ -154,16 +159,25 @@ GO
 -- Creating table 'FeatureDependencies'
 CREATE TABLE [dbo].[FeatureDependencies] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [DependencySoftware] nvarchar(max)  NULL,
     [DependencyFeature] nvarchar(max)  NULL,
-    [FeatureModel_Id] int  NOT NULL
+    [FeatureModelId] int  NULL,
+    [DependenciesListId] int  NOT NULL
 );
 GO
 
 -- Creating table 'SoftwareTypeMAttributes'
 CREATE TABLE [dbo].[SoftwareTypeMAttributes] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [Override] bit  NULL
+    [Override] bit  NULL,
+    [FKSoftwareTypeID] int  NULL,
+    [SoftwareTypeModel_Id] int  NOT NULL
+);
+GO
+
+-- Creating table 'DependenciesLists'
+CREATE TABLE [dbo].[DependenciesLists] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [DependencySoftware] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -213,39 +227,15 @@ ADD CONSTRAINT [PK_SoftwareTypeMAttributes]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
+-- Creating primary key on [Id] in table 'DependenciesLists'
+ALTER TABLE [dbo].[DependenciesLists]
+ADD CONSTRAINT [PK_DependenciesLists]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
-
--- Creating foreign key on [SoftwareTypeModel_Id] in table 'FeatureModels'
-ALTER TABLE [dbo].[FeatureModels]
-ADD CONSTRAINT [FK_SoftwareTypeModelFeatureModel]
-    FOREIGN KEY ([SoftwareTypeModel_Id])
-    REFERENCES [dbo].[SoftwareTypeModels]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_SoftwareTypeModelFeatureModel'
-CREATE INDEX [IX_FK_SoftwareTypeModelFeatureModel]
-ON [dbo].[FeatureModels]
-    ([SoftwareTypeModel_Id]);
-GO
-
--- Creating foreign key on [SoftwareTypeModel_Id] in table 'CategoryModels'
-ALTER TABLE [dbo].[CategoryModels]
-ADD CONSTRAINT [FK_SoftwareTypeModelCategoryModel]
-    FOREIGN KEY ([SoftwareTypeModel_Id])
-    REFERENCES [dbo].[SoftwareTypeModels]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_SoftwareTypeModelCategoryModel'
-CREATE INDEX [IX_FK_SoftwareTypeModelCategoryModel]
-ON [dbo].[CategoryModels]
-    ([SoftwareTypeModel_Id]);
-GO
 
 -- Creating foreign key on [FeatureModel_Id] in table 'FeatureAttributes'
 ALTER TABLE [dbo].[FeatureAttributes]
@@ -259,21 +249,6 @@ GO
 -- Creating non-clustered index for FOREIGN KEY 'FK_FeatureModelFeatureAttributes'
 CREATE INDEX [IX_FK_FeatureModelFeatureAttributes]
 ON [dbo].[FeatureAttributes]
-    ([FeatureModel_Id]);
-GO
-
--- Creating foreign key on [FeatureModel_Id] in table 'FeatureDependencies'
-ALTER TABLE [dbo].[FeatureDependencies]
-ADD CONSTRAINT [FK_FeatureModelFeatureDependency]
-    FOREIGN KEY ([FeatureModel_Id])
-    REFERENCES [dbo].[FeatureModels]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_FeatureModelFeatureDependency'
-CREATE INDEX [IX_FK_FeatureModelFeatureDependency]
-ON [dbo].[FeatureDependencies]
     ([FeatureModel_Id]);
 GO
 
@@ -292,19 +267,79 @@ ON [dbo].[FeatureSoftwareCategories]
     ([FeatureModel_Id]);
 GO
 
--- Creating foreign key on [SoftwareTypeMAttribute_Id] in table 'SoftwareTypeModels'
-ALTER TABLE [dbo].[SoftwareTypeModels]
-ADD CONSTRAINT [FK_SoftwareTypeMAttributeSoftwareTypeModel]
-    FOREIGN KEY ([SoftwareTypeMAttribute_Id])
-    REFERENCES [dbo].[SoftwareTypeMAttributes]
+-- Creating foreign key on [SoftwareTypeModelId] in table 'FeatureModels'
+ALTER TABLE [dbo].[FeatureModels]
+ADD CONSTRAINT [FK_SoftwareTypeModelFeatureModel]
+    FOREIGN KEY ([SoftwareTypeModelId])
+    REFERENCES [dbo].[SoftwareTypeModels]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_SoftwareTypeMAttributeSoftwareTypeModel'
-CREATE INDEX [IX_FK_SoftwareTypeMAttributeSoftwareTypeModel]
-ON [dbo].[SoftwareTypeModels]
-    ([SoftwareTypeMAttribute_Id]);
+-- Creating non-clustered index for FOREIGN KEY 'FK_SoftwareTypeModelFeatureModel'
+CREATE INDEX [IX_FK_SoftwareTypeModelFeatureModel]
+ON [dbo].[FeatureModels]
+    ([SoftwareTypeModelId]);
+GO
+
+-- Creating foreign key on [SoftwareTypeModelId] in table 'CategoryModels'
+ALTER TABLE [dbo].[CategoryModels]
+ADD CONSTRAINT [FK_SoftwareTypeModelCategoryModel]
+    FOREIGN KEY ([SoftwareTypeModelId])
+    REFERENCES [dbo].[SoftwareTypeModels]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SoftwareTypeModelCategoryModel'
+CREATE INDEX [IX_FK_SoftwareTypeModelCategoryModel]
+ON [dbo].[CategoryModels]
+    ([SoftwareTypeModelId]);
+GO
+
+-- Creating foreign key on [SoftwareTypeModel_Id] in table 'SoftwareTypeMAttributes'
+ALTER TABLE [dbo].[SoftwareTypeMAttributes]
+ADD CONSTRAINT [FK_SoftwareTypeModelSoftwareTypeMAttribute]
+    FOREIGN KEY ([SoftwareTypeModel_Id])
+    REFERENCES [dbo].[SoftwareTypeModels]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SoftwareTypeModelSoftwareTypeMAttribute'
+CREATE INDEX [IX_FK_SoftwareTypeModelSoftwareTypeMAttribute]
+ON [dbo].[SoftwareTypeMAttributes]
+    ([SoftwareTypeModel_Id]);
+GO
+
+-- Creating foreign key on [FeatureModelId] in table 'FeatureDependencies'
+ALTER TABLE [dbo].[FeatureDependencies]
+ADD CONSTRAINT [FK_FeatureModelFeatureDependency]
+    FOREIGN KEY ([FeatureModelId])
+    REFERENCES [dbo].[FeatureModels]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_FeatureModelFeatureDependency'
+CREATE INDEX [IX_FK_FeatureModelFeatureDependency]
+ON [dbo].[FeatureDependencies]
+    ([FeatureModelId]);
+GO
+
+-- Creating foreign key on [DependenciesListId] in table 'FeatureDependencies'
+ALTER TABLE [dbo].[FeatureDependencies]
+ADD CONSTRAINT [FK_DependenciesListFeatureDependency]
+    FOREIGN KEY ([DependenciesListId])
+    REFERENCES [dbo].[DependenciesLists]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_DependenciesListFeatureDependency'
+CREATE INDEX [IX_FK_DependenciesListFeatureDependency]
+ON [dbo].[FeatureDependencies]
+    ([DependenciesListId]);
 GO
 
 -- --------------------------------------------------

@@ -15,9 +15,11 @@ namespace SoftwareIncModMaker.Properties.DataSources
     public partial class FeatureDependency
     {
         public int Id { get; set; }
-        public string DependencySoftware { get; set; }
         public string DependencyFeature { get; set; }
+        public Nullable<int> FeatureModelId { get; set; }
+        public int DependenciesListId { get; set; }
     
         public virtual FeatureModel FeatureModel { get; set; }
+        public virtual DependenciesList DependenciesList { get; set; }
     }
 }

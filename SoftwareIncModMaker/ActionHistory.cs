@@ -9,12 +9,6 @@ namespace SoftwareIncModMaker
 {
     class ActionHistory
     {
-
-        // private static string _currentAction;
-        // private static bool _currentActionType;
-        // private static bool _actionIsEnded;
-        // private static List<String> _lastAction;
-        // private static string _information;
         public static List<String> HistoryOfAction = new List<String>();
         public static string CurrentAction { get; set; }
         public static bool CurrentActionType { get; set; }

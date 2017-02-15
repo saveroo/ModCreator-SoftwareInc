@@ -12,11 +12,15 @@ using System.IO;
 
 namespace SoftwareIncModMaker
 {
+    using SoftwareIncModMaker.Class;
+
     public partial class WikiBrowser : Form
     {
         public WikiBrowser()
         {
             InitializeComponent();
+            var newBrowser = new WebBrowserClass();
+            newBrowser.WikiBrowser(this.webBrowser1);
         }
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
@@ -30,15 +34,7 @@ namespace SoftwareIncModMaker
 
         private void WikiBrowser_Load(object sender, EventArgs e)
         {
-            var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = "SoftwareIncModMaker.web.html";
-
-            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
-            using (StreamReader reader = new StreamReader(stream))
-            {
-                string result = reader.ReadToEnd();
-                webBrowser1.DocumentText = result;
-            }
+            
 
         }
 

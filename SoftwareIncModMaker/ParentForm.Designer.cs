@@ -44,12 +44,19 @@
             this.nodeEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLDiagramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wikiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wikiBrowserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.forumBrowserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miscToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.debugInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showPropertyGridToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.actionLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hideActionLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.openXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeAllWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusCurrentAction = new System.Windows.Forms.ToolStripStatusLabel();
@@ -62,6 +69,10 @@
             this.dataColumn1 = new System.Data.DataColumn();
             this.dataTableEditor = new System.Data.DataTable();
             this.ActionMemoBox = new System.Windows.Forms.RichTextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
+            this.process1 = new System.Diagnostics.Process();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -79,7 +90,8 @@
             this.miscToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(883, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1244, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -185,16 +197,34 @@
             // 
             // wikiToolStripMenuItem
             // 
+            this.wikiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.wikiBrowserToolStripMenuItem,
+            this.forumBrowserToolStripMenuItem});
             this.wikiToolStripMenuItem.Name = "wikiToolStripMenuItem";
             this.wikiToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.wikiToolStripMenuItem.Text = "Wiki Browser";
             this.wikiToolStripMenuItem.Click += new System.EventHandler(this.wikiToolStripMenuItem_Click);
+            // 
+            // wikiBrowserToolStripMenuItem
+            // 
+            this.wikiBrowserToolStripMenuItem.Name = "wikiBrowserToolStripMenuItem";
+            this.wikiBrowserToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.wikiBrowserToolStripMenuItem.Text = "Wiki Browser";
+            // 
+            // forumBrowserToolStripMenuItem
+            // 
+            this.forumBrowserToolStripMenuItem.Name = "forumBrowserToolStripMenuItem";
+            this.forumBrowserToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.forumBrowserToolStripMenuItem.Text = "Forum Browser";
+            this.forumBrowserToolStripMenuItem.Click += new System.EventHandler(this.forumBrowserToolStripMenuItem_Click);
             // 
             // miscToolStripMenuItem
             // 
             this.miscToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.debugInfoToolStripMenuItem,
             this.checkForUpdateToolStripMenuItem,
+            this.showPropertyGridToolStripMenuItem,
+            this.hideActionLogToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.miscToolStripMenuItem.Name = "miscToolStripMenuItem";
             this.miscToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
@@ -214,6 +244,39 @@
             this.checkForUpdateToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.checkForUpdateToolStripMenuItem.Text = "Check for Update";
             // 
+            // showPropertyGridToolStripMenuItem
+            // 
+            this.showPropertyGridToolStripMenuItem.CheckOnClick = true;
+            this.showPropertyGridToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mainWindowToolStripMenuItem,
+            this.actionLogToolStripMenuItem});
+            this.showPropertyGridToolStripMenuItem.Name = "showPropertyGridToolStripMenuItem";
+            this.showPropertyGridToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.showPropertyGridToolStripMenuItem.Text = "Property Grid";
+            this.showPropertyGridToolStripMenuItem.Click += new System.EventHandler(this.showPropertyGridToolStripMenuItem_Click);
+            // 
+            // mainWindowToolStripMenuItem
+            // 
+            this.mainWindowToolStripMenuItem.Name = "mainWindowToolStripMenuItem";
+            this.mainWindowToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.mainWindowToolStripMenuItem.Text = "Main Window";
+            this.mainWindowToolStripMenuItem.Click += new System.EventHandler(this.mainWindowToolStripMenuItem_Click);
+            // 
+            // actionLogToolStripMenuItem
+            // 
+            this.actionLogToolStripMenuItem.Name = "actionLogToolStripMenuItem";
+            this.actionLogToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.actionLogToolStripMenuItem.Text = "Action Log";
+            this.actionLogToolStripMenuItem.Click += new System.EventHandler(this.actionLogToolStripMenuItem_Click);
+            // 
+            // hideActionLogToolStripMenuItem
+            // 
+            this.hideActionLogToolStripMenuItem.CheckOnClick = true;
+            this.hideActionLogToolStripMenuItem.Name = "hideActionLogToolStripMenuItem";
+            this.hideActionLogToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.hideActionLogToolStripMenuItem.Text = "Action Log";
+            this.hideActionLogToolStripMenuItem.Click += new System.EventHandler(this.hideActionLogToolStripMenuItem_Click);
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
@@ -224,15 +287,23 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openXMLToolStripMenuItem});
+            this.openXMLToolStripMenuItem,
+            this.closeAllWindowToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(131, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(168, 48);
             // 
             // openXMLToolStripMenuItem
             // 
             this.openXMLToolStripMenuItem.Name = "openXMLToolStripMenuItem";
-            this.openXMLToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.openXMLToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.openXMLToolStripMenuItem.Text = "Open XML";
+            // 
+            // closeAllWindowToolStripMenuItem
+            // 
+            this.closeAllWindowToolStripMenuItem.Name = "closeAllWindowToolStripMenuItem";
+            this.closeAllWindowToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.closeAllWindowToolStripMenuItem.Text = "Close All Window";
+            this.closeAllWindowToolStripMenuItem.Click += new System.EventHandler(this.closeAllWindowToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -245,9 +316,10 @@
             this.toolStripStatusLabel5,
             this.statusInformation});
             this.statusStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.statusStrip1.Location = new System.Drawing.Point(0, 335);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 589);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(883, 26);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 16, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1244, 26);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
@@ -320,24 +392,69 @@
             // 
             this.ActionMemoBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ActionMemoBox.Location = new System.Drawing.Point(0, 234);
+            this.ActionMemoBox.AutoWordSelection = true;
+            this.ActionMemoBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ActionMemoBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ActionMemoBox.BulletIndent = 1;
+            this.ActionMemoBox.ForeColor = System.Drawing.Color.SeaGreen;
+            this.ActionMemoBox.Location = new System.Drawing.Point(0, 439);
+            this.ActionMemoBox.Margin = new System.Windows.Forms.Padding(4);
             this.ActionMemoBox.Name = "ActionMemoBox";
             this.ActionMemoBox.ReadOnly = true;
-            this.ActionMemoBox.Size = new System.Drawing.Size(883, 98);
+            this.ActionMemoBox.Size = new System.Drawing.Size(1245, 124);
             this.ActionMemoBox.TabIndex = 6;
             this.ActionMemoBox.Text = "";
+            this.ActionMemoBox.Visible = false;
             this.ActionMemoBox.TextChanged += new System.EventHandler(this.ActionMemoBox_TextChanged);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBar1.Location = new System.Drawing.Point(0, 567);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(1244, 22);
+            this.progressBar1.TabIndex = 8;
+            // 
+            // propertyGrid1
+            // 
+            this.propertyGrid1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.propertyGrid1.Location = new System.Drawing.Point(920, 27);
+            this.propertyGrid1.Name = "propertyGrid1";
+            this.propertyGrid1.SelectedObject = this.ActionMemoBox;
+            this.propertyGrid1.Size = new System.Drawing.Size(324, 405);
+            this.propertyGrid1.TabIndex = 11;
+            this.propertyGrid1.Visible = false;
+            this.propertyGrid1.Click += new System.EventHandler(this.propertyGrid1_Click);
+            // 
+            // process1
+            // 
+            this.process1.StartInfo.Domain = "";
+            this.process1.StartInfo.LoadUserProfile = false;
+            this.process1.StartInfo.Password = null;
+            this.process1.StartInfo.StandardErrorEncoding = null;
+            this.process1.StartInfo.StandardOutputEncoding = null;
+            this.process1.StartInfo.UserName = "";
+            this.process1.SynchronizingObject = this;
             // 
             // ParentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(883, 361);
+            this.BackgroundImage = global::SoftwareIncModMaker.Properties.Resources.gu;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(1244, 615);
+            this.Controls.Add(this.propertyGrid1);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.ActionMemoBox);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("DejaVu Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IsMdiContainer = true;
-            this.MinimumSize = new System.Drawing.Size(400, 400);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(464, 399);
             this.Name = "ParentForm";
             this.Text = "Mod Creator: Software Inc";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -389,6 +506,17 @@
         private System.Windows.Forms.ToolStripMenuItem wikiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xMLDiagramToolStripMenuItem;
         private System.Windows.Forms.RichTextBox ActionMemoBox;
+        public System.ComponentModel.BackgroundWorker backgroundWorker1;
+        public System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ToolStripMenuItem closeAllWindowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wikiBrowserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem forumBrowserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hideActionLogToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showPropertyGridToolStripMenuItem;
+        private System.Windows.Forms.PropertyGrid propertyGrid1;
+        private System.Diagnostics.Process process1;
+        private System.Windows.Forms.ToolStripMenuItem mainWindowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem actionLogToolStripMenuItem;
     }
 }
 

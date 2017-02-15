@@ -17,11 +17,25 @@ namespace SoftwareIncModMaker
 
         }
 
-        public static void showChildForm(Form Here, Form Child)
+        public static async void showChildForm(Form Here, Form Child)
         {
+            await Task.Run(() => WorkerClass.Start()).ConfigureAwait(true);
             Form childForm = Child;
             childForm.MdiParent = Here;
             childForm.Show();
+        }
+
+        public static void DisposeAllButThis(Form form, Form[] whichForm)
+        {
+            foreach (Form frm in whichForm)
+            {
+                if (frm.GetType() != form.GetType()
+                    && frm != form)
+                {
+                    frm.Dispose();
+                    frm.Close();
+                }
+            }
         }
 
         public static void rightClickMenu(ContextMenuStrip formName, MouseEventArgs e)

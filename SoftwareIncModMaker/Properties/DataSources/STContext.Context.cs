@@ -32,5 +32,6 @@ namespace SoftwareIncModMaker.Properties.DataSources
         public virtual DbSet<FeatureSoftwareCategory> FeatureSoftwareCategories { get; set; }
         public virtual DbSet<FeatureDependency> FeatureDependencies { get; set; }
         public virtual DbSet<SoftwareTypeMAttribute> SoftwareTypeMAttributes { get; set; }
+        public virtual DbSet<DependenciesList> DependenciesLists { get; set; }
     }
 }

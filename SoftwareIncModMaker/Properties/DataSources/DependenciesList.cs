@@ -12,12 +12,18 @@ namespace SoftwareIncModMaker.Properties.DataSources
     using System;
     using System.Collections.Generic;
     
-    public partial class SoftwareTypeMAttribute
+    public partial class DependenciesList
     {
-        public int Id { get; set; }
-        public Nullable<bool> Override { get; set; }
-        public Nullable<int> FKSoftwareTypeID { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public DependenciesList()
+        {
+            this.FeatureDependencies = new HashSet<FeatureDependency>();
+        }
     
-        public virtual SoftwareTypeModel SoftwareTypeModel { get; set; }
+        public int Id { get; set; }
+        public string DependencySoftware { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FeatureDependency> FeatureDependencies { get; set; }
     }
 }

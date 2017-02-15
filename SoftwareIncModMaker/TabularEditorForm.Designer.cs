@@ -39,19 +39,17 @@
             this.addCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GroupTabControl = new System.Windows.Forms.TabControl();
             this.SoftwareTypeTab = new System.Windows.Forms.TabPage();
+            this.listBox3 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.childFeaturesBS = new System.Windows.Forms.BindingSource(this.components);
-            this.modCreatorDataSet = new SoftwareIncModMaker.ModCreatorDataSet();
+            this.autoLabel32 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            this.autoLabel31 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.autoLabel30 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.autoLabel27 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.modCreatorDataSet = new SoftwareIncModMaker.ModCreatorDataSet();
             this.sTDataSet = new SoftwareIncModMaker.STDataSet();
             this.softwareTypeBS = new System.Windows.Forms.BindingSource(this.components);
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.btnSubmitToList = new Syncfusion.Windows.Forms.ButtonAdv();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.allGenerate = new Syncfusion.Windows.Forms.ButtonAdv();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.autoLabel22 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
@@ -81,6 +79,7 @@
             this.autoLabel13 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.autoLabel12 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.ftDependencySubmit = new Syncfusion.Windows.Forms.ButtonAdv();
             this.BtEdit = new Syncfusion.Windows.Forms.Tools.ButtonEdit();
             this.addToDependencyComboList = new Syncfusion.Windows.Forms.Tools.ButtonEditChildButton();
             this.addToDependencyList = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
@@ -94,8 +93,7 @@
             this.ctUnlockBox = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
             this.ctPopularityBox = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
             this.ctRetentionBox = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
-            this.ftSubmit = new Syncfusion.Windows.Forms.ButtonAdv();
-            this.ctButtonSubmit = new Syncfusion.Windows.Forms.ButtonAdv();
+            this.ctSubmitButton = new Syncfusion.Windows.Forms.ButtonAdv();
             this.autoLabel11 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.ctNameGenerator = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel8 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
@@ -109,6 +107,7 @@
             this.ctDescriptionTextBox = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.TabNodeSoftwareType = new System.Windows.Forms.TabPage();
+            this.RootOverride = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.stRetention = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
             this.autoLabel29 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.autoLabel28 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
@@ -141,10 +140,7 @@
             this.treeMenuItem1 = new Syncfusion.Windows.Forms.Tools.TreeMenuItem();
             this.treeMenuItem2 = new Syncfusion.Windows.Forms.Tools.TreeMenuItem();
             this.treeMenuItem3 = new Syncfusion.Windows.Forms.Tools.TreeMenuItem();
-            this.treeMenuItem4 = new Syncfusion.Windows.Forms.Tools.TreeMenuItem();
-            this.treeMenuItem5 = new Syncfusion.Windows.Forms.Tools.TreeMenuItem();
-            this.treeMenuItem6 = new Syncfusion.Windows.Forms.Tools.TreeMenuItem();
-            this.treeMenuItem7 = new Syncfusion.Windows.Forms.Tools.TreeMenuItem();
+            this.childFeaturesBS = new System.Windows.Forms.BindingSource(this.components);
             this.treeMenuItem8 = new Syncfusion.Windows.Forms.Tools.TreeMenuItem();
             this.treeMenuItem9 = new Syncfusion.Windows.Forms.Tools.TreeMenuItem();
             this.treeMenuItem10 = new Syncfusion.Windows.Forms.Tools.TreeMenuItem();
@@ -153,11 +149,11 @@
             this.tabularFormContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.EditSTList = new System.Windows.Forms.ToolStripMenuItem();
             this.DeleteSTList = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.softwareTypeModelsTableAdapter = new SoftwareIncModMaker.ModCreatorDataSetTableAdapters.SoftwareTypeModelsTableAdapter();
             this.menuStrip1.SuspendLayout();
             this.GroupTabControl.SuspendLayout();
             this.SoftwareTypeTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.childFeaturesBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modCreatorDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.softwareTypeBS)).BeginInit();
@@ -195,6 +191,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ctDescriptionTextBox)).BeginInit();
             this.tabControl3.SuspendLayout();
             this.TabNodeSoftwareType.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RootOverride)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stRetention)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stUnlock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stPopularity)).BeginInit();
@@ -209,6 +206,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.stOneClient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stOSSpecific)).BeginInit();
             this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.childFeaturesBS)).BeginInit();
             this.tabularFormContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -218,12 +216,13 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.testToolStripMenuItem,
             this.testToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(885, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(861, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked_1);
@@ -266,59 +265,111 @@
             // 
             // GroupTabControl
             // 
+            this.GroupTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupTabControl.Controls.Add(this.SoftwareTypeTab);
             this.GroupTabControl.Controls.Add(this.CompanyTab);
             this.GroupTabControl.Controls.Add(this.Personality);
             this.GroupTabControl.Controls.Add(this.ScenarioTab);
             this.GroupTabControl.Controls.Add(this.tabPage6);
-            this.GroupTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GroupTabControl.Location = new System.Drawing.Point(0, 24);
             this.GroupTabControl.Name = "GroupTabControl";
             this.GroupTabControl.SelectedIndex = 0;
-            this.GroupTabControl.Size = new System.Drawing.Size(885, 535);
+            this.GroupTabControl.Size = new System.Drawing.Size(861, 535);
             this.GroupTabControl.TabIndex = 2;
             // 
             // SoftwareTypeTab
             // 
+            this.SoftwareTypeTab.BackColor = System.Drawing.Color.Snow;
+            this.SoftwareTypeTab.Controls.Add(this.listBox3);
             this.SoftwareTypeTab.Controls.Add(this.listBox2);
+            this.SoftwareTypeTab.Controls.Add(this.autoLabel32);
+            this.SoftwareTypeTab.Controls.Add(this.autoLabel31);
+            this.SoftwareTypeTab.Controls.Add(this.autoLabel30);
             this.SoftwareTypeTab.Controls.Add(this.autoLabel27);
             this.SoftwareTypeTab.Controls.Add(this.listBox1);
             this.SoftwareTypeTab.Controls.Add(this.listView2);
-            this.SoftwareTypeTab.Controls.Add(this.btnSubmitToList);
-            this.SoftwareTypeTab.Controls.Add(this.listView1);
-            this.SoftwareTypeTab.Controls.Add(this.allGenerate);
             this.SoftwareTypeTab.Controls.Add(this.tabControl2);
             this.SoftwareTypeTab.Controls.Add(this.tabControl1);
             this.SoftwareTypeTab.Controls.Add(this.tabControl3);
             this.SoftwareTypeTab.Location = new System.Drawing.Point(4, 22);
             this.SoftwareTypeTab.Name = "SoftwareTypeTab";
             this.SoftwareTypeTab.Padding = new System.Windows.Forms.Padding(3);
-            this.SoftwareTypeTab.Size = new System.Drawing.Size(877, 509);
+            this.SoftwareTypeTab.Size = new System.Drawing.Size(853, 509);
             this.SoftwareTypeTab.TabIndex = 0;
             this.SoftwareTypeTab.Text = "SoftwareType";
-            this.SoftwareTypeTab.UseVisualStyleBackColor = true;
+            // 
+            // listBox3
+            // 
+            this.listBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBox3.BackColor = System.Drawing.Color.Azure;
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.Location = new System.Drawing.Point(732, 175);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(111, 329);
+            this.listBox3.TabIndex = 72;
             // 
             // listBox2
             // 
-            this.listBox2.DataSource = this.childFeaturesBS;
-            this.listBox2.DisplayMember = "SubFeatureName";
+            this.listBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBox2.BackColor = System.Drawing.Color.Azure;
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(605, 290);
+            this.listBox2.Location = new System.Drawing.Point(606, 175);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(176, 95);
-            this.listBox2.TabIndex = 66;
-            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
+            this.listBox2.Size = new System.Drawing.Size(120, 329);
+            this.listBox2.TabIndex = 71;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged_1);
             // 
-            // childFeaturesBS
+            // autoLabel32
             // 
-            this.childFeaturesBS.AllowNew = true;
-            this.childFeaturesBS.DataSource = this.modCreatorDataSet;
-            this.childFeaturesBS.Position = 0;
+            this.autoLabel32.DY = -17;
+            this.autoLabel32.LabeledControl = this.listBox3;
+            this.autoLabel32.Location = new System.Drawing.Point(732, 158);
+            this.autoLabel32.Name = "autoLabel32";
+            this.autoLabel32.Position = Syncfusion.Windows.Forms.Tools.AutoLabelPosition.Top;
+            this.autoLabel32.Size = new System.Drawing.Size(76, 13);
+            this.autoLabel32.TabIndex = 70;
+            this.autoLabel32.Text = "Dependencies";
             // 
-            // modCreatorDataSet
+            // autoLabel31
             // 
-            this.modCreatorDataSet.DataSetName = "ModCreatorDataSet";
-            this.modCreatorDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.autoLabel31.DY = -17;
+            this.autoLabel31.LabeledControl = this.listView2;
+            this.autoLabel31.Location = new System.Drawing.Point(605, 93);
+            this.autoLabel31.Name = "autoLabel31";
+            this.autoLabel31.Position = Syncfusion.Windows.Forms.Tools.AutoLabelPosition.Top;
+            this.autoLabel31.Size = new System.Drawing.Size(94, 13);
+            this.autoLabel31.TabIndex = 68;
+            this.autoLabel31.Text = "Software Category";
+            // 
+            // listView2
+            // 
+            this.listView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView2.BackColor = System.Drawing.Color.Azure;
+            this.listView2.LabelWrap = false;
+            this.listView2.Location = new System.Drawing.Point(605, 110);
+            this.listView2.Name = "listView2";
+            this.listView2.ShowItemToolTips = true;
+            this.listView2.Size = new System.Drawing.Size(238, 41);
+            this.listView2.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.listView2.TabIndex = 63;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            // 
+            // autoLabel30
+            // 
+            this.autoLabel30.DY = -17;
+            this.autoLabel30.LabeledControl = this.listBox2;
+            this.autoLabel30.Location = new System.Drawing.Point(606, 158);
+            this.autoLabel30.Name = "autoLabel30";
+            this.autoLabel30.Position = Syncfusion.Windows.Forms.Tools.AutoLabelPosition.Top;
+            this.autoLabel30.Size = new System.Drawing.Size(94, 13);
+            this.autoLabel30.TabIndex = 67;
+            this.autoLabel30.Text = "Contained Feature";
             // 
             // autoLabel27
             // 
@@ -333,6 +384,9 @@
             // 
             // listBox1
             // 
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBox1.BackColor = System.Drawing.Color.Azure;
             this.listBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.modCreatorDataSet, "SoftwareTypeModels.RootName", true));
             this.listBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.modCreatorDataSet, "SoftwareTypeModels.FK_SoftwareTypeModelFeatureModel.Id", true));
             this.listBox1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.sTDataSet, "SoftwareTypeModels.Id", true));
@@ -342,11 +396,16 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(605, 25);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(239, 43);
+            this.listBox1.Size = new System.Drawing.Size(239, 56);
             this.listBox1.TabIndex = 64;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             this.listBox1.BindingContextChanged += new System.EventHandler(this.listBox1_BindingContextChanged);
             this.listBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDown);
+            // 
+            // modCreatorDataSet
+            // 
+            this.modCreatorDataSet.DataSetName = "ModCreatorDataSet";
+            this.modCreatorDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sTDataSet
             // 
@@ -359,65 +418,13 @@
             this.softwareTypeBS.DataMember = "SoftwareTypeModels";
             this.softwareTypeBS.DataSource = this.modCreatorDataSet;
             // 
-            // listView2
-            // 
-            this.listView2.Location = new System.Drawing.Point(799, 112);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(45, 153);
-            this.listView2.TabIndex = 63;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // btnSubmitToList
-            // 
-            this.btnSubmitToList.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Metro;
-            this.btnSubmitToList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-            this.btnSubmitToList.BeforeTouchSize = new System.Drawing.Size(85, 24);
-            this.btnSubmitToList.ForeColor = System.Drawing.Color.White;
-            this.btnSubmitToList.IsBackStageButton = false;
-            this.btnSubmitToList.Location = new System.Drawing.Point(605, 477);
-            this.btnSubmitToList.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSubmitToList.Name = "btnSubmitToList";
-            this.btnSubmitToList.Size = new System.Drawing.Size(85, 24);
-            this.btnSubmitToList.TabIndex = 61;
-            this.btnSubmitToList.Text = "Submit to List";
-            this.btnSubmitToList.UseVisualStyle = true;
-            this.btnSubmitToList.Click += new System.EventHandler(this.btnSubmitToList_Click);
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.listView1.Location = new System.Drawing.Point(605, 112);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(188, 153);
-            this.listView1.TabIndex = 60;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView1_ItemSelectionChanged);
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
-            // allGenerate
-            // 
-            this.allGenerate.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Metro;
-            this.allGenerate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-            this.allGenerate.BeforeTouchSize = new System.Drawing.Size(85, 24);
-            this.allGenerate.ForeColor = System.Drawing.Color.White;
-            this.allGenerate.IsBackStageButton = false;
-            this.allGenerate.Location = new System.Drawing.Point(696, 477);
-            this.allGenerate.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.allGenerate.Name = "allGenerate";
-            this.allGenerate.Size = new System.Drawing.Size(85, 24);
-            this.allGenerate.TabIndex = 59;
-            this.allGenerate.Text = "Generate";
-            this.allGenerate.UseVisualStyle = true;
-            this.allGenerate.Click += new System.EventHandler(this.allGenerate_Click);
-            // 
             // tabControl2
             // 
+            this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.tabControl2.Controls.Add(this.tabPage3);
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage2);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Left;
             this.tabControl2.Location = new System.Drawing.Point(355, 3);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
@@ -426,6 +433,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.MintCream;
             this.tabPage3.Controls.Add(this.autoLabel22);
             this.tabPage3.Controls.Add(this.ftUnlockBox);
             this.tabPage3.Controls.Add(this.ftAttrForced);
@@ -458,7 +466,6 @@
             this.tabPage3.Size = new System.Drawing.Size(236, 477);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Feature";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // autoLabel22
             // 
@@ -545,7 +552,7 @@
             this.ftUsabilityBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ftUsabilityBox.Location = new System.Drawing.Point(6, 273);
             this.ftUsabilityBox.Maximum = new decimal(new int[] {
-            12,
+            22,
             0,
             0,
             0});
@@ -568,7 +575,7 @@
             this.ftStabilityBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ftStabilityBox.Location = new System.Drawing.Point(6, 313);
             this.ftStabilityBox.Maximum = new decimal(new int[] {
-            12,
+            22,
             0,
             0,
             0});
@@ -591,7 +598,7 @@
             this.ftInnovationBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ftInnovationBox.Location = new System.Drawing.Point(6, 232);
             this.ftInnovationBox.Maximum = new decimal(new int[] {
-            12,
+            22,
             0,
             0,
             0});
@@ -613,6 +620,11 @@
             this.ftCodeArtBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
             this.ftCodeArtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ftCodeArtBox.DecimalPlaces = 1;
+            this.ftCodeArtBox.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.ftCodeArtBox.Location = new System.Drawing.Point(6, 191);
             this.ftCodeArtBox.Maximum = new decimal(new int[] {
             1,
@@ -620,15 +632,20 @@
             0,
             0});
             this.ftCodeArtBox.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
+            this.ftCodeArtBox.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.ftCodeArtBox.Name = "ftCodeArtBox";
             this.ftCodeArtBox.Size = new System.Drawing.Size(134, 20);
             this.ftCodeArtBox.TabIndex = 33;
             this.ftCodeArtBox.ThousandsSeparator = true;
             this.ftCodeArtBox.Value = new decimal(new int[] {
-            1,
+            5,
             0,
             0,
-            0});
+            65536});
             this.ftCodeArtBox.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
             // ftServerBox
@@ -636,28 +653,33 @@
             this.ftServerBox.BeforeTouchSize = new System.Drawing.Size(134, 20);
             this.ftServerBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
             this.ftServerBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ftServerBox.DecimalPlaces = 1;
+            this.ftServerBox.DecimalPlaces = 3;
             this.ftServerBox.Increment = new decimal(new int[] {
             1,
             0,
             0,
-            131072});
+            196608});
             this.ftServerBox.Location = new System.Drawing.Point(6, 355);
+            this.ftServerBox.Maximum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
             this.ftServerBox.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
             this.ftServerBox.Name = "ftServerBox";
             this.ftServerBox.Size = new System.Drawing.Size(134, 20);
             this.ftServerBox.TabIndex = 31;
             this.ftServerBox.Value = new decimal(new int[] {
-            1,
+            2,
             0,
             0,
-            0});
+            196608});
             this.ftServerBox.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
             // ftDescription
             // 
             this.ftDescription.BackColor = System.Drawing.SystemColors.Info;
-            this.ftDescription.BeforeTouchSize = new System.Drawing.Size(117, 13);
+            this.ftDescription.BeforeTouchSize = new System.Drawing.Size(202, 13);
             this.ftDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ftDescription.Location = new System.Drawing.Point(6, 104);
             this.ftDescription.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -666,11 +688,12 @@
             this.ftDescription.Size = new System.Drawing.Size(134, 27);
             this.ftDescription.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
             this.ftDescription.TabIndex = 29;
+            this.ftDescription.UseBorderColorOnFocus = true;
             // 
             // ftCategory
             // 
             this.ftCategory.BackColor = System.Drawing.SystemColors.Info;
-            this.ftCategory.BeforeTouchSize = new System.Drawing.Size(117, 13);
+            this.ftCategory.BeforeTouchSize = new System.Drawing.Size(202, 13);
             this.ftCategory.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ftCategory.Location = new System.Drawing.Point(6, 63);
             this.ftCategory.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -678,6 +701,7 @@
             this.ftCategory.Size = new System.Drawing.Size(134, 20);
             this.ftCategory.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
             this.ftCategory.TabIndex = 14;
+            this.ftCategory.UseBorderColorOnFocus = true;
             // 
             // ftDevTimeBox
             // 
@@ -690,7 +714,7 @@
             1,
             0,
             0,
-            0});
+            65536});
             this.ftDevTimeBox.Name = "ftDevTimeBox";
             this.ftDevTimeBox.Size = new System.Drawing.Size(134, 20);
             this.ftDevTimeBox.TabIndex = 0;
@@ -704,7 +728,7 @@
             // ftName
             // 
             this.ftName.BackColor = System.Drawing.SystemColors.Info;
-            this.ftName.BeforeTouchSize = new System.Drawing.Size(117, 13);
+            this.ftName.BeforeTouchSize = new System.Drawing.Size(202, 13);
             this.ftName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ftName.Location = new System.Drawing.Point(6, 21);
             this.ftName.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -712,6 +736,7 @@
             this.ftName.Size = new System.Drawing.Size(134, 20);
             this.ftName.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
             this.ftName.TabIndex = 29;
+            this.ftName.UseBorderColorOnFocus = true;
             // 
             // ftSubmitButton
             // 
@@ -721,10 +746,12 @@
             this.ftSubmitButton.ForeColor = System.Drawing.Color.White;
             this.ftSubmitButton.IsBackStageButton = false;
             this.ftSubmitButton.Location = new System.Drawing.Point(86, 431);
+            this.ftSubmitButton.MetroColor = System.Drawing.Color.CadetBlue;
             this.ftSubmitButton.Name = "ftSubmitButton";
             this.ftSubmitButton.Size = new System.Drawing.Size(54, 23);
             this.ftSubmitButton.TabIndex = 47;
             this.ftSubmitButton.Text = "Submit";
+            this.ftSubmitButton.UseVisualStyle = true;
             this.ftSubmitButton.Click += new System.EventHandler(this.ftSubmitButton_Click);
             // 
             // ftAttrFrom
@@ -732,15 +759,11 @@
             // 
             // 
             // 
-            this.ftAttrFrom.AutoCompleteControl.ChangeDataManagerPosition = true;
             this.ftAttrFrom.AutoCompleteControl.HeaderFont = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
             this.ftAttrFrom.AutoCompleteControl.ItemFont = new System.Drawing.Font("Segoe UI", 8.25F);
             this.ftAttrFrom.AutoCompleteControl.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(158)))), ((int)(((byte)(218)))));
-            this.ftAttrFrom.AutoCompleteControl.OverrideCombo = true;
             this.ftAttrFrom.AutoCompleteControl.ParentForm = this.tabPage3;
             this.ftAttrFrom.AutoCompleteControl.Style = Syncfusion.Windows.Forms.Tools.AutoCompleteStyle.Default;
-            this.ftAttrFrom.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.ftAttrFrom.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.ftAttrFrom.DropDownWidth = 121;
             this.ftAttrFrom.Location = new System.Drawing.Point(35, 379);
             this.ftAttrFrom.Name = "ftAttrFrom";
@@ -858,6 +881,8 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.BackColor = System.Drawing.Color.MintCream;
+            this.tabPage4.Controls.Add(this.ftDependencySubmit);
             this.tabPage4.Controls.Add(this.BtEdit);
             this.tabPage4.Controls.Add(this.ftDependencyFeature);
             this.tabPage4.Controls.Add(this.ftDependencyComboBox);
@@ -867,33 +892,53 @@
             this.tabPage4.Size = new System.Drawing.Size(236, 477);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Dependency";
-            this.tabPage4.UseVisualStyleBackColor = true;
             this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
+            // 
+            // ftDependencySubmit
+            // 
+            this.ftDependencySubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ftDependencySubmit.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Metro;
+            this.ftDependencySubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ftDependencySubmit.BeforeTouchSize = new System.Drawing.Size(223, 23);
+            this.ftDependencySubmit.ForeColor = System.Drawing.Color.White;
+            this.ftDependencySubmit.IsBackStageButton = false;
+            this.ftDependencySubmit.Location = new System.Drawing.Point(6, 448);
+            this.ftDependencySubmit.MetroColor = System.Drawing.Color.CadetBlue;
+            this.ftDependencySubmit.Name = "ftDependencySubmit";
+            this.ftDependencySubmit.Size = new System.Drawing.Size(223, 23);
+            this.ftDependencySubmit.TabIndex = 55;
+            this.ftDependencySubmit.Text = "Add to selected feature";
+            this.ftDependencySubmit.UseVisualStyle = true;
+            this.ftDependencySubmit.Click += new System.EventHandler(this.ftDependencySubmit_Click);
             // 
             // BtEdit
             // 
-            this.BtEdit.BeforeTouchSize = new System.Drawing.Size(121, 21);
+            this.BtEdit.BackColor = System.Drawing.Color.Azure;
+            this.BtEdit.BeforeTouchSize = new System.Drawing.Size(224, 21);
             this.BtEdit.Buttons.Add(this.addToDependencyComboList);
             this.BtEdit.ButtonStyle = Syncfusion.Windows.Forms.ButtonAppearance.Metro;
             this.BtEdit.Controls.Add(this.addToDependencyComboList);
             this.BtEdit.Controls.Add(this.addToDependencyList);
-            this.BtEdit.Location = new System.Drawing.Point(21, 48);
+            this.BtEdit.Location = new System.Drawing.Point(6, 20);
             this.BtEdit.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
             this.BtEdit.Name = "BtEdit";
-            this.BtEdit.Size = new System.Drawing.Size(121, 21);
+            this.BtEdit.Size = new System.Drawing.Size(224, 21);
             this.BtEdit.TabIndex = 57;
             this.BtEdit.TextBox = this.addToDependencyList;
             this.BtEdit.UseVisualStyle = true;
             // 
             // addToDependencyComboList
             // 
-            this.addToDependencyComboList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+            this.addToDependencyComboList.BackColor = System.Drawing.Color.White;
             this.addToDependencyComboList.BeforeTouchSize = new System.Drawing.Size(18, 17);
             this.addToDependencyComboList.BorderStyleAdv = Syncfusion.Windows.Forms.ButtonAdvBorderStyle.Flat;
-            this.addToDependencyComboList.ComboEditBackColor = System.Drawing.SystemColors.Window;
+            this.addToDependencyComboList.ComboEditBackColor = System.Drawing.Color.Azure;
             this.addToDependencyComboList.ForeColor = System.Drawing.Color.White;
             this.addToDependencyComboList.Image = null;
             this.addToDependencyComboList.IsBackStageButton = false;
+            this.addToDependencyComboList.MetroColor = System.Drawing.Color.CadetBlue;
             this.addToDependencyComboList.Name = "addToDependencyComboList";
             this.addToDependencyComboList.PreferredWidth = 18;
             this.addToDependencyComboList.TabIndex = 1;
@@ -902,13 +947,15 @@
             // 
             // addToDependencyList
             // 
-            this.addToDependencyList.BeforeTouchSize = new System.Drawing.Size(117, 13);
+            this.addToDependencyList.BackColor = System.Drawing.Color.Azure;
+            this.addToDependencyList.BeforeTouchSize = new System.Drawing.Size(202, 13);
             this.addToDependencyList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.addToDependencyList.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.addToDependencyList.FocusBorderColor = System.Drawing.Color.Black;
             this.addToDependencyList.Location = new System.Drawing.Point(2, 4);
-            this.addToDependencyList.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
+            this.addToDependencyList.Metrocolor = System.Drawing.Color.Red;
             this.addToDependencyList.Name = "addToDependencyList";
-            this.addToDependencyList.Size = new System.Drawing.Size(117, 13);
+            this.addToDependencyList.Size = new System.Drawing.Size(202, 13);
             this.addToDependencyList.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
             this.addToDependencyList.TabIndex = 0;
             this.addToDependencyList.Text = "Add to Dependency List";
@@ -917,43 +964,48 @@
             // ftDependencyFeature
             // 
             this.ftDependencyFeature.BackColor = System.Drawing.SystemColors.Info;
-            this.ftDependencyFeature.BeforeTouchSize = new System.Drawing.Size(117, 13);
+            this.ftDependencyFeature.BeforeTouchSize = new System.Drawing.Size(202, 13);
             this.ftDependencyFeature.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ftDependencyFeature.Location = new System.Drawing.Point(20, 125);
+            this.ftDependencyFeature.Location = new System.Drawing.Point(6, 137);
             this.ftDependencyFeature.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
             this.ftDependencyFeature.Name = "ftDependencyFeature";
-            this.ftDependencyFeature.Size = new System.Drawing.Size(121, 20);
+            this.ftDependencyFeature.Size = new System.Drawing.Size(224, 20);
             this.ftDependencyFeature.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
             this.ftDependencyFeature.TabIndex = 55;
             // 
             // ftDependencyComboBox
             // 
             this.ftDependencyComboBox.BackColor = System.Drawing.Color.White;
-            this.ftDependencyComboBox.BeforeTouchSize = new System.Drawing.Size(121, 21);
+            this.ftDependencyComboBox.BeforeTouchSize = new System.Drawing.Size(223, 21);
             this.ftDependencyComboBox.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
+            this.ftDependencyComboBox.FlatBorderColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ftDependencyComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ftDependencyComboBox.Location = new System.Drawing.Point(21, 87);
+            this.ftDependencyComboBox.Location = new System.Drawing.Point(6, 86);
             this.ftDependencyComboBox.MaxDropDownItems = 100;
+            this.ftDependencyComboBox.MetroBorderColor = System.Drawing.Color.CadetBlue;
             this.ftDependencyComboBox.Name = "ftDependencyComboBox";
-            this.ftDependencyComboBox.Size = new System.Drawing.Size(121, 21);
+            this.ftDependencyComboBox.Size = new System.Drawing.Size(223, 21);
+            this.ftDependencyComboBox.Sorted = true;
             this.ftDependencyComboBox.Style = Syncfusion.Windows.Forms.VisualStyle.Metro;
             this.ftDependencyComboBox.TabIndex = 1;
-            this.ftDependencyComboBox.Text = "comboBoxAdv1";
+            this.ftDependencyComboBox.Text = "--Select Software--";
+            this.ftDependencyComboBox.DropDown += new System.EventHandler(this.ftDependencyComboBox_DropDown);
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.Azure;
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(236, 477);
             this.tabPage2.TabIndex = 2;
             this.tabPage2.Text = "Categories";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tabControl1.Location = new System.Drawing.Point(207, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -962,13 +1014,13 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.MintCream;
             this.tabPage1.Controls.Add(this.ctIterativeBox);
             this.tabPage1.Controls.Add(this.ctTimeScaleBox);
             this.tabPage1.Controls.Add(this.ctUnlockBox);
             this.tabPage1.Controls.Add(this.ctPopularityBox);
             this.tabPage1.Controls.Add(this.ctRetentionBox);
-            this.tabPage1.Controls.Add(this.ftSubmit);
-            this.tabPage1.Controls.Add(this.ctButtonSubmit);
+            this.tabPage1.Controls.Add(this.ctSubmitButton);
             this.tabPage1.Controls.Add(this.autoLabel11);
             this.tabPage1.Controls.Add(this.ctNameGenerator);
             this.tabPage1.Controls.Add(this.autoLabel8);
@@ -986,16 +1038,22 @@
             this.tabPage1.Size = new System.Drawing.Size(140, 477);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Category";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // ctIterativeBox
             // 
+            this.ctIterativeBox.BackColor = System.Drawing.Color.Azure;
             this.ctIterativeBox.BeforeTouchSize = new System.Drawing.Size(121, 20);
             this.ctIterativeBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
             this.ctIterativeBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ctIterativeBox.DecimalPlaces = 2;
+            this.ctIterativeBox.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            131072});
             this.ctIterativeBox.Location = new System.Drawing.Point(6, 329);
             this.ctIterativeBox.Maximum = new decimal(new int[] {
-            12,
+            1,
             0,
             0,
             0});
@@ -1005,20 +1063,27 @@
             this.ctIterativeBox.TabIndex = 54;
             this.ctIterativeBox.ThousandsSeparator = true;
             this.ctIterativeBox.Value = new decimal(new int[] {
-            1,
+            75,
             0,
             0,
-            0});
+            131072});
             this.ctIterativeBox.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
             // ctTimeScaleBox
             // 
+            this.ctTimeScaleBox.BackColor = System.Drawing.Color.Azure;
             this.ctTimeScaleBox.BeforeTouchSize = new System.Drawing.Size(121, 20);
             this.ctTimeScaleBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
             this.ctTimeScaleBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ctTimeScaleBox.DecimalPlaces = 1;
+            this.ctTimeScaleBox.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.ctTimeScaleBox.Location = new System.Drawing.Point(6, 168);
             this.ctTimeScaleBox.Maximum = new decimal(new int[] {
-            12,
+            1,
             0,
             0,
             0});
@@ -1031,27 +1096,32 @@
             1,
             0,
             0,
-            0});
+            65536});
             this.ctTimeScaleBox.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
             // ctUnlockBox
             // 
+            this.ctUnlockBox.BackColor = System.Drawing.Color.Azure;
             this.ctUnlockBox.BeforeTouchSize = new System.Drawing.Size(121, 20);
             this.ctUnlockBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
             this.ctUnlockBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ctUnlockBox.Location = new System.Drawing.Point(6, 207);
             this.ctUnlockBox.Maximum = new decimal(new int[] {
-            12,
+            2050,
             0,
             0,
             0});
             this.ctUnlockBox.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
+            this.ctUnlockBox.Minimum = new decimal(new int[] {
+            1950,
+            0,
+            0,
+            0});
             this.ctUnlockBox.Name = "ctUnlockBox";
             this.ctUnlockBox.Size = new System.Drawing.Size(121, 20);
             this.ctUnlockBox.TabIndex = 52;
-            this.ctUnlockBox.ThousandsSeparator = true;
             this.ctUnlockBox.Value = new decimal(new int[] {
-            1,
+            1950,
             0,
             0,
             0});
@@ -1059,12 +1129,19 @@
             // 
             // ctPopularityBox
             // 
+            this.ctPopularityBox.BackColor = System.Drawing.Color.Azure;
             this.ctPopularityBox.BeforeTouchSize = new System.Drawing.Size(121, 20);
             this.ctPopularityBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
             this.ctPopularityBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ctPopularityBox.DecimalPlaces = 1;
+            this.ctPopularityBox.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.ctPopularityBox.Location = new System.Drawing.Point(6, 249);
             this.ctPopularityBox.Maximum = new decimal(new int[] {
-            12,
+            22,
             0,
             0,
             0});
@@ -1082,12 +1159,19 @@
             // 
             // ctRetentionBox
             // 
+            this.ctRetentionBox.BackColor = System.Drawing.Color.Azure;
             this.ctRetentionBox.BeforeTouchSize = new System.Drawing.Size(121, 20);
             this.ctRetentionBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
             this.ctRetentionBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ctRetentionBox.DecimalPlaces = 1;
+            this.ctRetentionBox.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.ctRetentionBox.Location = new System.Drawing.Point(6, 288);
             this.ctRetentionBox.Maximum = new decimal(new int[] {
-            12,
+            1,
             0,
             0,
             0});
@@ -1097,42 +1181,30 @@
             this.ctRetentionBox.TabIndex = 50;
             this.ctRetentionBox.ThousandsSeparator = true;
             this.ctRetentionBox.Value = new decimal(new int[] {
-            1,
+            5,
             0,
             0,
-            0});
+            65536});
             this.ctRetentionBox.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
-            // ftSubmit
+            // ctSubmitButton
             // 
-            this.ftSubmit.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Metro;
-            this.ftSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-            this.ftSubmit.BeforeTouchSize = new System.Drawing.Size(108, 23);
-            this.ftSubmit.ForeColor = System.Drawing.Color.White;
-            this.ftSubmit.IsBackStageButton = false;
-            this.ftSubmit.Location = new System.Drawing.Point(6, 400);
-            this.ftSubmit.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ftSubmit.Name = "ftSubmit";
-            this.ftSubmit.Size = new System.Drawing.Size(108, 23);
-            this.ftSubmit.TabIndex = 30;
-            this.ftSubmit.Text = "Submit to Feature";
-            this.ftSubmit.UseVisualStyle = true;
-            // 
-            // ctButtonSubmit
-            // 
-            this.ctButtonSubmit.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Metro;
-            this.ctButtonSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-            this.ctButtonSubmit.BeforeTouchSize = new System.Drawing.Size(108, 23);
-            this.ctButtonSubmit.ForeColor = System.Drawing.Color.White;
-            this.ctButtonSubmit.IsBackStageButton = false;
-            this.ctButtonSubmit.Location = new System.Drawing.Point(6, 433);
-            this.ctButtonSubmit.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ctButtonSubmit.Name = "ctButtonSubmit";
-            this.ctButtonSubmit.Size = new System.Drawing.Size(108, 23);
-            this.ctButtonSubmit.TabIndex = 29;
-            this.ctButtonSubmit.Text = "Submit";
-            this.ctButtonSubmit.UseVisualStyle = true;
-            this.ctButtonSubmit.Click += new System.EventHandler(this.ctButtonSubmit_Click);
+            this.ctSubmitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ctSubmitButton.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Metro;
+            this.ctSubmitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+            this.ctSubmitButton.BeforeTouchSize = new System.Drawing.Size(128, 23);
+            this.ctSubmitButton.ForeColor = System.Drawing.Color.White;
+            this.ctSubmitButton.IsBackStageButton = false;
+            this.ctSubmitButton.Location = new System.Drawing.Point(6, 448);
+            this.ctSubmitButton.MetroColor = System.Drawing.Color.CadetBlue;
+            this.ctSubmitButton.Name = "ctSubmitButton";
+            this.ctSubmitButton.Size = new System.Drawing.Size(128, 23);
+            this.ctSubmitButton.TabIndex = 29;
+            this.ctSubmitButton.Text = "Submit";
+            this.ctSubmitButton.UseVisualStyle = true;
+            this.ctSubmitButton.Click += new System.EventHandler(this.ctButtonSubmit_Click);
             // 
             // autoLabel11
             // 
@@ -1148,7 +1220,7 @@
             // ctNameGenerator
             // 
             this.ctNameGenerator.BackColor = System.Drawing.SystemColors.Info;
-            this.ctNameGenerator.BeforeTouchSize = new System.Drawing.Size(117, 13);
+            this.ctNameGenerator.BeforeTouchSize = new System.Drawing.Size(202, 13);
             this.ctNameGenerator.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ctNameGenerator.Location = new System.Drawing.Point(6, 374);
             this.ctNameGenerator.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -1216,7 +1288,7 @@
             // ctNameTextBox
             // 
             this.ctNameTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.ctNameTextBox.BeforeTouchSize = new System.Drawing.Size(117, 13);
+            this.ctNameTextBox.BeforeTouchSize = new System.Drawing.Size(202, 13);
             this.ctNameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ctNameTextBox.Location = new System.Drawing.Point(6, 21);
             this.ctNameTextBox.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -1224,6 +1296,7 @@
             this.ctNameTextBox.Size = new System.Drawing.Size(121, 20);
             this.ctNameTextBox.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
             this.ctNameTextBox.TabIndex = 13;
+            this.ctNameTextBox.UseBorderColorOnFocus = true;
             // 
             // autoLabel4
             // 
@@ -1248,7 +1321,7 @@
             // ctDescriptionTextBox
             // 
             this.ctDescriptionTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.ctDescriptionTextBox.BeforeTouchSize = new System.Drawing.Size(117, 13);
+            this.ctDescriptionTextBox.BeforeTouchSize = new System.Drawing.Size(202, 13);
             this.ctDescriptionTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ctDescriptionTextBox.Location = new System.Drawing.Point(6, 61);
             this.ctDescriptionTextBox.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -1257,19 +1330,23 @@
             this.ctDescriptionTextBox.Size = new System.Drawing.Size(121, 84);
             this.ctDescriptionTextBox.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
             this.ctDescriptionTextBox.TabIndex = 9;
+            this.ctDescriptionTextBox.UseBorderColorOnFocus = true;
             // 
             // tabControl3
             // 
+            this.tabControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.tabControl3.Controls.Add(this.TabNodeSoftwareType);
-            this.tabControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.tabControl3.Location = new System.Drawing.Point(3, 3);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(204, 503);
+            this.tabControl3.Size = new System.Drawing.Size(198, 503);
             this.tabControl3.TabIndex = 0;
             // 
             // TabNodeSoftwareType
             // 
+            this.TabNodeSoftwareType.BackColor = System.Drawing.Color.MintCream;
+            this.TabNodeSoftwareType.Controls.Add(this.RootOverride);
             this.TabNodeSoftwareType.Controls.Add(this.stRetention);
             this.TabNodeSoftwareType.Controls.Add(this.autoLabel29);
             this.TabNodeSoftwareType.Controls.Add(this.autoLabel28);
@@ -1297,19 +1374,37 @@
             this.TabNodeSoftwareType.Location = new System.Drawing.Point(4, 22);
             this.TabNodeSoftwareType.Name = "TabNodeSoftwareType";
             this.TabNodeSoftwareType.Padding = new System.Windows.Forms.Padding(3);
-            this.TabNodeSoftwareType.Size = new System.Drawing.Size(196, 477);
+            this.TabNodeSoftwareType.Size = new System.Drawing.Size(190, 477);
             this.TabNodeSoftwareType.TabIndex = 0;
             this.TabNodeSoftwareType.Text = "SoftwareType";
-            this.TabNodeSoftwareType.UseVisualStyleBackColor = true;
+            // 
+            // RootOverride
+            // 
+            this.RootOverride.BeforeTouchSize = new System.Drawing.Size(150, 21);
+            this.RootOverride.Location = new System.Drawing.Point(6, 406);
+            this.RootOverride.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(91)))));
+            this.RootOverride.Name = "RootOverride";
+            this.RootOverride.Size = new System.Drawing.Size(150, 21);
+            this.RootOverride.Style = Syncfusion.Windows.Forms.Tools.CheckBoxAdvStyle.Metro;
+            this.RootOverride.TabIndex = 59;
+            this.RootOverride.Text = "Override";
+            this.RootOverride.ThemesEnabled = false;
             // 
             // stRetention
             // 
+            this.stRetention.BackColor = System.Drawing.Color.Azure;
             this.stRetention.BeforeTouchSize = new System.Drawing.Size(53, 20);
             this.stRetention.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
             this.stRetention.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.stRetention.DecimalPlaces = 1;
+            this.stRetention.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.stRetention.Location = new System.Drawing.Point(130, 154);
             this.stRetention.Maximum = new decimal(new int[] {
-            12,
+            1,
             0,
             0,
             0});
@@ -1349,6 +1444,7 @@
             // 
             // stUnlock
             // 
+            this.stUnlock.BackColor = System.Drawing.Color.Azure;
             this.stUnlock.BeforeTouchSize = new System.Drawing.Size(53, 20);
             this.stUnlock.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
             this.stUnlock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1387,12 +1483,19 @@
             // 
             // stPopularity
             // 
+            this.stPopularity.BackColor = System.Drawing.Color.Azure;
             this.stPopularity.BeforeTouchSize = new System.Drawing.Size(44, 20);
             this.stPopularity.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
             this.stPopularity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.stPopularity.DecimalPlaces = 1;
+            this.stPopularity.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.stPopularity.Location = new System.Drawing.Point(130, 66);
             this.stPopularity.Maximum = new decimal(new int[] {
-            12,
+            22,
             0,
             0,
             0});
@@ -1410,12 +1513,19 @@
             // 
             // stRandom
             // 
+            this.stRandom.BackColor = System.Drawing.Color.Azure;
             this.stRandom.BeforeTouchSize = new System.Drawing.Size(121, 20);
             this.stRandom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
             this.stRandom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.stRandom.DecimalPlaces = 1;
+            this.stRandom.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.stRandom.Location = new System.Drawing.Point(6, 171);
             this.stRandom.Maximum = new decimal(new int[] {
-            12,
+            1,
             0,
             0,
             0});
@@ -1433,6 +1543,7 @@
             // 
             // stIterativeBox
             // 
+            this.stIterativeBox.BackColor = System.Drawing.Color.Azure;
             this.stIterativeBox.BeforeTouchSize = new System.Drawing.Size(44, 20);
             this.stIterativeBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
             this.stIterativeBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1467,15 +1578,18 @@
             // 
             // stSubmitButton
             // 
+            this.stSubmitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.stSubmitButton.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Metro;
             this.stSubmitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-            this.stSubmitButton.BeforeTouchSize = new System.Drawing.Size(85, 24);
+            this.stSubmitButton.BeforeTouchSize = new System.Drawing.Size(177, 23);
             this.stSubmitButton.ForeColor = System.Drawing.Color.White;
             this.stSubmitButton.IsBackStageButton = false;
-            this.stSubmitButton.Location = new System.Drawing.Point(6, 436);
-            this.stSubmitButton.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.stSubmitButton.Location = new System.Drawing.Point(6, 448);
+            this.stSubmitButton.MetroColor = System.Drawing.Color.CadetBlue;
             this.stSubmitButton.Name = "stSubmitButton";
-            this.stSubmitButton.Size = new System.Drawing.Size(85, 24);
+            this.stSubmitButton.Size = new System.Drawing.Size(177, 23);
             this.stSubmitButton.TabIndex = 31;
             this.stSubmitButton.Text = "Submit";
             this.stSubmitButton.UseVisualStyle = true;
@@ -1495,7 +1609,7 @@
             // stOSLimit
             // 
             this.stOSLimit.BackColor = System.Drawing.SystemColors.Info;
-            this.stOSLimit.BeforeTouchSize = new System.Drawing.Size(117, 13);
+            this.stOSLimit.BeforeTouchSize = new System.Drawing.Size(202, 13);
             this.stOSLimit.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stOSLimit.Location = new System.Drawing.Point(6, 373);
             this.stOSLimit.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -1518,7 +1632,7 @@
             // stNameGeneratorBox
             // 
             this.stNameGeneratorBox.BackColor = System.Drawing.SystemColors.Info;
-            this.stNameGeneratorBox.BeforeTouchSize = new System.Drawing.Size(117, 13);
+            this.stNameGeneratorBox.BeforeTouchSize = new System.Drawing.Size(202, 13);
             this.stNameGeneratorBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stNameGeneratorBox.Location = new System.Drawing.Point(6, 333);
             this.stNameGeneratorBox.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -1541,7 +1655,7 @@
             // stDescriptionTextBox
             // 
             this.stDescriptionTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.stDescriptionTextBox.BeforeTouchSize = new System.Drawing.Size(117, 13);
+            this.stDescriptionTextBox.BeforeTouchSize = new System.Drawing.Size(202, 13);
             this.stDescriptionTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stDescriptionTextBox.Location = new System.Drawing.Point(6, 64);
             this.stDescriptionTextBox.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -1550,6 +1664,7 @@
             this.stDescriptionTextBox.Size = new System.Drawing.Size(118, 84);
             this.stDescriptionTextBox.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
             this.stDescriptionTextBox.TabIndex = 12;
+            this.stDescriptionTextBox.UseBorderColorOnFocus = true;
             // 
             // asdsad
             // 
@@ -1565,7 +1680,7 @@
             // stNameTextBox
             // 
             this.stNameTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.stNameTextBox.BeforeTouchSize = new System.Drawing.Size(117, 13);
+            this.stNameTextBox.BeforeTouchSize = new System.Drawing.Size(202, 13);
             this.stNameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stNameTextBox.Location = new System.Drawing.Point(6, 24);
             this.stNameTextBox.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -1573,6 +1688,7 @@
             this.stNameTextBox.Size = new System.Drawing.Size(118, 20);
             this.stNameTextBox.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
             this.stNameTextBox.TabIndex = 7;
+            this.stNameTextBox.UseBorderColorOnFocus = true;
             // 
             // autoLabel2
             // 
@@ -1600,7 +1716,7 @@
             // stCategoryTextBox
             // 
             this.stCategoryTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.stCategoryTextBox.BeforeTouchSize = new System.Drawing.Size(117, 13);
+            this.stCategoryTextBox.BeforeTouchSize = new System.Drawing.Size(202, 13);
             this.stCategoryTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stCategoryTextBox.Location = new System.Drawing.Point(6, 211);
             this.stCategoryTextBox.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
@@ -1608,6 +1724,7 @@
             this.stCategoryTextBox.Size = new System.Drawing.Size(118, 20);
             this.stCategoryTextBox.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
             this.stCategoryTextBox.TabIndex = 3;
+            this.stCategoryTextBox.UseBorderColorOnFocus = true;
             this.stCategoryTextBox.TextChanged += new System.EventHandler(this.textBoxExt1_TextChanged);
             // 
             // stInHouse
@@ -1657,7 +1774,7 @@
             this.CompanyTab.Location = new System.Drawing.Point(4, 22);
             this.CompanyTab.Name = "CompanyTab";
             this.CompanyTab.Padding = new System.Windows.Forms.Padding(3);
-            this.CompanyTab.Size = new System.Drawing.Size(877, 509);
+            this.CompanyTab.Size = new System.Drawing.Size(853, 509);
             this.CompanyTab.TabIndex = 1;
             this.CompanyTab.Text = "Company";
             this.CompanyTab.UseVisualStyleBackColor = true;
@@ -1666,7 +1783,7 @@
             // 
             this.Personality.Location = new System.Drawing.Point(4, 22);
             this.Personality.Name = "Personality";
-            this.Personality.Size = new System.Drawing.Size(877, 509);
+            this.Personality.Size = new System.Drawing.Size(853, 509);
             this.Personality.TabIndex = 2;
             this.Personality.Text = "Personalities";
             this.Personality.UseVisualStyleBackColor = true;
@@ -1675,7 +1792,7 @@
             // 
             this.ScenarioTab.Location = new System.Drawing.Point(4, 22);
             this.ScenarioTab.Name = "ScenarioTab";
-            this.ScenarioTab.Size = new System.Drawing.Size(877, 509);
+            this.ScenarioTab.Size = new System.Drawing.Size(853, 509);
             this.ScenarioTab.TabIndex = 3;
             this.ScenarioTab.Text = "Scenario";
             this.ScenarioTab.UseVisualStyleBackColor = true;
@@ -1686,121 +1803,71 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(877, 509);
+            this.tabPage6.Size = new System.Drawing.Size(853, 509);
             this.tabPage6.TabIndex = 4;
-            this.tabPage6.Text = "tabPage6";
+            this.tabPage6.Text = "Collection";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // treeNavigator1
             // 
             this.treeNavigator1.BackColor = System.Drawing.Color.White;
             headerCollection1.Font = new System.Drawing.Font("Arial", 8F);
+            headerCollection1.HeaderText = "Software List";
             this.treeNavigator1.Header = headerCollection1;
             this.treeNavigator1.ItemBackColor = System.Drawing.SystemColors.Control;
             this.treeNavigator1.Items.Add(this.treeMenuItem1);
-            this.treeNavigator1.Items.Add(this.treeMenuItem2);
-            this.treeNavigator1.Items.Add(this.treeMenuItem3);
-            this.treeNavigator1.Items.Add(this.treeMenuItem4);
-            this.treeNavigator1.Items.Add(this.treeMenuItem5);
-            this.treeNavigator1.Items.Add(this.treeMenuItem6);
-            this.treeNavigator1.Items.Add(this.treeMenuItem7);
             this.treeNavigator1.Location = new System.Drawing.Point(8, 6);
             this.treeNavigator1.MinimumSize = new System.Drawing.Size(150, 150);
             this.treeNavigator1.Name = "treeNavigator1";
-            this.treeNavigator1.Size = new System.Drawing.Size(984, 480);
+            this.treeNavigator1.Size = new System.Drawing.Size(725, 480);
             this.treeNavigator1.TabIndex = 1;
             this.treeNavigator1.Text = "treeNavigator1";
+            this.treeNavigator1.MouseEnter += new System.EventHandler(this.treeNavigator1_MouseEnter);
             // 
             // treeMenuItem1
             // 
             this.treeMenuItem1.BackColor = System.Drawing.SystemColors.Control;
             this.treeMenuItem1.ItemBackColor = System.Drawing.SystemColors.Control;
             this.treeMenuItem1.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
+            this.treeMenuItem1.Items.Add(this.treeMenuItem2);
             this.treeMenuItem1.Location = new System.Drawing.Point(2, 0);
             this.treeMenuItem1.Name = "treeMenuItem1";
             this.treeMenuItem1.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(193)))), ((int)(((byte)(220)))));
             this.treeMenuItem1.SelectedItemForeColor = System.Drawing.Color.Black;
-            this.treeMenuItem1.Size = new System.Drawing.Size(963, 50);
+            this.treeMenuItem1.Size = new System.Drawing.Size(704, 50);
             this.treeMenuItem1.TabIndex = 0;
             this.treeMenuItem1.Text = "treeMenuItem1";
             // 
             // treeMenuItem2
             // 
-            this.treeMenuItem2.BackColor = System.Drawing.SystemColors.Control;
             this.treeMenuItem2.ItemBackColor = System.Drawing.SystemColors.Control;
             this.treeMenuItem2.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
-            this.treeMenuItem2.Location = new System.Drawing.Point(2, 52);
+            this.treeMenuItem2.Items.Add(this.treeMenuItem3);
+            this.treeMenuItem2.Location = new System.Drawing.Point(0, 0);
             this.treeMenuItem2.Name = "treeMenuItem2";
             this.treeMenuItem2.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(193)))), ((int)(((byte)(220)))));
             this.treeMenuItem2.SelectedItemForeColor = System.Drawing.Color.Black;
-            this.treeMenuItem2.Size = new System.Drawing.Size(963, 50);
+            this.treeMenuItem2.Size = new System.Drawing.Size(0, 0);
             this.treeMenuItem2.TabIndex = 0;
             this.treeMenuItem2.Text = "treeMenuItem2";
             // 
             // treeMenuItem3
             // 
-            this.treeMenuItem3.BackColor = System.Drawing.SystemColors.Control;
             this.treeMenuItem3.ItemBackColor = System.Drawing.SystemColors.Control;
             this.treeMenuItem3.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
-            this.treeMenuItem3.Location = new System.Drawing.Point(2, 104);
+            this.treeMenuItem3.Location = new System.Drawing.Point(0, 0);
             this.treeMenuItem3.Name = "treeMenuItem3";
             this.treeMenuItem3.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(193)))), ((int)(((byte)(220)))));
             this.treeMenuItem3.SelectedItemForeColor = System.Drawing.Color.Black;
-            this.treeMenuItem3.Size = new System.Drawing.Size(963, 50);
+            this.treeMenuItem3.Size = new System.Drawing.Size(0, 0);
             this.treeMenuItem3.TabIndex = 0;
             this.treeMenuItem3.Text = "treeMenuItem3";
             // 
-            // treeMenuItem4
+            // childFeaturesBS
             // 
-            this.treeMenuItem4.BackColor = System.Drawing.SystemColors.Control;
-            this.treeMenuItem4.ItemBackColor = System.Drawing.SystemColors.Control;
-            this.treeMenuItem4.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
-            this.treeMenuItem4.Location = new System.Drawing.Point(2, 156);
-            this.treeMenuItem4.Name = "treeMenuItem4";
-            this.treeMenuItem4.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(193)))), ((int)(((byte)(220)))));
-            this.treeMenuItem4.SelectedItemForeColor = System.Drawing.Color.Black;
-            this.treeMenuItem4.Size = new System.Drawing.Size(963, 50);
-            this.treeMenuItem4.TabIndex = 0;
-            this.treeMenuItem4.Text = "treeMenuItem4";
-            // 
-            // treeMenuItem5
-            // 
-            this.treeMenuItem5.BackColor = System.Drawing.SystemColors.Control;
-            this.treeMenuItem5.ItemBackColor = System.Drawing.SystemColors.Control;
-            this.treeMenuItem5.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
-            this.treeMenuItem5.Location = new System.Drawing.Point(2, 208);
-            this.treeMenuItem5.Name = "treeMenuItem5";
-            this.treeMenuItem5.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(193)))), ((int)(((byte)(220)))));
-            this.treeMenuItem5.SelectedItemForeColor = System.Drawing.Color.Black;
-            this.treeMenuItem5.Size = new System.Drawing.Size(963, 50);
-            this.treeMenuItem5.TabIndex = 0;
-            this.treeMenuItem5.Text = "treeMenuItem5";
-            // 
-            // treeMenuItem6
-            // 
-            this.treeMenuItem6.BackColor = System.Drawing.SystemColors.Control;
-            this.treeMenuItem6.ItemBackColor = System.Drawing.SystemColors.Control;
-            this.treeMenuItem6.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
-            this.treeMenuItem6.Location = new System.Drawing.Point(2, 260);
-            this.treeMenuItem6.Name = "treeMenuItem6";
-            this.treeMenuItem6.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(193)))), ((int)(((byte)(220)))));
-            this.treeMenuItem6.SelectedItemForeColor = System.Drawing.Color.Black;
-            this.treeMenuItem6.Size = new System.Drawing.Size(963, 50);
-            this.treeMenuItem6.TabIndex = 0;
-            this.treeMenuItem6.Text = "treeMenuItem6";
-            // 
-            // treeMenuItem7
-            // 
-            this.treeMenuItem7.BackColor = System.Drawing.SystemColors.Control;
-            this.treeMenuItem7.ItemBackColor = System.Drawing.SystemColors.Control;
-            this.treeMenuItem7.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
-            this.treeMenuItem7.Location = new System.Drawing.Point(2, 312);
-            this.treeMenuItem7.Name = "treeMenuItem7";
-            this.treeMenuItem7.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(193)))), ((int)(((byte)(220)))));
-            this.treeMenuItem7.SelectedItemForeColor = System.Drawing.Color.Black;
-            this.treeMenuItem7.Size = new System.Drawing.Size(963, 50);
-            this.treeMenuItem7.TabIndex = 0;
-            this.treeMenuItem7.Text = "treeMenuItem7";
+            this.childFeaturesBS.AllowNew = true;
+            this.childFeaturesBS.DataSource = this.modCreatorDataSet;
+            this.childFeaturesBS.Position = 0;
             // 
             // treeMenuItem8
             // 
@@ -1861,9 +1928,10 @@
             // 
             this.tabularFormContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.EditSTList,
-            this.DeleteSTList});
+            this.DeleteSTList,
+            this.generateToolStripMenuItem});
             this.tabularFormContextMenu.Name = "tabularFormContextMenu";
-            this.tabularFormContextMenu.Size = new System.Drawing.Size(108, 48);
+            this.tabularFormContextMenu.Size = new System.Drawing.Size(122, 70);
             this.tabularFormContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.tabularFormContextMenu_Opening);
             this.tabularFormContextMenu.Click += new System.EventHandler(this.tabularFormContextMenu_Click);
             this.tabularFormContextMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabularFormContextMenu_MouseDown);
@@ -1871,16 +1939,23 @@
             // EditSTList
             // 
             this.EditSTList.Name = "EditSTList";
-            this.EditSTList.Size = new System.Drawing.Size(107, 22);
+            this.EditSTList.Size = new System.Drawing.Size(121, 22);
             this.EditSTList.Text = "Edit";
             this.EditSTList.Click += new System.EventHandler(this.EditSTList_Click);
             // 
             // DeleteSTList
             // 
             this.DeleteSTList.Name = "DeleteSTList";
-            this.DeleteSTList.Size = new System.Drawing.Size(107, 22);
+            this.DeleteSTList.Size = new System.Drawing.Size(121, 22);
             this.DeleteSTList.Text = "Delete";
             this.DeleteSTList.Click += new System.EventHandler(this.DeleteSTList_Click);
+            // 
+            // generateToolStripMenuItem
+            // 
+            this.generateToolStripMenuItem.Name = "generateToolStripMenuItem";
+            this.generateToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.generateToolStripMenuItem.Text = "Generate";
+            this.generateToolStripMenuItem.Click += new System.EventHandler(this.generateToolStripMenuItem_Click);
             // 
             // softwareTypeModelsTableAdapter
             // 
@@ -1890,7 +1965,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 559);
+            this.ClientSize = new System.Drawing.Size(861, 559);
             this.Controls.Add(this.GroupTabControl);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
@@ -1898,12 +1973,12 @@
             this.Name = "TabularEditorForm";
             this.Text = "Tabular Editor";
             this.Load += new System.EventHandler(this.TabularEditorForm_Load);
+            this.DoubleClick += new System.EventHandler(this.TabularEditorForm_DoubleClick);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.GroupTabControl.ResumeLayout(false);
             this.SoftwareTypeTab.ResumeLayout(false);
             this.SoftwareTypeTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.childFeaturesBS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modCreatorDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.softwareTypeBS)).EndInit();
@@ -1946,6 +2021,7 @@
             this.tabControl3.ResumeLayout(false);
             this.TabNodeSoftwareType.ResumeLayout(false);
             this.TabNodeSoftwareType.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RootOverride)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stRetention)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stUnlock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stPopularity)).EndInit();
@@ -1960,6 +2036,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.stOneClient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stOSSpecific)).EndInit();
             this.tabPage6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.childFeaturesBS)).EndInit();
             this.tabularFormContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -2004,8 +2081,7 @@
         private Syncfusion.Windows.Forms.Tools.TextBoxExt ctNameGenerator;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel8;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel10;
-        private Syncfusion.Windows.Forms.ButtonAdv ftSubmit;
-        private Syncfusion.Windows.Forms.ButtonAdv ctButtonSubmit;
+        private Syncfusion.Windows.Forms.ButtonAdv ctSubmitButton;
         private Syncfusion.Windows.Forms.Tools.NumericUpDownExt ctIterativeBox;
         private Syncfusion.Windows.Forms.Tools.NumericUpDownExt ctTimeScaleBox;
         private Syncfusion.Windows.Forms.Tools.NumericUpDownExt ctUnlockBox;
@@ -2021,22 +2097,11 @@
         private Syncfusion.Windows.Forms.Tools.NumericUpDownExt stRandom;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel26;
         private Syncfusion.Windows.Forms.Tools.NumericUpDownExt stPopularity;
-        private Syncfusion.Windows.Forms.ButtonAdv allGenerate;
-        private System.Windows.Forms.ListView listView1;
-        private Syncfusion.Windows.Forms.ButtonAdv btnSubmitToList;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.ListBox listBox1;
         private Syncfusion.Windows.Forms.Tools.TreeNavigator treeNavigator1;
         private Syncfusion.Windows.Forms.Tools.TreeMenuItem treeMenuItem1;
-        private Syncfusion.Windows.Forms.Tools.TreeMenuItem treeMenuItem2;
-        private Syncfusion.Windows.Forms.Tools.TreeMenuItem treeMenuItem3;
-        private Syncfusion.Windows.Forms.Tools.TreeMenuItem treeMenuItem4;
-        private Syncfusion.Windows.Forms.Tools.TreeMenuItem treeMenuItem5;
-        private Syncfusion.Windows.Forms.Tools.TreeMenuItem treeMenuItem6;
-        private Syncfusion.Windows.Forms.Tools.TreeMenuItem treeMenuItem7;
         private Syncfusion.Windows.Forms.Tools.TreeMenuItem treeMenuItem8;
         private Syncfusion.Windows.Forms.Tools.TreeMenuItem treeMenuItem9;
         private Syncfusion.Windows.Forms.Tools.TreeMenuItem treeMenuItem10;
@@ -2082,7 +2147,6 @@
         private Syncfusion.Windows.Forms.Tools.NumericUpDownExt stUnlock;
         private Syncfusion.Windows.Forms.Tools.NumericUpDownExt stRetention;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel29;
-        private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.BindingSource softwareTypeBS;
         private System.Windows.Forms.BindingSource childFeaturesBS;
         private ModCreatorDataSet modCreatorDataSet;
@@ -2091,5 +2155,15 @@
         private System.Windows.Forms.ToolStripMenuItem DeleteSTList;
         private ModCreatorDataSetTableAdapters.SoftwareTypeModelsTableAdapter softwareTypeModelsTableAdapter;
         private STDataSet sTDataSet;
+        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv RootOverride;
+        private Syncfusion.Windows.Forms.Tools.TreeMenuItem treeMenuItem2;
+        private Syncfusion.Windows.Forms.Tools.TreeMenuItem treeMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem generateToolStripMenuItem;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel31;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel30;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel32;
+        private Syncfusion.Windows.Forms.ButtonAdv ftDependencySubmit;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox listBox3;
     }
 }

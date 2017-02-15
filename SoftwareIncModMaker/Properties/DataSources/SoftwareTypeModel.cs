@@ -36,10 +36,10 @@ namespace SoftwareIncModMaker.Properties.DataSources
         public Nullable<decimal> RootIterative { get; set; }
         public string RootNameGenerator { get; set; }
     
-        public virtual SoftwareTypeMAttribute SoftwareTypeMAttribute { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FeatureModel> FeatureModels { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CategoryModel> CategoryModels { get; set; }
+        public virtual SoftwareTypeMAttribute SoftwareTypeMAttribute { get; set; }
     }
 }

@@ -13,6 +13,15 @@
     <EntitySet Name="FeatureSoftwareCategories" EntityType="SoftwareTypeModel2.Store.FeatureSoftwareCategories" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="FeatureDependencies" EntityType="SoftwareTypeModel2.Store.FeatureDependencies" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="SoftwareTypeMAttributes" EntityType="SoftwareTypeModel2.Store.SoftwareTypeMAttributes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DependenciesLists" EntityType="SoftwareTypeModel2.Store.DependenciesLists" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FeatureModelFeatureAttributes" Association="SoftwareTypeModel2.Store.FeatureModelFeatureAttributes">
+      <End Role="FeatureModel" EntitySet="FeatureModels" />
+      <End Role="FeatureAttributes" EntitySet="FeatureAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FeatureModelFeatureSoftwareCategory" Association="SoftwareTypeModel2.Store.FeatureModelFeatureSoftwareCategory">
+      <End Role="FeatureModel" EntitySet="FeatureModels" />
+      <End Role="FeatureSoftwareCategory" EntitySet="FeatureSoftwareCategories" />
+    </AssociationSet>
     <AssociationSet Name="SoftwareTypeModelFeatureModel" Association="SoftwareTypeModel2.Store.SoftwareTypeModelFeatureModel">
       <End Role="SoftwareTypeModel" EntitySet="SoftwareTypeModels" />
       <End Role="FeatureModel" EntitySet="FeatureModels" />
@@ -21,21 +30,17 @@
       <End Role="SoftwareTypeModel" EntitySet="SoftwareTypeModels" />
       <End Role="CategoryModel" EntitySet="CategoryModels" />
     </AssociationSet>
-    <AssociationSet Name="FeatureModelFeatureAttributes" Association="SoftwareTypeModel2.Store.FeatureModelFeatureAttributes">
-      <End Role="FeatureModel" EntitySet="FeatureModels" />
-      <End Role="FeatureAttributes" EntitySet="FeatureAttributes" />
+    <AssociationSet Name="SoftwareTypeModelSoftwareTypeMAttribute" Association="SoftwareTypeModel2.Store.SoftwareTypeModelSoftwareTypeMAttribute">
+      <End Role="SoftwareTypeModel" EntitySet="SoftwareTypeModels" />
+      <End Role="SoftwareTypeMAttribute" EntitySet="SoftwareTypeMAttributes" />
     </AssociationSet>
     <AssociationSet Name="FeatureModelFeatureDependency" Association="SoftwareTypeModel2.Store.FeatureModelFeatureDependency">
       <End Role="FeatureModel" EntitySet="FeatureModels" />
       <End Role="FeatureDependency" EntitySet="FeatureDependencies" />
     </AssociationSet>
-    <AssociationSet Name="FeatureModelFeatureSoftwareCategory" Association="SoftwareTypeModel2.Store.FeatureModelFeatureSoftwareCategory">
-      <End Role="FeatureModel" EntitySet="FeatureModels" />
-      <End Role="FeatureSoftwareCategory" EntitySet="FeatureSoftwareCategories" />
-    </AssociationSet>
-    <AssociationSet Name="SoftwareTypeMAttributeSoftwareTypeModel" Association="SoftwareTypeModel2.Store.SoftwareTypeMAttributeSoftwareTypeModel">
-      <End Role="SoftwareTypeMAttribute" EntitySet="SoftwareTypeMAttributes" />
-      <End Role="SoftwareTypeModel" EntitySet="SoftwareTypeModels" />
+    <AssociationSet Name="DependenciesListFeatureDependency" Association="SoftwareTypeModel2.Store.DependenciesListFeatureDependency">
+      <End Role="DependenciesList" EntitySet="DependenciesLists" />
+      <End Role="FeatureDependency" EntitySet="FeatureDependencies" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="FeatureModels">
@@ -46,19 +51,19 @@
     <Property Name="SubFeatureName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="SubFeatureDescription" Type="nvarchar(max)" Nullable="false" />
     <Property Name="SubFeatureSoftwareCategory" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="SubFeatureUnlock" Type="decimal" Nullable="true" />
-    <Property Name="SubFeatureUsability" Type="decimal" Nullable="true" />
-    <Property Name="SubFeatureInnovation" Type="decimal" Nullable="true" />
-    <Property Name="SubFeatureDevTime" Type="decimal" Nullable="true" />
-    <Property Name="SubFeatureCodeArt" Type="decimal" Nullable="true" />
+    <Property Name="SubFeatureUnlock" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="SubFeatureUsability" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="SubFeatureInnovation" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="SubFeatureDevTime" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="SubFeatureCodeArt" Type="decimal" Nullable="true" Precision="18" Scale="0" />
     <Property Name="SubFeatureDepedency" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="SubFeatureStability" Type="decimal" Nullable="true" />
-    <Property Name="SubFeatureServer" Type="decimal" Nullable="false" />
+    <Property Name="SubFeatureStability" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="SubFeatureServer" Type="decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="FKSoftwareTypeModel_Id" Type="int" Nullable="false" />
     <Property Name="FKFeatureAttributes_Id" Type="int" Nullable="true" />
     <Property Name="FKFeatureDependencies_Id" Type="int" Nullable="true" />
     <Property Name="FKFeatureSoftwareCategory_Id" Type="int" Nullable="true" />
-    <Property Name="SoftwareTypeModel_Id" Type="int" Nullable="false" />
+    <Property Name="SoftwareTypeModelId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="CategoryModels">
     <Key>
@@ -67,13 +72,13 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="STCategoryName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="STCategoryDescription" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="STPopularity" Type="decimal" Nullable="true" />
-    <Property Name="STUnlock" Type="decimal" Nullable="true" />
-    <Property Name="STTimeScale" Type="decimal" Nullable="true" />
-    <Property Name="STRetention" Type="decimal" Nullable="true" />
-    <Property Name="STIterative" Type="decimal" Nullable="true" />
+    <Property Name="STPopularity" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="STUnlock" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="STTimeScale" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="STRetention" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="STIterative" Type="decimal" Nullable="true" Precision="18" Scale="0" />
     <Property Name="STNameGenerator" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="SoftwareTypeModel_Id" Type="int" Nullable="true" />
+    <Property Name="SoftwareTypeModelId" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="SoftwareTypeModels">
     <Key>
@@ -83,17 +88,16 @@
     <Property Name="RootName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="RootDescription" Type="nvarchar(max)" Nullable="false" />
     <Property Name="RootCategory" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="RootUnlock" Type="decimal" Nullable="true" />
+    <Property Name="RootUnlock" Type="decimal" Nullable="true" Precision="18" Scale="0" />
     <Property Name="RootOSLimit" Type="nvarchar(max)" Nullable="true" />
     <Property Name="RootOSSpecific" Type="bit" Nullable="true" />
-    <Property Name="RootPopularity" Type="decimal" Nullable="true" />
-    <Property Name="RootRandom" Type="decimal" Nullable="true" />
-    <Property Name="RootRetention" Type="decimal" Nullable="true" />
+    <Property Name="RootPopularity" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="RootRandom" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="RootRetention" Type="decimal" Nullable="true" Precision="18" Scale="0" />
     <Property Name="RootOneClient" Type="bit" Nullable="true" />
     <Property Name="RootInHouse" Type="bit" Nullable="true" />
-    <Property Name="RootIterative" Type="decimal" Nullable="true" />
+    <Property Name="RootIterative" Type="decimal" Nullable="true" Precision="18" Scale="0" />
     <Property Name="RootNameGenerator" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="SoftwareTypeMAttribute_Id" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="FeatureAttributes">
     <Key>
@@ -115,12 +119,12 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="FCName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="FCDescription" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="FCPopularity" Type="decimal" Nullable="true" />
-    <Property Name="FCTimeScale" Type="decimal" Nullable="true" />
-    <Property Name="FCRetention" Type="decimal" Nullable="true" />
-    <Property Name="FCIterative" Type="decimal" Nullable="true" />
+    <Property Name="FCPopularity" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="FCTimeScale" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="FCRetention" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="FCIterative" Type="decimal" Nullable="true" Precision="18" Scale="0" />
     <Property Name="FCNameGenerator" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="FCUnlock" Type="decimal" Nullable="true" />
+    <Property Name="FCUnlock" Type="decimal" Nullable="true" Precision="18" Scale="0" />
     <Property Name="FeatureModel_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="FeatureDependencies">
@@ -128,9 +132,9 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="DependencySoftware" Type="nvarchar(max)" Nullable="true" />
     <Property Name="DependencyFeature" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="FeatureModel_Id" Type="int" Nullable="false" />
+    <Property Name="FeatureModelId" Type="int" Nullable="true" />
+    <Property Name="DependenciesListId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="SoftwareTypeMAttributes">
     <Key>
@@ -138,31 +142,16 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Override" Type="bit" Nullable="true" />
+    <Property Name="FKSoftwareTypeID" Type="int" Nullable="true" />
+    <Property Name="SoftwareTypeModel_Id" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="SoftwareTypeModelFeatureModel">
-    <End Role="SoftwareTypeModel" Type="SoftwareTypeModel2.Store.SoftwareTypeModels" Multiplicity="1" />
-    <End Role="FeatureModel" Type="SoftwareTypeModel2.Store.FeatureModels" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SoftwareTypeModel">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="FeatureModel">
-        <PropertyRef Name="SoftwareTypeModel_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="SoftwareTypeModelCategoryModel">
-    <End Role="SoftwareTypeModel" Type="SoftwareTypeModel2.Store.SoftwareTypeModels" Multiplicity="0..1" />
-    <End Role="CategoryModel" Type="SoftwareTypeModel2.Store.CategoryModels" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SoftwareTypeModel">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="CategoryModel">
-        <PropertyRef Name="SoftwareTypeModel_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
+  <EntityType Name="DependenciesLists">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DependencySoftware" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
   <Association Name="FeatureModelFeatureAttributes">
     <End Role="FeatureModel" Type="SoftwareTypeModel2.Store.FeatureModels" Multiplicity="1" />
     <End Role="FeatureAttributes" Type="SoftwareTypeModel2.Store.FeatureAttributes" Multiplicity="*" />
@@ -171,18 +160,6 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="FeatureAttributes">
-        <PropertyRef Name="FeatureModel_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FeatureModelFeatureDependency">
-    <End Role="FeatureModel" Type="SoftwareTypeModel2.Store.FeatureModels" Multiplicity="1" />
-    <End Role="FeatureDependency" Type="SoftwareTypeModel2.Store.FeatureDependencies" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="FeatureModel">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="FeatureDependency">
         <PropertyRef Name="FeatureModel_Id" />
       </Dependent>
     </ReferentialConstraint>
@@ -199,23 +176,71 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="SoftwareTypeMAttributeSoftwareTypeModel">
-    <End Role="SoftwareTypeMAttribute" Type="SoftwareTypeModel2.Store.SoftwareTypeMAttributes" Multiplicity="0..1" />
-    <End Role="SoftwareTypeModel" Type="SoftwareTypeModel2.Store.SoftwareTypeModels" Multiplicity="*" />
+  <Association Name="SoftwareTypeModelFeatureModel">
+    <End Role="SoftwareTypeModel" Type="SoftwareTypeModel2.Store.SoftwareTypeModels" Multiplicity="1" />
+    <End Role="FeatureModel" Type="SoftwareTypeModel2.Store.FeatureModels" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="SoftwareTypeMAttribute">
+      <Principal Role="SoftwareTypeModel">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="SoftwareTypeModel">
-        <PropertyRef Name="SoftwareTypeMAttribute_Id" />
+      <Dependent Role="FeatureModel">
+        <PropertyRef Name="SoftwareTypeModelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SoftwareTypeModelCategoryModel">
+    <End Role="SoftwareTypeModel" Type="SoftwareTypeModel2.Store.SoftwareTypeModels" Multiplicity="0..1" />
+    <End Role="CategoryModel" Type="SoftwareTypeModel2.Store.CategoryModels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SoftwareTypeModel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CategoryModel">
+        <PropertyRef Name="SoftwareTypeModelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SoftwareTypeModelSoftwareTypeMAttribute">
+    <End Role="SoftwareTypeModel" Type="SoftwareTypeModel2.Store.SoftwareTypeModels" Multiplicity="1" />
+    <End Role="SoftwareTypeMAttribute" Type="SoftwareTypeModel2.Store.SoftwareTypeMAttributes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SoftwareTypeModel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SoftwareTypeMAttribute">
+        <PropertyRef Name="SoftwareTypeModel_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FeatureModelFeatureDependency">
+    <End Role="FeatureModel" Type="SoftwareTypeModel2.Store.FeatureModels" Multiplicity="0..1" />
+    <End Role="FeatureDependency" Type="SoftwareTypeModel2.Store.FeatureDependencies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FeatureModel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FeatureDependency">
+        <PropertyRef Name="FeatureModelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DependenciesListFeatureDependency">
+    <End Role="DependenciesList" Type="SoftwareTypeModel2.Store.DependenciesLists" Multiplicity="1" />
+    <End Role="FeatureDependency" Type="SoftwareTypeModel2.Store.FeatureDependencies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DependenciesList">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FeatureDependency">
+        <PropertyRef Name="DependenciesListId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="SoftwareTypeModel2" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
-        <EntityContainer Name="SoftwareTypeModel2Container" annotation:LazyLoadingEnabled="true">
+      <Schema Namespace="SoftwareTypeModel2" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="SoftwareTypeModel2Container" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
           <EntitySet Name="FeatureModels" EntityType="SoftwareTypeModel2.FeatureModel" />
           <EntitySet Name="CategoryModels" EntityType="SoftwareTypeModel2.CategoryModel" />
           <EntitySet Name="SoftwareTypeModels" EntityType="SoftwareTypeModel2.SoftwareTypeModel" />
@@ -226,19 +251,11 @@
           </AssociationSet>
           <EntitySet Name="FeatureSoftwareCategories" EntityType="SoftwareTypeModel2.FeatureSoftwareCategory" />
           <EntitySet Name="FeatureDependencies" EntityType="SoftwareTypeModel2.FeatureDependency" />
-          <AssociationSet Name="FeatureModelFeatureDependency" Association="SoftwareTypeModel2.FeatureModelFeatureDependency">
-            <End Role="FeatureModel" EntitySet="FeatureModels" />
-            <End Role="FeatureDependency" EntitySet="FeatureDependencies" />
-          </AssociationSet>
           <AssociationSet Name="FeatureModelFeatureSoftwareCategory" Association="SoftwareTypeModel2.FeatureModelFeatureSoftwareCategory">
             <End Role="FeatureModel" EntitySet="FeatureModels" />
             <End Role="FeatureSoftwareCategory" EntitySet="FeatureSoftwareCategories" />
           </AssociationSet>
           <EntitySet Name="SoftwareTypeMAttributes" EntityType="SoftwareTypeModel2.SoftwareTypeMAttribute" />
-          <AssociationSet Name="SoftwareTypeMAttributeSoftwareTypeModel" Association="SoftwareTypeModel2.SoftwareTypeMAttributeSoftwareTypeModel">
-            <End Role="SoftwareTypeMAttribute" EntitySet="SoftwareTypeMAttributes" />
-            <End Role="SoftwareTypeModel" EntitySet="SoftwareTypeModels" />
-          </AssociationSet>
           <AssociationSet Name="SoftwareTypeModelFeatureModel" Association="SoftwareTypeModel2.SoftwareTypeModelFeatureModel">
             <End Role="SoftwareTypeModel" EntitySet="SoftwareTypeModels" />
             <End Role="FeatureModel" EntitySet="FeatureModels" />
@@ -247,68 +264,81 @@
             <End Role="SoftwareTypeModel" EntitySet="SoftwareTypeModels" />
             <End Role="CategoryModel" EntitySet="CategoryModels" />
           </AssociationSet>
+          <AssociationSet Name="SoftwareTypeModelSoftwareTypeMAttribute" Association="SoftwareTypeModel2.SoftwareTypeModelSoftwareTypeMAttribute">
+            <End Role="SoftwareTypeModel" EntitySet="SoftwareTypeModels" />
+            <End Role="SoftwareTypeMAttribute" EntitySet="SoftwareTypeMAttributes" />
+          </AssociationSet>
+          <AssociationSet Name="FeatureModelFeatureDependency" Association="SoftwareTypeModel2.FeatureModelFeatureDependency">
+            <End Role="FeatureModel" EntitySet="FeatureModels" />
+            <End Role="FeatureDependency" EntitySet="FeatureDependencies" />
+          </AssociationSet>
+          <EntitySet Name="DependenciesLists" EntityType="SoftwareTypeModel2.DependenciesList" />
+          <AssociationSet Name="DependenciesListFeatureDependency" Association="SoftwareTypeModel2.DependenciesListFeatureDependency">
+            <End Role="DependenciesList" EntitySet="DependenciesLists" />
+            <End Role="FeatureDependency" EntitySet="FeatureDependencies" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="SoftwareTypeModel">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RootName" Type="String" Nullable="false" />
-          <Property Name="RootDescription" Type="String" Nullable="false" />
-          <Property Name="RootCategory" Type="String" Nullable="true" />
-          <Property Name="RootUnlock" Type="Decimal" Nullable="true" />
-          <Property Name="RootOSLimit" Type="String" Nullable="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="RootName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="RootDescription" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="RootCategory" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="RootUnlock" Type="Decimal" Nullable="true" Precision="18" Scale="0" />
+          <Property Name="RootOSLimit" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="RootOSSpecific" Type="Boolean" Nullable="true" />
-          <Property Name="RootPopularity" Type="Decimal" Nullable="true" />
-          <Property Name="RootRandom" Type="Decimal" Nullable="true" />
-          <Property Name="RootRetention" Type="Decimal" Nullable="true" />
+          <Property Name="RootPopularity" Type="Decimal" Nullable="true" Precision="18" Scale="0" />
+          <Property Name="RootRandom" Type="Decimal" Nullable="true" Precision="18" Scale="0" />
+          <Property Name="RootRetention" Type="Decimal" Nullable="true" Precision="18" Scale="0" />
           <Property Name="RootOneClient" Type="Boolean" Nullable="true" />
           <Property Name="RootInHouse" Type="Boolean" Nullable="true" />
-          <Property Name="RootIterative" Type="Decimal" Nullable="true" />
-          <NavigationProperty Name="SoftwareTypeMAttribute" Relationship="SoftwareTypeModel2.SoftwareTypeMAttributeSoftwareTypeModel" FromRole="SoftwareTypeModel" ToRole="SoftwareTypeMAttribute" />
-          <Property Name="RootNameGenerator" Type="String" Nullable="true" />
+          <Property Name="RootIterative" Type="Decimal" Nullable="true" Precision="18" Scale="0" />
+          <Property Name="RootNameGenerator" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="FeatureModels" Relationship="SoftwareTypeModel2.SoftwareTypeModelFeatureModel" FromRole="SoftwareTypeModel" ToRole="FeatureModel" />
           <NavigationProperty Name="CategoryModels" Relationship="SoftwareTypeModel2.SoftwareTypeModelCategoryModel" FromRole="SoftwareTypeModel" ToRole="CategoryModel" />
+          <NavigationProperty Name="SoftwareTypeMAttribute" Relationship="SoftwareTypeModel2.SoftwareTypeModelSoftwareTypeMAttribute" FromRole="SoftwareTypeModel" ToRole="SoftwareTypeMAttribute" />
         </EntityType>
         <EntityType Name="FeatureModel">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SubFeatureName" Type="String" Nullable="false" />
-          <Property Name="SubFeatureDescription" Type="String" Nullable="false" />
-          <Property Name="SubFeatureSoftwareCategory" Type="String" Nullable="true" />
-          <Property Name="SubFeatureUnlock" Type="Decimal" Nullable="true" />
-          <Property Name="SubFeatureUsability" Type="Decimal" Nullable="true" />
-          <Property Name="SubFeatureInnovation" Type="Decimal" Nullable="true" />
-          <Property Name="SubFeatureDevTime" Type="Decimal" Nullable="true" />
-          <Property Name="SubFeatureCodeArt" Type="Decimal" Nullable="true" />
-          <Property Name="SubFeatureDepedency" Type="String" Nullable="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="SubFeatureName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="SubFeatureDescription" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="SubFeatureSoftwareCategory" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="SubFeatureUnlock" Type="Decimal" Nullable="true" Precision="18" Scale="0" />
+          <Property Name="SubFeatureUsability" Type="Decimal" Nullable="true" Precision="18" Scale="0" />
+          <Property Name="SubFeatureInnovation" Type="Decimal" Nullable="true" Precision="18" Scale="0" />
+          <Property Name="SubFeatureDevTime" Type="Decimal" Nullable="true" Precision="18" Scale="0" />
+          <Property Name="SubFeatureCodeArt" Type="Decimal" Nullable="true" Precision="18" Scale="0" />
+          <Property Name="SubFeatureDepedency" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="FeatureAttributes" Relationship="SoftwareTypeModel2.FeatureModelFeatureAttributes" FromRole="FeatureModel" ToRole="FeatureAttributes" />
-          <NavigationProperty Name="FeatureDependencies" Relationship="SoftwareTypeModel2.FeatureModelFeatureDependency" FromRole="FeatureModel" ToRole="FeatureDependency" />
           <NavigationProperty Name="FeatureSoftwareCategories" Relationship="SoftwareTypeModel2.FeatureModelFeatureSoftwareCategory" FromRole="FeatureModel" ToRole="FeatureSoftwareCategory" />
-          <Property Name="SubFeatureStability" Type="Decimal" Nullable="true" />
-          <Property Name="SubFeatureServer" Type="Decimal" Nullable="false" />
+          <Property Name="SubFeatureStability" Type="Decimal" Nullable="true" Precision="18" Scale="0" />
+          <Property Name="SubFeatureServer" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <Property Name="FKSoftwareTypeModel_Id" Type="Int32" Nullable="false" />
           <Property Name="FKFeatureAttributes_Id" Type="Int32" Nullable="true" />
           <Property Name="FKFeatureDependencies_Id" Type="Int32" Nullable="true" />
           <Property Name="FKFeatureSoftwareCategory_Id" Type="Int32" Nullable="true" />
           <NavigationProperty Name="SoftwareTypeModel" Relationship="SoftwareTypeModel2.SoftwareTypeModelFeatureModel" FromRole="FeatureModel" ToRole="SoftwareTypeModel" />
           <Property Name="SoftwareTypeModelId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FeatureDependencies" Relationship="SoftwareTypeModel2.FeatureModelFeatureDependency" FromRole="FeatureModel" ToRole="FeatureDependency" />
         </EntityType>
         <EntityType Name="CategoryModel">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="STCategoryName" Type="String" Nullable="false" />
-          <Property Name="STCategoryDescription" Type="String" Nullable="true" />
-          <Property Name="STPopularity" Type="Decimal" Nullable="true" />
-          <Property Name="STUnlock" Type="Decimal" Nullable="true" />
-          <Property Name="STTimeScale" Type="Decimal" Nullable="true" />
-          <Property Name="STRetention" Type="Decimal" Nullable="true" />
-          <Property Name="STIterative" Type="Decimal" Nullable="true" />
-          <Property Name="STNameGenerator" Type="String" Nullable="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="STCategoryName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="STCategoryDescription" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="STPopularity" Type="Decimal" Nullable="true" Precision="18" Scale="0" />
+          <Property Name="STUnlock" Type="Decimal" Nullable="true" Precision="18" Scale="0" />
+          <Property Name="STTimeScale" Type="Decimal" Nullable="true" Precision="18" Scale="0" />
+          <Property Name="STRetention" Type="Decimal" Nullable="true" Precision="18" Scale="0" />
+          <Property Name="STIterative" Type="Decimal" Nullable="true" Precision="18" Scale="0" />
+          <Property Name="STNameGenerator" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="SoftwareTypeModel" Relationship="SoftwareTypeModel2.SoftwareTypeModelCategoryModel" FromRole="CategoryModel" ToRole="SoftwareTypeModel" />
           <Property Name="SoftwareTypeModelId" Type="Int32" Nullable="true" />
         </EntityType>
@@ -316,14 +346,14 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AttributeFrom" Type="String" Nullable="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="AttributeFrom" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="AttributeForced" Type="Boolean" Nullable="true" />
           <Property Name="AttributeResearch" Type="Boolean" Nullable="true" />
           <Property Name="AttributeVital" Type="Boolean" Nullable="true" />
           <NavigationProperty Name="FeatureModel" Relationship="SoftwareTypeModel2.FeatureModelFeatureAttributes" FromRole="FeatureAttributes" ToRole="FeatureModel" />
           <Property Name="FKFeatureModel_Id" Type="Int32" Nullable="false" />
-          <Property Name="FKFeatureName" Type="String" Nullable="false" />
+          <Property Name="FKFeatureName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
         </EntityType>
         <Association Name="FeatureModelFeatureAttributes">
           <End Type="SoftwareTypeModel2.FeatureModel" Multiplicity="1" Role="FeatureModel" />
@@ -333,30 +363,28 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FCName" Type="String" Nullable="false" />
-          <Property Name="FCDescription" Type="String" Nullable="true" />
-          <Property Name="FCPopularity" Type="Decimal" Nullable="true" />
-          <Property Name="FCTimeScale" Type="Decimal" Nullable="true" />
-          <Property Name="FCRetention" Type="Decimal" Nullable="true" />
-          <Property Name="FCIterative" Type="Decimal" Nullable="true" />
-          <Property Name="FCNameGenerator" Type="String" Nullable="true" />
-          <Property Name="FCUnlock" Type="Decimal" Nullable="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="FCName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FCDescription" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FCPopularity" Type="Decimal" Nullable="true" Precision="18" Scale="0" />
+          <Property Name="FCTimeScale" Type="Decimal" Nullable="true" Precision="18" Scale="0" />
+          <Property Name="FCRetention" Type="Decimal" Nullable="true" Precision="18" Scale="0" />
+          <Property Name="FCIterative" Type="Decimal" Nullable="true" Precision="18" Scale="0" />
+          <Property Name="FCNameGenerator" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FCUnlock" Type="Decimal" Nullable="true" Precision="18" Scale="0" />
           <NavigationProperty Name="FeatureModel" Relationship="SoftwareTypeModel2.FeatureModelFeatureSoftwareCategory" FromRole="FeatureSoftwareCategory" ToRole="FeatureModel" />
         </EntityType>
         <EntityType Name="FeatureDependency">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DependencySoftware" Type="String" Nullable="true" />
-          <Property Name="DependencyFeature" Type="String" Nullable="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="DependencyFeature" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="FeatureModel" Relationship="SoftwareTypeModel2.FeatureModelFeatureDependency" FromRole="FeatureDependency" ToRole="FeatureModel" />
+          <Property Name="FeatureModelId" Type="Int32" Nullable="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <NavigationProperty Name="DependenciesList" Relationship="SoftwareTypeModel2.DependenciesListFeatureDependency" FromRole="FeatureDependency" ToRole="DependenciesList" />
+          <Property Name="DependenciesListId" Type="Int32" Nullable="false" />
         </EntityType>
-        <Association Name="FeatureModelFeatureDependency">
-          <End Type="SoftwareTypeModel2.FeatureModel" Role="FeatureModel" Multiplicity="1" />
-          <End Type="SoftwareTypeModel2.FeatureDependency" Role="FeatureDependency" Multiplicity="*" />
-        </Association>
         <Association Name="FeatureModelFeatureSoftwareCategory">
           <End Type="SoftwareTypeModel2.FeatureModel" Role="FeatureModel" Multiplicity="1" />
           <End Type="SoftwareTypeModel2.FeatureSoftwareCategory" Role="FeatureSoftwareCategory" Multiplicity="0..1" />
@@ -365,14 +393,11 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" annotation:StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="Int32" annotation:StoreGeneratedPattern="Identity" Nullable="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Override" Type="Boolean" Nullable="true" />
-          <NavigationProperty Name="SoftwareTypeModels" Relationship="SoftwareTypeModel2.SoftwareTypeMAttributeSoftwareTypeModel" FromRole="SoftwareTypeMAttribute" ToRole="SoftwareTypeModel" />
+          <Property Name="FKSoftwareTypeID" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="SoftwareTypeModel" Relationship="SoftwareTypeModel2.SoftwareTypeModelSoftwareTypeMAttribute" FromRole="SoftwareTypeMAttribute" ToRole="SoftwareTypeModel" />
         </EntityType>
-        <Association Name="SoftwareTypeMAttributeSoftwareTypeModel">
-          <End Type="SoftwareTypeModel2.SoftwareTypeMAttribute" Role="SoftwareTypeMAttribute" Multiplicity="0..1" />
-          <End Type="SoftwareTypeModel2.SoftwareTypeModel" Role="SoftwareTypeModel" Multiplicity="0..1" />
-        </Association>
         <Association Name="SoftwareTypeModelFeatureModel">
           <End Type="SoftwareTypeModel2.SoftwareTypeModel" Role="SoftwareTypeModel" Multiplicity="1" />
           <End Type="SoftwareTypeModel2.FeatureModel" Role="FeatureModel" Multiplicity="*" />
@@ -397,6 +422,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="SoftwareTypeModelSoftwareTypeMAttribute">
+          <End Type="SoftwareTypeModel2.SoftwareTypeModel" Role="SoftwareTypeModel" Multiplicity="1" />
+          <End Type="SoftwareTypeModel2.SoftwareTypeMAttribute" Role="SoftwareTypeMAttribute" Multiplicity="0..1" />
+        </Association>
+        <Association Name="FeatureModelFeatureDependency">
+          <End Type="SoftwareTypeModel2.FeatureModel" Role="FeatureModel" Multiplicity="0..1" />
+          <End Type="SoftwareTypeModel2.FeatureDependency" Role="FeatureDependency" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FeatureModel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FeatureDependency">
+              <PropertyRef Name="FeatureModelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DependenciesList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DependencySoftware" Type="String" Nullable="false" />
+          <NavigationProperty Name="FeatureDependencies" Relationship="SoftwareTypeModel2.DependenciesListFeatureDependency" FromRole="DependenciesList" ToRole="FeatureDependency" />
+        </EntityType>
+        <Association Name="DependenciesListFeatureDependency">
+          <End Type="SoftwareTypeModel2.DependenciesList" Role="DependenciesList" Multiplicity="1" />
+          <End Type="SoftwareTypeModel2.FeatureDependency" Role="FeatureDependency" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DependenciesList">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FeatureDependency">
+              <PropertyRef Name="DependenciesListId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -406,8 +467,7 @@
     <EntitySetMapping Name="FeatureModels">
       <EntityTypeMapping TypeName="IsTypeOf(SoftwareTypeModel2.FeatureModel)">
         <MappingFragment StoreEntitySet="FeatureModels">
-          <ScalarProperty Name="SoftwareTypeModelId" ColumnName="SoftwareTypeModel_Id" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="SubFeatureName" ColumnName="SubFeatureName" />
           <ScalarProperty Name="SubFeatureDescription" ColumnName="SubFeatureDescription" />
           <ScalarProperty Name="SubFeatureSoftwareCategory" ColumnName="SubFeatureSoftwareCategory" />
@@ -423,6 +483,7 @@
           <ScalarProperty Name="FKFeatureAttributes_Id" ColumnName="FKFeatureAttributes_Id" />
           <ScalarProperty Name="FKFeatureDependencies_Id" ColumnName="FKFeatureDependencies_Id" />
           <ScalarProperty Name="FKFeatureSoftwareCategory_Id" ColumnName="FKFeatureSoftwareCategory_Id" />
+          <ScalarProperty Name="SoftwareTypeModelId" ColumnName="SoftwareTypeModelId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -438,6 +499,7 @@
           <ScalarProperty Name="STRetention" ColumnName="STRetention" />
           <ScalarProperty Name="STIterative" ColumnName="STIterative" />
           <ScalarProperty Name="STNameGenerator" ColumnName="STNameGenerator" />
+          <ScalarProperty Name="SoftwareTypeModelId" ColumnName="SoftwareTypeModelId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -493,8 +555,9 @@
       <EntityTypeMapping TypeName="IsTypeOf(SoftwareTypeModel2.FeatureDependency)">
         <MappingFragment StoreEntitySet="FeatureDependencies">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="DependencySoftware" ColumnName="DependencySoftware" />
           <ScalarProperty Name="DependencyFeature" ColumnName="DependencyFeature" />
+          <ScalarProperty Name="FeatureModelId" ColumnName="FeatureModelId" />
+          <ScalarProperty Name="DependenciesListId" ColumnName="DependenciesListId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -503,6 +566,15 @@
         <MappingFragment StoreEntitySet="SoftwareTypeMAttributes">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Override" ColumnName="Override" />
+          <ScalarProperty Name="FKSoftwareTypeID" ColumnName="FKSoftwareTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DependenciesLists">
+      <EntityTypeMapping TypeName="IsTypeOf(SoftwareTypeModel2.DependenciesList)">
+        <MappingFragment StoreEntitySet="DependenciesLists">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DependencySoftware" ColumnName="DependencySoftware" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -514,14 +586,6 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="FeatureModelFeatureDependency" TypeName="SoftwareTypeModel2.FeatureModelFeatureDependency" StoreEntitySet="FeatureDependencies">
-      <EndProperty Name="FeatureModel">
-        <ScalarProperty Name="Id" ColumnName="FeatureModel_Id" />
-      </EndProperty>
-      <EndProperty Name="FeatureDependency">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
     <AssociationSetMapping Name="FeatureModelFeatureSoftwareCategory" TypeName="SoftwareTypeModel2.FeatureModelFeatureSoftwareCategory" StoreEntitySet="FeatureSoftwareCategories">
       <EndProperty Name="FeatureModel">
         <ScalarProperty Name="Id" ColumnName="FeatureModel_Id" />
@@ -530,51 +594,52 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="SoftwareTypeMAttributeSoftwareTypeModel" TypeName="SoftwareTypeModel2.SoftwareTypeMAttributeSoftwareTypeModel" StoreEntitySet="SoftwareTypeModels">
-      <EndProperty Name="SoftwareTypeMAttribute">
-        <ScalarProperty Name="Id" ColumnName="SoftwareTypeMAttribute_Id" />
-      </EndProperty>
+    <AssociationSetMapping Name="SoftwareTypeModelSoftwareTypeMAttribute" TypeName="SoftwareTypeModel2.SoftwareTypeModelSoftwareTypeMAttribute" StoreEntitySet="SoftwareTypeMAttributes">
       <EndProperty Name="SoftwareTypeModel">
+        <ScalarProperty Name="Id" ColumnName="SoftwareTypeModel_Id" />
+      </EndProperty>
+      <EndProperty Name="SoftwareTypeMAttribute">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
-      <Condition ColumnName="SoftwareTypeMAttribute_Id" IsNull="false" />
     </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <edmx:Designer>
     <edmx:Connection>
-      <DesignerInfoPropertySet>
-        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
-      </DesignerInfoPropertySet>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
     </edmx:Connection>
     <edmx:Options>
-      <DesignerInfoPropertySet>
-        <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
-        <DesignerProperty Name="UseLegacyProvider" Value="False" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
-      </DesignerInfoPropertySet>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="True" />
+        <edmx:DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <edmx:DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </edmx:DesignerInfoPropertySet>
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ef2e4cf3e41a4339b05cc9a50a2ce452" Name="Diagram1" ZoomLevel="88">
-        <EntityTypeShape EntityType="SoftwareTypeModel2.SoftwareTypeModel" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SoftwareTypeModel2.FeatureModel" Width="1.875" PointX="6.875" PointY="9.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SoftwareTypeModel2.CategoryModel" Width="1.5" PointX="5" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SoftwareTypeModel2.FeatureAttributes" Width="1.5" PointX="9.75" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SoftwareTypeModel2.FeatureSoftwareCategory" Width="1.5" PointX="10.875" PointY="10.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SoftwareTypeModel2.FeatureDependency" Width="1.5" PointX="9.75" PointY="14.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SoftwareTypeModel2.SoftwareTypeMAttribute" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <AssociationConnector ManuallyRouted="false" Association="SoftwareTypeModel2.FeatureModelFeatureAttributes" />
-        <AssociationConnector Association="SoftwareTypeModel2.FeatureModelFeatureDependency" ManuallyRouted="false" />
-        <AssociationConnector Association="SoftwareTypeModel2.FeatureModelFeatureSoftwareCategory" ManuallyRouted="false" />
-        <AssociationConnector Association="SoftwareTypeModel2.SoftwareTypeMAttributeSoftwareTypeModel" ManuallyRouted="false" />
-        <AssociationConnector Association="SoftwareTypeModel2.SoftwareTypeModelFeatureModel" />
-        <AssociationConnector Association="SoftwareTypeModel2.SoftwareTypeModelCategoryModel" />
-      </Diagram>
+      <edmx:Diagram DiagramId="ef2e4cf3e41a4339b05cc9a50a2ce452" Name="Diagram1" ZoomLevel="88">
+        <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.SoftwareTypeModel" Width="1.5" PointX="4.625" PointY="6.875" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.FeatureModel" Width="1.875" PointX="6.75" PointY="9.625" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.CategoryModel" Width="1.5" PointX="4.875" PointY="12.75" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.FeatureAttributes" Width="1.5" PointX="9.625" PointY="7.625" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.FeatureSoftwareCategory" Width="1.5" PointX="10.75" PointY="10.875" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.FeatureDependency" Width="1.5" PointX="7.25" PointY="15.375" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.SoftwareTypeMAttribute" Width="1.5" PointX="2.375" PointY="8.25" IsExpanded="true" />
+        <edmx:AssociationConnector ManuallyRouted="false" Association="SoftwareTypeModel2.FeatureModelFeatureAttributes" />
+        <edmx:AssociationConnector Association="SoftwareTypeModel2.FeatureModelFeatureSoftwareCategory" ManuallyRouted="false" />
+        <edmx:AssociationConnector Association="SoftwareTypeModel2.SoftwareTypeModelFeatureModel" />
+        <edmx:AssociationConnector Association="SoftwareTypeModel2.SoftwareTypeModelCategoryModel" />
+        <edmx:AssociationConnector Association="SoftwareTypeModel2.SoftwareTypeModelSoftwareTypeMAttribute" />
+        <edmx:AssociationConnector Association="SoftwareTypeModel2.FeatureModelFeatureDependency" />
+        <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.DependenciesList" Width="2.375" PointX="9.875" PointY="16" />
+        <edmx:AssociationConnector Association="SoftwareTypeModel2.DependenciesListFeatureDependency" />
+      </edmx:Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

@@ -84,11 +84,11 @@ namespace SoftwareIncModMaker
 
             //iterate thru snippet method and add to List<>
             foreach (var item in softwareTypeOneLineSnippets())
-                items.Add(new softwareTypeSnippet(item) { ImageIndex = 1 });
+                items.Add(new SoftwareTypeSnippet(item) { ImageIndex = 1 });
             foreach (var item in softwareTypeCategorySnippets())
-                items.Add(new softwareTypeSnippet(item) { ImageIndex = 1 });
+                items.Add(new SoftwareTypeSnippet(item) { ImageIndex = 1 });
             foreach (var item in softwareTypeFeatureSnippets())
-                items.Add(new softwareTypeSnippet(item) { ImageIndex = 1 });
+                items.Add(new SoftwareTypeSnippet(item) { ImageIndex = 1 });
 
             //set as autocomplete source
             Form.SetAutocompleteItems(items);
@@ -96,15 +96,18 @@ namespace SoftwareIncModMaker
 
     }
 
-    internal class softwareTypeSnippet : SnippetAutocompleteItem
+    /// <summary>
+    /// The software type snippet.
+    /// </summary>
+    internal sealed class SoftwareTypeSnippet : SnippetAutocompleteItem
     {
         public static string RegexSpecSymbolsPattern = @"[\^\$\[\]\(\)\.\\\*\+\|\?\{\}]";
 
-        public softwareTypeSnippet(string softwareTypeTag) : base(softwareTypeTag)
+        public SoftwareTypeSnippet(string softwareTypeTag) : base(softwareTypeTag)
         {
-            ImageIndex = 0;
-            ToolTipTitle = "Insert Tag";
-            ToolTipText = softwareTypeTag;
+            this.ImageIndex = 0;
+            this.ToolTipTitle = "Insert Tag";
+            this.ToolTipText = softwareTypeTag;
         }
 
         public override CompareResult Compare(string fragmentText)

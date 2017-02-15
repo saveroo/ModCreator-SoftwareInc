@@ -99,7 +99,7 @@ namespace SoftwareIncModMaker
 
         private static int _instances = 0; 
 
-        private BindingList<SoftwareTypeClassBackup> FeatureList;
+//        private BindingList<SoftwareTypeClassBackup> FeatureList;
 
         public SoftwareTypeClassBackup()
         {
