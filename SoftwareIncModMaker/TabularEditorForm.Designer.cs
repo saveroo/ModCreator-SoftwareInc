@@ -1834,7 +1834,7 @@
             this.treeMenuItem1.Name = "treeMenuItem1";
             this.treeMenuItem1.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(193)))), ((int)(((byte)(220)))));
             this.treeMenuItem1.SelectedItemForeColor = System.Drawing.Color.Black;
-            this.treeMenuItem1.Size = new System.Drawing.Size(704, 50);
+            this.treeMenuItem1.Size = new System.Drawing.Size(723, 50);
             this.treeMenuItem1.TabIndex = 0;
             this.treeMenuItem1.Text = "treeMenuItem1";
             // 

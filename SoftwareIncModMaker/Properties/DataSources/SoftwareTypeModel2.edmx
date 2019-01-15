@@ -623,13 +623,13 @@
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <edmx:Diagram DiagramId="ef2e4cf3e41a4339b05cc9a50a2ce452" Name="Diagram1" ZoomLevel="88">
+      <edmx:Diagram DiagramId="ef2e4cf3e41a4339b05cc9a50a2ce452" Name="Diagram1" ZoomLevel="87">
         <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.SoftwareTypeModel" Width="1.5" PointX="4.625" PointY="6.875" IsExpanded="true" />
-        <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.FeatureModel" Width="1.875" PointX="6.75" PointY="9.625" IsExpanded="true" />
-        <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.CategoryModel" Width="1.5" PointX="4.875" PointY="12.75" IsExpanded="true" />
-        <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.FeatureAttributes" Width="1.5" PointX="9.625" PointY="7.625" IsExpanded="true" />
-        <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.FeatureSoftwareCategory" Width="1.5" PointX="10.75" PointY="10.875" IsExpanded="true" />
-        <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.FeatureDependency" Width="1.5" PointX="7.25" PointY="15.375" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.FeatureModel" Width="1.875" PointX="6.875" PointY="6.875" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.CategoryModel" Width="1.5" PointX="4.5" PointY="11.625" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.FeatureAttributes" Width="1.5" PointX="9.25" PointY="6.875" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.FeatureSoftwareCategory" Width="1.5" PointX="9.375" PointY="9.625" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.FeatureDependency" Width="1.5" PointX="7" PointY="12.375" IsExpanded="true" />
         <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.SoftwareTypeMAttribute" Width="1.5" PointX="2.375" PointY="8.25" IsExpanded="true" />
         <edmx:AssociationConnector ManuallyRouted="false" Association="SoftwareTypeModel2.FeatureModelFeatureAttributes" />
         <edmx:AssociationConnector Association="SoftwareTypeModel2.FeatureModelFeatureSoftwareCategory" ManuallyRouted="false" />
@@ -637,7 +637,7 @@
         <edmx:AssociationConnector Association="SoftwareTypeModel2.SoftwareTypeModelCategoryModel" />
         <edmx:AssociationConnector Association="SoftwareTypeModel2.SoftwareTypeModelSoftwareTypeMAttribute" />
         <edmx:AssociationConnector Association="SoftwareTypeModel2.FeatureModelFeatureDependency" />
-        <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.DependenciesList" Width="2.375" PointX="9.875" PointY="16" />
+        <edmx:EntityTypeShape EntityType="SoftwareTypeModel2.DependenciesList" Width="2.375" PointX="9.125" PointY="13" />
         <edmx:AssociationConnector Association="SoftwareTypeModel2.DependenciesListFeatureDependency" />
       </edmx:Diagram>
     </edmx:Diagrams>

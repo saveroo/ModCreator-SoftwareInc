@@ -4,8 +4,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SoftwareIncModMaker")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Mod Workspace: Software Inc")]
+[assembly: AssemblyDescription("Software Inc Mod Creator")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("saveroo")]
 [assembly: AssemblyProduct("SoftwareIncModMaker")]

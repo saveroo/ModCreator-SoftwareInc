@@ -28,8 +28,5 @@
             childForm.Show();
         }
 
-        private static void Main()
-        {
-        }
     }
 }

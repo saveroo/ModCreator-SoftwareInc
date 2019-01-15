@@ -17,6 +17,9 @@ namespace SoftwareIncModMaker
     using Syncfusion.Windows.Forms.Grid;
     using Syncfusion.Windows.Forms.Tools;
 
+    /// <summary>
+    /// The tabular editor form.
+    /// </summary>
     public partial class TabularEditorForm : Form
     {
         private SoftwareTypeModel selectedSoftware;
@@ -30,32 +33,6 @@ namespace SoftwareIncModMaker
             var mainCtx = new SoftwareTypeModel2Container();
 
             this.listBox1.DataSource = mainCtx.SoftwareTypeModels.ToList();
-
-            // listBox2.DataSource = (
-            // from x in mainCtx.FeatureModels
-            // where x.Id == x.SoftwareTypeModel.Id
-            // select x).ToList();
-        }
-
-        public void AddFeatureToBindingList(
-            string atFr,
-            bool atFo,
-            bool atVi,
-            bool atRe,
-            string name,
-            string desc,
-            string artCategory,
-            decimal unlock,
-            decimal devtime,
-            decimal innovation,
-            decimal usability,
-            decimal stability,
-            decimal codeart,
-            string dependency,
-            decimal server,
-            string softwareCategory,
-            string attrcategory)
-        {
         }
 
         public SoftwareTypeModel2Container ModelContext()
@@ -135,31 +112,12 @@ namespace SoftwareIncModMaker
         {
         }
 
-        private void AddToListBox(ListBox box, SoftwareType obj)
-        {
-            var item = new ListBox();
-            item.Text = obj.RootName;
-            item.Tag = obj;
-
-            // box.Items.Add(item);
-        }
-
-        private void AllGenerateClick(object sender, EventArgs e)
-        {
-            var groupList = new List<List<SoftwareTypeClassBackup>>();
-        }
-
         private void AutoLabel1Click(object sender, EventArgs e)
         {
         }
 
         private void AutoLabel7Click(object sender, EventArgs e)
         {
-        }
-
-        private void BtnSubmitToListClick(object sender, EventArgs e)
-        {
-            // Do nothing
         }
 
         private void CheckBoxAdv1CheckStateChanged(object sender, EventArgs e)
@@ -170,32 +128,6 @@ namespace SoftwareIncModMaker
         {
         }
 
-        private void CreateListViewItem(ListView listView, Feature obj)
-        {
-            var item = new ListViewItem();
-            item.Text = obj.SubFeatureName;
-            item.Tag = obj;
-
-            listView.Items.Add(item);
-        }
-
-        private void CreateListViewItem(ListView listView, SoftwareType obj)
-        {
-            var item = new ListViewItem();
-            item.Text = obj.RootName;
-            item.Tag = obj;
-
-            listView.Items.Add(item);
-        }
-
-        private void CreateListViewItem(ListView listView, Category obj)
-        {
-            var item = new ListViewItem();
-            item.Text = obj.RootName;
-            item.Tag = obj;
-
-            listView.Items.Add(item);
-        }
 
         private void CtButtonSubmitClick(object sender, EventArgs e)
         {
@@ -222,22 +154,6 @@ namespace SoftwareIncModMaker
             }
         }
 
-        private SoftwareTypeClassBackup CtClass()
-        {
-            var ct = new SoftwareTypeClassBackup();
-
-            ct.ParentCategories = "Categories";
-            ct.SubCategory = "Category";
-            ct.SubCategoryDescription = this.ctDescriptionTextBox.Text;
-            ct.AttrName = this.ctNameTextBox.Text;
-            ct.SubCategoryNameGenerator = this.ctNameGenerator.Text;
-            ct.SubCategoryIterative = this.ctIterativeBox.Value;
-            ct.SubCategoryPopularity = this.ctPopularityBox.Value;
-            ct.SubCategoryRetention = this.ctRetentionBox.Value;
-            ct.SubCategoryTimeScale = this.ctTimeScaleBox.Value;
-            ct.SubCategoryUnlock = this.ctUnlockBox.Value;
-            return ct;
-        }
 
         private void DeleteStListClick(object sender, EventArgs e)
         {
@@ -337,35 +253,9 @@ namespace SoftwareIncModMaker
             }
         }
 
-        private void EditControl1Load(object sender, EventArgs e)
-        {
-        }
 
         private void EditStListClick(object sender, EventArgs e)
         {
-        }
-
-        private SoftwareTypeClassBackup FtClass()
-        {
-            var ft = new SoftwareTypeClassBackup();
-
-            // attribute
-            ft.AttributeForced = this.ftAttrForced.Checked;
-            ft.AttributeResearch = this.ftAttrResearch.Checked;
-            ft.AttributeVital = this.ftAttrVital.Checked;
-            ft.AttributeFrom = this.ftAttrFrom.Text;
-
-            ft.SubFeatureName = this.ftName.Text;
-            ft.SubFeatureServer = this.ftServerBox.Value;
-            ft.SubFeatureInnovation = this.ftInnovationBox.Value;
-
-            // ft.SubFeatureDependency  = 
-            ft.SubFeatureCodeArt = this.ftCodeArtBox.Value;
-            ft.SubFeatureStability = this.ftStabilityBox.Value;
-            ft.SubFeatureUsability = this.ftUsabilityBox.Value;
-            ft.SubFeatureDevtime = this.ftDevTimeBox.Value;
-            ft.SubFeatureUnlock = this.ftUnlockBox.Value;
-            return ft;
         }
 
         private void FtDependencyComboBoxDropDown(object sender, EventArgs e)
@@ -409,25 +299,6 @@ namespace SoftwareIncModMaker
 
         private void FtSubmitButtonClick(object sender, EventArgs e)
         {
-            var newFeature = new Feature(
-                this.listBox1.SelectedItem as SoftwareType,
-                this.ftAttrFrom.Text,
-                this.ftAttrForced.BoolValue,
-                this.ftAttrVital.BoolValue,
-                this.ftAttrResearch.BoolValue,
-                this.ftName.Text,
-                this.ftDescription.Text,
-                this.ftCategory.Text,
-                this.ftUnlockBox.Value,
-                this.ftDevTimeBox.Value,
-                this.ftInnovationBox.Value,
-                this.ftUsabilityBox.Value,
-                this.ftStabilityBox.Value,
-                this.ftCodeArtBox.Value,
-                this.ftDependencyFeature.Text,
-                this.ftServerBox.Value,
-                this.ftCategory.Text,
-                this.ftAttrVital.Text);
 
             var newFt = new FeatureModel();
 
@@ -446,15 +317,7 @@ namespace SoftwareIncModMaker
             }
             else
             {
-                // var newAttr = new FeatureAttributes()
-                // {
-                // AttributeFrom = ftAttrFrom.Text,
-                // AttributeForced = ftAttrForced.BoolValue,
-                // AttributeVital = ftAttrVital.BoolValue,
-                // AttributeResearch = ftAttrResearch.BoolValue,
-                // FKFeatureModel_Id = newFt.Id,
-                // FKFeatureName = ftName.Text
-                // };
+
                 newFt.SubFeatureName = this.ftName.Text;
                 newFt.SubFeatureDescription = this.ftDescription.Text;
                 newFt.SubFeatureUnlock = this.ftUnlockBox.Value;
@@ -476,6 +339,7 @@ namespace SoftwareIncModMaker
             }
 
             if (this.listBox1.SelectedItem != null)
+            {
                 using (var b = new SoftwareTypeModel2Container())
                 {
                     b.SoftwareTypeModels.Find((this.listBox1.SelectedItem as SoftwareTypeModel).Id)
@@ -487,7 +351,11 @@ namespace SoftwareIncModMaker
                         Color.Green);
                     b.SaveChanges();
                 }
-            else ActionHistory.Information = "Select the Software from the list before adding new feature";
+            }
+            else
+            {
+                ActionHistory.Information = "Select the Software from the list before adding new feature";
+            }
         }
 
         private void GenerateToolStripMenuItemClick(object sender, EventArgs e)
@@ -554,37 +422,6 @@ namespace SoftwareIncModMaker
             File.WriteAllLines("SoftwareMod/" + castedListbox.RootName + ".xml", xList);
         }
 
-        private void GridDataBoundGrid1CellClick(object sender, GridCellClickEventArgs e)
-        {
-        }
-
-        private int InstanceOfFeature()
-        {
-            var a = this.listBox1.SelectedItem as SoftwareType;
-            if (a.ChildrenFeatures != null) return a.ChildrenFeatures.Count;
-            return 0;
-        }
-
-        private Feature InstanceOfFeature(int index, ListView st)
-        {
-            if (st.SelectedItems.Count > 0) return (Feature)st.SelectedItems[index].Tag;
-            return null;
-        }
-
-        private List<SoftwareTypeClassBackup> IterateCategory()
-        {
-            var categoryList = new List<SoftwareTypeClassBackup>();
-            categoryList.Add(this.CtClass());
-            return categoryList;
-        }
-
-        private List<SoftwareTypeClassBackup> IterateFeature()
-        {
-            var featureList = new List<SoftwareTypeClassBackup>();
-            featureList.Add(this.FtClass());
-            return featureList;
-        }
-
         private void ListBox1BindingContextChanged(object sender, EventArgs e)
         {
             // ActionMemo.addLines("BindingContext is changed");
@@ -646,7 +483,6 @@ namespace SoftwareIncModMaker
                 .FeatureModels.ToList()
                 .ForEach(s => this.ftAttrFrom.Items.Add(s.SubFeatureName));
 
-            var aa = this.listBox1.SelectedItem as SoftwareType;
         }
 
         private void ListBox2SelectedIndexChanged(object sender, EventArgs e)
